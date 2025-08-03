@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/Screens/test_gemini_ui_generation.dart';
+import 'package:frontend/Screens/voice_to_text_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'AI Flutter Generator',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: TestGeminiUIGeneration(),
+      home: VoiceToTextScreen(),
     );
   }
 }
