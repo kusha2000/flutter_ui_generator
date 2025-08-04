@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:frontend/widgets/generated_widget_loader.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -429,7 +429,22 @@ class _TestGeminiUIGenerationState extends State<TestGeminiUIGeneration> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('AI Flutter Generator')),
+      appBar: AppBar(
+        title: const Text('AI Flutter Generator'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.auto_fix_high),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const GeneratedWidget(),
+                ),
+              );
+            },
+          ),
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
