@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:permission_handler/permission_handler.dart';
+
 class VoiceToTextScreen extends StatefulWidget {
   @override
   _VoiceToTextScreenState createState() => _VoiceToTextScreenState();
 }
+
 class _VoiceToTextScreenState extends State<VoiceToTextScreen> {
   late stt.SpeechToText _speech;
   bool _isListening = false;
@@ -12,12 +14,14 @@ class _VoiceToTextScreenState extends State<VoiceToTextScreen> {
   String _text = 'Press the button and start speaking...';
   String _currentWords = '';
   double _confidence = 1.0;
+
   @override
   void initState() {
     super.initState();
     _speech = stt.SpeechToText();
     _initSpeech();
   }
+
   void _initSpeech() async {
     // Request microphone permission
     var status = await Permission.microphone.request();
@@ -27,16 +31,19 @@ class _VoiceToTextScreenState extends State<VoiceToTextScreen> {
       });
       return;
     }
+
     bool available = await _speech.initialize(
       onStatus: (val) => print('onStatus: $val'),
       onError: (val) => print('onError: $val'),
     );
+
     if (available) {
       setState(() => _isAvailable = true);
     } else {
       setState(() => _text = 'Speech recognition not available');
     }
   }
+
   void _listen() async {
     if (!_isListening) {
       if (await _speech.hasPermission && _speech.isAvailable) {
@@ -63,6 +70,7 @@ class _VoiceToTextScreenState extends State<VoiceToTextScreen> {
       _stopListening();
     }
   }
+
   void _stopListening() {
     if (_isListening) {
       _speech.stop();
@@ -74,6 +82,7 @@ class _VoiceToTextScreenState extends State<VoiceToTextScreen> {
       });
     }
   }
+
   void _clearText() {
     setState(() {
       _text = 'Press the button and start speaking...';
@@ -81,6 +90,7 @@ class _VoiceToTextScreenState extends State<VoiceToTextScreen> {
       _confidence = 1.0;
     });
   }
+
   void _copyText() {
     if (_text.isNotEmpty && _text != 'Press the button and start speaking...') {
       // Note: In a real app, you'd use Clipboard.setData() from flutter/services
@@ -89,6 +99,7 @@ class _VoiceToTextScreenState extends State<VoiceToTextScreen> {
       );
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -145,6 +156,7 @@ class _VoiceToTextScreenState extends State<VoiceToTextScreen> {
               ),
             ),
             SizedBox(height: 20.0),
+
             // Confidence indicator
             if (_confidence != 1.0)
               Container(
@@ -169,6 +181,7 @@ class _VoiceToTextScreenState extends State<VoiceToTextScreen> {
                 ),
               ),
             SizedBox(height: 20.0),
+
             // Text display area
             Expanded(
               child: Container(
@@ -200,6 +213,7 @@ class _VoiceToTextScreenState extends State<VoiceToTextScreen> {
               ),
             ),
             SizedBox(height: 20.0),
+
             // Control buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -216,6 +230,7 @@ class _VoiceToTextScreenState extends State<VoiceToTextScreen> {
                         EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
                   ),
                 ),
+
                 // Main mic button
                 ElevatedButton.icon(
                   onPressed: _isAvailable ? _listen : null,
@@ -231,6 +246,7 @@ class _VoiceToTextScreenState extends State<VoiceToTextScreen> {
               ],
             ),
             SizedBox(height: 20.0),
+
             // Help text
             Text(
               'Tap Start to begin voice recognition. The app will listen for 30 seconds or until you tap Stop.',
@@ -246,6 +262,7 @@ class _VoiceToTextScreenState extends State<VoiceToTextScreen> {
       ),
     );
   }
+
   @override
   void dispose() {
     _speech.stop();

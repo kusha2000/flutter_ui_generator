@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/widgets/generated_widget_loader.dart';
+import 'package:frontend/widgets/ai_type_selection.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -438,7 +438,7 @@ class _TestGeminiUIGenerationState extends State<TestGeminiUIGeneration> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const GeneratedWidget(),
+                  builder: (context) => const AITypeSection(),
                 ),
               );
             },
