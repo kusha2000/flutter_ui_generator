@@ -87,148 +87,187 @@ class CodeProcessor:
         return response_text
     
     def clean_code_response(self, code: str, widget_name: str = "GeneratedWidget") -> str:
-        """Clean and validate the generated code for Flutter 3.27.1"""
-        logger.info(f"🧹 Starting code cleanup for Flutter 3.27.1...")
-        logger.info(f"🎯 Target widget name: {widget_name}")
-        logger.info(f"📏 Original code length: {len(code)} characters")
-        
-        if not code or not code.strip():
-            logger.error("❌ Empty or whitespace-only code detected")
-            return self.get_professional_fallback_widget("Empty code response", widget_name)
-        
-        # Remove markdown code blocks if present
-        code = re.sub(r'```dart\n?', '', code)
-        code = re.sub(r'```\n?', '', code)
-        code = code.strip()
-        
-        # Fix import statements - Remove ALL spaces after colons in package imports
-        logger.info("🔧 Fixing import statements (removing spaces after colons)...")
-        
-        # Direct replacement approach for Flutter material import
-        flutter_import_correct = "import 'package:flutter/material.dart';"
-        
-        # Check for various forms of the import statement
-        has_space_import = False
-        
-        # Pattern 1: Check for space after package:
-        if "import 'package: flutter/material.dart'" in code or 'import "package: flutter/material.dart"' in code or "import 'package:flutter/material.dart'" in code or 'import "package:flutter/material.dart"' :
-            logger.warning("⚠️ Found space in import statement after 'package:'")
-            logger.warning("   Original: import 'package: flutter/material.dart';")
-            has_space_import = True
-            
-            # Replace with correct import
-            code = code.replace("import 'package: flutter/material.dart';", flutter_import_correct)
-            code = code.replace("import 'package:flutter/material.dart'", flutter_import_correct)
-            code = code.replace('import "package: flutter/material.dart";', flutter_import_correct)
-            code = code.replace('import "package:flutter/material.dart"', flutter_import_correct)
-            
-            logger.info("✅ Fixed space in Flutter material import")
-            logger.info(f"   Fixed to: {flutter_import_correct}")
-        
-        # Additional generic fix for any package imports with spaces
-        import_pattern = r"package:\s+"
-        if re.search(import_pattern, code):
-            if not has_space_import:
-                logger.warning("⚠️ Found space in other package imports after 'package:'")
-                # Extract and log the problematic import line(s)
-                import_matches = re.findall(r"import\s+['\"]package:\s+[^'\"]+['\"];?", code)
-                for match in import_matches:
-                    logger.warning(f"   Original: {match}")
-        
-        # Fix common variations of the space issue in imports (generic fix)
-        # Handles: 'package: xyz' -> 'package:xyz'
-        original_code = code
-        code = re.sub(r"'package:\s+", "'package:", code)
-        code = re.sub(r'"package:\s+', '"package:', code)
-        
-        if original_code != code and not has_space_import:
-            logger.info("✅ Fixed space in package imports")
-            # Log the fixed import line(s)
-            import_matches = re.findall(r"import\s+['\"]package:[^'\"]+['\"];?", code)
-            for match in import_matches[:3]:  # Show first 3 to avoid spam
-                logger.info(f"   Fixed to: {match}")
-        
-        if not has_space_import and original_code == code:
-            logger.info("✅ No space issues found in package imports")
-        
-        # Check and fix spaces in URLs
-        url_pattern = r"['\"]https?:\s+//"
-        if re.search(url_pattern, code):
-            logger.warning("⚠️ Found space in URL after colon")
-            url_match = re.search(r"['\"]https?:\s+//[^'\"]+['\"]", code)
-            if url_match:
-                logger.warning(f"   Original URL: {url_match.group(0)}")
-        
-        # Also fix spaces in URLs (like the avatar image)
-        # Handles: 'https: //' -> 'https://'
-        original_code = code
-        code = re.sub(r"'https:\s+//", "'https://", code)
-        code = re.sub(r'"https:\s+//', '"https://', code)
-        
-        if original_code != code:
-            logger.info("✅ Fixed space in URLs")
-        
-        # Check and fix spaces in time formats
-        time_pattern = r"(\d+):\s+(\d+)"
-        time_matches = re.findall(time_pattern, code)
-        if time_matches:
-            logger.warning(f"⚠️ Found {len(time_matches)} time format(s) with spaces")
-            logger.info(f"   Examples: {', '.join([f'{m[0]}: {m[1]}' for m in time_matches[:3]])}")
-        
-        # Fix spaces in time formats (like '10: 00 AM' -> '10:00 AM')
-        original_code = code
-        code = re.sub(r"(\d+):\s+(\d+)", r"\1:\2", code)
-        
-        if original_code != code:
-            logger.info("✅ Fixed spaces in time formats")
-        
-        logger.info("✅ All import and formatting fixes completed")
-        
-        # Ensure proper import exists
-        if "import 'package:flutter/material.dart';" not in code:
-            logger.info("🧹 Adding missing Flutter import")
-            code = "import 'package:flutter/material.dart';\n\n" + code
-        
-        # Fix widget naming
-        logger.info(f"🔧 Enforcing widget name: {widget_name}")
-        incorrect_names = [
-            'GeneratedWidget', 'MainWidget', 'Main', 'MyWidget',
-            'AppWidget', 'HomeWidget', 'CustomWidget', 'UIWidget',
-            'GeminiGeneratedWidget'  # Add this to handle Gemini's default name
-        ]
-        
-        for incorrect_name in incorrect_names:
-            if incorrect_name != widget_name:
-                code = re.sub(
-                    rf'class\s+{incorrect_name}\s*extends',
-                    f'class {widget_name} extends',
-                    code
-                )
-                code = re.sub(
-                    rf'const\s+{incorrect_name}\s*\(',
-                    f'const {widget_name}(',
-                    code
-                )
-        
-        # Flutter 3.27.1 specific fixes
-        code = self._apply_flutter_3_27_fixes(code)
-        
-        # Fix common formatting issues
-        code = self._fix_code_formatting(code)
-        
-        # Verify widget name
-        if f'class {widget_name}' not in code:
-            logger.warning(f"⚠️ Widget name {widget_name} not found, attempting to fix...")
-            class_match = re.search(r'class\s+(\w+)\s+extends\s+(StatelessWidget|StatefulWidget)', code)
-            if class_match:
-                old_name = class_match.group(1)
-                logger.info(f"🔧 Replacing widget name '{old_name}' with '{widget_name}'")
-                code = code.replace(f'class {old_name}', f'class {widget_name}')
-                code = code.replace(f'const {old_name}(', f'const {widget_name}(')
-        
-        logger.info(f"✅ Code cleanup complete")
-        logger.info(f"📏 Final code length: {len(code)} characters")
-        return code
+      """Clean and validate the generated code for Flutter 3.27.1"""
+      logger.info(f"🧹 Starting code cleanup for Flutter 3.27.1...")
+      logger.info(f"🎯 Target widget name: {widget_name}")
+      logger.info(f"📏 Original code length: {len(code)} characters")
+      
+      if not code or not code.strip():
+          logger.error("❌ Empty or whitespace-only code detected")
+          return self.get_professional_fallback_widget("Empty code response", widget_name)
+      
+      # Remove markdown code blocks if present
+      code = re.sub(r'```dart\n?', '', code)
+      code = re.sub(r'```\n?', '', code)
+      code = code.strip()
+      
+      # CRITICAL FIX: Log the first few lines to see what we're dealing with
+      logger.info("=" * 80)
+      logger.info("📋 ORIGINAL CODE (First 300 characters):")
+      logger.info(f"   {repr(code[:300])}")
+      logger.info("=" * 80)
+      
+      # FIX 1: Remove ALL spaces after colons in package imports
+      # This is the most aggressive fix - it handles ALL variations
+      logger.info("🔧 Fixing import statements (removing ALL spaces after 'package:')...")
+      logger.info(f"   Checking for pattern 'package:\\s+' in code...")
+      
+      # Check if the problem exists
+      space_match = re.search(r"package:\s+", code)
+      if space_match:
+          logger.warning("⚠️ FOUND SPACE ISSUE!")
+          logger.warning(f"   Matched text: {repr(space_match.group(0))}")
+          logger.warning(f"   Position: {space_match.start()} to {space_match.end()}")
+          logger.warning(f"   Context (50 chars): {repr(code[max(0, space_match.start()-10):space_match.end()+40])}")
+      
+      # Pattern 1: Fix "package: " (space after colon) - MOST AGGRESSIVE
+      original_code = code
+      
+      # Replace any whitespace (including newlines, tabs) after 'package:' in imports
+      code = re.sub(r"import\s+['\"]package:\s+([^'\"]+)['\"]", r"import 'package:\1'", code)
+      logger.info(f"   After regex fix 1: {repr(code[:100])}")
+      
+      # Also handle cases where quotes might be inconsistent
+      code = re.sub(r"'package:\s+", "'package:", code)
+      logger.info(f"   After regex fix 2: {repr(code[:100])}")
+      
+      code = re.sub(r'"package:\s+', '"package:', code)
+      logger.info(f"   After regex fix 3: {repr(code[:100])}")
+      
+      # Extra aggressive: remove ANY whitespace between 'package:' and the next word
+      code = re.sub(r'package:\s+(\w)', r'package:\1', code)
+      logger.info(f"   After regex fix 4: {repr(code[:100])}")
+      
+      if original_code != code:
+          logger.info("✅ Fixed spaces in package imports")
+          # Show what changed
+          import_matches = re.findall(r"import\s+['\"]package:[^'\"]+['\"];?", code)
+          for match in import_matches[:3]:
+              logger.info(f"   Fixed import: {repr(match)}")
+      else:
+          logger.info("⚠️ No changes made - pattern might not have matched")
+          logger.info(f"   First line: {repr(code.split(chr(10))[0] if chr(10) in code else code[:100])}")
+      
+      # FIX 2: Remove double/triple/multiple semicolons
+      logger.info("🔧 Fixing multiple semicolons...")
+      
+      if re.search(r';{2,}', code):
+          logger.warning("⚠️ Found multiple semicolons in code")
+          # Replace 2 or more semicolons with just one
+          code = re.sub(r';{2,}', ';', code)
+          logger.info("✅ Fixed multiple semicolons")
+      else:
+          logger.info("✅ No multiple semicolon issues found")
+      
+      # FIX 3: Fix spaces in URLs (like 'https: //' -> 'https://')
+      if re.search(r"https?:\s+//", code):
+          logger.warning("⚠️ Found space in URL after colon")
+          code = re.sub(r"https?:\s+//", lambda m: m.group(0).replace(' ', ''), code)
+          logger.info("✅ Fixed spaces in URLs")
+      
+      # FIX 4: Fix spaces in time formats (like '10: 00' -> '10:00')
+      time_pattern = r"(\d+):\s+(\d+)"
+      if re.search(time_pattern, code):
+          logger.warning("⚠️ Found spaces in time formats")
+          code = re.sub(time_pattern, r"\1:\2", code)
+          logger.info("✅ Fixed spaces in time formats")
+      
+      # FIX 5: Ensure the correct Flutter import exists
+      correct_import = "import 'package:flutter/material.dart';"
+      
+      # Check if ANY form of flutter/material import exists
+      has_flutter_import = bool(re.search(r"import\s+['\"]package:flutter/material\.dart['\"];?", code))
+      
+      if not has_flutter_import:
+          logger.info("🧹 Adding missing Flutter import")
+          code = correct_import + "\n\n" + code
+      else:
+          logger.info("✅ Flutter material import found")
+      
+      logger.info("✅ All import and formatting fixes completed")
+      
+      # Fix widget naming
+      logger.info(f"🔧 Enforcing widget name: {widget_name}")
+      incorrect_names = [
+          'GeneratedWidget', 'MainWidget', 'Main', 'MyWidget',
+          'AppWidget', 'HomeWidget', 'CustomWidget', 'UIWidget',
+          'GeminiGeneratedWidget', 'GroqGeneratedWidget', 
+          'ChatGPTGeneratedWidget', 'ClaudeGeneratedWidget'
+      ]
+      
+      for incorrect_name in incorrect_names:
+          if incorrect_name != widget_name:
+              code = re.sub(
+                  rf'\bclass\s+{incorrect_name}\s+extends',
+                  f'class {widget_name} extends',
+                  code
+              )
+              code = re.sub(
+                  rf'\bconst\s+{incorrect_name}\s*\(',
+                  f'const {widget_name}(',
+                  code
+              )
+      
+      # Flutter 3.27.1 specific fixes
+      code = self._apply_flutter_3_27_fixes(code)
+      
+      # Fix common formatting issues
+      code = self._fix_code_formatting(code)
+      
+      # Verify widget name
+      if f'class {widget_name}' not in code:
+          logger.warning(f"⚠️ Widget name {widget_name} not found, attempting to fix...")
+          class_match = re.search(r'class\s+(\w+)\s+extends\s+(StatelessWidget|StatefulWidget)', code)
+          if class_match:
+              old_name = class_match.group(1)
+              logger.info(f"🔧 Replacing widget name '{old_name}' with '{widget_name}'")
+              code = code.replace(f'class {old_name}', f'class {widget_name}')
+              code = code.replace(f'const {old_name}(', f'const {widget_name}(')
+      
+      # FINAL VERIFICATION: Check if the space issue is STILL there
+      logger.info("=" * 80)
+      logger.info("🔍 FINAL VERIFICATION:")
+      space_check = re.search(r"package:\s+\w", code)
+      
+      if space_check:
+          logger.error("❌ CRITICAL: Space after 'package:' STILL EXISTS after all fixes!")
+          logger.error(f"   Matched text: {repr(space_check.group(0))}")
+          logger.error(f"   Position: {space_check.start()} to {space_check.end()}")
+          
+          # Show the problematic line
+          problem_line_match = re.search(r'import[^;]+package:[^;]+;', code)
+          if problem_line_match:
+              logger.error(f"   Full import line: {repr(problem_line_match.group(0))}")
+          
+          # One last desperate attempt - simple string replacement
+          logger.info("🔧 Applying FINAL string replacement fix...")
+          code = code.replace("package: ", "package:")
+          logger.info(f"   After string replacement: {repr(code[:100])}")
+          
+          # Check again
+          final_check = re.search(r"package:\s+\w", code)
+          if final_check:
+              logger.error("❌ STILL FAILED! Space persists even after string replacement!")
+              logger.error(f"   The space character might be: {repr(code[final_check.start()+8:final_check.start()+10])}")
+          else:
+              logger.info("✅ String replacement fixed it!")
+      else:
+          logger.info("✅ No spaces found after 'package:' - code is clean!")
+      
+      logger.info("=" * 80)
+      
+      logger.info(f"✅ Code cleanup complete")
+      logger.info(f"📏 Final code length: {len(code)} characters")
+      
+      # Log the first 3 lines to verify
+      logger.info("=" * 80)
+      logger.info("📋 FINAL CODE - First 3 lines:")
+      lines = code.split('\n')
+      for i, line in enumerate(lines[:3], 1):
+          logger.info(f"   Line {i}: {repr(line)}")
+      logger.info("=" * 80)
+      
+      return code
     
     def _apply_flutter_3_27_fixes(self, code: str) -> str:
         """Apply Flutter 3.27.1 specific fixes"""
