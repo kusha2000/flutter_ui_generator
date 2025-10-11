@@ -20,7 +20,7 @@ class _TestGeminiUIGenerationState extends State<TestGeminiUIGeneration> {
   Future<void> _generateUI(String prompt) async {
     try {
       final response = await http.post(
-        Uri.parse('http://192.168.8.213:8000/generate-ui'),
+        Uri.parse('http://172.26.120.94:8000/generate-ui'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'prompt': prompt}),
       );
