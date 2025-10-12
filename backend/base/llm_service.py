@@ -24,6 +24,7 @@ class BaseLLMService(ABC):
         """Get the appropriate widget name based on service type"""
         service_widget_mapping = {
             'gemini': 'GeminiGeneratedWidget',
+            'groq': 'GroqGeneratedWidget',
             'openai': 'ChatGPTGeneratedWidget',
             'chatgpt': 'ChatGPTGeneratedWidget',
             'claude': 'ClaudeGeneratedWidget'

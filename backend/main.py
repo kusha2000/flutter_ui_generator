@@ -4,6 +4,7 @@ import uvicorn
 import logging
 from base.models import PromptRequest, CodeResponse
 from gemini.gemini_services import GeminiService
+from groqs.groq_services import GroqService
 
 # Configure logging
 logging.basicConfig(
@@ -36,10 +37,10 @@ try:
     if SERVICE_TYPE.lower() == 'gemini':
         llm_service = GeminiService()
         logger.info("✅ Gemini service initialized successfully")
-    elif SERVICE_TYPE.lower() == 'openai':
-        # from openai.openai_services import OpenAIService
-        # llm_service = OpenAIService()
-        raise NotImplementedError("OpenAI service not yet implemented")
+    elif SERVICE_TYPE.lower() == 'groq':
+        llm_service = GroqService()
+        logger.info("✅ Groq service initialized successfully")
+        # raise NotImplementedError("OpenAI service not yet implemented")
     elif SERVICE_TYPE.lower() == 'claude':
         # from claude.claude_services import ClaudeService
         # llm_service = ClaudeService()
