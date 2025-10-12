@@ -5,6 +5,7 @@ import 'package:frontend/widgets/copilot_generated_widget_loader.dart';
 import 'package:frontend/widgets/deepseek_generated_widget_loader.dart';
 import 'package:frontend/widgets/gemini_generated_widget_loader.dart';
 import 'package:frontend/widgets/grok_generated_widget_loader.dart';
+import 'package:frontend/widgets/groq_generated_widget_loader.dart';
 
 class AITypeSection extends StatelessWidget {
   const AITypeSection({super.key});
@@ -125,8 +126,8 @@ class AITypeSection extends StatelessWidget {
                       const SizedBox(height: 16),
                       _buildAIButton(
                         context,
-                        'ChatGPT',
-                        'OpenAI\'s conversational AI',
+                        'Groq',
+                        'Groq\'s conversational AI',
                         Icons.chat_bubble_outline,
                         const LinearGradient(
                           colors: [Color(0xFF10A37F), Color(0xFF1A7F64)],
@@ -135,7 +136,7 @@ class AITypeSection extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ChatGPTGeneratedWidget(),
+                              builder: (context) => GroqGeneratedWidget(),
                             ),
                           );
                         },
