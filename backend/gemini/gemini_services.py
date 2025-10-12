@@ -1,4 +1,3 @@
-
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
@@ -22,10 +21,10 @@ class GeminiService(BaseLLMService):
     def __init__(self, generation_config: GenerationConfig = None, retry_config: RetryConfig = None):
         load_dotenv()
         
-        # Gemini-specific generation config
+        # Gemini-specific generation config optimized for code generation
         if generation_config is None:
             generation_config = GenerationConfig(
-                temperature=0.7,
+                temperature=0.4,  # Lower temperature for more consistent code
                 top_p=0.8,
                 top_k=40,
                 max_output_tokens=8192
@@ -75,21 +74,46 @@ class GeminiService(BaseLLMService):
         if not self._initialize_model():
             raise ValueError("Failed to initialize Gemini model")
     
+    def _get_available_models(self):
+        """Get list of available models that support generateContent"""
+        try:
+            logger.info("📋 Fetching available models from API...")
+            models = genai.list_models()
+            available = []
+            
+            for model in models:
+                # Check if the model supports generateContent
+                if 'generateContent' in model.supported_generation_methods:
+                    available.append(model.name)
+                    logger.info(f"✅ Found available model: {model.name}")
+            
+            return available
+        except Exception as e:
+            logger.error(f"❌ Error fetching models: {str(e)}")
+            return []
+    
     def _initialize_model(self) -> bool:
         """Initialize the Gemini model"""
-        model_names = [
-            'gemini-1.5-flash',
-            'gemini-1.5-pro',
-            'gemini-1.0-pro',
-            'gemini-pro'
-        ]
+        # First, try to get available models from the API
+        available_models = self._get_available_models()
         
-        logger.info(f"🔍 Attempting to initialize models in order: {model_names}")
+        if not available_models:
+            logger.warning("⚠️ Could not fetch models from API, using fallback list")
+            # Fallback model names with proper prefix
+            available_models = [
+                'models/gemini-1.5-flash-latest',
+                'models/gemini-1.5-pro-latest',
+                'models/gemini-pro',
+                'gemini-1.5-flash-latest',
+                'gemini-1.5-pro-latest',
+                'gemini-pro'
+            ]
         
-        for i, model_name in enumerate(model_names):
+        logger.info(f"🔍 Attempting to initialize models: {available_models}")
+        
+        for i, model_name in enumerate(available_models):
             try:
-                logger.info(f"🔄 [{i+1}/{len(model_names)}] Trying to initialize model: {model_name}")
-                
+                logger.info(f"🔄 [{i+1}/{len(available_models)}] Trying to initialize model: {model_name}")
                 self.model = genai.GenerativeModel(
                     model_name,
                     generation_config=self.gemini_generation_config,
@@ -118,8 +142,16 @@ class GeminiService(BaseLLMService):
     def _make_api_request(self, prompt: str) -> Optional[str]:
         """Make a single API request to Gemini"""
         try:
+            logger.info("🚀 Making API request to Gemini...")
             response = self.model.generate_content(prompt)
-            return response.text if response.text else None
+            
+            if response.text:
+                logger.info(f"✅ Received response from Gemini")
+                logger.info(f"📏 Response length: {len(response.text)} characters")
+                return response.text
+            else:
+                logger.warning("⚠️ Empty response from Gemini")
+                return None
         except Exception as e:
             logger.error(f"❌ Gemini API request failed: {str(e)}")
             # Re-raise the exception so the retry logic can handle it
@@ -128,12 +160,11 @@ class GeminiService(BaseLLMService):
     def list_available_models(self):
         """List all available Gemini models"""
         logger.info("📋 Listing available Gemini models...")
-        
         try:
             models = genai.list_models()
             logger.info("📋 Available models:")
-            
             model_list = []
+            
             for i, model in enumerate(models):
                 logger.info(f"  {i+1}. {model.name}")
                 logger.info(f"     Supported methods: {model.supported_generation_methods}")
@@ -144,7 +175,6 @@ class GeminiService(BaseLLMService):
             
             logger.info(f"📊 Total models found: {len(model_list)}")
             return model_list
-            
         except Exception as e:
             logger.error(f"❌ Error listing models: {str(e)}")
             return []
