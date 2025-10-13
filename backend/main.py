@@ -5,6 +5,9 @@ import logging
 from base.models import PromptRequest, CodeResponse
 from gemini.gemini_services import GeminiService
 from groqs.groq_services import GroqService
+from coheres.cohere_services import CohereService
+from huggingFace.huggingFace_services import HuggingFaceService
+from openRouter.openRouter_services import OpenRouterService
 
 # Configure logging
 logging.basicConfig(
@@ -29,7 +32,7 @@ app.add_middleware(
 )
 
 # Initialize LLM service
-SERVICE_TYPE = 'gemini'  # Options: 'gemini', 'openai', 'claude'
+SERVICE_TYPE = 'cohere'  # Options: 'gemini', 'openai', 'claude'
 
 try:
     logger.info(f"🚀 Initializing {SERVICE_TYPE.upper()} service...")
@@ -41,10 +44,9 @@ try:
         llm_service = GroqService()
         logger.info("✅ Groq service initialized successfully")
         # raise NotImplementedError("OpenAI service not yet implemented")
-    elif SERVICE_TYPE.lower() == 'claude':
-        # from claude.claude_services import ClaudeService
-        # llm_service = ClaudeService()
-        raise NotImplementedError("Claude service not yet implemented")
+    elif SERVICE_TYPE.lower() == 'cohere':
+        llm_service = CohereService()
+        logger.info("✅ cohere service initialized successfully")
     else:
         raise ValueError(f"Unsupported LLM service: {SERVICE_TYPE}")
         
