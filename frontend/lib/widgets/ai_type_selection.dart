@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/widgets/chatgpt_generated_widget_loader.dart';
-import 'package:frontend/widgets/claude_generated_widget_loader.dart';
+import 'package:frontend/widgets/huggingface_generated_widget_loader.dart';
+import 'package:frontend/widgets/openrouter_generated_widget_loader.dart';
 import 'package:frontend/widgets/copilot_generated_widget_loader.dart';
 import 'package:frontend/widgets/deepseek_generated_widget_loader.dart';
 import 'package:frontend/widgets/gemini_generated_widget_loader.dart';
-import 'package:frontend/widgets/grok_generated_widget_loader.dart';
+import 'package:frontend/widgets/cohere_generated_widget_loader.dart';
 import 'package:frontend/widgets/groq_generated_widget_loader.dart';
 
 class AITypeSection extends StatelessWidget {
@@ -109,7 +109,7 @@ class AITypeSection extends StatelessWidget {
                       _buildAIButton(
                         context,
                         'Gemini',
-                        'Google\'s powerful AI',
+                        'gemini-2.5-flash-preview-05-20',
                         Icons.auto_awesome,
                         const LinearGradient(
                           colors: [Color(0xFF4285F4), Color(0xFF34A853)],
@@ -127,7 +127,7 @@ class AITypeSection extends StatelessWidget {
                       _buildAIButton(
                         context,
                         'Groq',
-                        'Groq\'s conversational AI',
+                        'groq/compound',
                         Icons.chat_bubble_outline,
                         const LinearGradient(
                           colors: [Color(0xFF10A37F), Color(0xFF1A7F64)],
@@ -144,8 +144,8 @@ class AITypeSection extends StatelessWidget {
                       const SizedBox(height: 16),
                       _buildAIButton(
                         context,
-                        'Grok',
-                        'X\'s witty AI assistant',
+                        'Cohere',
+                        'command-r-plus-08-2024',
                         Icons.psychology,
                         const LinearGradient(
                           colors: [Color(0xFF1DA1F2), Color(0xFF0D8BD9)],
@@ -154,43 +154,7 @@ class AITypeSection extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => GrokGeneratedWidget(),
-                            ),
-                          );
-                        },
-                      ),
-                      const SizedBox(height: 16),
-                      _buildAIButton(
-                        context,
-                        'Claude',
-                        'Anthropic\'s helpful AI',
-                        Icons.smart_toy,
-                        const LinearGradient(
-                          colors: [Color(0xFFFF6B6B), Color(0xFFEE5A24)],
-                        ),
-                        () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ClaudeGeneratedWidget(),
-                            ),
-                          );
-                        },
-                      ),
-                      const SizedBox(height: 16),
-                      _buildAIButton(
-                        context,
-                        'Copilot',
-                        'Microsoft\'s coding companion',
-                        Icons.code,
-                        const LinearGradient(
-                          colors: [Color(0xFF0078D4), Color(0xFF106EBE)],
-                        ),
-                        () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => CopilotGeneratedWidget(),
+                              builder: (context) => CohereGeneratedWidget(),
                             ),
                           );
                         },

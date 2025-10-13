@@ -25,9 +25,8 @@ class BaseLLMService(ABC):
         service_widget_mapping = {
             'gemini': 'GeminiGeneratedWidget',
             'groq': 'GroqGeneratedWidget',
-            'openai': 'ChatGPTGeneratedWidget',
-            'chatgpt': 'ChatGPTGeneratedWidget',
-            'claude': 'ClaudeGeneratedWidget'
+            'cohere': 'CohereGeneratedWidget',
+
         }
         return service_widget_mapping.get(self.service_type, 'GeneratedWidget')
     
