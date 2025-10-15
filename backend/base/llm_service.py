@@ -26,7 +26,7 @@ class BaseLLMService(ABC):
             'gemini': 'GeminiGeneratedWidget',
             'groq': 'GroqGeneratedWidget',
             'cohere': 'CohereGeneratedWidget',
-
+            'huggingface': 'HuggingFaceGeneratedWidget',
         }
         return service_widget_mapping.get(self.service_type, 'GeneratedWidget')
     
