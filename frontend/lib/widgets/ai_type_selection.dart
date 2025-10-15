@@ -162,6 +162,25 @@ class AITypeSection extends StatelessWidget {
                       const SizedBox(height: 16),
                       _buildAIButton(
                         context,
+                        'HuggingFace',
+                        'Qwen2.5-Coder-7B-Instruct',
+                        Icons.smart_toy,
+                        const LinearGradient(
+                          colors: [Color(0xFFFF6B6B), Color(0xFFEE5A24)],
+                        ),
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  HuggingFaceGeneratedWidget(),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(height: 16),
+                      _buildAIButton(
+                        context,
                         'DeepSeek',
                         'Advanced reasoning AI',
                         Icons.psychology_alt,
