@@ -1,0 +1,22 @@
+{
+    "prompt": "Playful onboarding with bright yellow background",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.yellow[200],\n      body: SafeArea(\n        child: Padding(\n          padding: const EdgeInsets.all(24.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Expanded(\n                flex: 3,\n                child: Container(\n                  decoration: BoxDecoration(\n                    color: Colors.orange[100],\n                    borderRadius: BorderRadius.circular(20),\n                  ),\n                  child: Icon(\n                    Icons.favorite,\n                    size: 100,\n                    color: Colors.black,\n                  ),\n                ),\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Let’s Have Fun!',\n                style: TextStyle(\n                  fontSize: 26,\n                  fontWeight: FontWeight.w900,\n                  color: Colors.black,\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Dive into a world of excitement and creativity.',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.grey[800],\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 16),\n              SizedBox(\n                width: double.infinity,\n                height: 50,\n                child: ElevatedButton(\n                  onPressed: () {},\n                  style: ElevatedButton.styleFrom(\n                    backgroundColor: Colors.orange,\n                    shape: RoundedRectangleBorder(\n                      borderRadius: BorderRadius.circular(12),\n                    ),\n                  ),\n                  child: Text(\n                    'Join Now',\n                    style: TextStyle(\n                      fontSize: 16,\n                      color: Colors.white,\n                    ),\n                  ),\n                ),\n              ),\n              SizedBox(height: 16),\n              TextButton(\n                onPressed: () {},\n                child: Text(\n                  'Skip',\n                  style: TextStyle(\n                    fontSize: 16,\n                    color: Colors.grey[800],\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "onboarding",
+    "tags": [
+        "onboarding",
+        "playful",
+        "welcome",
+        "join-now",
+        "skip"
+    ],
+    "components": [
+        "Container",
+        "Icon",
+        "Text",
+        "ElevatedButton",
+        "TextButton",
+        "Column",
+        "SafeArea"
+    ],
+    "layout_type": "Column"
+}

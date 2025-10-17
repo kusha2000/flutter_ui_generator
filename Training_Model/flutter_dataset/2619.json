@@ -1,0 +1,24 @@
+{
+    "prompt": "Design a corporate notifications page with gray background, navy title, and scrollable white cards. Cards show avatars, sender names, message previews, timestamps, and blue unread dots, styled with sharp edges and shadows.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[100],\n      appBar: AppBar(\n        backgroundColor: Colors.grey[100],\n        elevation: 0,\n        title: Text(\n          'Notifications',\n          style: TextStyle(\n            fontSize: 24,\n            fontWeight: FontWeight.bold,\n            color: Colors.blue[900],\n          ),\n        ),\n      ),\n      body: ListView.builder(\n        padding: EdgeInsets.all(16),\n        itemCount: 10,\n        itemBuilder: (context, index) {\n          bool isUnread = index < 4;\n          return Container(\n            margin: EdgeInsets.only(bottom: 12),\n            decoration: BoxDecoration(\n              color: Colors.white,\n              borderRadius: BorderRadius.circular(0),\n              boxShadow: [\n                BoxShadow(\n                  color: Colors.grey[300]!,\n                  blurRadius: 4,\n                  offset: Offset(0, 1),\n                ),\n              ],\n            ),\n            child: ListTile(\n              contentPadding: EdgeInsets.all(12),\n              leading: Stack(\n                children: [\n                  CircleAvatar(\n                    radius: 22,\n                    backgroundColor: Colors.grey[300],\n                    child: Icon(Icons.person, color: Colors.grey[800]),\n                  ),\n                  if (isUnread)\n                    Positioned(\n                      right: 0,\n                      top: 0,\n                      child: Container(\n                        width: 10,\n                        height: 10,\n                        decoration: BoxDecoration(\n                          color: Colors.blue[800],\n                          shape: BoxShape.circle,\n                        ),\n                      ),\n                    ),\n                ],\n              ),\n              title: Text(\n                'User ${index + 1}',\n                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800]),\n              ),\n              subtitle: Text(\n                'Meeting scheduled...',\n                style: TextStyle(color: Colors.grey[600], fontSize: 14),\n              ),\n              trailing: Text(\n                '${index + 1} min ago',\n                style: TextStyle(color: Colors.grey[500], fontSize: 12),\n              ),\n            ),\n          );\n        },\n      ),\n    );\n  }\n}",
+    "category": "social",
+    "tags": [
+        "notifications",
+        "list",
+        "cards",
+        "avatar",
+        "timestamps",
+        "scrollable",
+        "professional"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "ListTile",
+        "CircleAvatar",
+        "Container",
+        "BoxShadow"
+    ],
+    "layout_type": "ListView"
+}

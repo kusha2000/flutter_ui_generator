@@ -1,0 +1,25 @@
+{
+    "prompt": "Single-column product list with minimalist search bar.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: SafeArea(\n        child: Column(\n          children: [\n            Container(\n              padding: EdgeInsets.all(10),\n              child: TextField(\n                decoration: InputDecoration(\n                  hintText: 'Search...',\n                  prefixIcon: Icon(Icons.search, color: Colors.grey),\n                  border: InputBorder.none,\n                  filled: true,\n                  fillColor: Colors.grey.shade100,\n                ),\n              ),\n            ),\n            Padding(\n              padding: EdgeInsets.symmetric(horizontal: 10),\n              child: Align(\n                alignment: Alignment.center,\n                child: Text(\n                  'Found 245 results',\n                  style: TextStyle(color: Colors.grey.shade500, fontSize: 12),\n                ),\n              ),\n            ),\n            SizedBox(height: 8),\n            Expanded(\n              child: ListView.builder(\n                padding: EdgeInsets.all(10),\n                itemCount: 8,\n                itemBuilder: (context, index) {\n                  return Container(\n                    margin: EdgeInsets.only(bottom: 8),\n                    padding: EdgeInsets.all(10),\n                    decoration: BoxDecoration(\n                      color: Colors.grey.shade100,\n                      borderRadius: BorderRadius.circular(4),\n                    ),\n                    child: Column(\n                      children: [\n                        Text(\n                          'Product ${index + 1}',\n                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),\n                          textAlign: TextAlign.center,\n                        ),\n                        SizedBox(height: 6),\n                        Text(\n                          '${(index + 1) * 20}.99',\n                          style: TextStyle(color: Colors.blue, fontSize: 14),\n                        ),\n                        SizedBox(height: 6),\n                        Row(\n                          mainAxisAlignment: MainAxisAlignment.center,\n                          children: List.generate(5, (i) => Icon(Icons.star, size: 14, color: i < 4 ? Colors.yellow.shade600 : Colors.grey.shade300)),\n                        ),\n                        SizedBox(height: 6),\n                        ElevatedButton(\n                          onPressed: () {},\n                          style: ElevatedButton.styleFrom(\n                            backgroundColor: Colors.blue,\n                            foregroundColor: Colors.white,\n                            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),\n                            minimumSize: Size(80, 30),\n                          ),\n                          child: Text('Details', style: TextStyle(fontSize: 10)),\n                        ),\n                      ],\n                    ),\n                  );\n                },\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "search",
+    "tags": [
+        "search",
+        "results",
+        "minimalist",
+        "list",
+        "cards",
+        "ecommerce"
+    ],
+    "components": [
+        "Scaffold",
+        "SafeArea",
+        "Column",
+        "TextField",
+        "ListView",
+        "Container",
+        "Column",
+        "ElevatedButton",
+        "Icon"
+    ],
+    "layout_type": "Column"
+}

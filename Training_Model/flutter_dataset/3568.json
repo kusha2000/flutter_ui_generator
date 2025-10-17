@@ -1,0 +1,26 @@
+{
+    "prompt": "Light quiz page with indigo theme. Indigo AppBar 'Art Quiz'. Progress '4 of 8' + circular bar. Question in bordered card. Four answer cards stacked. Indigo 'Next' button bottom-left. Scrollable, padded, centered.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[50],\n      appBar: AppBar(\n        backgroundColor: Colors.indigo[600],\n        title: Text(\n          'Art Quiz',\n          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),\n        ),\n        centerTitle: true,\n        elevation: 3,\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(20.0),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.center,\n          children: [\n            SizedBox(height: 16),\n            Text(\n              'Question 4 of 8',\n              style: TextStyle(fontSize: 16, color: Colors.grey[600]),\n            ),\n            SizedBox(height: 24),\n            Container(\n              padding: EdgeInsets.all(20),\n              decoration: BoxDecoration(\n                color: Colors.white,\n                border: Border.all(color: Colors.indigo[600]!, width: 2),\n                borderRadius: BorderRadius.circular(12),\n              ),\n              child: Row(\n                children: [\n                  Expanded(\n                    child: Text(\n                      'Who painted the Mona Lisa?',\n                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.grey[800]),\n                      textAlign: TextAlign.center,\n                    ),\n                  ),\n                  SizedBox(width: 12),\n                  Container(\n                    width: 50,\n                    height: 50,\n                    child: CircularProgressIndicator(\n                      value: 4 / 8,\n                      backgroundColor: Colors.grey[300],\n                      valueColor: AlwaysStoppedAnimation<Color>(Colors.indigo[600]!),\n                      strokeWidth: 5,\n                    ),\n                  ),\n                ],\n              ),\n            ),\n            SizedBox(height: 24),\n            Expanded(\n              child: ListView(\n                children: [\n                  _buildAnswerOption('A', 'Leonardo da Vinci', Colors.indigo),\n                  SizedBox(height: 16),\n                  _buildAnswerOption('B', 'Vincent van Gogh', Colors.indigo),\n                  SizedBox(height: 16),\n                  _buildAnswerOption('C', 'Pablo Picasso', Colors.indigo),\n                  SizedBox(height: 16),\n                  _buildAnswerOption('D', 'Claude Monet', Colors.indigo),\n                ],\n              ),\n            ),\n            SizedBox(height: 20),\n            Align(\n              alignment: Alignment.centerLeft,\n              child: Container(\n                width: 200,\n                height: 56,\n                child: ElevatedButton(\n                  onPressed: () {},\n                  style: ElevatedButton.styleFrom(\n                    backgroundColor: Colors.indigo[600],\n                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),\n                    elevation: 3,\n                  ),\n                  child: Text(\n                    'Next Question',\n                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),\n                  ),\n                ),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildAnswerOption(String letter, String answer, MaterialColor color) {\n    return Container(\n      padding: EdgeInsets.all(16),\n      decoration: BoxDecoration(\n        color: Colors.white,\n        borderRadius: BorderRadius.circular(12),\n        boxShadow: [BoxShadow(color: color[300]!.withOpacity(0.3), blurRadius: 6, spreadRadius: 1)],\n      ),\n      child: Row(\n        children: [\n          Container(\n            width: 36,\n            height: 36,\n            decoration: BoxDecoration(\n              color: color[100],\n              shape: BoxShape.circle,\n            ),\n            child: Center(\n              child: Text(\n                letter,\n                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: color[600]),\n              ),\n            ),\n          ),\n          SizedBox(width: 12),\n          Expanded(\n            child: Text(\n              answer,\n              style: TextStyle(fontSize: 18, color: Colors.grey[800]),\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "education",
+    "tags": [
+        "quiz",
+        "education",
+        "art",
+        "multiple-choice",
+        "progress",
+        "cards",
+        "button"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Column",
+        "Container",
+        "Text",
+        "CircularProgressIndicator",
+        "ListView",
+        "ElevatedButton",
+        "Row"
+    ],
+    "layout_type": "Column"
+}

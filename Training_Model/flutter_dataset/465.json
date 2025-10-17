@@ -1,0 +1,21 @@
+{
+    "prompt": "Create a 404 Not Found page with a gradient background transitioning from light blue (Colors.blue[100]) to white. Display '404' in a bold, teal-colored font (Colors.teal[700], font size 68). Show 'Page Not Found' as a subtitle in dark blue (Colors.blue[800], font size 26, semi-bold). Include a message 'The page you’re trying to access doesn’t exist.' in gray (Colors.grey[700], font size 16). Add a teal 'Back to Home' button with sharp rectangular edges and white text. Use a Column layout with mainAxisAlignment.center and crossAxisAlignment.start, aligning content to the left with padding of 20.0 on the left and right. Wrap the Column in a Container with the gradient background, and use a Scaffold with a transparent background.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.transparent,\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            colors: [Colors.blue[100]!, Colors.white],\n            begin: Alignment.topCenter,\n            end: Alignment.bottomCenter,\n          ),\n        ),\n        child: Padding(\n          padding: const EdgeInsets.symmetric(horizontal: 20.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            crossAxisAlignment: CrossAxisAlignment.start,\n            children: [\n              Text(\n                '404',\n                style: TextStyle(\n                  fontSize: 68,\n                  fontWeight: FontWeight.bold,\n                  color: Colors.teal[700],\n                ),\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Page Not Found',\n                style: TextStyle(\n                  fontSize: 26,\n                  fontWeight: FontWeight.w600,\n                  color: Colors.blue[800],\n                ),\n              ),\n              SizedBox(height: 20),\n              Text(\n                'The page you’re trying to access doesn’t exist.',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.grey[700],\n                  height: 1.5,\n                ),\n              ),\n              SizedBox(height: 24),\n              ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.teal,\n                  foregroundColor: Colors.white,\n                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 14),\n                ),\n                child: Text(\n                  'Back to Home',\n                  style: TextStyle(fontSize: 16),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "error_pages",
+    "tags": [
+        "404",
+        "error",
+        "not_found",
+        "gradient",
+        "button",
+        "left_aligned"
+    ],
+    "components": [
+        "Text",
+        "ElevatedButton",
+        "Column",
+        "Scaffold",
+        "Container"
+    ],
+    "layout_type": "Column"
+}

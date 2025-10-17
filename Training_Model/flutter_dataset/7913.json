@@ -1,0 +1,24 @@
+{
+    "prompt": "Create the dark/light mode toggle",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  bool isDarkMode = false;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.pink[100],\n      body: Center(\n        child: Container(\n          decoration: BoxDecoration(\n            color: Colors.white,\n            borderRadius: BorderRadius.circular(16),\n            boxShadow: [BoxShadow(color: Colors.pink[200]!, blurRadius: 10)],\n          ),\n          padding: EdgeInsets.all(24),\n          child: Column(\n            mainAxisSize: MainAxisSize.min,\n            children: [\n              Text(\n                'Light',\n                style: TextStyle(\n                  fontSize: 18,\n                  fontFamily: 'Pacifico',\n                  color: Colors.yellow,\n                ),\n              ),\n              SizedBox(height: 16),\n              AnimatedCrossFade(\n                firstChild: Icon(Icons.star, color: Colors.yellow, size: 30),\n                secondChild: Icon(Icons.star, color: Colors.blue, size: 30),\n                crossFadeState: isDarkMode ? CrossFadeState.showSecond : CrossFadeState.showFirst,\n                duration: Duration(milliseconds: 300),\n              ),\n              SizedBox(height: 16),\n              AnimatedContainer(\n                duration: Duration(milliseconds: 300),\n                curve: Curves.bounceOut,\n                width: 80,\n                height: 40,\n                decoration: BoxDecoration(\n                  borderRadius: BorderRadius.circular(20),\n                  color: isDarkMode ? Colors.blue : Colors.yellow,\n                ),\n                child: Stack(\n                  children: [\n                    AnimatedAlign(\n                      duration: Duration(milliseconds: 300),\n                      alignment: isDarkMode ? Alignment.centerRight : Alignment.centerLeft,\n                      child: Container(\n                        width: 36,\n                        height: 36,\n                        margin: EdgeInsets.all(2),\n                        decoration: BoxDecoration(\n                          shape: BoxShape.circle,\n                          color: Colors.white,\n                        ),\n                      ),\n                    ),\n                  ],\n                ),\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Dark',\n                style: TextStyle(\n                  fontSize: 18,\n                  fontFamily: 'Pacifico',\n                  color: Colors.blue,\n                ),\n              ),\n              SizedBox(height: 16),\n              GestureDetector(\n                onTap: () {\n                  setState(() {\n                    isDarkMode = !isDarkMode;\n                  });\n                },\n                child: Container(\n                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),\n                  decoration: BoxDecoration(\n                    color: Colors.pink,\n                    borderRadius: BorderRadius.circular(8),\n                  ),\n                  child: Text(\n                    'Toggle',\n                    style: TextStyle(color: Colors.white, fontSize: 16),\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "settings",
+    "tags": [
+        "toggle",
+        "switch",
+        "dark mode",
+        "light mode",
+        "theme",
+        "playful",
+        "animation",
+        "icon"
+    ],
+    "components": [
+        "AnimatedContainer",
+        "AnimatedAlign",
+        "Text",
+        "GestureDetector",
+        "AnimatedCrossFade",
+        "Icon"
+    ],
+    "layout_type": "Column"
+}

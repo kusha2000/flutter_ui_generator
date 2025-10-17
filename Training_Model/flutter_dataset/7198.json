@@ -1,0 +1,25 @@
+{
+    "prompt": "Professional chat UI",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  final TextEditingController _messageController = TextEditingController();\n  final List<Map<String, dynamic>> messages = [\n    {'text': 'Hey there!', 'isSent': false, 'time': '10:00 AM'},\n    {'text': 'Hello! How are you?', 'isSent': true, 'time': '10:02 AM'},\n    {'text': 'I\\'m doing great, thanks!', 'isSent': false, 'time': '10:03 AM'},\n    {'text': 'Awesome!', 'isSent': true, 'time': '10:04 AM'},\n  ];\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        backgroundColor: Colors.white,\n        elevation: 1,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back, color: Colors.black),\n          onPressed: () {},\n        ),\n        title: Row(\n          children: [\n            CircleAvatar(\n              radius: 18,\n              backgroundColor: Colors.blue,\n              child: Text('JD', style: TextStyle(color: Colors.white, fontSize: 14)),\n            ),\n            SizedBox(width: 12),\n            Text('John Doe', style: TextStyle(color: Colors.black, fontSize: 18)),\n          ],\n        ),\n        actions: [\n          IconButton(\n            icon: Icon(Icons.more_vert, color: Colors.black),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      body: Column(\n        children: [\n          Expanded(\n            child: ListView.builder(\n              padding: EdgeInsets.all(16),\n              itemCount: messages.length,\n              itemBuilder: (context, index) {\n                final message = messages[index];\n                return Align(\n                  alignment: message['isSent'] ? Alignment.centerRight : Alignment.centerLeft,\n                  child: Column(\n                    crossAxisAlignment: message['isSent'] ? CrossAxisAlignment.end : CrossAxisAlignment.start,\n                    children: [\n                      Container(\n                        margin: EdgeInsets.symmetric(vertical: 4),\n                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),\n                        decoration: BoxDecoration(\n                          color: message['isSent'] ? Colors.blue : Colors.grey[200],\n                          borderRadius: BorderRadius.circular(18),\n                        ),\n                        child: Text(\n                          message['text'],\n                          style: TextStyle(\n                            color: message['isSent'] ? Colors.white : Colors.black,\n                            fontSize: 16,\n                          ),\n                        ),\n                      ),\n                      Padding(\n                        padding: EdgeInsets.symmetric(horizontal: 8),\n                        child: Text(\n                          message['time'],\n                          style: TextStyle(color: Colors.grey, fontSize: 12),\n                        ),\n                      ),\n                    ],\n                  ),\n                );\n              },\n            ),\n          ),\n          Container(\n            padding: EdgeInsets.all(16),\n            decoration: BoxDecoration(\n              color: Colors.white,\n              border: Border(top: BorderSide(color: Colors.blue)),\n            ),\n            child: Row(\n              children: [\n                Expanded(\n                  child: TextField(\n                    controller: _messageController,\n                    decoration: InputDecoration(\n                      hintText: 'Type a message...',\n                      border: OutlineInputBorder(\n                        borderRadius: BorderRadius.circular(24),\n                        borderSide: BorderSide(color: Colors.blue),\n                      ),\n                      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),\n                    ),\n                  ),\n                ),\n                SizedBox(width: 8),\n                CircleAvatar(\n                  backgroundColor: Colors.blue,\n                  child: IconButton(\n                    icon: Icon(Icons.send, color: Colors.white),\n                    onPressed: () {},\n                  ),\n                ),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "messaging",
+    "tags": [
+        "chat",
+        "messaging",
+        "conversation",
+        "input",
+        "send",
+        "light_theme",
+        "professional",
+        "timestamp"
+    ],
+    "components": [
+        "AppBar",
+        "ListView",
+        "TextField",
+        "Container",
+        "CircleAvatar",
+        "IconButton",
+        "Text"
+    ],
+    "layout_type": "Column"
+}

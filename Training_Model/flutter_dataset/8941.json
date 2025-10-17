@@ -1,0 +1,26 @@
+{
+    "prompt": "Futuristic Neon Camera UI",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFF0A1C33),\n      appBar: AppBar(\n        backgroundColor: Colors.transparent,\n        elevation: 0,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back, color: Colors.greenAccent),\n          onPressed: () {},\n        ),\n        actions: [\n          IconButton(\n            icon: Icon(Icons.flash_off, color: Colors.greenAccent),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      body: Column(\n        children: [\n          Expanded(\n            child: Padding(\n              padding: EdgeInsets.all(8.0),\n              child: Container(\n                decoration: BoxDecoration(\n                  color: Colors.black,\n                  border: Border.all(color: Colors.cyanAccent, width: 2),\n                  boxShadow: [\n                    BoxShadow(\n                      color: Colors.cyanAccent.withOpacity(0.3),\n                      blurRadius: 10,\n                      spreadRadius: 2,\n                    ),\n                  ],\n                ),\n                child: Center(\n                  child: Icon(\n                    Icons.camera_alt,\n                    size: 80,\n                    color: Colors.cyanAccent.withOpacity(0.7),\n                  ),\n                ),\n              ),\n            ),\n          ),\n          Container(\n            height: 100,\n            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),\n            child: Row(\n              mainAxisAlignment: MainAxisAlignment.spaceBetween,\n              children: [\n                ClipPath(\n                  clipper: TriangleClipper(),\n                  child: Container(\n                    width: 50,\n                    height: 50,\n                    color: Colors.black,\n                    child: Icon(\n                      Icons.photo,\n                      color: Colors.cyanAccent,\n                    ),\n                    decoration: BoxDecoration(\n                      border: Border.all(color: Colors.cyanAccent, width: 1),\n                      boxShadow: [\n                        BoxShadow(\n                          color: Colors.cyanAccent.withOpacity(0.3),\n                          blurRadius: 8,\n                        ),\n                      ],\n                    ),\n                  ),\n                ),\n                GestureDetector(\n                  onTap: () {},\n                  child: Container(\n                    width: 70,\n                    height: 70,\n                    decoration: BoxDecoration(\n                      shape: BoxShape.circle,\n                      color: Colors.cyan,\n                      boxShadow: [\n                        BoxShadow(\n                          color: Colors.cyan.withOpacity(0.5),\n                          blurRadius: 12,\n                          spreadRadius: 3,\n                        ),\n                      ],\n                    ),\n                  ),\n                ),\n                SizedBox(width: 50),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}\n\nclass TriangleClipper extends CustomClipper<Path> {\n  @override\n  Path getClip(Size size) {\n    final path = Path();\n    path.moveTo(size.width / 2, 0);\n    path.lineTo(0, size.height);\n    path.lineTo(size.width, size.height);\n    path.close();\n    return path;\n  }\n  @override\n  bool shouldReclip(CustomClipper<Path> oldClipper) => true;\n}",
+    "category": "camera",
+    "tags": [
+        "camera",
+        "photo",
+        "capture",
+        "preview",
+        "gallery",
+        "flash",
+        "futuristic",
+        "neon"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "Icon",
+        "GestureDetector",
+        "Row",
+        "Column",
+        "CustomClipper"
+    ],
+    "layout_type": "Column"
+}

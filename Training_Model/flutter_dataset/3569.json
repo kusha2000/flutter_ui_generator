@@ -1,0 +1,26 @@
+{
+    "prompt": "Design a cyan-accented dark quiz page. Include 'Science Trivia' header, progress bar, question card, four answer options, and a rounded cyan button top-left. Layout scrollable with padding.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[900],\n      appBar: AppBar(\n        backgroundColor: Colors.cyan[800],\n        elevation: 0,\n        title: Text(\n          'Science Trivia',\n          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),\n        ),\n        centerTitle: true,\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(16.0),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.center,\n          children: [\n            SizedBox(height: 16),\n            Align(\n              alignment: Alignment.centerLeft,\n              child: Container(\n                width: 150,\n                height: 48,\n                child: ElevatedButton(\n                  onPressed: () {},\n                  style: ElevatedButton.styleFrom(\n                    backgroundColor: Colors.cyan[600],\n                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),\n                    elevation: 3,\n                  ),\n                  child: Text(\n                    'Next Question',\n                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),\n                  ),\n                ),\n              ),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Question 8 of 12',\n              style: TextStyle(fontSize: 16, color: Colors.grey[400]),\n            ),\n            SizedBox(height: 8),\n            LinearProgressIndicator(\n              value: 8 / 12,\n              backgroundColor: Colors.grey[700],\n              valueColor: AlwaysStoppedAnimation<Color>(Colors.cyan[600]!),\n              minHeight: 6,\n            ),\n            SizedBox(height: 24),\n            Container(\n              padding: EdgeInsets.all(20),\n              decoration: BoxDecoration(\n                color: Colors.grey[850],\n                border: Border.all(color: Colors.cyan[600]!, width: 2),\n                borderRadius: BorderRadius.circular(12),\n                boxShadow: [BoxShadow(color: Colors.cyan[400]!.withOpacity(0.3), blurRadius: 8, spreadRadius: 1)],\n              ),\n              child: Text(\n                'What gas makes up most of Earth’s atmosphere?',\n                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white70),\n                textAlign: TextAlign.center,\n              ),\n            ),\n            SizedBox(height: 24),\n            Expanded(\n              child: ListView(\n                children: [\n                  _buildAnswerOption('A', 'Nitrogen', Colors.cyan),\n                  SizedBox(height: 12),\n                  _buildAnswerOption('B', 'Oxygen', Colors.cyan),\n                  SizedBox(height: 12),\n                  _buildAnswerOption('C', 'Carbon Dioxide', Colors.cyan),\n                  SizedBox(height: 12),\n                  _buildAnswerOption('D', 'Argon', Colors.cyan),\n                ],\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildAnswerOption(String letter, String answer, MaterialColor color) {\n    return Container(\n      padding: EdgeInsets.all(16),\n      decoration: BoxDecoration(\n        color: Colors.grey[850],\n        borderRadius: BorderRadius.circular(12),\n        border: Border.all(color: color[400]!, width: 2),\n      ),\n      child: Row(\n        children: [\n          Container(\n            width: 36,\n            height: 36,\n            decoration: BoxDecoration(\n              color: color[200],\n              shape: BoxShape.circle,\n            ),\n            child: Center(\n              child: Text(\n                letter,\n                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),\n              ),\n            ),\n          ),\n          SizedBox(width: 12),\n          Expanded(\n            child: Text(\n              answer,\n              style: TextStyle(fontSize: 18, color: Colors.white70),\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "education",
+    "tags": [
+        "quiz",
+        "education",
+        "science",
+        "multiple-choice",
+        "progress",
+        "cards",
+        "button"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Column",
+        "Container",
+        "Text",
+        "LinearProgressIndicator",
+        "ListView",
+        "ElevatedButton",
+        "Row"
+    ],
+    "layout_type": "Column"
+}

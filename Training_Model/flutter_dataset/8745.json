@@ -1,0 +1,22 @@
+{
+    "prompt": "create the Account Verification page",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: SafeArea(\n        child: Padding(\n          padding: EdgeInsets.all(24.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Icon(\n                Icons.verified_user,\n                size: 80,\n                color: Colors.blue[600],\n              ),\n              SizedBox(height: 32),\n              Text(\n                'Verify Your Account',\n                style: TextStyle(\n                  fontSize: 28,\n                  fontWeight: FontWeight.bold,\n                  color: Colors.black87,\n                ),\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Enter the 4-digit code sent to your email',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.grey[600],\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 40),\n              Row(\n                mainAxisAlignment: MainAxisAlignment.spaceEvenly,\n                children: List.generate(4, (index) => Container(\n                  width: 60,\n                  height: 60,\n                  decoration: BoxDecoration(\n                    border: Border.all(color: Colors.grey[300]!),\n                    borderRadius: BorderRadius.circular(12),\n                  ),\n                  child: TextField(\n                    textAlign: TextAlign.center,\n                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),\n                    keyboardType: TextInputType.number,\n                    maxLength: 1,\n                    decoration: InputDecoration(\n                      border: InputBorder.none,\n                      counterText: '',\n                    ),\n                  ),\n                )),\n              ),\n              SizedBox(height: 40),\n              ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.blue[600],\n                  foregroundColor: Colors.white,\n                  padding: EdgeInsets.symmetric(horizontal: 80, vertical: 16),\n                  shape: RoundedRectangleBorder(\n                    borderRadius: BorderRadius.circular(12),\n                  ),\n                ),\n                child: Text(\n                  'Verify',\n                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),\n                ),\n              ),\n              SizedBox(height: 24),\n              TextButton(\n                onPressed: () {},\n                child: Text(\n                  'Resend Code',\n                  style: TextStyle(\n                    color: Colors.blue[600],\n                    fontSize: 16,\n                    fontWeight: FontWeight.w500,\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "authentication",
+    "tags": [
+        "verification",
+        "otp",
+        "code",
+        "email",
+        "security",
+        "form"
+    ],
+    "components": [
+        "Icon",
+        "Text",
+        "TextField",
+        "ElevatedButton",
+        "TextButton",
+        "Container"
+    ],
+    "layout_type": "Column"
+}

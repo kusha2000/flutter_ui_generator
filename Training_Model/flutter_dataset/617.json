@@ -1,0 +1,24 @@
+{
+    "prompt": "Design a notifications page with a dark theme for a sleek, modern look. Use a deep charcoal background and a bold, white 'Notifications' title at the top. Include a scrollable list of notification cards with a dark gray background, each featuring a circular avatar on the left with vibrant gradient colors, sender name in bold white text, a short message preview in light gray, and a timestamp in a subtle gray tone. Unread notifications should have a small red dot on the avatar. Cards should have sharp edges, a slight glow effect, and consistent spacing, adhering to Material Design with a focus on contrast and readability.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFF1C2526),\n      appBar: AppBar(\n        backgroundColor: Color(0xFF1C2526),\n        elevation: 0,\n        title: Text(\n          'Notifications',\n          style: TextStyle(\n            fontSize: 24,\n            fontWeight: FontWeight.bold,\n            color: Colors.white,\n          ),\n        ),\n      ),\n      body: ListView.builder(\n        padding: EdgeInsets.all(16),\n        itemCount: 10,\n        itemBuilder: (context, index) {\n          bool isUnread = index % 3 == 0;\n          return Container(\n            margin: EdgeInsets.only(bottom: 12),\n            decoration: BoxDecoration(\n              color: Color(0xFF2E3B3E),\n              borderRadius: BorderRadius.circular(0),\n              boxShadow: [\n                BoxShadow(\n                  color: Colors.black26,\n                  blurRadius: 4,\n                  offset: Offset(0, 1),\n                ),\n              ],\n            ),\n            child: ListTile(\n              contentPadding: EdgeInsets.all(12),\n              leading: Stack(\n                children: [\n                  CircleAvatar(\n                    radius: 24,\n                    backgroundImage: LinearGradient(\n                      colors: [Colors.blue[400]!, Colors.purple[400]!],\n                    ).createShader(Rect.fromCircle(center: Offset(24, 24), radius: 24)),\n                    child: Icon(Icons.person, color: Colors.white),\n                  ),\n                  if (isUnread)\n                    Positioned(\n                      right: 0,\n                      top: 0,\n                      child: Container(\n                        width: 10,\n                        height: 10,\n                        decoration: BoxDecoration(\n                          color: Colors.red,\n                          shape: BoxShape.circle,\n                        ),\n                      ),\n                    ),\n                ],\n              ),\n              title: Text(\n                'User ${index + 1}',\n                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),\n              ),\n              subtitle: Text(\n                'You have a new notification...',\n                style: TextStyle(color: Colors.grey[400], fontSize: 14),\n              ),\n              trailing: Text(\n                '${index + 1} min ago',\n                style: TextStyle(color: Colors.grey[600], fontSize: 12),\n              ),\n            ),\n          );\n        },\n      ),\n    );\n  }\n}",
+    "category": "social",
+    "tags": [
+        "notifications",
+        "list",
+        "cards",
+        "avatar",
+        "timestamps",
+        "scrollable",
+        "dark"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "ListTile",
+        "CircleAvatar",
+        "Container",
+        "BoxShadow"
+    ],
+    "layout_type": "ListView"
+}

@@ -1,0 +1,23 @@
+{
+    "prompt": "Dark Map",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Maps'),\n        backgroundColor: Colors.black,\n        foregroundColor: Colors.white,\n        leading: IconButton(\n          icon: Icon(Icons.menu),\n          onPressed: () {},\n        ),\n      ),\n      body: Container(\n        width: double.infinity,\n        height: double.infinity,\n        color: Colors.grey[800],\n        child: Center(\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Icon(\n                Icons.map_outlined,\n                size: 100,\n                color: Colors.white54,\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Dark Map View',\n                style: TextStyle(\n                  fontSize: 18,\n                  color: Colors.white54,\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n      floatingActionButton: Column(\n        mainAxisAlignment: MainAxisAlignment.end,\n        children: [\n          FloatingActionButton(\n            onPressed: () {},\n            backgroundColor: Colors.grey[700],\n            child: Icon(\n              Icons.my_location,\n              color: Colors.white,\n            ),\n            heroTag: 'location',\n          ),\n          SizedBox(height: 10),\n          FloatingActionButton(\n            onPressed: () {},\n            backgroundColor: Colors.grey[700],\n            child: Icon(\n              Icons.search,\n              color: Colors.white,\n            ),\n            heroTag: 'search',\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "map",
+        "dark-theme",
+        "search",
+        "location",
+        "menu",
+        "stacked-buttons"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "FloatingActionButton",
+        "Column",
+        "Icon",
+        "Text"
+    ],
+    "layout_type": "Scaffold"
+}

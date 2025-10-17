@@ -1,0 +1,22 @@
+{
+    "prompt": "Create a minimal admin control panel with a light theme. Top bar has centered title, profile avatar, and notification icon. Four vertical stat cards below (users, revenue, orders, growth) with soft colors and rounded edges. Then a simple activities list with avatars and timestamps. Floating button centered at bottom. Compact and clean Material layout.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        backgroundColor: Colors.white,\n        elevation: 0,\n        title: Text('Control Panel', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),\n        centerTitle: true,\n        actions: [\n          Icon(Icons.notifications, color: Colors.grey[600]),\n          SizedBox(width: 8),\n          CircleAvatar(\n            backgroundImage: NetworkImage('https://via.placeholder.com/40'),\n            radius: 16,\n          ),\n          SizedBox(width: 8),\n        ],\n      ),\n      body: SingleChildScrollView(\n        padding: EdgeInsets.all(8),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.start,\n          children: [\n            _buildStatCard('Total Users', '2,134', Colors.blue[100]!),\n            SizedBox(height: 8),\n            _buildStatCard('Revenue', '\\$67,430', Colors.green[100]!),\n            SizedBox(height: 8),\n            _buildStatCard('Orders', '1,056', Colors.orange[100]!),\n            SizedBox(height: 8),\n            _buildStatCard('Growth', '15.3%', Colors.purple[100]!),\n            SizedBox(height: 16),\n            Text('Recent Activities', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),\n            SizedBox(height: 8),\n            ...List.generate(5, (index) => _buildActivityItem('User ${index + 1} performed action', '${index + 1}m ago')),\n          ],\n        ),\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {},\n        child: Icon(Icons.add),\n        backgroundColor: Colors.blue,\n      ),\n      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,\n    );\n  }\n\n  Widget _buildStatCard(String title, String value, Color color) {\n    return Container(\n      padding: EdgeInsets.all(8),\n      decoration: BoxDecoration(\n        color: color,\n        borderRadius: BorderRadius.circular(8),\n      ),\n      child: Column(\n        crossAxisAlignment: CrossAxisAlignment.start,\n        children: [\n          Text(title, style: TextStyle(color: Colors.black87, fontSize: 12)),\n          SizedBox(height: 4),\n          Text(value, style: TextStyle(color: Colors.black87, fontSize: 16, fontWeight: FontWeight.bold)),\n        ],\n      ),\n    );\n  }\n\n  Widget _buildActivityItem(String activity, String time) {\n    return Padding(\n      padding: EdgeInsets.only(bottom: 8),\n      child: Row(\n        children: [\n          CircleAvatar(\n            backgroundImage: NetworkImage('https://via.placeholder.com/40'),\n            radius: 16,\n          ),\n          SizedBox(width: 8),\n          Expanded(child: Text(activity, style: TextStyle(fontWeight: FontWeight.w500))),\n          Text(time, style: TextStyle(color: Colors.grey[600], fontSize: 12)),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "admin",
+    "tags": [
+        "dashboard",
+        "admin",
+        "statistics",
+        "activities",
+        "light theme",
+        "minimalist"
+    ],
+    "components": [
+        "AppBar",
+        "Column",
+        "Container",
+        "CircleAvatar",
+        "FloatingActionButton",
+        "Text"
+    ],
+    "layout_type": "Column"
+}

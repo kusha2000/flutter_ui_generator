@@ -1,0 +1,24 @@
+{
+    "prompt": "Vintage toggle switch with typewriter labels.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  bool isDarkMode = false;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.beige,\n      body: Center(\n        child: Container(\n          decoration: BoxDecoration(\n            color: Colors.white,\n            borderRadius: BorderRadius.circular(8),\n            boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 8)],\n          ),\n          padding: EdgeInsets.all(24),\n          child: Column(\n            mainAxisSize: MainAxisSize.min,\n            children: [\n              AnimatedCrossFade(\n                firstChild: Icon(Icons.radio, color: Colors.teal, size: 40),\n                secondChild: Icon(Icons.radio, color: Colors.yellow[700], size: 40),\n                crossFadeState: isDarkMode ? CrossFadeState.showSecond : CrossFadeState.showFirst,\n                duration: Duration(milliseconds: 300),\n              ),\n              SizedBox(height: 16),\n              Row(\n                mainAxisSize: MainAxisSize.min,\n                children: [\n                  Text(\n                    'Light Mode',\n                    style: TextStyle(\n                      fontSize: 18,\n                      fontFamily: 'Courier',\n                      color: Colors.teal,\n                    ),\n                  ),\n                  SizedBox(width: 16),\n                  AnimatedContainer(\n                    duration: Duration(milliseconds: 300),\n                    width: 80,\n                    height: 40,\n                    decoration: BoxDecoration(\n                      borderRadius: BorderRadius.circular(8),\n                      color: isDarkMode ? Colors.teal : Colors.yellow[700],\n                    ),\n                    child: Stack(\n                      children: [\n                        AnimatedAlign(\n                          duration: Duration(milliseconds: 300),\n                          alignment: isDarkMode ? Alignment.centerRight : Alignment.centerLeft,\n                          child: Container(\n                            width: 36,\n                            height: 36,\n                            margin: EdgeInsets.all(2),\n                            decoration: BoxDecoration(\n                              borderRadius: BorderRadius.circular(4),\n                              color: Colors.white,\n                            ),\n                          ),\n                        ),\n                      ],\n                    ),\n                  ),\n                  SizedBox(width: 16),\n                  Text(\n                    'Dark Mode',\n                    style: TextStyle(\n                      fontSize: 18,\n                      fontFamily: 'Courier',\n                      color: Colors.yellow[700],\n                    ),\n                  ),\n                ],\n              ),\n              SizedBox(height: 16),\n              GestureDetector(\n                onTap: () {\n                  setState(() {\n                    isDarkMode = !isDarkMode;\n                  });\n                },\n                child: Container(\n                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),\n                  decoration: BoxDecoration(\n                    color: Colors.brown,\n                    borderRadius: BorderRadius.circular(8),\n                  ),\n                  child: Text(\n                    'Toggle',\n                    style: TextStyle(color: Colors.white, fontSize: 16),\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "settings",
+    "tags": [
+        "toggle",
+        "switch",
+        "dark mode",
+        "light mode",
+        "theme",
+        "retro",
+        "animation",
+        "icon"
+    ],
+    "components": [
+        "AnimatedContainer",
+        "AnimatedAlign",
+        "Text",
+        "GestureDetector",
+        "AnimatedCrossFade",
+        "Icon"
+    ],
+    "layout_type": "Column"
+}

@@ -1,0 +1,24 @@
+{
+    "prompt": "Bold notifications page with navy and white theme.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFF0A1C3A),\n      appBar: AppBar(\n        backgroundColor: Color(0xFF0A1C3A),\n        elevation: 0,\n        title: Text(\n          'Notifications',\n          style: TextStyle(\n            fontSize: 28,\n            fontWeight: FontWeight.bold,\n            color: Colors.white,\n          ),\n        ),\n      ),\n      body: ListView.builder(\n        padding: EdgeInsets.all(16),\n        itemCount: 10,\n        itemBuilder: (context, index) {\n          bool isUnread = index % 2 == 1;\n          return Container(\n            margin: EdgeInsets.only(bottom: 12),\n            decoration: BoxDecoration(\n              color: Colors.white,\n              borderRadius: BorderRadius.circular(12),\n              boxShadow: [\n                BoxShadow(\n                  color: Colors.black45,\n                  blurRadius: 8,\n                  offset: Offset(0, 3),\n                ),\n              ],\n            ),\n            child: ListTile(\n              contentPadding: EdgeInsets.all(16),\n              leading: Stack(\n                children: [\n                  CircleAvatar(\n                    radius: 24,\n                    backgroundColor: primaryColors[index % primaryColors.length],\n                    child: Icon(Icons.person, color: Colors.white),\n                  ),\n                  if (isUnread)\n                    Positioned(\n                      right: 0,\n                      top: 0,\n                      child: Container(\n                        width: 10,\n                        height: 10,\n                        decoration: BoxDecoration(\n                          color: Colors.yellow,\n                          shape: BoxShape.circle,\n                        ),\n                      ),\n                    ),\n                ],\n              ),\n              title: Text(\n                'User ${index + 1}',\n                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),\n              ),\n              subtitle: Column(\n                crossAxisAlignment: CrossAxisAlignment.start,\n                children: [\n                  Text(\n                    'New alert...',\n                    style: TextStyle(color: Colors.black, fontSize: 14),\n                  ),\n                  SizedBox(height: 4),\n                  Text(\n                    '${index + 1} min ago',\n                    style: TextStyle(color: Colors.grey[600], fontSize: 12),\n                  ),\n                ],\n              ),\n            ),\n          );\n        },\n      ),\n    );\n  }\n\n  static const List<Color> primaryColors = [\n    Colors.red,\n    Colors.blue,\n    Colors.green,\n  ];\n}",
+    "category": "social",
+    "tags": [
+        "notifications",
+        "list",
+        "cards",
+        "avatar",
+        "timestamps",
+        "scrollable",
+        "high-contrast"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "ListTile",
+        "CircleAvatar",
+        "Container",
+        "BoxShadow"
+    ],
+    "layout_type": "ListView"
+}

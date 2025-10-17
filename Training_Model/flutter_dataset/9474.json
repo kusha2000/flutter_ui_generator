@@ -1,0 +1,21 @@
+{
+    "prompt": "Loading screen dark",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFF121212),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            CircularProgressIndicator(\n              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),\n              strokeWidth: 3.0,\n            ),\n            SizedBox(height: 24),\n            Text(\n              'Loading...',\n              style: TextStyle(\n                fontSize: 18,\n                color: Colors.white,\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "progress",
+        "dark",
+        "theme",
+        "circular",
+        "white"
+    ],
+    "components": [
+        "Scaffold",
+        "CircularProgressIndicator",
+        "Text",
+        "Column",
+        "Center"
+    ],
+    "layout_type": "Column"
+}

@@ -1,0 +1,22 @@
+{
+    "prompt": "Design a dark-themed product categories page with a sleek black background and a centered app bar showing 'Categories' in white, bold text. Arrange 6 product categories in a 3-column grid with minimal spacing. Each category is displayed in a circular card with a dark gray background and a glowing neon green icon (shopping bag, headphones, laptop, shirt, book, home). Below each icon, display category names (Electronics, Audio, Computers, Fashion, Books, Home) in white text. Add a subtle glow effect to the cards and use futuristic typography for a modern, techy aesthetic.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.black,\n      appBar: AppBar(\n        backgroundColor: Colors.black,\n        elevation: 0,\n        title: Text(\n          'Categories',\n          style: TextStyle(\n            color: Colors.white,\n            fontSize: 24,\n            fontWeight: FontWeight.bold,\n            fontFamily: 'RobotoMono',\n          ),\n        ),\n        centerTitle: true,\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(8.0),\n        child: GridView.count(\n          crossAxisCount: 3,\n          crossAxisSpacing: 8,\n          mainAxisSpacing: 8,\n          childAspectRatio: 1.0,\n          children: [\n            _buildCategoryCard(Icons.shopping_bag, 'Electronics', Colors.greenAccent),\n            _buildCategoryCard(Icons.headphones, 'Audio', Colors.greenAccent),\n            _buildCategoryCard(Icons.laptop, 'Computers', Colors.greenAccent),\n            _buildCategoryCard(Icons.checkroom, 'Fashion', Colors.greenAccent),\n            _buildCategoryCard(Icons.book, 'Books', Colors.greenAccent),\n            _buildCategoryCard(Icons.home, 'Home', Colors.greenAccent),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildCategoryCard(IconData icon, String title, Color iconColor) {\n    return Container(\n      decoration: BoxDecoration(\n        color: Colors.grey[900],\n        shape: BoxShape.circle,\n        boxShadow: [\n          BoxShadow(\n            color: Colors.greenAccent.withOpacity(0.3),\n            blurRadius: 8,\n            spreadRadius: 2,\n          ),\n        ],\n      ),\n      child: Column(\n        mainAxisAlignment: MainAxisAlignment.center,\n        children: [\n          Icon(\n            icon,\n            size: 36,\n            color: iconColor,\n          ),\n          SizedBox(height: 8),\n          Text(\n            title,\n            style: TextStyle(\n              fontSize: 14,\n              fontWeight: FontWeight.w500,\n              color: Colors.white,\n              fontFamily: 'RobotoMono',\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "e-commerce",
+    "tags": [
+        "categories",
+        "grid",
+        "cards",
+        "icons",
+        "dark theme",
+        "shopping"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "GridView",
+        "Container",
+        "Icon",
+        "Text"
+    ],
+    "layout_type": "GridView"
+}

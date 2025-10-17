@@ -1,0 +1,20 @@
+{
+    "prompt": "Create a modern loading page with a clean white background. Place a primary blue circular progress indicator at the center and display 'Loading...' text 24 pixels below in subtle gray. Use a vertically centered Column layout within a Scaffold, following Material Design 3 principles for a minimalist, professional appearance.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            CircularProgressIndicator(\n              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF2196F3)),\n            ),\n            SizedBox(height: 24),\n            Text(\n              'Loading...',\n              style: TextStyle(\n                fontSize: 18,\n                color: Color(0xFF666666),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "progress",
+        "circular",
+        "center",
+        "minimal"
+    ],
+    "components": [
+        "Scaffold",
+        "CircularProgressIndicator",
+        "Text",
+        "Column",
+        "Center"
+    ],
+    "layout_type": "Column"
+}

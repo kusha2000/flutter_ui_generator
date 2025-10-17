@@ -1,0 +1,22 @@
+{
+    "prompt": "Horizontal star rating",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  int selectedRating = 0;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[100],\n      body: Center(\n        child: Container(\n          margin: EdgeInsets.all(20),\n          padding: EdgeInsets.all(16),\n          decoration: BoxDecoration(\n            color: Colors.white,\n            borderRadius: BorderRadius.circular(12),\n            boxShadow: [\n              BoxShadow(\n                color: Colors.black.withOpacity(0.1),\n                blurRadius: 8,\n                offset: Offset(0, 2),\n              ),\n            ],\n          ),\n          child: Row(\n            mainAxisSize: MainAxisSize.min,\n            children: [\n              Container(\n                width: 40,\n                height: 40,\n                decoration: BoxDecoration(\n                  gradient: LinearGradient(\n                    colors: [Colors.orange, Colors.red],\n                  ),\n                  shape: BoxShape.circle,\n                ),\n                child: Icon(Icons.apps, color: Colors.white, size: 20),\n              ),\n              SizedBox(width: 12),\n              Column(\n                mainAxisSize: MainAxisSize.min,\n                crossAxisAlignment: CrossAxisAlignment.start,\n                children: [\n                  Text(\n                    'Rate Us!',\n                    style: TextStyle(\n                      fontSize: 16,\n                      fontWeight: FontWeight.bold,\n                      color: Colors.grey[800],\n                    ),\n                  ),\n                  SizedBox(height: 4),\n                  Row(\n                    children: List.generate(5, (index) {\n                      return GestureDetector(\n                        onTap: () => setState(() => selectedRating = index + 1),\n                        child: Padding(\n                          padding: EdgeInsets.only(right: 2),\n                          child: Icon(\n                            selectedRating > index ? Icons.star : Icons.star_border,\n                            color: Colors.amber,\n                            size: 20,\n                          ),\n                        ),\n                      );\n                    }),\n                  ),\n                ],\n              ),\n              SizedBox(width: 16),\n              ElevatedButton(\n                onPressed: selectedRating > 0 ? () {} : null,\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.blue,\n                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),\n                  shape: RoundedRectangleBorder(\n                    borderRadius: BorderRadius.circular(20),\n                  ),\n                  minimumSize: Size(60, 32),\n                ),\n                child: Text(\n                  'Rate',\n                  style: TextStyle(fontSize: 14, color: Colors.white),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "feedback",
+    "tags": [
+        "rating",
+        "compact",
+        "horizontal",
+        "card",
+        "minimal",
+        "embedded"
+    ],
+    "components": [
+        "Container",
+        "Row",
+        "Icon",
+        "Text",
+        "ElevatedButton",
+        "GestureDetector"
+    ],
+    "layout_type": "Row"
+}

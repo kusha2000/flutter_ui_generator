@@ -1,0 +1,26 @@
+{
+    "prompt": "Neon theme Camera UI",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.black,\n      appBar: AppBar(\n        backgroundColor: Colors.black,\n        elevation: 0,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back, color: Colors.white),\n          onPressed: () {},\n        ),\n        actions: [\n          IconButton(\n            icon: Icon(Icons.flash_off, color: Colors.white),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      body: Column(\n        children: [\n          Expanded(\n            child: Padding(\n              padding: EdgeInsets.all(16.0),\n              child: Container(\n                decoration: BoxDecoration(\n                  color: Colors.grey[900],\n                  borderRadius: BorderRadius.circular(20),\n                  boxShadow: [\n                    BoxShadow(\n                      color: Colors.blue.withOpacity(0.3),\n                      blurRadius: 15,\n                      spreadRadius: 2,\n                    ),\n                  ],\n                ),\n                child: Center(\n                  child: Icon(\n                    Icons.camera_alt,\n                    size: 80,\n                    color: Colors.grey[600],\n                  ),\n                ),\n              ),\n            ),\n          ),\n          Container(\n            height: 120,\n            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),\n            child: Row(\n              mainAxisAlignment: MainAxisAlignment.spaceBetween,\n              crossAxisAlignment: CrossAxisAlignment.center,\n              children: [\n                Container(\n                  width: 60,\n                  height: 60,\n                  decoration: BoxDecoration(\n                    color: Colors.grey[800],\n                    borderRadius: BorderRadius.circular(8),\n                    border: Border.all(\n                      color: Colors.blue,\n                      width: 2,\n                    ),\n                  ),\n                  child: Icon(\n                    Icons.photo,\n                    color: Colors.blue,\n                  ),\n                ),\n                GestureDetector(\n                  onTap: () {},\n                  child: Container(\n                    width: 80,\n                    height: 80,\n                    decoration: BoxDecoration(\n                      shape: BoxShape.circle,\n                      gradient: LinearGradient(\n                        colors: [Colors.blue, Colors.cyan],\n                        begin: Alignment.topLeft,\n                        end: Alignment.bottomRight,\n                      ),\n                      boxShadow: [\n                        BoxShadow(\n                          color: Colors.blue.withOpacity(0.6),\n                          blurRadius: 15,\n                          spreadRadius: 2,\n                        ),\n                      ],\n                    ),\n                    child: Center(\n                      child: Container(\n                        width: 60,\n                        height: 60,\n                        decoration: BoxDecoration(\n                          shape: BoxShape.circle,\n                          color: Colors.white,\n                        ),\n                      ),\n                    ),\n                  ),\n                ),\n                SizedBox(width: 60),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "camera",
+    "tags": [
+        "camera",
+        "dark",
+        "neon",
+        "futuristic",
+        "glow",
+        "gradient",
+        "blue",
+        "night"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "Icon",
+        "GestureDetector",
+        "Row",
+        "Column",
+        "LinearGradient"
+    ],
+    "layout_type": "Column"
+}

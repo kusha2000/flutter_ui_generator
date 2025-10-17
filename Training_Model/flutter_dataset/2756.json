@@ -1,0 +1,23 @@
+{
+    "prompt": "Create a clean verification page with white background, grey icon, black title, 4-digit input fields, flat verify button, and grey resend link in Column layout with minimal spacing.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: SafeArea(\n        child: Padding(\n          padding: EdgeInsets.all(16.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Icon(\n                Icons.verified,\n                size: 50,\n                color: Colors.grey[600],\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Verification',\n                style: TextStyle(\n                  fontSize: 24,\n                  fontWeight: FontWeight.w600,\n                  color: Colors.black,\n                ),\n              ),\n              SizedBox(height: 8),\n              Text(\n                'Enter 4-digit code',\n                style: TextStyle(\n                  fontSize: 14,\n                  color: Colors.grey[500],\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 24),\n              Row(\n                mainAxisAlignment: MainAxisAlignment.spaceEvenly,\n                children: List.generate(4, (index) => Container(\n                  width: 50,\n                  height: 50,\n                  decoration: BoxDecoration(\n                    border: Border.all(color: Colors.grey[400]!),\n                    borderRadius: BorderRadius.circular(8),\n                  ),\n                  child: TextField(\n                    textAlign: TextAlign.center,\n                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),\n                    keyboardType: TextInputType.number,\n                    maxLength: 1,\n                    decoration: InputDecoration(\n                      border: InputBorder.none,\n                      counterText: '',\n                    ),\n                  ),\n                )),\n              ),\n              SizedBox(height: 24),\n              ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.grey[600],\n                  foregroundColor: Colors.white,\n                  padding: EdgeInsets.symmetric(horizontal: 60, vertical: 12),\n                  shape: RoundedRectangleBorder(\n                    borderRadius: BorderRadius.circular(8),\n                  ),\n                  elevation: 0,\n                ),\n                child: Text(\n                  'Verify',\n                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),\n                ),\n              ),\n              SizedBox(height: 16),\n              TextButton(\n                onPressed: () {},\n                child: Text(\n                  'Resend Code',\n                  style: TextStyle(\n                    color: Colors.grey[600],\n                    fontSize: 14,\n                    fontWeight: FontWeight.w500,\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "authentication",
+    "tags": [
+        "verification",
+        "otp",
+        "code",
+        "email",
+        "security",
+        "form",
+        "minimalist"
+    ],
+    "components": [
+        "Icon",
+        "Text",
+        "TextField",
+        "ElevatedButton",
+        "TextButton",
+        "Container"
+    ],
+    "layout_type": "Column"
+}

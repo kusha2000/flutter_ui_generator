@@ -1,0 +1,26 @@
+{
+    "prompt": "Coral settings page",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  bool _notificationsEnabled = true;\n  bool _darkModeEnabled = false;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFFFFDE7),\n      appBar: AppBar(\n        title: Text('Settings', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600)),\n        backgroundColor: Color(0xFFFFFDE7),\n        elevation: 0,\n      ),\n      body: SingleChildScrollView(\n        padding: EdgeInsets.all(20),\n        child: Column(\n          children: [\n            Card(\n              elevation: 3,\n              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12), side: BorderSide(color: Color(0xFFFF6F61))),\n              child: Padding(\n                padding: EdgeInsets.all(16),\n                child: Column(\n                  children: [\n                    CircleAvatar(\n                      radius: 50,\n                      backgroundColor: Color(0xFFFF6F61),\n                      child: Icon(Icons.person, size: 60, color: Colors.white),\n                    ),\n                    SizedBox(height: 12),\n                    Text('Jane Smith', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),\n                    Text('jane.smith@email.com', style: TextStyle(fontSize: 14, color: Colors.grey[600])),\n                  ],\n                ),\n              ),\n            ),\n            SizedBox(height: 20),\n            Text('Account', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Color(0xFFFF6F61))),\n            SizedBox(height: 10),\n            _buildListTile(Icons.edit, 'Edit Profile', trailing: Icon(Icons.chevron_right, color: Color(0xFFFF6F61))),\n            _buildListTile(Icons.lock, 'Change Password', trailing: Icon(Icons.chevron_right, color: Color(0xFFFF6F61))),\n            _buildListTile(Icons.privacy_tip, 'Privacy', trailing: Icon(Icons.chevron_right, color: Color(0xFFFF6F61))),\n            SizedBox(height: 20),\n            Text('Preferences', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Color(0xFFFF6F61))),\n            SizedBox(height: 10),\n            _buildListTile(Icons.notifications, 'Notifications', trailing: Switch(\n              value: _notificationsEnabled,\n              onChanged: (val) => setState(() => _notificationsEnabled = val),\n              activeColor: Color(0xFFFF6F61),\n            )),\n            _buildListTile(Icons.dark_mode, 'Dark Mode', trailing: Switch(\n              value: _darkModeEnabled,\n              onChanged: (val) => setState(() => _darkModeEnabled = val),\n              activeColor: Color(0xFFFF6F61),\n            )),\n            _buildListTile(Icons.language, 'Language', trailing: Icon(Icons.chevron_right, color: Color(0xFFFF6F61))),\n            SizedBox(height: 20),\n            Text('Support', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Color(0xFFFF6F61))),\n            SizedBox(height: 10),\n            _buildListTile(Icons.help, 'Help', trailing: Icon(Icons.chevron_right, color: Color(0xFFFF6F61))),\n            _buildListTile(Icons.contact_support, 'Contact', trailing: Icon(Icons.chevron_right, color: Color(0xFFFF6F61))),\n            _buildListTile(Icons.info, 'About', trailing: Icon(Icons.chevron_right, color: Color(0xFFFF6F61))),\n            SizedBox(height: 32),\n            ElevatedButton(\n              onPressed: () {},\n              style: ElevatedButton.styleFrom(\n                backgroundColor: Color(0xFFFF6F61),\n                foregroundColor: Colors.white,\n                padding: EdgeInsets.symmetric(vertical: 16),\n                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),\n                minimumSize: Size(double.infinity, 50),\n              ),\n              child: Text('Logout', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildListTile(IconData icon, String title, {Widget? trailing}) {\n    return Card(\n      elevation: 2,\n      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),\n      margin: EdgeInsets.only(bottom: 10),\n      child: ListTile(\n        leading: Icon(icon, color: Color(0xFFFF6F61)),\n        title: Text(title, style: TextStyle(fontSize: 16)),\n        trailing: trailing,\n        onTap: () {},\n      ),\n    );\n  }\n}",
+    "category": "settings",
+    "tags": [
+        "settings",
+        "profile",
+        "account",
+        "preferences",
+        "support",
+        "toggle",
+        "list",
+        "light theme"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "SingleChildScrollView",
+        "Card",
+        "CircleAvatar",
+        "ListTile",
+        "Switch",
+        "ElevatedButton"
+    ],
+    "layout_type": "Column"
+}

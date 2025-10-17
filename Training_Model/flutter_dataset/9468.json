@@ -1,0 +1,22 @@
+{
+    "prompt": "404 page with icon",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[200],\n      body: Padding(\n        padding: const EdgeInsets.all(24.0),\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          crossAxisAlignment: CrossAxisAlignment.center,\n          children: [\n            Row(\n              mainAxisAlignment: MainAxisAlignment.center,\n              children: [\n                Icon(\n                  Icons.error,\n                  size: 40,\n                  color: Colors.green[800],\n                ),\n                SizedBox(width: 12),\n                Text(\n                  '404',\n                  style: TextStyle(\n                    fontSize: 74,\n                    fontWeight: FontWeight.bold,\n                    color: Colors.green[800],\n                  ),\n                ),\n              ],\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Page Not Found',\n              style: TextStyle(\n                fontSize: 26,\n                fontWeight: FontWeight.w600,\n                color: Colors.green[600],\n              ),\n            ),\n            SizedBox(height: 20),\n            Text(\n              'The page you’re looking for is unavailable.',\n              textAlign: TextAlign.center,\n              style: TextStyle(\n                fontSize: 16,\n                color: Colors.grey[700],\n                height: 1.5,\n              ),\n            ),\n            SizedBox(height: 24),\n            ElevatedButton(\n              onPressed: () {},\n              style: ElevatedButton.styleFrom(\n                backgroundColor: Colors.green[800],\n                foregroundColor: Colors.white,\n                padding: EdgeInsets.symmetric(horizontal: 32, vertical: 14),\n                shape: RoundedRectangleBorder(\n                  borderRadius: BorderRadius.circular(8),\n                ),\n              ),\n              child: Text(\n                'Go Back',\n                style: TextStyle(fontSize: 16),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "error_pages",
+    "tags": [
+        "404",
+        "error",
+        "not_found",
+        "icon",
+        "button",
+        "row"
+    ],
+    "components": [
+        "Text",
+        "ElevatedButton",
+        "Column",
+        "Scaffold",
+        "Row",
+        "Icon"
+    ],
+    "layout_type": "Column"
+}

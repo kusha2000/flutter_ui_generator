@@ -1,0 +1,22 @@
+{
+    "prompt": "Vintage brown drawer menu",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFF5F5DC),\n      appBar: AppBar(\n        title: Text('Home', style: TextStyle(color: Colors.white, fontFamily: 'Courier')),\n        backgroundColor: Colors.brown,\n        iconTheme: IconThemeData(color: Colors.white),\n      ),\n      drawer: Drawer(\n        child: Column(\n          children: [\n            UserAccountsDrawerHeader(\n              decoration: BoxDecoration(color: Colors.brown),\n              currentAccountPicture: CircleAvatar(\n                backgroundColor: Colors.white,\n                child: Icon(Icons.person, color: Colors.brown, size: 40),\n              ),\n              accountName: Text('Ava Martin', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black, fontFamily: 'Courier')),\n              accountEmail: Text('ava.martin@example.com', style: TextStyle(fontSize: 14, color: Colors.grey[600], fontFamily: 'Courier')),\n            ),\n            Divider(),\n            ListTile(\n              leading: Icon(Icons.home, color: Colors.brown),\n              title: Text('Home', style: TextStyle(color: Colors.brown, fontFamily: 'Courier')),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.person, color: Colors.brown),\n              title: Text('Profile', style: TextStyle(color: Colors.brown, fontFamily: 'Courier')),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.settings, color: Colors.brown),\n              title: Text('Settings', style: TextStyle(color: Colors.brown, fontFamily: 'Courier')),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.exit_to_app, color: Colors.red),\n              title: Text('Logout', style: TextStyle(color: Colors.brown, fontFamily: 'Courier')),\n              onTap: () {},\n            ),\n          ],\n        ),\n      ),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            Text(\n              'Welcome, Ava!',\n              style: TextStyle(\n                fontSize: 32,\n                fontWeight: FontWeight.bold,\n                color: Colors.brown,\n                fontFamily: 'Courier',\n                shadows: [Shadow(color: Colors.black26, blurRadius: 4, offset: Offset(2, 2))],\n              ),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Navigate with the drawer',\n              style: TextStyle(fontSize: 16, color: Colors.grey[600], fontFamily: 'Courier'),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "drawer",
+        "menu",
+        "navigation",
+        "profile",
+        "retro",
+        "sidebar"
+    ],
+    "components": [
+        "Drawer",
+        "AppBar",
+        "ListTile",
+        "UserAccountsDrawerHeader",
+        "CircleAvatar",
+        "Divider"
+    ],
+    "layout_type": "Column"
+}

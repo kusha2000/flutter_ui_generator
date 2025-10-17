@@ -1,0 +1,21 @@
+{
+    "prompt": "Clean gray verification page: outline icon, serif title, 4 input fields, muted blue button, subtle shadows, professional design.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFF8F9FA),\n      body: SafeArea(\n        child: Padding(\n          padding: EdgeInsets.all(32.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Icon(\n                Icons.mail_outline,\n                size: 64,\n                color: Color(0xFF6C757D),\n              ),\n              SizedBox(height: 40),\n              Text(\n                'Email Verification',\n                style: TextStyle(\n                  fontSize: 24,\n                  fontWeight: FontWeight.w300,\n                  color: Color(0xFF343A40),\n                  letterSpacing: 0.5,\n                ),\n              ),\n              SizedBox(height: 20),\n              Text(\n                'Please enter the verification code',\n                style: TextStyle(\n                  fontSize: 15,\n                  color: Color(0xFF6C757D),\n                  letterSpacing: 0.3,\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 50),\n              Row(\n                mainAxisAlignment: MainAxisAlignment.center,\n                children: List.generate(4, (index) => Container(\n                  margin: EdgeInsets.symmetric(horizontal: 8),\n                  width: 56,\n                  height: 56,\n                  decoration: BoxDecoration(\n                    color: Colors.white,\n                    border: Border.all(color: Color(0xFFDEE2E6), width: 1),\n                    borderRadius: BorderRadius.circular(4),\n                    boxShadow: [\n                      BoxShadow(\n                        color: Colors.black.withOpacity(0.05),\n                        blurRadius: 4,\n                        offset: Offset(0, 2),\n                      ),\n                    ],\n                  ),\n                  child: TextField(\n                    textAlign: TextAlign.center,\n                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400, color: Color(0xFF343A40)),\n                    keyboardType: TextInputType.number,\n                    maxLength: 1,\n                    decoration: InputDecoration(\n                      border: InputBorder.none,\n                      counterText: '',\n                    ),\n                  ),\n                )),\n              ),\n              SizedBox(height: 50),\n              ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Color(0xFF495057),\n                  foregroundColor: Colors.white,\n                  padding: EdgeInsets.symmetric(horizontal: 48, vertical: 14),\n                  shape: RoundedRectangleBorder(\n                    borderRadius: BorderRadius.circular(4),\n                  ),\n                  elevation: 2,\n                ),\n                child: Text(\n                  'Verify',\n                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, letterSpacing: 0.5),\n                ),\n              ),\n              SizedBox(height: 30),\n              TextButton(\n                onPressed: () {},\n                child: Text(\n                  'Send new code',\n                  style: TextStyle(\n                    color: Color(0xFF6C757D),\n                    fontSize: 14,\n                    fontWeight: FontWeight.w400,\n                    decoration: TextDecoration.underline,\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "authentication",
+    "tags": [
+        "verification",
+        "minimalist",
+        "professional",
+        "clean",
+        "corporate",
+        "email"
+    ],
+    "components": [
+        "Icon",
+        "Text",
+        "TextField",
+        "ElevatedButton",
+        "TextButton"
+    ],
+    "layout_type": "Column"
+}

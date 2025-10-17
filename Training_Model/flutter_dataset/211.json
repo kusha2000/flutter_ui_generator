@@ -1,0 +1,22 @@
+{
+    "prompt": "Design a cozy onboarding screen with a warm brown background (Colors.brown[200]). Feature a circular illustration at the top (using a Container with a circular shape) occupying 25% of the screen height, filled with a soft beige (Colors.brown[50]). Place a brown icon (Icons.home, size 80) in the center. Below, add a bold heading in dark brown (Colors.brown[800], font size 26px, FontWeight.w700) with the text 'Feel at Home'. Include a subtitle in light brown (Colors.brown[400], font size 16px) describing the app’s comforting features. At the bottom, include a brown 'Begin' button (Colors.brown[600], 12px radius) and a 'Skip' text button in beige. Use 24px padding, center-align text, and add 16px spacing for a warm, inviting feel.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.brown[200],\n      body: SafeArea(\n        child: Padding(\n          padding: const EdgeInsets.all(24.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Expanded(\n                flex: 2,\n                child: Container(\n                  decoration: BoxDecoration(\n                    shape: BoxShape.circle,\n                    color: Colors.brown[50],\n                  ),\n                  child: Icon(\n                    Icons.home,\n                    size: 80,\n                    color: Colors.brown[800],\n                  ),\n                ),\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Feel at Home',\n                style: TextStyle(\n                  fontSize: 26,\n                  fontWeight: FontWeight.w700,\n                  color: Colors.brown[800],\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Create a cozy experience with our app’s features.',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.brown[400],\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 16),\n              SizedBox(\n                width: double.infinity,\n                height: 50,\n                child: ElevatedButton(\n                  onPressed: () {},\n                  style: ElevatedButton.styleFrom(\n                    backgroundColor: Colors.brown[600],\n                    shape: RoundedRectangleBorder(\n                      borderRadius: BorderRadius.circular(12),\n                    ),\n                  ),\n                  child: Text(\n                    'Begin',\n                    style: TextStyle(\n                      fontSize: 16,\n                      color: Colors.white,\n                    ),\n                  ),\n                ),\n              ),\n              SizedBox(height: 16),\n              TextButton(\n                onPressed: () {},\n                child: Text(\n                  'Skip',\n                  style: TextStyle(\n                    fontSize: 16,\n                    color: Colors.brown[50],\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "onboarding",
+    "tags": [
+        "onboarding",
+        "cozy",
+        "welcome",
+        "begin",
+        "skip"
+    ],
+    "components": [
+        "Container",
+        "Icon",
+        "Text",
+        "ElevatedButton",
+        "TextButton",
+        "Column",
+        "SafeArea"
+    ],
+    "layout_type": "Column"
+}

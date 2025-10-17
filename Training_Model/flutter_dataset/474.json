@@ -1,0 +1,21 @@
+{
+    "prompt": "Design a dark theme loading page with a sophisticated appearance featuring a centered white circular progress indicator against a deep dark background (0xFF121212). The progress indicator should be white (0xFFFFFFFF) with increased thickness (strokeWidth: 3.0) for better visibility on dark surfaces. Below the indicator, place 'Loading...' text in white color (0xFFFFFFFF) with a font size of 18px, positioned 24 pixels below the progress indicator. The dark background should follow Material Design dark theme guidelines, creating a comfortable viewing experience in low-light conditions while maintaining clear visual hierarchy and accessibility standards.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFF121212),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            CircularProgressIndicator(\n              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),\n              strokeWidth: 3.0,\n            ),\n            SizedBox(height: 24),\n            Text(\n              'Loading...',\n              style: TextStyle(\n                fontSize: 18,\n                color: Colors.white,\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "progress",
+        "dark",
+        "theme",
+        "circular",
+        "white"
+    ],
+    "components": [
+        "Scaffold",
+        "CircularProgressIndicator",
+        "Text",
+        "Column",
+        "Center"
+    ],
+    "layout_type": "Column"
+}

@@ -1,0 +1,22 @@
+{
+    "prompt": "Futuristic QR scanner with cyan hexagonal viewfinder.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  bool isFlashOn = false;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            colors: [Colors.blue.shade900, Colors.black],\n            begin: Alignment.topCenter,\n            end: Alignment.bottomCenter,\n          ),\n        ),\n        child: Padding(\n          padding: EdgeInsets.all(20),\n          child: Column(\n            children: [\n              SizedBox(height: 40),\n              Text(\n                'QR Code Reader',\n                style: TextStyle(\n                  fontSize: 26,\n                  fontStyle: FontStyle.italic,\n                  fontWeight: FontWeight.bold,\n                  color: Colors.white,\n                ),\n              ),\n              SizedBox(height: 50),\n              Container(\n                width: 260,\n                height: 260,\n                decoration: BoxDecoration(\n                  shape: BoxShape.circle,\n                  border: Border.all(color: Colors.cyanAccent, width: 3),\n                  boxShadow: [\n                    BoxShadow(\n                      color: Colors.cyanAccent.withOpacity(0.4),\n                      spreadRadius: 3,\n                      blurRadius: 12,\n                    ),\n                  ],\n                ),\n              ),\n              SizedBox(height: 30),\n              Text(\n                'Scan QR to unlock',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.cyanAccent,\n                  shadows: [Shadow(color: Colors.cyanAccent, blurRadius: 10)],\n                ),\n              ),\n              Spacer(),\n              FloatingActionButton.extended(\n                onPressed: () {\n                  setState(() {\n                    isFlashOn = !isFlashOn;\n                  });\n                },\n                icon: Icon(\n                  isFlashOn ? Icons.flash_on : Icons.flash_off,\n                  color: Colors.white,\n                ),\n                label: Text('Light', style: TextStyle(color: Colors.white)),\n                backgroundColor: isFlashOn ? Colors.cyanAccent : Colors.grey.shade800,\n              ),\n              SizedBox(height: 20),\n            ],\n          ),\n        ),\n      ),\n      appBar: AppBar(\n        backgroundColor: Colors.transparent,\n        elevation: 0,\n        actions: [\n          IconButton(\n            icon: Icon(Icons.photo_library, color: Colors.white),\n            onPressed: () {},\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "camera",
+    "tags": [
+        "qr",
+        "scanner",
+        "camera",
+        "viewfinder",
+        "flash",
+        "gallery",
+        "futuristic"
+    ],
+    "components": [
+        "Scaffold",
+        "Container",
+        "FloatingActionButton",
+        "Text",
+        "AppBar"
+    ],
+    "layout_type": "Column"
+}

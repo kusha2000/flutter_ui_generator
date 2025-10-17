@@ -1,0 +1,24 @@
+{
+    "prompt": "Orange theme Quiz App",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[100],\n      appBar: AppBar(\n        backgroundColor: Colors.deepOrange[600],\n        title: Text(\n          'History Trivia',\n          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),\n        ),\n        centerTitle: true,\n        elevation: 4,\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(20.0),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.start,\n          children: [\n            SizedBox(height: 16),\n            Text(\n              'Question 3 of 12',\n              style: TextStyle(fontSize: 16, color: Colors.grey[600]),\n            ),\n            SizedBox(height: 8),\n            LinearProgressIndicator(\n              value: 3 / 12,\n              backgroundColor: Colors.grey[300],\n              valueColor: AlwaysStoppedAnimation<Color>(Colors.deepOrange[600]!),\n              minHeight: 5,\n            ),\n            SizedBox(height: 24),\n            Container(\n              padding: EdgeInsets.all(20),\n              decoration: BoxDecoration(\n                color: Colors.white,\n                border: Border.all(color: Colors.deepOrange[600]!, width: 2),\n                borderRadius: BorderRadius.circular(12),\n              ),\n              child: Text(\n                'In which year did World War II end?',\n                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.grey[800]),\n                textAlign: TextAlign.center,\n              ),\n            ),\n            SizedBox(height: 24),\n            Expanded(\n              child: ListView(\n                children: [\n                  _buildAnswerOption('A', '1945', Colors.deepOrange),\n                  SizedBox(height: 16),\n                  _buildAnswerOption('B', '1918', Colors.deepOrange),\n                  SizedBox(height: 16),\n                  _buildAnswerOption('C', '1939', Colors.deepOrange),\n                  SizedBox(height: 16),\n                  _buildAnswerOption('D', '1941', Colors.deepOrange),\n                ],\n              ),\n            ),\n            SizedBox(height: 20),\n            Container(\n              width: double.infinity,\n              height: 56,\n              child: ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.deepOrange[600],\n                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),\n                  elevation: 3,\n                ),\n                child: Text(\n                  'Next Question',\n                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),\n                ),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildAnswerOption(String letter, String answer, MaterialColor color) {\n    return OutlinedButton(\n      onPressed: () {},\n      style: OutlinedButton.styleFrom(\n        side: BorderSide(color: color[600]!, width: 2),\n        padding: EdgeInsets.all(16),\n        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n      ),\n      child: Row(\n        children: [\n          Text(\n            letter,\n            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: color[600]),\n          ),\n          SizedBox(width: 12),\n          Expanded(\n            child: Text(\n              answer,\n              style: TextStyle(fontSize: 18, color: Colors.grey[800]),\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "education",
+    "tags": [
+        "quiz",
+        "education",
+        "history",
+        "multiple-choice",
+        "progress",
+        "buttons"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Column",
+        "Container",
+        "Text",
+        "LinearProgressIndicator",
+        "ListView",
+        "OutlinedButton"
+    ],
+    "layout_type": "Column"
+}

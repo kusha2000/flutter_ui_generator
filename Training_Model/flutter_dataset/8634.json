@@ -1,0 +1,28 @@
+{
+    "prompt": "Nostalgic study flashcards layout",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  bool showAnswer = false;\n  int currentCard = 1;\n  int totalCards = 10;\n  bool isFavorite = false;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFF5E8C7),\n      body: Column(\n        children: [\n          AppBar(\n            backgroundColor: Color(0xFFF5E8C7),\n            elevation: 0,\n            title: Text('Literature Quotes', style: TextStyle(fontFamily: 'SpecialElite', color: Colors.black87, fontSize: 24)),\n            actions: [\n              IconButton(icon: Icon(Icons.settings, color: Colors.red[700]), onPressed: () {}),\n              IconButton(icon: Icon(Icons.menu, color: Colors.red[700]), onPressed: () {}),\n            ],\n          ),\n          Padding(\n            padding: EdgeInsets.all(16),\n            child: Text('Card $currentCard/$totalCards', style: TextStyle(fontFamily: 'Courier', fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black87)),\n          ),\n          Expanded(\n            child: Center(\n              child: Row(\n                mainAxisAlignment: MainAxisAlignment.spaceEvenly,\n                children: [\n                  IconButton(\n                    icon: Icon(Icons.arrow_back, size: 40, color: Colors.black87),\n                    onPressed: () {},\n                  ),\n                  Transform.rotate(\n                    angle: 0.05,\n                    child: Container(\n                      width: 280,\n                      height: 200,\n                      decoration: BoxDecoration(\n                        color: Colors.white,\n                        border: Border.all(color: Colors.black87, width: 4),\n                        boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 8, offset: Offset(2, 2))],\n                      ),\n                      child: Center(\n                        child: Padding(\n                          padding: EdgeInsets.all(20),\n                          child: Text(\n                            showAnswer ? 'To be or not to be' : 'Who said this famous quote?',\n                            style: TextStyle(fontFamily: 'Courier', fontSize: 18, color: Colors.black87),\n                            textAlign: TextAlign.center,\n                          ),\n                        ),\n                      ),\n                    ),\n                  ),\n                  IconButton(\n                    icon: Icon(Icons.arrow_forward, size: 40, color: Colors.black87),\n                    onPressed: () {},\n                  ),\n                ],\n              ),\n            ),\n          ),\n          Padding(\n            padding: EdgeInsets.symmetric(vertical: 20),\n            child: ElevatedButton(\n              onPressed: () {\n                setState(() {\n                  showAnswer = !showAnswer;\n                });\n              },\n              style: ElevatedButton.styleFrom(\n                backgroundColor: Colors.red[700],\n                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 12),\n                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n                shadowColor: Colors.black26,\n                elevation: 5,\n              ),\n              child: Text('Flip', style: TextStyle(color: Colors.white, fontSize: 16)),\n            ),\n          ),\n          Container(\n            padding: EdgeInsets.all(16),\n            child: Row(\n              mainAxisAlignment: MainAxisAlignment.spaceEvenly,\n              children: [\n                FloatingActionButton(\n                  backgroundColor: Colors.red[700],\n                  child: Icon(Icons.shuffle, color: Colors.white),\n                  onPressed: () {},\n                ),\n                FloatingActionButton(\n                  backgroundColor: Colors.red[700],\n                  child: Icon(Icons.refresh, color: Colors.white),\n                  onPressed: () {},\n                ),\n                FloatingActionButton(\n                  backgroundColor: Colors.red[700],\n                  child: Icon(isFavorite ? Icons.favorite : Icons.favorite_border, color: Colors.white),\n                  onPressed: () {\n                    setState(() {\n                      isFavorite = !isFavorite;\n                    });\n                  },\n                ),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "education",
+    "tags": [
+        "flashcards",
+        "study",
+        "retro",
+        "polaroid",
+        "navigation",
+        "progress",
+        "typewriter"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "Text",
+        "IconButton",
+        "ElevatedButton",
+        "FloatingActionButton",
+        "Row",
+        "Column",
+        "Padding",
+        "Transform"
+    ],
+    "layout_type": "Column"
+}

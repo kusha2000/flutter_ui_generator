@@ -1,0 +1,23 @@
+{
+    "prompt": "Minimal Horizontal Notifications UI",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[50],\n      appBar: AppBar(\n        backgroundColor: Colors.grey[50],\n        elevation: 0,\n        title: Text(\n          'Notifications',\n          style: TextStyle(\n            fontSize: 20,\n            fontWeight: FontWeight.w600,\n            color: Colors.grey[800],\n          ),\n        ),\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(16),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.start,\n          children: [\n            SizedBox(\n              height: 200,\n              child: ListView.builder(\n                scrollDirection: Axis.horizontal,\n                itemCount: 10,\n                itemBuilder: (context, index) {\n                  bool isUnread = index < 4;\n                  return Container(\n                    width: 160,\n                    margin: EdgeInsets.only(right: 12),\n                    decoration: BoxDecoration(\n                      color: Colors.white,\n                      borderRadius: BorderRadius.circular(12),\n                      boxShadow: [\n                        BoxShadow(\n                          color: Colors.grey[200]!,\n                          blurRadius: 6,\n                          offset: Offset(0, 2),\n                        ),\n                      ],\n                    ),\n                    child: Padding(\n                      padding: EdgeInsets.all(12),\n                      child: Column(\n                        crossAxisAlignment: CrossAxisAlignment.start,\n                        children: [\n                          Row(\n                            children: [\n                              CircleAvatar(\n                                radius: 16,\n                                backgroundColor: Colors.green[200 + (index * 50) % 400],\n                                child: Icon(\n                                  Icons.person,\n                                  size: 18,\n                                  color: Colors.green[700],\n                                ),\n                              ),\n                              Spacer(),\n                              if (isUnread)\n                                Container(\n                                  width: 8,\n                                  height: 8,\n                                  decoration: BoxDecoration(\n                                    color: Colors.orange,\n                                    shape: BoxShape.circle,\n                                  ),\n                                ),\n                            ],\n                          ),\n                          SizedBox(height: 12),\n                          Text(\n                            'User ${index + 1}',\n                            style: TextStyle(\n                              fontWeight: FontWeight.w600,\n                              fontSize: 14,\n                              color: Colors.grey[800],\n                            ),\n                          ),\n                          SizedBox(height: 6),\n                          Expanded(\n                            child: Text(\n                              'Short notification message here...',\n                              style: TextStyle(\n                                color: Colors.grey[600],\n                                fontSize: 12,\n                              ),\n                              maxLines: 4,\n                              overflow: TextOverflow.ellipsis,\n                            ),\n                          ),\n                          Text(\n                            '${index + 1}m ago',\n                            style: TextStyle(\n                              color: Colors.grey[500],\n                              fontSize: 10,\n                            ),\n                          ),\n                        ],\n                      ),\n                    ),\n                  );\n                },\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "social",
+    "tags": [
+        "notifications",
+        "horizontal-scroll",
+        "compact",
+        "cards",
+        "minimalist",
+        "avatar"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "Column",
+        "CircleAvatar",
+        "Container",
+        "Expanded"
+    ],
+    "layout_type": "Column"
+}

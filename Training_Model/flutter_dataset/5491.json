@@ -1,0 +1,24 @@
+{
+    "prompt": "Clean Terms & Conditions page with emphasis on whitespace and typography.",
+    "flutter_code": "class GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        backgroundColor: Colors.white,\n        elevation: 0,\n        centerTitle: true,\n        title: Text(\n          'Terms & Conditions',\n          style: TextStyle(\n            color: Color(0xFF2D3748),\n            fontSize: 18,\n            fontWeight: FontWeight.w500,\n          ),\n        ),\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back, color: Color(0xFF2D3748)),\n          onPressed: () {},\n        ),\n      ),\n      body: Column(\n        children: [\n          Container(\n            height: 1,\n            color: Color(0xFFE2E8F0),\n          ),\n          Expanded(\n            child: SingleChildScrollView(\n              padding: EdgeInsets.symmetric(horizontal: 32, vertical: 40),\n              child: Column(\n                crossAxisAlignment: CrossAxisAlignment.start,\n                children: [\n                  Text(\n                    'Terms and Conditions of Use',\n                    style: TextStyle(\n                      fontSize: 28,\n                      fontWeight: FontWeight.w300,\n                      color: Color(0xFF1A202C),\n                      letterSpacing: -0.5,\n                    ),\n                  ),\n                  SizedBox(height: 40),\n                  Text(\n                    '1. Acceptance of Terms\\n\\nBy accessing and using this application, you accept and agree to be bound by the terms and provision of this agreement.\\n\\n2. Use License\\n\\nPermission is granted to temporarily download one copy of the materials on our application for personal, non-commercial transitory viewing only.\\n\\n3. Disclaimer\\n\\nThe materials on our application are provided on an \\'as is\\' basis. We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties.\\n\\n4. Limitations\\n\\nIn no event shall our company or its suppliers be liable for any damages arising out of the inability to use the materials on our application.\\n\\n5. Privacy Policy\\n\\nYour personal information will be handled in accordance with our Privacy Policy, which is incorporated into these terms by reference.',\n                    style: TextStyle(\n                      fontSize: 16,\n                      height: 1.8,\n                      color: Color(0xFF4A5568),\n                      fontWeight: FontWeight.w400,\n                    ),\n                  ),\n                ],\n              ),\n            ),\n          ),\n          Container(\n            padding: EdgeInsets.fromLTRB(32, 24, 32, 40),\n            child: Row(\n              children: [\n                Expanded(\n                  child: TextButton(\n                    onPressed: () {},\n                    style: TextButton.styleFrom(\n                      foregroundColor: Color(0xFF718096),\n                      padding: EdgeInsets.symmetric(vertical: 18),\n                    ),\n                    child: Text('Decline', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),\n                  ),\n                ),\n                SizedBox(width: 24),\n                Expanded(\n                  child: ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Color(0xFF2D3748),\n                      foregroundColor: Colors.white,\n                      padding: EdgeInsets.symmetric(vertical: 18),\n                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),\n                      elevation: 0,\n                    ),\n                    child: Text('Accept', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),\n                  ),\n                ),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "legal",
+    "tags": [
+        "terms",
+        "conditions",
+        "minimalist",
+        "clean",
+        "typography",
+        "whitespace",
+        "flat-design"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "SingleChildScrollView",
+        "Text",
+        "TextButton",
+        "ElevatedButton",
+        "Container"
+    ],
+    "layout_type": "Column"
+}

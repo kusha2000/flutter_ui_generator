@@ -1,0 +1,21 @@
+{
+    "prompt": "Simple vertical friend requests with avatars and Accept buttons.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[100],\n      appBar: AppBar(\n        backgroundColor: Colors.grey[100],\n        elevation: 0,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back, color: Colors.black),\n          onPressed: () {},\n        ),\n        title: Text(\n          'Friend Requests',\n          style: TextStyle(\n            color: Colors.black,\n            fontSize: 18,\n            fontWeight: FontWeight.w500,\n          ),\n        ),\n        centerTitle: true,\n      ),\n      body: ListView.builder(\n        padding: EdgeInsets.all(8),\n        itemCount: 5,\n        itemBuilder: (context, index) {\n          List<String> names = ['Henry Adams', 'Grace Kim', 'Jacob Lee', 'Lily Chen', 'Owen Patel'];\n          List<int> mutualFriends = [5, 10, 7, 12, 9];\n          return Container(\n            margin: EdgeInsets.only(bottom: 8),\n            padding: EdgeInsets.all(8),\n            decoration: BoxDecoration(\n              color: Colors.white,\n              borderRadius: BorderRadius.circular(0),\n              boxShadow: [\n                BoxShadow(\n                  color: Colors.grey.withOpacity(0.05),\n                  spreadRadius: 1,\n                  blurRadius: 4,\n                  offset: Offset(0, 1),\n                ),\n              ],\n            ),\n            child: Row(\n              children: [\n                CircleAvatar(\n                  radius: 20,\n                  backgroundColor: Colors.purple[100],\n                  child: Text(\n                    names[index][0],\n                    style: TextStyle(\n                      fontSize: 16,\n                      fontWeight: FontWeight.bold,\n                      color: Colors.purple[700],\n                    ),\n                  ),\n                ),\n                SizedBox(width: 8),\n                Expanded(\n                  child: Column(\n                    crossAxisAlignment: CrossAxisAlignment.start,\n                    children: [\n                      Text(\n                        names[index],\n                        style: TextStyle(\n                          fontSize: 14,\n                          fontWeight: FontWeight.w500,\n                          color: Colors.black87,\n                        ),\n                      ),\n                      Text(\n                        '${mutualFriends[index]} mutual friends',\n                        style: TextStyle(\n                          fontSize: 12,\n                          color: Colors.grey[600],\n                        ),\n                      ),\n                    ],\n                  ),\n                ),\n                SizedBox(width: 8),\n                ElevatedButton(\n                  onPressed: () {},\n                  style: ElevatedButton.styleFrom(\n                    backgroundColor: Colors.purple,\n                    foregroundColor: Colors.white,\n                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),\n                    shape: RoundedRectangleBorder(\n                      borderRadius: BorderRadius.circular(4),\n                    ),\n                  ),\n                  child: Text('Accept', style: TextStyle(fontSize: 10)),\n                ),\n              ],\n            ),\n          );\n        },\n      ),\n    );\n  }\n}",
+    "category": "social",
+    "tags": [
+        "friend_requests",
+        "social_media",
+        "compact",
+        "list",
+        "cards",
+        "button"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "CircleAvatar",
+        "ElevatedButton"
+    ],
+    "layout_type": "Column"
+}

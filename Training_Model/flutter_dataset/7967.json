@@ -1,0 +1,23 @@
+{
+    "prompt": "Create the Dark Map",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Dark Map'),\n        backgroundColor: Colors.black,\n        foregroundColor: Colors.white,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back),\n          onPressed: () {},\n        ),\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(4),\n        child: Container(\n          width: double.infinity,\n          height: double.infinity,\n          color: Colors.grey[900],\n          child: Stack(\n            children: [\n              Center(\n                child: Column(\n                  mainAxisAlignment: MainAxisAlignment.center,\n                  children: [\n                    Icon(\n                      Icons.map,\n                      size: 100,\n                      color: Colors.grey[400],\n                    ),\n                    SizedBox(height: 16),\n                    Text(\n                      'Map View Area',\n                      style: TextStyle(\n                        fontSize: 18,\n                        color: Colors.grey[400],\n                      ),\n                    ),\n                  ],\n                ),\n              ),\n              Container(\n                decoration: BoxDecoration(\n                  color: Colors.white.withOpacity(0.1),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {},\n        backgroundColor: Colors.grey[900],\n        child: Icon(\n          Icons.my_location,\n          color: Colors.green,\n        ),\n      ),\n      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "map",
+        "navigation",
+        "location",
+        "gps",
+        "dark-theme",
+        "floating-action-button"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "Stack",
+        "FloatingActionButton",
+        "Icon",
+        "Text"
+    ],
+    "layout_type": "Scaffold"
+}

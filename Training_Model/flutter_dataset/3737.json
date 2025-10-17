@@ -1,0 +1,25 @@
+{
+    "prompt": "Build a lightweight mobile user role page with minimal padding, small circular avatars, single-column list, colored role indicators on the right, and small outlined 'Edit Role' buttons.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        title: Text('User Role Management', style: TextStyle(color: Colors.black)),\n        backgroundColor: Colors.white,\n        elevation: 1,\n        actions: [\n          IconButton(\n            icon: Icon(Icons.settings, color: Colors.black),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      body: Column(\n        children: [\n          Padding(\n            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),\n            child: TextField(\n              decoration: InputDecoration(\n                hintText: 'Search',\n                prefixIcon: Icon(Icons.search, color: Colors.grey[600]),\n                border: OutlineInputBorder(\n                  borderRadius: BorderRadius.circular(8),\n                  borderSide: BorderSide(color: Colors.grey[300]!),\n                ),\n                focusedBorder: OutlineInputBorder(\n                  borderRadius: BorderRadius.circular(8),\n                  borderSide: BorderSide(color: Colors.blue[600]!),\n                ),\n                fillColor: Colors.grey[100],\n                filled: true,\n              ),\n            ),\n          ),\n          Expanded(\n            child: ListView(\n              padding: EdgeInsets.symmetric(horizontal: 12),\n              children: [\n                _buildUserCard('Alice Brown', 'alice.brown@company.com', 'Admin', Colors.red[600]!),\n                _buildUserCard('Bob Wilson', 'bob.wilson@company.com', 'Editor', Colors.blue[600]!),\n                _buildUserCard('Clara Davis', 'clara.davis@company.com', 'Viewer', Colors.green[600]!),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n\n  Widget _buildUserCard(String name, String email, String role, Color roleColor) {\n    return Card(\n      margin: EdgeInsets.only(bottom: 8),\n      elevation: 2,\n      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n      child: Padding(\n        padding: EdgeInsets.all(8),\n        child: Row(\n          children: [\n            CircleAvatar(\n              radius: 20,\n              backgroundColor: Colors.grey[300],\n              child: Icon(Icons.person, color: Colors.grey[700], size: 24),\n            ),\n            SizedBox(width: 12),\n            Expanded(\n              child: Column(\n                crossAxisAlignment: CrossAxisAlignment.start,\n                children: [\n                  Text(\n                    name,\n                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),\n                  ),\n                  SizedBox(height: 4),\n                  Text(\n                    email,\n                    style: TextStyle(fontSize: 12, color: Colors.grey[600]),\n                  ),\n                  SizedBox(height: 8),\n                  OutlinedButton(\n                    onPressed: () {},\n                    child: Text('Edit Role', style: TextStyle(fontSize: 12)),\n                    style: OutlinedButton.styleFrom(\n                      side: BorderSide(color: Colors.blue[600]!),\n                      shape: RoundedRectangleBorder(\n                        borderRadius: BorderRadius.circular(15),\n                      ),\n                    ),\n                  ),\n                ],\n              ),\n            ),\n            Container(\n              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),\n              decoration: BoxDecoration(\n                color: roleColor,\n                borderRadius: BorderRadius.circular(12),\n              ),\n              child: Text(\n                role,\n                style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.w500),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "admin_dashboard",
+    "tags": [
+        "user_management",
+        "roles",
+        "permissions",
+        "admin",
+        "search",
+        "cards",
+        "list",
+        "mobile"
+    ],
+    "components": [
+        "AppBar",
+        "TextField",
+        "ListView",
+        "Card",
+        "CircleAvatar",
+        "OutlinedButton",
+        "Container"
+    ],
+    "layout_type": "Column"
+}

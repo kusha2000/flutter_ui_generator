@@ -1,0 +1,24 @@
+{
+    "prompt": "Neon theme notifications card",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.black,\n      appBar: AppBar(\n        backgroundColor: Colors.black,\n        elevation: 0,\n        title: Text(\n          'Notifications',\n          style: TextStyle(\n            fontSize: 26,\n            fontWeight: FontWeight.bold,\n            color: Colors.cyanAccent,\n          ),\n        ),\n      ),\n      body: ListView.builder(\n        padding: EdgeInsets.all(16),\n        itemCount: 10,\n        itemBuilder: (context, index) {\n          bool isUnread = index % 2 == 1;\n          return Container(\n            margin: EdgeInsets.only(bottom: 12),\n            decoration: BoxDecoration(\n              border: Border.all(color: Colors.cyanAccent, width: 1),\n              borderRadius: BorderRadius.circular(0),\n              boxShadow: [\n                BoxShadow(\n                  color: Colors.cyanAccent.withOpacity(0.3),\n                  blurRadius: 8,\n                  spreadRadius: 1,\n                ),\n              ],\n            ),\n            child: ListTile(\n              contentPadding: EdgeInsets.all(16),\n              leading: Stack(\n                children: [\n                  CircleAvatar(\n                    radius: 24,\n                    backgroundImage: LinearGradient(\n                      colors: [Colors.cyan, Colors.purple],\n                    ).createShader(Rect.fromCircle(center: Offset(24, 24), radius: 24)),\n                    child: Icon(Icons.person, color: Colors.white),\n                  ),\n                  if (isUnread)\n                    Positioned(\n                      right: 0,\n                      top: 0,\n                      child: Container(\n                        width: 10,\n                        height: 10,\n                        decoration: BoxDecoration(\n                          color: Colors.pinkAccent,\n                          shape: BoxShape.circle,\n                        ),\n                      ),\n                    ),\n                ],\n              ),\n              title: Text(\n                'User ${index + 1}',\n                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),\n              ),\n              subtitle: Text(\n                'System alert...',\n                style: TextStyle(color: Colors.cyan[200], fontSize: 14),\n              ),\n              trailing: Text(\n                '${index + 1} min ago',\n                style: TextStyle(color: Colors.greenAccent, fontSize: 12),\n              ),\n            ),\n          );\n        },\n      ),\n    );\n  }\n}",
+    "category": "social",
+    "tags": [
+        "notifications",
+        "list",
+        "cards",
+        "avatar",
+        "timestamps",
+        "scrollable",
+        "futuristic"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "ListTile",
+        "CircleAvatar",
+        "Container",
+        "BoxShadow"
+    ],
+    "layout_type": "ListView"
+}

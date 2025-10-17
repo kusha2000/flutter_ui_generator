@@ -1,0 +1,22 @@
+{
+    "prompt": "Create a compact chat list page with a light gray background and a slim app bar with the title 'Chats' in bold black text and a search icon. Each chat item in the scrollable list should be tightly packed with a 40px circular profile picture on the left, contact name in bold dark gray text, message preview in smaller gray text below, and timestamp in tiny gray text on the right. Use a faint divider line and minimal 8px padding per item. Ensure a dense, efficient layout with smooth scrolling and responsive design.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Chats', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),\n        backgroundColor: Colors.grey[200],\n        elevation: 1,\n        actions: [\n          IconButton(\n            icon: Icon(Icons.search, color: Colors.black),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      backgroundColor: Colors.grey[100],\n      body: ListView.separated(\n        itemCount: 15,\n        separatorBuilder: (context, index) => Divider(height: 1, color: Colors.grey[300]),\n        itemBuilder: (context, index) {\n          return ListTile(\n            contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),\n            leading: CircleAvatar(\n              radius: 20,\n              backgroundColor: Colors.grey[300],\n              child: Text('U${index + 1}', style: TextStyle(color: Colors.grey[800])),\n            ),\n            title: Text(\n              'User ${index + 1}',\n              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.grey[800]),\n            ),\n            subtitle: Text(\n              'Hey there! How are you doing today?',\n              style: TextStyle(color: Colors.grey[600], fontSize: 12),\n              maxLines: 1,\n              overflow: TextOverflow.ellipsis,\n            ),\n            trailing: Text(\n              '12:${(index % 60).toString().padLeft(2, '0')}',\n              style: TextStyle(color: Colors.grey[500], fontSize: 10),\n            ),\n            onTap: () {},\n          );\n        },\n      ),\n    );\n  }\n}",
+    "category": "messaging",
+    "tags": [
+        "chat",
+        "list",
+        "compact",
+        "messaging",
+        "efficient"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "ListTile",
+        "CircleAvatar",
+        "Text",
+        "IconButton"
+    ],
+    "layout_type": "ListView"
+}

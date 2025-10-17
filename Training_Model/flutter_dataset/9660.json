@@ -1,0 +1,23 @@
+{
+    "prompt": "White PIN lock screen",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  String pin = '';\n  final int pinLength = 4;\n\n  void _onNumberPressed(String number) {\n    if (pin.length < pinLength) {\n      setState(() {\n        pin += number;\n      });\n    }\n  }\n\n  void _onDeletePressed() {\n    if (pin.isNotEmpty) {\n      setState(() {\n        pin = pin.substring(0, pin.length - 1);\n      });\n    }\n  }\n\n  Widget _buildPinCircle(bool filled) {\n    return Container(\n      width: 60,\n      height: 60,\n      decoration: BoxDecoration(\n        shape: BoxShape.circle,\n        border: Border.all(color: Colors.grey[300]!, width: 2),\n        color: filled ? Colors.blue : Colors.transparent,\n      ),\n      child: filled ? Icon(Icons.circle, color: Colors.blue, size: 20) : null,\n    );\n  }\n\n  Widget _buildKeypadButton(String text, {VoidCallback? onPressed}) {\n    return Container(\n      width: 70,\n      height: 70,\n      child: ElevatedButton(\n        onPressed: onPressed,\n        style: ElevatedButton.styleFrom(\n          backgroundColor: Colors.grey[100],\n          foregroundColor: Colors.black,\n          shape: CircleBorder(),\n          elevation: 2,\n        ),\n        child: Text(text, style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500)),\n      ),\n    );\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: Padding(\n        padding: EdgeInsets.all(20),\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            Icon(Icons.lock, size: 80, color: Colors.blue),\n            SizedBox(height: 30),\n            Text('App Locked', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.black)),\n            SizedBox(height: 10),\n            Text('Enter your PIN to unlock', style: TextStyle(fontSize: 16, color: Colors.grey[600])),\n            SizedBox(height: 50),\n            Row(\n              mainAxisAlignment: MainAxisAlignment.center,\n              children: List.generate(pinLength, (index) => Padding(\n                padding: EdgeInsets.symmetric(horizontal: 10),\n                child: _buildPinCircle(index < pin.length),\n              )),\n            ),\n            SizedBox(height: 50),\n            GridView.builder(\n              shrinkWrap: true,\n              physics: NeverScrollableScrollPhysics(),\n              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(\n                crossAxisCount: 3,\n                crossAxisSpacing: 20,\n                mainAxisSpacing: 20,\n                childAspectRatio: 1,\n              ),\n              itemCount: 12,\n              itemBuilder: (context, index) {\n                if (index < 9) {\n                  String number = (index + 1).toString();\n                  return _buildKeypadButton(number, onPressed: () => _onNumberPressed(number));\n                } else if (index == 9) {\n                  return Container();\n                } else if (index == 10) {\n                  return _buildKeypadButton('0', onPressed: () => _onNumberPressed('0'));\n                } else {\n                  return _buildKeypadButton('⌫', onPressed: _onDeletePressed);\n                }\n              },\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "security",
+    "tags": [
+        "app_lock",
+        "pin",
+        "authentication",
+        "security",
+        "keypad"
+    ],
+    "components": [
+        "Scaffold",
+        "Column",
+        "Icon",
+        "Text",
+        "Container",
+        "ElevatedButton",
+        "GridView",
+        "Row"
+    ],
+    "layout_type": "Column"
+}

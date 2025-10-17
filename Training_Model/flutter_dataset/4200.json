@@ -1,0 +1,22 @@
+{
+    "prompt": "Minimalist onboarding with illustration and buttons.",
+    "flutter_code": "class GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: SafeArea(\n        child: Padding(\n          padding: const EdgeInsets.all(24.0),\n          child: Column(\n            children: [\n              Expanded(\n                flex: 4,\n                child: Container(\n                  width: double.infinity,\n                  decoration: BoxDecoration(\n                    color: Colors.grey[100],\n                    borderRadius: BorderRadius.circular(16),\n                  ),\n                  child: Icon(\n                    Icons.rocket_launch,\n                    size: 120,\n                    color: Colors.blue,\n                  ),\n                ),\n              ),\n              SizedBox(height: 32),\n              Text(\n                'Welcome to Our App',\n                style: TextStyle(\n                  fontSize: 28,\n                  fontWeight: FontWeight.bold,\n                  color: Colors.grey[800],\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Discover amazing features and enhance your productivity with our innovative solution designed just for you.',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.grey[600],\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 48),\n              SizedBox(\n                width: double.infinity,\n                height: 56,\n                child: ElevatedButton(\n                  onPressed: () {},\n                  style: ElevatedButton.styleFrom(\n                    backgroundColor: Colors.blue,\n                    shape: RoundedRectangleBorder(\n                      borderRadius: BorderRadius.circular(12),\n                    ),\n                  ),\n                  child: Text(\n                    'Get Started',\n                    style: TextStyle(\n                      fontSize: 18,\n                      fontWeight: FontWeight.w600,\n                      color: Colors.white,\n                    ),\n                  ),\n                ),\n              ),\n              SizedBox(height: 16),\n              TextButton(\n                onPressed: () {},\n                child: Text(\n                  'Skip',\n                  style: TextStyle(\n                    fontSize: 16,\n                    color: Colors.grey[600],\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "onboarding",
+    "tags": [
+        "onboarding",
+        "welcome",
+        "introduction",
+        "get-started",
+        "skip"
+    ],
+    "components": [
+        "Container",
+        "Icon",
+        "Text",
+        "ElevatedButton",
+        "TextButton",
+        "Column",
+        "SafeArea"
+    ],
+    "layout_type": "Column"
+}

@@ -1,0 +1,22 @@
+{
+    "prompt": "Build vibrant profile page with gradient background, circular white-bordered avatar, user info text, and three horizontal circular purple buttons.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            colors: [Colors.purple, Colors.pink],\n            begin: Alignment.topCenter,\n            end: Alignment.bottomCenter,\n          ),\n        ),\n        child: Center(\n          child: Padding(\n            padding: const EdgeInsets.all(40.0),\n            child: Column(\n              mainAxisAlignment: MainAxisAlignment.center,\n              crossAxisAlignment: CrossAxisAlignment.center,\n              children: [\n                Container(\n                  width: 160,\n                  height: 160,\n                  decoration: BoxDecoration(\n                    shape: BoxShape.circle,\n                    border: Border.all(color: Colors.white, width: 4),\n                  ),\n                  child: CircleAvatar(\n                    radius: 80,\n                    backgroundColor: Colors.white70,\n                    child: Icon(\n                      Icons.person,\n                      size: 80,\n                      color: Colors.purple[900],\n                    ),\n                  ),\n                ),\n                SizedBox(height: 30),\n                Text(\n                  'Michael Brown',\n                  style: TextStyle(\n                    fontSize: 32,\n                    fontWeight: FontWeight.bold,\n                    color: Colors.white,\n                  ),\n                ),\n                SizedBox(height: 10),\n                Text(\n                  'michael.brown@example.com',\n                  style: TextStyle(\n                    fontSize: 18,\n                    color: Colors.pink[100],\n                  ),\n                ),\n                SizedBox(height: 40),\n                Row(\n                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,\n                  children: [\n                    ElevatedButton(\n                      onPressed: () {},\n                      style: ElevatedButton.styleFrom(\n                        backgroundColor: Colors.purple,\n                        foregroundColor: Colors.white,\n                        shape: CircleBorder(),\n                        padding: EdgeInsets.all(15),\n                        minimumSize: Size(50, 50),\n                      ),\n                      child: Text('Edit'),\n                    ),\n                    ElevatedButton(\n                      onPressed: () {},\n                      style: ElevatedButton.styleFrom(\n                        backgroundColor: Colors.purple,\n                        foregroundColor: Colors.white,\n                        shape: CircleBorder(),\n                        padding: EdgeInsets.all(15),\n                        minimumSize: Size(50, 50),\n                      ),\n                      child: Text('Settings'),\n                    ),\n                    ElevatedButton(\n                      onPressed: () {},\n                      style: ElevatedButton.styleFrom(\n                        backgroundColor: Colors.purple,\n                        foregroundColor: Colors.white,\n                        shape: CircleBorder(),\n                        padding: EdgeInsets.all(15),\n                        minimumSize: Size(50, 50),\n                      ),\n                      child: Text('Logout'),\n                    ),\n                  ],\n                ),\n              ],\n            ),\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "profile",
+    "tags": [
+        "profile",
+        "user",
+        "avatar",
+        "buttons",
+        "gradient",
+        "vibrant"
+    ],
+    "components": [
+        "CircleAvatar",
+        "Text",
+        "ElevatedButton",
+        "Container",
+        "Row",
+        "Column"
+    ],
+    "layout_type": "Column"
+}

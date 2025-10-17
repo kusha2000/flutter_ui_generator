@@ -1,0 +1,25 @@
+{
+    "prompt": "Premium staggered categories page with gradient cards",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFF1A237E),\n      appBar: AppBar(\n        backgroundColor: Colors.transparent,\n        elevation: 0,\n        title: Text(\n          'Product Categories',\n          style: TextStyle(\n            color: Colors.amber[300],\n            fontSize: 22,\n            fontWeight: FontWeight.bold,\n          ),\n        ),\n        centerTitle: true,\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(16.0),\n        child: Column(\n          children: [\n            Row(\n              children: [\n                Expanded(\n                  child: _buildCategoryCard(\n                    Icons.shopping_bag,\n                    'Electronics',\n                    [Colors.blue[600]!, Colors.purple[600]!],\n                    140,\n                  ),\n                ),\n                SizedBox(width: 12),\n                Expanded(\n                  child: _buildCategoryCard(\n                    Icons.headphones,\n                    'Audio',\n                    [Colors.green[600]!, Colors.teal[600]!],\n                    120,\n                  ),\n                ),\n              ],\n            ),\n            SizedBox(height: 12),\n            Row(\n              children: [\n                Expanded(\n                  child: _buildCategoryCard(\n                    Icons.laptop,\n                    'Computers',\n                    [Colors.orange[600]!, Colors.red[600]!],\n                    120,\n                  ),\n                ),\n                SizedBox(width: 12),\n                Expanded(\n                  child: _buildCategoryCard(\n                    Icons.checkroom,\n                    'Fashion',\n                    [Colors.pink[600]!, Colors.purple[600]!],\n                    140,\n                  ),\n                ),\n              ],\n            ),\n            SizedBox(height: 12),\n            Row(\n              children: [\n                Expanded(\n                  child: _buildCategoryCard(\n                    Icons.book,\n                    'Books',\n                    [Colors.yellow[700]!, Colors.orange[700]!],\n                    130,\n                  ),\n                ),\n                SizedBox(width: 12),\n                Expanded(\n                  child: _buildCategoryCard(\n                    Icons.home,\n                    'Home',\n                    [Colors.teal[600]!, Colors.blue[600]!],\n                    130,\n                  ),\n                ),\n              ],\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildCategoryCard(IconData icon, String title, List<Color> gradientColors, double height) {\n    return Container(\n      height: height,\n      decoration: BoxDecoration(\n        gradient: LinearGradient(\n          begin: Alignment.topLeft,\n          end: Alignment.bottomRight,\n          colors: gradientColors,\n        ),\n        borderRadius: BorderRadius.circular(16),\n        border: Border.all(\n          color: Colors.amber[300]!.withOpacity(0.3),\n          width: 1,\n        ),\n        boxShadow: [\n          BoxShadow(\n            color: gradientColors[0].withOpacity(0.3),\n            blurRadius: 8,\n            offset: Offset(0, 4),\n          ),\n        ],\n      ),\n      child: Column(\n        mainAxisAlignment: MainAxisAlignment.center,\n        children: [\n          Icon(\n            icon,\n            size: 40,\n            color: Colors.white,\n          ),\n          SizedBox(height: 12),\n          Text(\n            title,\n            style: TextStyle(\n              fontSize: 15,\n              fontWeight: FontWeight.bold,\n              color: Colors.white,\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "e-commerce",
+    "tags": [
+        "categories",
+        "gradient",
+        "staggered",
+        "premium",
+        "navy",
+        "gold",
+        "luxurious"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Column",
+        "Row",
+        "Container",
+        "Icon",
+        "Text",
+        "LinearGradient"
+    ],
+    "layout_type": "Column"
+}

@@ -1,0 +1,22 @@
+{
+    "prompt": "Create a vibrant onboarding screen with a pink gradient background (from Colors.pink[400] to Colors.pink[100]). Feature a rounded square illustration at the top (using a Container with 16px border radius) occupying 30% of the screen height, filled with a soft white (Colors.white70). Place a pink icon (Icons.music_note, size 90) in the center. Below, add a bold heading in white (font size 24px, FontWeight.w800) with the text 'Feel the Beat'. Include a subtitle in light pink (Colors.pink[200], font size 14px) describing the app’s music features. At the bottom, include a pink 'Start Vibing' button (Colors.pink[600], 10px radius) and a 'Skip' text button in white. Use 20px padding, center-align text, and add 16px spacing for a lively, energetic look.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            begin: Alignment.topCenter,\n            end: Alignment.bottomCenter,\n            colors: [Colors.pink[400]!, Colors.pink[100]!],\n          ),\n        ),\n        child: SafeArea(\n          child: Padding(\n            padding: const EdgeInsets.all(20.0),\n            child: Column(\n              mainAxisAlignment: MainAxisAlignment.center,\n              children: [\n                Expanded(\n                  flex: 3,\n                  child: Container(\n                    decoration: BoxDecoration(\n                      color: Colors.white70,\n                      borderRadius: BorderRadius.circular(16),\n                    ),\n                    child: Icon(\n                      Icons.music_note,\n                      size: 90,\n                      color: Colors.pink[600],\n                    ),\n                  ),\n                ),\n                SizedBox(height: 16),\n                Text(\n                  'Feel the Beat',\n                  style: TextStyle(\n                    fontSize: 24,\n                    fontWeight: FontWeight.w800,\n                    color: Colors.white,\n                  ),\n                  textAlign: TextAlign.center,\n                ),\n                SizedBox(height: 16),\n                Text(\n                  'Enjoy music like never before with our app.',\n                  style: TextStyle(\n                    fontSize: 14,\n                    color: Colors.pink[200],\n                  ),\n                  textAlign: TextAlign.center,\n                ),\n                SizedBox(height: 16),\n                SizedBox(\n                  width: double.infinity,\n                  height: 48,\n                  child: ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Colors.pink[600],\n                      shape: RoundedRectangleBorder(\n                        borderRadius: BorderRadius.circular(10),\n                      ),\n                    ),\n                    child: Text(\n                      'Start Vibing',\n                      style: TextStyle(\n                        fontSize: 16,\n                        color: Colors.white,\n                      ),\n                    ),\n                  ),\n                ),\n                SizedBox(height: 16),\n                TextButton(\n                  onPressed: () {},\n                  child: Text(\n                    'Skip',\n                    style: TextStyle(\n                      fontSize: 16,\n                      color: Colors.white,\n                    ),\n                  ),\n                ),\n              ],\n            ),\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "onboarding",
+    "tags": [
+        "onboarding",
+        "vibrant",
+        "music",
+        "start-vibing",
+        "skip"
+    ],
+    "components": [
+        "Container",
+        "Icon",
+        "Text",
+        "ElevatedButton",
+        "TextButton",
+        "Column",
+        "SafeArea"
+    ],
+    "layout_type": "Column"
+}

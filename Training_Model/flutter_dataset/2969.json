@@ -1,0 +1,24 @@
+{
+    "prompt": "Travel map page with deep purple app bar titled 'Travel Map', hamburger drawer with three items (Home, Map, Settings), and bottom-center FAB with amber GPS icon. Map area has light purple background and rounded corners for a clean Material Design interface.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Travel Map'),\n        backgroundColor: Colors.deepPurple,\n        foregroundColor: Colors.white,\n        leading: Builder(\n          builder: (context) => IconButton(\n            icon: Icon(Icons.menu),\n            onPressed: () => Scaffold.of(context).openDrawer(),\n          ),\n        ),\n      ),\n      drawer: Drawer(\n        child: ListView(\n          padding: EdgeInsets.zero,\n          children: [\n            DrawerHeader(\n              decoration: BoxDecoration(color: Colors.deepPurple),\n              child: Text(\n                'Menu',\n                style: TextStyle(color: Colors.white, fontSize: 24),\n              ),\n            ),\n            ListTile(title: Text('Home'), onTap: () {}),\n            ListTile(title: Text('Map'), onTap: () {}),\n            ListTile(title: Text('Settings'), onTap: () {}),\n          ],\n        ),\n      ),\n      body: Container(\n        width: double.infinity,\n        height: double.infinity,\n        decoration: BoxDecoration(\n          color: Colors.purple[100],\n          borderRadius: BorderRadius.circular(8),\n        ),\n        child: Center(\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Icon(\n                Icons.map,\n                size: 100,\n                color: Colors.purple[600],\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Map View Area',\n                style: TextStyle(\n                  fontSize: 18,\n                  color: Colors.purple[600],\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {},\n        backgroundColor: Colors.white,\n        child: Icon(\n          Icons.my_location,\n          color: Colors.amber,\n        ),\n      ),\n      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "map",
+        "navigation",
+        "location",
+        "gps",
+        "drawer",
+        "floating-action-button"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Drawer",
+        "Container",
+        "FloatingActionButton",
+        "Icon",
+        "Text",
+        "ListView"
+    ],
+    "layout_type": "Scaffold"
+}

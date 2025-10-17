@@ -1,0 +1,22 @@
+{
+    "prompt": "Glowing blue header chats",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Chats', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),\n        backgroundColor: Colors.blue[900],\n        elevation: 2,\n        actions: [\n          IconButton(\n            icon: Icon(Icons.search, color: Colors.white),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      backgroundColor: Color(0xFF0A0E21),\n      body: ListView.separated(\n        itemCount: 15,\n        separatorBuilder: (context, index) => Divider(height: 1, color: Colors.blue[800]),\n        itemBuilder: (context, index) {\n          return ListTile(\n            contentPadding: EdgeInsets.symmetric(horizontal: 14, vertical: 7),\n            leading: Container(\n              width: 50,\n              height: 50,\n              child: CustomPaint(\n                painter: HexagonPainter(),\n                child: Center(child: Text('U${index + 1}', style: TextStyle(color: Colors.blue[200]))),\n              ),\n            ),\n            title: Text(\n              'User ${index + 1}',\n              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),\n            ),\n            subtitle: Text(\n              'Hey there! How are you doing today?',\n              style: TextStyle(color: Colors.blue[300], fontSize: 14),\n              maxLines: 1,\n              overflow: TextOverflow.ellipsis,\n            ),\n            trailing: Text(\n              '12:${(index % 60).toString().padLeft(2, '0')}',\n              style: TextStyle(color: Colors.blue[300], fontSize: 12),\n            ),\n            onTap: () {},\n          );\n        },\n      ),\n    );\n  }\n}\n\nclass HexagonPainter extends CustomPainter {\n  @override\n  void paint(Canvas canvas, Size size) {\n    final paint = Paint()..color = Colors.blue[800]!;\n    final path = Path();\n    final center = Offset(size.width / 2, size.height / 2);\n    final radius = size.width / 2;\n    for (int i = 0; i < 6; i++) {\n      final angle = (math.pi / 3) * i;\n      final x = center.dx + radius * math.cos(angle);\n      final y = center.dy + radius * math.sin(angle);\n      if (i == 0) {\n        path.moveTo(x, y);\n      } else {\n        path.lineTo(x, y);\n      }\n    }\n    path.close();\n    canvas.drawPath(path, paint);\n  }\n\n  @override\n  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;\n}",
+    "category": "messaging",
+    "tags": [
+        "chat",
+        "list",
+        "futuristic",
+        "messaging",
+        "neon"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "ListTile",
+        "CustomPaint",
+        "Text",
+        "IconButton"
+    ],
+    "layout_type": "ListView"
+}

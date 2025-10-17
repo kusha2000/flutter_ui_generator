@@ -1,0 +1,21 @@
+{
+    "prompt": "Build a dark blue 404 page: white '404', light blue subtitle, white70 message, white button, progress indicator above, centered Column layout.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.blue[900],\n      body: Padding(\n        padding: const EdgeInsets.all(24.0),\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          crossAxisAlignment: CrossAxisAlignment.center,\n          children: [\n            CircularProgressIndicator(\n              color: Colors.blue[200],\n            ),\n            SizedBox(height: 20),\n            Text(\n              '404',\n              style: TextStyle(\n                fontSize: 78,\n                fontWeight: FontWeight.bold,\n                color: Colors.white,\n              ),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Page Not Found',\n              style: TextStyle(\n                fontSize: 28,\n                fontWeight: FontWeight.w600,\n                color: Colors.blue[200],\n              ),\n            ),\n            SizedBox(height: 20),\n            Text(\n              'This page is missing or has been moved.',\n              textAlign: TextAlign.center,\n              style: TextStyle(\n                fontSize: 16,\n                color: Colors.white70,\n                height: 1.5,\n              ),\n            ),\n            SizedBox(height: 24),\n            ElevatedButton(\n              onPressed: () {},\n              style: ElevatedButton.styleFrom(\n                backgroundColor: Colors.white,\n                foregroundColor: Colors.blue[900],\n                padding: EdgeInsets.symmetric(horizontal: 32, vertical: 14),\n                shape: RoundedRectangleBorder(\n                  borderRadius: BorderRadius.circular(10),\n                ),\n              ),\n              child: Text(\n                'Home',\n                style: TextStyle(fontSize: 16),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "error_pages",
+    "tags": [
+        "404",
+        "error",
+        "not_found",
+        "dark_theme",
+        "button",
+        "progress_indicator"
+    ],
+    "components": [
+        "Text",
+        "ElevatedButton",
+        "Column",
+        "Scaffold",
+        "CircularProgressIndicator"
+    ],
+    "layout_type": "Column"
+}

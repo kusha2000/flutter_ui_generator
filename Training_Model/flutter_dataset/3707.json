@@ -1,0 +1,29 @@
+{
+    "prompt": "Vibrant reviews page with circular image, playful title, green price, rating, colorful review cards, and orange add button at bottom-center.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Product Reviews', style: TextStyle(fontFamily: 'Pacifico')),\n        backgroundColor: Colors.teal,\n        foregroundColor: Colors.white,\n        elevation: 2,\n      ),\n      body: SingleChildScrollView(\n        padding: EdgeInsets.all(16),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.center,\n          children: [\n            ClipOval(\n              child: Container(\n                height: 150,\n                width: 150,\n                color: Colors.grey[200],\n                child: Icon(Icons.image, size: 50, color: Colors.grey[400]),\n              ),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Premium Wireless Earbuds',\n              style: TextStyle(fontSize: 26, fontFamily: 'Pacifico', color: Colors.black),\n            ),\n            SizedBox(height: 8),\n            Text(\n              '99.99',\n              style: TextStyle(fontSize: 22, color: Colors.green, fontWeight: FontWeight.w600),\n            ),\n            SizedBox(height: 8),\n            Row(\n              mainAxisAlignment: MainAxisAlignment.center,\n              children: [\n                ...List.generate(5, (index) => Icon(Icons.star, color: Colors.amber, size: 20)),\n                SizedBox(width: 8),\n                Text('94% (412 reviews)', style: TextStyle(color: Colors.grey[600])),\n              ],\n            ),\n            SizedBox(height: 24),\n            Text(\n              'Customer Reviews',\n              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),\n            ),\n            SizedBox(height: 16),\n            ...List.generate(3, (index) => Container(\n              margin: EdgeInsets.only(bottom: 16),\n              padding: EdgeInsets.all(16),\n              decoration: BoxDecoration(\n                color: [Colors.blue[200], Colors.green[200], Colors.orange[200]][index % 3],\n                borderRadius: BorderRadius.circular(12),\n              ),\n              child: Column(\n                crossAxisAlignment: CrossAxisAlignment.start,\n                children: [\n                  Row(\n                    mainAxisAlignment: MainAxisAlignment.spaceBetween,\n                    children: [\n                      Text(\n                        'Reviewer ${index + 1}',\n                        style: TextStyle(fontWeight: FontWeight.w600),\n                      ),\n                      Text(\n                        '3 days ago',\n                        style: TextStyle(color: Colors.grey[700], fontSize: 12),\n                      ),\n                    ],\n                  ),\n                  SizedBox(height: 4),\n                  Row(\n                    children: List.generate(5, (starIndex) => Icon(\n                      Icons.star,\n                      color: starIndex < 4 ? Colors.amber : Colors.grey[300],\n                      size: 16,\n                    )),\n                  ),\n                  SizedBox(height: 8),\n                  Text(\n                    'Excellent sound quality and comfortable fit. Worth the price!',\n                    style: TextStyle(fontSize: 14),\n                  ),\n                ],\n              ),\n            )),\n          ],\n        ),\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {},\n        child: Icon(Icons.add),\n        backgroundColor: Colors.orange,\n      ),\n      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,\n    );\n  }\n}",
+    "category": "ecommerce",
+    "tags": [
+        "reviews",
+        "product",
+        "rating",
+        "stars",
+        "ecommerce",
+        "scrollable",
+        "cards",
+        "colorful",
+        "playful"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "SingleChildScrollView",
+        "Column",
+        "ClipOval",
+        "Container",
+        "Text",
+        "Row",
+        "Icon",
+        "FloatingActionButton"
+    ],
+    "layout_type": "Column"
+}

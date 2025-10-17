@@ -1,0 +1,22 @@
+{
+    "prompt": "Create an elegant loading page with a gradient background transitioning from deep purple (0xFF6A1B9A) at the top to vibrant pink (0xFFE91E63) at the bottom. Position a white circular progress indicator at the center with increased stroke width (4.0) for prominence. Below the indicator, display 'Please wait...' in white text (0xFFFFFFFF) with font size 20px and medium font weight, spaced 28 pixels from the progress indicator. The gradient should use LinearGradient with Alignment.topCenter to Alignment.bottomCenter, creating a modern and visually appealing loading experience that stands out from conventional designs.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            begin: Alignment.topCenter,\n            end: Alignment.bottomCenter,\n            colors: [Color(0xFF6A1B9A), Color(0xFFE91E63)],\n          ),\n        ),\n        child: Center(\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              CircularProgressIndicator(\n                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),\n                strokeWidth: 4.0,\n              ),\n              SizedBox(height: 28),\n              Text(\n                'Please wait...',\n                style: TextStyle(\n                  fontSize: 20,\n                  fontWeight: FontWeight.w500,\n                  color: Colors.white,\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "gradient",
+        "purple",
+        "pink",
+        "elegant",
+        "progress"
+    ],
+    "components": [
+        "Scaffold",
+        "Container",
+        "BoxDecoration",
+        "LinearGradient",
+        "CircularProgressIndicator",
+        "Text"
+    ],
+    "layout_type": "Column"
+}

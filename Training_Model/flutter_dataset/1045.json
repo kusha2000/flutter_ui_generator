@@ -1,0 +1,19 @@
+{
+    "prompt": "Create a vibrant forgot password screen with gradient background transitioning from purple at top to blue at bottom. Use Column layout with crossAxisAlignment.stretch for full-width elements, centered vertically. Display white 'Password Reset' title, font size 32, bold. Add white subtitle with 70% opacity saying 'Enter your email for a reset link.' Include TextField with white background, rounded border, gray hint text 'Your Email', and purple email prefix icon. Add full-width ElevatedButton with purple background, white 'Send Reset Link' text, and rounded corners. Place white 'Back to Login' TextButton below. Use 28px padding and 18px spacing between elements.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            colors: [Colors.purple[600]!, Colors.blue[600]!],\n            begin: Alignment.topCenter,\n            end: Alignment.bottomCenter,\n          ),\n        ),\n        child: Padding(\n          padding: const EdgeInsets.all(28.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            crossAxisAlignment: CrossAxisAlignment.stretch,\n            children: [\n              Text(\n                'Password Reset',\n                style: TextStyle(\n                  fontSize: 32,\n                  fontWeight: FontWeight.bold,\n                  color: Colors.white,\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 18),\n              Text(\n                'Enter your email for a reset link.',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.white70,\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 18),\n              TextField(\n                keyboardType: TextInputType.emailAddress,\n                decoration: InputDecoration(\n                  hintText: 'Your Email',\n                  hintStyle: TextStyle(color: Colors.grey),\n                  border: OutlineInputBorder(\n                    borderRadius: BorderRadius.circular(10.0),\n                  ),\n                  prefixIcon: Icon(Icons.email, color: Colors.purple[400]),\n                  filled: true,\n                  fillColor: Colors.white,\n                ),\n              ),\n              SizedBox(height: 18),\n              ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.purple[500],\n                  padding: EdgeInsets.symmetric(vertical: 16),\n                  shape: RoundedRectangleBorder(\n                    borderRadius: BorderRadius.circular(10.0),\n                  ),\n                ),\n                child: Text(\n                  'Send Reset Link',\n                  style: TextStyle(fontSize: 16, color: Colors.white),\n                ),\n              ),\n              SizedBox(height: 18),\n              TextButton(\n                onPressed: () {},\n                child: Text(\n                  'Back to Login',\n                  style: TextStyle(color: Colors.white, fontSize: 16),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "authentication",
+    "tags": [
+        "forgot-password",
+        "email",
+        "reset",
+        "gradient",
+        "vibrant"
+    ],
+    "components": [
+        "TextField",
+        "ElevatedButton",
+        "TextButton",
+        "Text"
+    ],
+    "layout_type": "Column"
+}

@@ -1,0 +1,25 @@
+{
+    "prompt": "Create a sleek light-gray analytics dashboard with a top app bar titled 'Analytics Overview', three horizontal metric cards with green accents and icons, a bar chart section, and a compact data table below.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFF5F5F5),\n      appBar: AppBar(\n        backgroundColor: Colors.white,\n        elevation: 1,\n        title: Text(\n          'Analytics Overview',\n          style: TextStyle(color: Colors.black87, fontSize: 20, fontWeight: FontWeight.bold),\n        ),\n        actions: [\n          IconButton(\n            icon: Icon(Icons.settings, color: Colors.black87),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      body: SingleChildScrollView(\n        padding: EdgeInsets.all(16.0),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.start,\n          children: [\n            Row(\n              children: [\n                Expanded(\n                  child: _buildMetricCard('Active Users', '12,345', Icons.person, Colors.green),\n                ),\n                SizedBox(width: 12),\n                Expanded(\n                  child: _buildMetricCard('Total Sales', '18,900', Icons.attach_money, Colors.green),\n                ),\n                SizedBox(width: 12),\n                Expanded(\n                  child: _buildMetricCard('Engagement Rate', '4.5%', Icons.trending_up, Colors.green),\n                ),\n              ],\n            ),\n            SizedBox(height: 24),\n            Container(\n              height: 300,\n              decoration: BoxDecoration(\n                color: Colors.white,\n                borderRadius: BorderRadius.circular(12),\n                boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.2), blurRadius: 8, offset: Offset(0, 2))],\n              ),\n              child: Center(\n                child: Text(\n                  'Bar Chart Visualization',\n                  style: TextStyle(color: Colors.grey[600], fontSize: 16),\n                ),\n              ),\n            ),\n            SizedBox(height: 24),\n            Text(\n              'Recent Data',\n              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black87),\n            ),\n            SizedBox(height: 12),\n            _buildDataTable(),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildMetricCard(String title, String value, IconData icon, Color color) {\n    return Container(\n      padding: EdgeInsets.all(16),\n      decoration: BoxDecoration(\n        color: Colors.white,\n        borderRadius: BorderRadius.circular(12),\n        boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.2), blurRadius: 8, offset: Offset(0, 2))],\n      ),\n      child: Column(\n        crossAxisAlignment: CrossAxisAlignment.start,\n        children: [\n          Icon(icon, color: color, size: 24),\n          SizedBox(height: 8),\n          Text(title, style: TextStyle(color: Colors.grey[600], fontSize: 12)),\n          SizedBox(height: 4),\n          Text(value, style: TextStyle(color: Colors.black87, fontSize: 20, fontWeight: FontWeight.bold)),\n        ],\n      ),\n    );\n  }\n\n  Widget _buildDataTable() {\n    return Container(\n      decoration: BoxDecoration(\n        color: Colors.white,\n        borderRadius: BorderRadius.circular(12),\n        boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.2), blurRadius: 8, offset: Offset(0, 2))],\n      ),\n      child: DataTable(\n        columns: [\n          DataColumn(label: Text('Date', style: TextStyle(fontWeight: FontWeight.w600))),\n          DataColumn(label: Text('Users', style: TextStyle(fontWeight: FontWeight.w600))),\n          DataColumn(label: Text('Sales', style: TextStyle(fontWeight: FontWeight.w600))),\n          DataColumn(label: Text('Engagement', style: TextStyle(fontWeight: FontWeight.w600))),\n        ],\n        rows: [\n          DataRow(cells: [DataCell(Text('Jan 1')), DataCell(Text('1,234')), DataCell(Text('2,450')), DataCell(Text('4.2%'))]),\n          DataRow(cells: [DataCell(Text('Jan 2')), DataCell(Text('1,567')), DataCell(Text('3,120')), DataCell(Text('4.8%'))]),\n          DataRow(cells: [DataCell(Text('Jan 3')), DataCell(Text('1,890')), DataCell(Text('3,780')), DataCell(Text('5.1%'))]),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "analytics",
+    "tags": [
+        "dashboard",
+        "analytics",
+        "metrics",
+        "chart",
+        "data",
+        "table",
+        "cards"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "Row",
+        "Column",
+        "DataTable",
+        "Icon",
+        "Text"
+    ],
+    "layout_type": "Column"
+}

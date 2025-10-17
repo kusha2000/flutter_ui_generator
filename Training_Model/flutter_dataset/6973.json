@@ -1,0 +1,22 @@
+{
+    "prompt": "Full-screen cheerful map with rainbow top bar.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text(\n          'Fun Map',\n          style: TextStyle(fontWeight: FontWeight.bold),\n        ),\n        backgroundColor: Colors.transparent,\n        foregroundColor: Colors.white,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back),\n          onPressed: () {},\n        ),\n        flexibleSpace: Container(\n          decoration: BoxDecoration(\n            gradient: LinearGradient(\n              colors: [Colors.red, Colors.orange, Colors.yellow, Colors.green, Colors.blue, Colors.purple],\n              begin: Alignment.topLeft,\n              end: Alignment.bottomRight,\n            ),\n          ),\n        ),\n      ),\n      body: Container(\n        width: double.infinity,\n        height: double.infinity,\n        decoration: BoxDecoration(\n          color: Colors.yellow[100],\n          borderRadius: BorderRadius.circular(12),\n        ),\n        child: Center(\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Icon(\n                Icons.map,\n                size: 100,\n                color: Colors.yellow[600],\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Map View Area',\n                style: TextStyle(\n                  fontSize: 18,\n                  color: Colors.yellow[600],\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {},\n        child: Icon(\n          Icons.my_location,\n          color: Colors.white,\n        ),\n        backgroundColor: Colors.transparent,\n        shape: CircleBorder(),\n        child: Container(\n          decoration: BoxDecoration(\n            shape: BoxShape.circle,\n            gradient: LinearGradient(\n              colors: [Colors.red, Colors.orange, Colors.yellow, Colors.green, Colors.blue, Colors.purple],\n              begin: Alignment.topLeft,\n              end: Alignment.bottomRight,\n            ),\n          ),\n          child: Icon(\n            Icons.my_location,\n            color: Colors.white,\n          ),\n        ),\n      ),\n      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "map",
+        "navigation",
+        "location",
+        "gps",
+        "colorful",
+        "floating-action-button"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "FloatingActionButton",
+        "Icon",
+        "Text"
+    ],
+    "layout_type": "Scaffold"
+}

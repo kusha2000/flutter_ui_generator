@@ -1,0 +1,21 @@
+{
+    "prompt": "Teal theme Progress Loading",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFF121212),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            AnimatedOpacity(\n              opacity: 1.0,\n              duration: Duration(seconds: 1),\n              child: Text(\n                'Please Wait',\n                style: TextStyle(\n                  fontSize: 20,\n                  color: Colors.white,\n                  fontWeight: FontWeight.bold,\n                ),\n              ),\n            ),\n            SizedBox(height: 16),\n            CircularProgressIndicator(\n              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF26A69A)),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "dark",
+        "progress",
+        "circular",
+        "animation"
+    ],
+    "components": [
+        "Scaffold",
+        "CircularProgressIndicator",
+        "Text",
+        "Column",
+        "Center",
+        "AnimatedOpacity"
+    ],
+    "layout_type": "Column"
+}

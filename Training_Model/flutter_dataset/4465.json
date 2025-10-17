@@ -1,0 +1,21 @@
+{
+    "prompt": "Gradient 404 page, left-aligned content with teal heading, blue subtitle, gray text, and rectangular teal button.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.transparent,\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            colors: [Colors.blue[100]!, Colors.white],\n            begin: Alignment.topCenter,\n            end: Alignment.bottomCenter,\n          ),\n        ),\n        child: Padding(\n          padding: const EdgeInsets.symmetric(horizontal: 20.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            crossAxisAlignment: CrossAxisAlignment.start,\n            children: [\n              Text(\n                '404',\n                style: TextStyle(\n                  fontSize: 68,\n                  fontWeight: FontWeight.bold,\n                  color: Colors.teal[700],\n                ),\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Page Not Found',\n                style: TextStyle(\n                  fontSize: 26,\n                  fontWeight: FontWeight.w600,\n                  color: Colors.blue[800],\n                ),\n              ),\n              SizedBox(height: 20),\n              Text(\n                'The page you’re trying to access doesn’t exist.',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.grey[700],\n                  height: 1.5,\n                ),\n              ),\n              SizedBox(height: 24),\n              ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.teal,\n                  foregroundColor: Colors.white,\n                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 14),\n                ),\n                child: Text(\n                  'Back to Home',\n                  style: TextStyle(fontSize: 16),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "error_pages",
+    "tags": [
+        "404",
+        "error",
+        "not_found",
+        "gradient",
+        "button",
+        "left_aligned"
+    ],
+    "components": [
+        "Text",
+        "ElevatedButton",
+        "Column",
+        "Scaffold",
+        "Container"
+    ],
+    "layout_type": "Column"
+}

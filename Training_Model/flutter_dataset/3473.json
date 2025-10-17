@@ -1,0 +1,20 @@
+{
+    "prompt": "Build a clean white loading screen: centered blue progress indicator, gray loading text below, vertical Column layout, Scaffold.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            CircularProgressIndicator(\n              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF2196F3)),\n            ),\n            SizedBox(height: 24),\n            Text(\n              'Loading...',\n              style: TextStyle(\n                fontSize: 18,\n                color: Color(0xFF666666),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "progress",
+        "circular",
+        "center",
+        "minimal"
+    ],
+    "components": [
+        "Scaffold",
+        "CircularProgressIndicator",
+        "Text",
+        "Column",
+        "Center"
+    ],
+    "layout_type": "Column"
+}

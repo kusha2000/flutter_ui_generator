@@ -1,0 +1,22 @@
+{
+    "prompt": "Build a minimalist rating UI with white background, outlined stars, and simple action buttons.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  int selectedRating = 0;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: Center(\n        child: Padding(\n          padding: EdgeInsets.symmetric(horizontal: 48.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Container(\n                width: 60,\n                height: 60,\n                decoration: BoxDecoration(\n                  color: Color(0xFFF5F5F5),\n                  borderRadius: BorderRadius.circular(8),\n                ),\n                child: Icon(\n                  Icons.apps,\n                  color: Color(0xFF757575),\n                  size: 30,\n                ),\n              ),\n              SizedBox(height: 40),\n              Text(\n                'Rate App',\n                style: TextStyle(\n                  fontSize: 24,\n                  fontWeight: FontWeight.w400,\n                  color: Color(0xFF212121),\n                  letterSpacing: -0.5,\n                ),\n              ),\n              SizedBox(height: 12),\n              Text(\n                'Share your experience',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Color(0xFF757575),\n                ),\n              ),\n              SizedBox(height: 32),\n              Row(\n                mainAxisAlignment: MainAxisAlignment.center,\n                children: List.generate(5, (index) {\n                  return GestureDetector(\n                    onTap: () => setState(() => selectedRating = index + 1),\n                    child: Padding(\n                      padding: EdgeInsets.symmetric(horizontal: 8),\n                      child: Icon(\n                        selectedRating > index ? Icons.star : Icons.star_border,\n                        color: selectedRating > index ? Color(0xFF1976D2) : Color(0xFFE0E0E0),\n                        size: 32,\n                      ),\n                    ),\n                  );\n                }),\n              ),\n              SizedBox(height: 48),\n              SizedBox(\n                width: 140,\n                height: 44,\n                child: ElevatedButton(\n                  onPressed: selectedRating > 0 ? () {} : null,\n                  style: ElevatedButton.styleFrom(\n                    backgroundColor: selectedRating > 0 ? Color(0xFF1976D2) : Color(0xFFE0E0E0),\n                    elevation: 0,\n                    shape: RoundedRectangleBorder(\n                      borderRadius: BorderRadius.circular(4),\n                    ),\n                  ),\n                  child: Text(\n                    'Submit',\n                    style: TextStyle(\n                      fontSize: 14,\n                      color: selectedRating > 0 ? Colors.white : Color(0xFF9E9E9E),\n                      fontWeight: FontWeight.w500,\n                    ),\n                  ),\n                ),\n              ),\n              SizedBox(height: 16),\n              TextButton(\n                onPressed: () {},\n                style: TextButton.styleFrom(\n                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),\n                ),\n                child: Text(\n                  'Skip',\n                  style: TextStyle(\n                    fontSize: 14,\n                    color: Color(0xFF757575),\n                    fontWeight: FontWeight.w400,\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "feedback",
+    "tags": [
+        "rating",
+        "minimalist",
+        "clean",
+        "simple",
+        "subtle",
+        "modern"
+    ],
+    "components": [
+        "Container",
+        "Icon",
+        "Text",
+        "ElevatedButton",
+        "TextButton",
+        "GestureDetector"
+    ],
+    "layout_type": "Column"
+}

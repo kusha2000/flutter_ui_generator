@@ -1,0 +1,21 @@
+{
+    "prompt": "Horizontal minimalist product list",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    final products = [\n      {'name': 'Wireless Headphones', 'description': 'Premium quality sound', 'price': '99.99', 'icon': Icons.headphones},\n      {'name': 'Smartphone', 'description': 'Latest technology device', 'price': '699.99', 'icon': Icons.phone_android},\n      {'name': 'Laptop Computer', 'description': 'High performance machine', 'price': '1299.99', 'icon': Icons.laptop},\n      {'name': 'Smart Watch', 'description': 'Track your fitness goals', 'price': '299.99', 'icon': Icons.watch},\n      {'name': 'Gaming Console', 'description': 'Next-gen gaming experience', 'price': '499.99', 'icon': Icons.games},\n      {'name': 'Bluetooth Speaker', 'description': 'Portable audio solution', 'price': '79.99', 'icon': Icons.speaker},\n    ];\n\n    return Scaffold(\n      backgroundColor: Color(0xFFFAF7F0),\n      appBar: AppBar(\n        title: Text('Collection', style: TextStyle(color: Colors.brown[800], fontWeight: FontWeight.w300, fontSize: 24)),\n        backgroundColor: Color(0xFFFAF7F0),\n        elevation: 0,\n      ),\n      body: ListView.builder(\n        padding: EdgeInsets.all(20),\n        itemCount: products.length,\n        itemBuilder: (context, index) {\n          final product = products[index];\n          return Container(\n            margin: EdgeInsets.only(bottom: 20),\n            padding: EdgeInsets.all(20),\n            decoration: BoxDecoration(\n              color: Colors.white,\n              borderRadius: BorderRadius.circular(8),\n              boxShadow: [\n                BoxShadow(\n                  color: Colors.grey.withOpacity(0.1),\n                  blurRadius: 10,\n                  offset: Offset(0, 4),\n                ),\n              ],\n            ),\n            child: Row(\n              children: [\n                Container(\n                  width: 60,\n                  height: 60,\n                  decoration: BoxDecoration(\n                    color: Colors.grey[100],\n                    borderRadius: BorderRadius.circular(8),\n                  ),\n                  child: Icon(product['icon'] as IconData, size: 28, color: Colors.grey[600]),\n                ),\n                SizedBox(width: 20),\n                Expanded(\n                  child: Column(\n                    crossAxisAlignment: CrossAxisAlignment.start,\n                    children: [\n                      Text(\n                        product['name'] as String,\n                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.brown[800]),\n                      ),\n                      SizedBox(height: 4),\n                      Text(\n                        product['description'] as String,\n                        style: TextStyle(fontSize: 13, color: Colors.grey[600]),\n                      ),\n                    ],\n                  ),\n                ),\n                Column(\n                  crossAxisAlignment: CrossAxisAlignment.end,\n                  children: [\n                    Text(\n                      product['price'] as String,\n                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.brown[700]),\n                    ),\n                    SizedBox(height: 8),\n                    TextButton(\n                      onPressed: () {},\n                      child: Text(\n                        'Add to Cart',\n                        style: TextStyle(color: Colors.brown[600], fontSize: 12),\n                      ),\n                    ),\n                  ],\n                ),\n              ],\n            ),\n          );\n        },\n      ),\n    );\n  }\n}",
+    "category": "e-commerce",
+    "tags": [
+        "products",
+        "minimalist",
+        "horizontal",
+        "elegant",
+        "typography"
+    ],
+    "components": [
+        "ListView",
+        "Container",
+        "Row",
+        "Icon",
+        "Text",
+        "TextButton"
+    ],
+    "layout_type": "Row"
+}

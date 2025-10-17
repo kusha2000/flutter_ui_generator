@@ -1,0 +1,22 @@
+{
+    "prompt": "Scrollable green privacy policy page with right-aligned title, back button, three sections, and an Accept button.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.green[50],\n      appBar: AppBar(\n        backgroundColor: Colors.green[50],\n        elevation: 0,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back, color: Colors.green[900]),\n          onPressed: () {},\n        ),\n      ),\n      body: SingleChildScrollView(\n        padding: EdgeInsets.all(18.0),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.end,\n          children: [\n            Text(\n              'Privacy Policy',\n              style: TextStyle(\n                fontSize: 28,\n                fontWeight: FontWeight.bold,\n                color: Colors.green[900],\n              ),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'This policy details our data management practices.',\n              style: TextStyle(\n                fontSize: 14,\n                color: Colors.grey[700],\n                height: 1.5,\n              ),\n            ),\n            SizedBox(height: 20),\n            Text(\n              'What We Collect',\n              style: TextStyle(\n                fontSize: 18,\n                fontWeight: FontWeight.bold,\n                color: Colors.green[900],\n              ),\n            ),\n            SizedBox(height: 8),\n            Text(\n              'We collect data like your name and email.',\n              style: TextStyle(\n                fontSize: 14,\n                color: Colors.grey[700],\n                height: 1.5,\n              ),\n            ),\n            SizedBox(height: 20),\n            Text(\n              'How We Use It',\n              style: TextStyle(\n                fontSize: 18,\n                fontWeight: FontWeight.bold,\n                color: Colors.green[900],\n              ),\n            ),\n            SizedBox(height: 8),\n            Text(\n              'Your data supports service improvements.',\n              style: TextStyle(\n                fontSize: 14,\n                color: Colors.grey[700],\n                height: 1.5,\n              ),\n            ),\n            SizedBox(height: 20),\n            Text(\n              'Your Privacy',\n              style: TextStyle(\n                fontSize: 18,\n                fontWeight: FontWeight.bold,\n                color: Colors.green[900],\n              ),\n            ),\n            SizedBox(height: 8),\n            Text(\n              'We prioritize your data security with encryption.',\n              style: TextStyle(\n                fontSize: 14,\n                color: Colors.grey[700],\n                height: 1.5,\n              ),\n            ),\n            SizedBox(height: 32),\n            Align(\n              alignment: Alignment.centerRight,\n              child: ElevatedButton(\n                onPressed: () {},\n                child: Text('Accept', style: TextStyle(color: Colors.white)),\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.green[900],\n                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),\n                  shape: RoundedRectangleBorder(\n                    borderRadius: BorderRadius.circular(8),\n                  ),\n                ),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "legal",
+    "tags": [
+        "privacy",
+        "policy",
+        "green",
+        "scrollable",
+        "button"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "SingleChildScrollView",
+        "Column",
+        "Text",
+        "ElevatedButton",
+        "Align"
+    ],
+    "layout_type": "Column"
+}

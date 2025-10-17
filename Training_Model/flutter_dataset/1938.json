@@ -1,0 +1,23 @@
+{
+    "prompt": "Design a minimalist black camera interface with a full-screen preview, a small transparent circular capture button at the bottom center with white border, a square gallery thumbnail top-left, and a flash toggle top-right. Minimal padding and high contrast.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.black,\n      body: Stack(\n        children: [\n          Positioned.fill(\n            child: Container(\n              color: Colors.black,\n              child: Center(\n                child: Icon(\n                  Icons.camera_alt,\n                  size: 80,\n                  color: Colors.white30,\n                ),\n              ),\n            ),\n          ),\n          Positioned(\n            top: 16,\n            left: 16,\n            child: Container(\n              width: 50,\n              height: 50,\n              decoration: BoxDecoration(\n                color: Colors.black54,\n                border: Border.all(color: Colors.white30, width: 1),\n              ),\n              child: Icon(\n                Icons.photo,\n                color: Colors.white70,\n              ),\n            ),\n          ),\n          Positioned(\n            top: 16,\n            right: 16,\n            child: IconButton(\n              icon: Icon(Icons.flash_off, color: Colors.white),\n              onPressed: () {},\n              style: ButtonStyle(\n                backgroundColor: MaterialStateProperty.all(Colors.black54),\n                shape: MaterialStateProperty.all(CircleBorder()),\n              ),\n            ),\n          ),\n          Positioned(\n            bottom: 20,\n            left: MediaQuery.of(context).size.width / 2 - 30,\n            child: GestureDetector(\n              onTap: () {},\n              child: Container(\n                width: 60,\n                height: 60,\n                decoration: BoxDecoration(\n                  shape: BoxShape.circle,\n                  color: Colors.transparent,\n                  border: Border.all(color: Colors.white, width: 2),\n                ),\n              ),\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "camera",
+    "tags": [
+        "camera",
+        "photo",
+        "capture",
+        "preview",
+        "gallery",
+        "flash",
+        "minimalist"
+    ],
+    "components": [
+        "Scaffold",
+        "Stack",
+        "Container",
+        "Icon",
+        "GestureDetector",
+        "IconButton"
+    ],
+    "layout_type": "Stack"
+}

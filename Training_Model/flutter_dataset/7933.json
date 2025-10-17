@@ -1,0 +1,26 @@
+{
+    "prompt": "Vibrant Camera UI",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            begin: Alignment.topLeft,\n            end: Alignment.bottomRight,\n            colors: [Colors.orange, Colors.yellow[600]!],\n          ),\n        ),\n        child: Column(\n          children: [\n            SafeArea(\n              child: Padding(\n                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),\n                child: Row(\n                  mainAxisAlignment: MainAxisAlignment.spaceBetween,\n                  children: [\n                    Container(\n                      decoration: BoxDecoration(\n                        color: Colors.white.withOpacity(0.2),\n                        borderRadius: BorderRadius.circular(20),\n                      ),\n                      child: IconButton(\n                        icon: Icon(Icons.arrow_back, color: Colors.white),\n                        onPressed: () {},\n                      ),\n                    ),\n                    Container(\n                      decoration: BoxDecoration(\n                        color: Colors.white.withOpacity(0.2),\n                        borderRadius: BorderRadius.circular(20),\n                      ),\n                      child: IconButton(\n                        icon: Icon(Icons.flash_off, color: Colors.white),\n                        onPressed: () {},\n                      ),\n                    ),\n                  ],\n                ),\n              ),\n            ),\n            Expanded(\n              child: Padding(\n                padding: EdgeInsets.all(16.0),\n                child: Container(\n                  decoration: BoxDecoration(\n                    color: Colors.white,\n                    borderRadius: BorderRadius.circular(20),\n                    border: Border.all(\n                      color: Colors.white,\n                      width: 4,\n                    ),\n                    boxShadow: [\n                      BoxShadow(\n                        color: Colors.black.withOpacity(0.2),\n                        blurRadius: 15,\n                        offset: Offset(0, 5),\n                      ),\n                    ],\n                  ),\n                  child: Center(\n                    child: Icon(\n                      Icons.camera_alt,\n                      size: 80,\n                      color: Colors.orange[300],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n            Container(\n              height: 120,\n              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),\n              child: Row(\n                mainAxisAlignment: MainAxisAlignment.spaceBetween,\n                crossAxisAlignment: CrossAxisAlignment.center,\n                children: [\n                  Container(\n                    width: 60,\n                    height: 60,\n                    decoration: BoxDecoration(\n                      gradient: LinearGradient(\n                        colors: [Colors.pink, Colors.purple],\n                      ),\n                      borderRadius: BorderRadius.circular(12),\n                    ),\n                    child: Icon(\n                      Icons.photo,\n                      color: Colors.white,\n                    ),\n                  ),\n                  GestureDetector(\n                    onTap: () {},\n                    child: Container(\n                      width: 80,\n                      height: 80,\n                      decoration: BoxDecoration(\n                        shape: BoxShape.circle,\n                        color: Colors.yellow[400],\n                        boxShadow: [\n                          BoxShadow(\n                            color: Colors.black.withOpacity(0.2),\n                            blurRadius: 10,\n                            offset: Offset(0, 3),\n                          ),\n                        ],\n                      ),\n                      child: Center(\n                        child: Container(\n                          width: 60,\n                          height: 60,\n                          decoration: BoxDecoration(\n                            shape: BoxShape.circle,\n                            color: Colors.white,\n                          ),\n                        ),\n                      ),\n                    ),\n                  ),\n                  SizedBox(width: 60),\n                ],\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "camera",
+    "tags": [
+        "camera",
+        "vibrant",
+        "colorful",
+        "gradient",
+        "playful",
+        "energetic",
+        "orange",
+        "yellow"
+    ],
+    "components": [
+        "Scaffold",
+        "Container",
+        "Icon",
+        "GestureDetector",
+        "Row",
+        "Column",
+        "LinearGradient",
+        "SafeArea"
+    ],
+    "layout_type": "Column"
+}

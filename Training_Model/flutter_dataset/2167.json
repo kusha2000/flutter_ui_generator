@@ -1,0 +1,25 @@
+{
+    "prompt": "Build minimal wishlist with gray background, transparent app bar, and two-column grid. Flat cards show centered icons, text, black heart buttons, plus bottom-center teal floating button.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  List<Map<String, dynamic>> wishlistItems = [\n    {'name': 'Wireless Headphones', 'price': '99.99', 'icon': Icons.headphones},\n    {'name': 'Smartphone', 'price': '699.99', 'icon': Icons.phone_android},\n    {'name': 'Laptop', 'price': '1299.99', 'icon': Icons.laptop},\n    {'name': 'Watch', 'price': '299.99', 'icon': Icons.watch},\n  ];\n\n  void removeItem(int index) {\n    setState(() {\n      wishlistItems.removeAt(index);\n    });\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[100],\n      appBar: AppBar(\n        backgroundColor: Colors.transparent,\n        elevation: 0,\n        title: Row(\n          children: [\n            Icon(Icons.favorite, color: Colors.black, size: 24),\n            SizedBox(width: 8),\n            Text('Wishlist', style: TextStyle(color: Colors.black, fontSize: 18)),\n          ],\n        ),\n      ),\n      body: wishlistItems.isEmpty\n          ? Center(\n              child: Column(\n                mainAxisAlignment: MainAxisAlignment.center,\n                children: [\n                  Icon(Icons.favorite_border, size: 80, color: Colors.grey[400]),\n                  SizedBox(height: 16),\n                  Text('Your wishlist is empty', style: TextStyle(fontSize: 18, color: Colors.grey[600])),\n                ],\n              ),\n            )\n          : GridView.builder(\n              padding: EdgeInsets.all(8),\n              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(\n                crossAxisCount: 2,\n                crossAxisSpacing: 8,\n                mainAxisSpacing: 8,\n                childAspectRatio: 0.7,\n              ),\n              itemCount: wishlistItems.length,\n              itemBuilder: (context, index) {\n                final item = wishlistItems[index];\n                return Container(\n                  color: Colors.white,\n                  padding: EdgeInsets.all(8),\n                  child: Column(\n                    mainAxisAlignment: MainAxisAlignment.center,\n                    children: [\n                      Icon(item['icon'], size: 40, color: Colors.teal[600]),\n                      SizedBox(height: 8),\n                      Text(\n                        item['name'],\n                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),\n                        textAlign: TextAlign.center,\n                      ),\n                      SizedBox(height: 4),\n                      Text(\n                        item['price'],\n                        style: TextStyle(fontSize: 12, color: Colors.teal[600], fontWeight: FontWeight.w600),\n                      ),\n                      Spacer(),\n                      IconButton(\n                        icon: Icon(Icons.favorite, color: Colors.black, size: 20),\n                        onPressed: () => removeItem(index),\n                      ),\n                    ],\n                  ),\n                );\n              },\n            ),\n      floatingActionButton: FloatingActionButton(\n        backgroundColor: Colors.teal[600],\n        child: Icon(Icons.add, color: Colors.white),\n        onPressed: () {},\n      ),\n      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,\n    );\n  }\n}",
+    "category": "e-commerce",
+    "tags": [
+        "wishlist",
+        "grid",
+        "minimal",
+        "heart",
+        "favorite",
+        "shopping",
+        "product",
+        "card"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "GridView",
+        "Container",
+        "Icon",
+        "FloatingActionButton",
+        "Column"
+    ],
+    "layout_type": "Grid"
+}

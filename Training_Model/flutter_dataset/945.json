@@ -1,0 +1,26 @@
+{
+    "prompt": "Create a nature-themed camera interface with a soft green background and a full-screen preview area with rounded corners. Place a leaf-shaped capture button at the bottom center, colored in dark green with a subtle texture. Include a transparent app bar with a back arrow on the left and a flash toggle on the right, both in white. Position the gallery thumbnail at the bottom left with a circular frame and a slight green tint. Use generous padding and organic shapes for a natural, calming aesthetic.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFE8F5E9),\n      appBar: AppBar(\n        backgroundColor: Colors.transparent,\n        elevation: 0,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back, color: Colors.white),\n          onPressed: () {},\n        ),\n        actions: [\n          IconButton(\n            icon: Icon(Icons.flash_off, color: Colors.white),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      body: Column(\n        children: [\n          Expanded(\n            child: Padding(\n              padding: EdgeInsets.all(20.0),\n              child: Container(\n                decoration: BoxDecoration(\n                  color: Colors.black,\n                  borderRadius: BorderRadius.circular(16),\n                ),\n                child: Center(\n                  child: Icon(\n                    Icons.camera_alt,\n                    size: 80,\n                    color: Colors.white70,\n                  ),\n                ),\n              ),\n            ),\n          ),\n          Container(\n            height: 120,\n            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),\n            child: Row(\n              mainAxisAlignment: MainAxisAlignment.spaceBetween,\n              children: [\n                Container(\n                  width: 60,\n                  height: 60,\n                  decoration: BoxDecoration(\n                    shape: BoxShape.circle,\n                    color: Colors.black54,\n                    image: DecorationImage(\n                      image: NetworkImage('https://via.placeholder.com/60'),\n                      colorFilter: ColorFilter.mode(Colors.green.withOpacity(0.3), BlendMode.srcATop),\n                    ),\n                  ),\n                ),\n                GestureDetector(\n                  onTap: () {},\n                  child: ClipPath(\n                    clipper: LeafClipper(),\n                    child: Container(\n                      width: 80,\n                      height: 80,\n                      color: Colors.green[900],\n                    ),\n                  ),\n                ),\n                SizedBox(width: 60),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}\n\nclass LeafClipper extends CustomClipper<Path> {\n  @override\n  Path getClip(Size size) {\n    final path = Path();\n    double w = size.width;\n    double h = size.height;\n    path.moveTo(0.5 * w, 0);\n    path.quadraticBezierTo(0, h * 0.4, 0.3 * w, h * 0.7);\n    path.quadraticBezierTo(0.5 * w, h, 0.7 * w, h * 0.7);\n    path.quadraticBezierTo(w, h * 0.4, 0.5 * w, 0);\n    path.close();\n    return path;\n  }\n  @override\n  bool shouldReclip(CustomClipper<Path> oldClipper) => true;\n}",
+    "category": "camera",
+    "tags": [
+        "camera",
+        "photo",
+        "capture",
+        "preview",
+        "gallery",
+        "flash",
+        "nature",
+        "organic"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "Icon",
+        "GestureDetector",
+        "Row",
+        "Column",
+        "CustomClipper"
+    ],
+    "layout_type": "Column"
+}

@@ -1,0 +1,21 @@
+{
+    "prompt": "Horizontal loading",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFF5F5F5),\n      body: Center(\n        child: Row(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            CircularProgressIndicator(\n              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF009688)),\n            ),\n            SizedBox(width: 20),\n            Text(\n              'Loading content...',\n              style: TextStyle(\n                fontSize: 16,\n                color: Color(0xFF424242),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "horizontal",
+        "row",
+        "teal",
+        "inline",
+        "compact"
+    ],
+    "components": [
+        "Scaffold",
+        "Row",
+        "CircularProgressIndicator",
+        "Text",
+        "Center"
+    ],
+    "layout_type": "Row"
+}

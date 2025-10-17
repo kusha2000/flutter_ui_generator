@@ -1,0 +1,26 @@
+{
+    "prompt": "Flashcards study page interface.",
+    "flutter_code": "class GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  bool showAnswer = false;\n  int currentCard = 1;\n  int totalCards = 10;\n  bool isFavorite = false;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        backgroundColor: Colors.white,\n        elevation: 0,\n        title: Text('Biology Terms', style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w600)),\n        actions: [\n          IconButton(icon: Icon(Icons.settings, color: Colors.grey[600]), onPressed: () {}),\n          IconButton(icon: Icon(Icons.more_vert, color: Colors.grey[600]), onPressed: () {}),\n        ],\n      ),\n      body: Column(\n        children: [\n          Padding(\n            padding: EdgeInsets.all(16),\n            child: Text('$currentCard of $totalCards', style: TextStyle(fontSize: 16, color: Colors.grey[600])),\n          ),\n          Expanded(\n            child: Center(\n              child: Row(\n                mainAxisAlignment: MainAxisAlignment.spaceEvenly,\n                children: [\n                  IconButton(\n                    icon: Icon(Icons.arrow_back_ios, size: 30, color: Colors.blue),\n                    onPressed: () {},\n                  ),\n                  Container(\n                    width: 280,\n                    height: 180,\n                    decoration: BoxDecoration(\n                      color: Colors.white,\n                      borderRadius: BorderRadius.circular(12),\n                      boxShadow: [\n                        BoxShadow(\n                          color: Colors.black.withOpacity(0.1),\n                          spreadRadius: 2,\n                          blurRadius: 8,\n                          offset: Offset(0, 4),\n                        ),\n                      ],\n                    ),\n                    child: Center(\n                      child: Padding(\n                        padding: EdgeInsets.all(20),\n                        child: Text(\n                          showAnswer ? 'The powerhouse of the cell' : 'What is mitochondria?',\n                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),\n                          textAlign: TextAlign.center,\n                        ),\n                      ),\n                    ),\n                  ),\n                  IconButton(\n                    icon: Icon(Icons.arrow_forward_ios, size: 30, color: Colors.blue),\n                    onPressed: () {},\n                  ),\n                ],\n              ),\n            ),\n          ),\n          Padding(\n            padding: EdgeInsets.symmetric(vertical: 20),\n            child: ElevatedButton(\n              onPressed: () {\n                setState(() {\n                  showAnswer = !showAnswer;\n                });\n              },\n              style: ElevatedButton.styleFrom(\n                backgroundColor: Colors.blue,\n                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 12),\n                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),\n              ),\n              child: Text('Flip Card', style: TextStyle(color: Colors.white, fontSize: 16)),\n            ),\n          ),\n          Container(\n            padding: EdgeInsets.all(20),\n            child: Row(\n              mainAxisAlignment: MainAxisAlignment.spaceEvenly,\n              children: [\n                IconButton(\n                  icon: Icon(Icons.shuffle, color: Colors.grey[600]),\n                  onPressed: () {},\n                ),\n                IconButton(\n                  icon: Icon(Icons.refresh, color: Colors.grey[600]),\n                  onPressed: () {},\n                ),\n                IconButton(\n                  icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border, color: isFavorite ? Colors.red : Colors.grey[600]),\n                  onPressed: () {\n                    setState(() {\n                      isFavorite = !isFavorite;\n                    });\n                  },\n                ),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "education",
+    "tags": [
+        "flashcards",
+        "study",
+        "learning",
+        "cards",
+        "flip",
+        "navigation",
+        "progress"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "Text",
+        "IconButton",
+        "ElevatedButton",
+        "Row",
+        "Column",
+        "Padding"
+    ],
+    "layout_type": "Column"
+}

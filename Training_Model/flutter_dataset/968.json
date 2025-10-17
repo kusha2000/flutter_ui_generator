@@ -1,0 +1,23 @@
+{
+    "prompt": "Create a map view page with a full-screen map and a compact top app bar. The app bar should have a title 'City Map' in bold black text, a light green background (Colors.green[100]), and a black back arrow icon. Position two floating action buttons: one in the bottom-right corner with a blue GPS icon (Colors.blue) and a white background, and another in the bottom-left corner with a zoom-in icon (Icons.zoom_in) in white and a blue background (Colors.blue). The map area should have a white background with a subtle blue shadow (elevation effect). Use Material Design with a clean and professional look, ensuring the map fills the screen below the app bar.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text(\n          'City Map',\n          style: TextStyle(fontWeight: FontWeight.bold),\n        ),\n        backgroundColor: Colors.green[100],\n        foregroundColor: Colors.black,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back),\n          onPressed: () {},\n        ),\n      ),\n      body: Container(\n        width: double.infinity,\n        height: double.infinity,\n        decoration: BoxDecoration(\n          color: Colors.white,\n          boxShadow: [BoxShadow(color: Colors.blue.withOpacity(0.2), blurRadius: 8)],\n        ),\n        child: Center(\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Icon(\n                Icons.map,\n                size: 100,\n                color: Colors.grey[600],\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Map View Area',\n                style: TextStyle(\n                  fontSize: 18,\n                  color: Colors.grey[600],\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n      floatingActionButton: Stack(\n        children: [\n          Positioned(\n            bottom: 16,\n            right: 16,\n            child: FloatingActionButton(\n              onPressed: () {},\n              backgroundColor: Colors.white,\n              child: Icon(\n                Icons.my_location,\n                color: Colors.blue,\n              ),\n            ),\n          ),\n          Positioned(\n            bottom: 16,\n            left: 16,\n            child: FloatingActionButton(\n              onPressed: () {},\n              backgroundColor: Colors.blue,\n              child: Icon(\n                Icons.zoom_in,\n                color: Colors.white,\n              ),\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "map",
+        "navigation",
+        "location",
+        "gps",
+        "zoom",
+        "floating-action-button"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "Stack",
+        "FloatingActionButton",
+        "Icon",
+        "Text"
+    ],
+    "layout_type": "Scaffold"
+}

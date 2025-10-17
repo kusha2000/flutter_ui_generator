@@ -1,0 +1,26 @@
+{
+    "prompt": "Vibrant theme Camera UI",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            colors: [Colors.blue, Colors.purple],\n            begin: Alignment.topLeft,\n            end: Alignment.bottomRight,\n          ),\n        ),\n        child: Column(\n          children: [\n            AppBar(\n              backgroundColor: Colors.transparent,\n              elevation: 0,\n              leading: IconButton(\n                icon: Icon(Icons.arrow_back, color: Colors.white),\n                onPressed: () {},\n              ),\n              actions: [\n                IconButton(\n                  icon: Icon(Icons.flash_off, color: Colors.white),\n                  onPressed: () {},\n                ),\n              ],\n            ),\n            Expanded(\n              child: Padding(\n                padding: EdgeInsets.all(20.0),\n                child: Container(\n                  decoration: BoxDecoration(\n                    color: Colors.black,\n                    borderRadius: BorderRadius.circular(12),\n                  ),\n                  child: Center(\n                    child: Icon(\n                      Icons.camera_alt,\n                      size: 80,\n                      color: Colors.white70,\n                    ),\n                  ),\n                ),\n              ),\n            ),\n            Container(\n              height: 120,\n              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),\n              child: Row(\n                mainAxisAlignment: MainAxisAlignment.spaceBetween,\n                children: [\n                SizedBox(width: 60),\n                GestureDetector(\n                  onTap: () {},\n                  child: Container(\n                    width: 80,\n                    height: 80,\n                    decoration: BoxDecoration(\n                      shape: BoxShape.circle,\n                      color: Colors.yellow,\n                      boxShadow: [\n                        BoxShadow(\n                          color: Colors.black26,\n                          blurRadius: 8,\n                          offset: Offset(0, 4),\n                        ),\n                      ],\n                    ),\n                    child: Center(\n                      child: Container(\n                        width: 60,\n                        height: 60,\n                        decoration: BoxDecoration(\n                          shape: BoxShape.circle,\n                          color: Colors.yellow[700],\n                        ),\n                      ),\n                    ),\n                  ),\n                ),\n                ClipPolygon(\n                  sides: 6,\n                  child: Container(\n                    width: 60,\n                    height: 60,\n                    color: Colors.black54,\n                    child: Icon(\n                      Icons.photo,\n                      color: Colors.white70,\n                    ),\n                  ),\n                ),\n              ],\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}\n\nclass ClipPolygon extends CustomClipper<Path> {\n  final int sides;\n  ClipPolygon({required this.sides});\n  @override\n  Path getClip(Size size) {\n    final path = Path();\n    final center = Offset(size.width / 2, size.height / 2);\n    final radius = size.width / 2;\n    for (int i = 0; i < sides; i++) {\n      final angle = (i / sides) * 2 * 3.14159;\n      final x = center.dx + radius * math.cos(angle);\n      final y = center.dy + radius * math.sin(angle);\n      if (i == 0) {\n        path.moveTo(x, y);\n      } else {\n        path.lineTo(x, y);\n      }\n    }\n    path.close();\n    return path;\n  }\n  @override\n  bool shouldReclip(CustomClipper<Path> oldClipper) => true;\n}",
+    "category": "camera",
+    "tags": [
+        "camera",
+        "photo",
+        "capture",
+        "preview",
+        "gallery",
+        "flash",
+        "vibrant",
+        "gradient"
+    ],
+    "components": [
+        "Scaffold",
+        "Container",
+        "AppBar",
+        "Icon",
+        "GestureDetector",
+        "Row",
+        "Column",
+        "CustomClipper"
+    ],
+    "layout_type": "Column"
+}

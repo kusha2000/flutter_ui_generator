@@ -1,0 +1,21 @@
+{
+    "prompt": "Create an elegant green-themed 404 Not Found page with nature-inspired aesthetics. Use a subtle gradient background transitioning from very light green (Colors.green[50]) to light teal (Colors.teal[50]). Display a sophisticated '404' in forest green (Colors.green[800]) with refined typography and moderate font weight. Show 'Path Not Found' as an organic subtitle in the same green tone. Include a nature-themed message 'Like a trail that leads nowhere, this page seems to have grown over with digital moss. Let\\'s guide you back to familiar ground.' in earthy dark gray. Feature an eco-friendly 'Return to Garden' button with green background, soft rounded corners, and subtle shadow. Use harmonious spacing with SizedBox heights of 18, 14, 26, and 34 pixels. Apply comfortable padding of 22.0 to create a serene, balanced layout that evokes natural tranquility.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            begin: Alignment.topCenter,\n            end: Alignment.bottomCenter,\n            colors: [Colors.green[50]!, Colors.teal[50]!],\n          ),\n        ),\n        child: Padding(\n          padding: const EdgeInsets.all(22.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            crossAxisAlignment: CrossAxisAlignment.center,\n            children: [\n              Text(\n                '404',\n                style: TextStyle(\n                  fontSize: 78,\n                  fontWeight: FontWeight.w600,\n                  color: Colors.green[800],\n                ),\n              ),\n              SizedBox(height: 18),\n              Text(\n                'Path Not Found',\n                style: TextStyle(\n                  fontSize: 27,\n                  fontWeight: FontWeight.w500,\n                  color: Colors.green[800],\n                ),\n              ),\n              SizedBox(height: 26),\n              Text(\n                'Like a trail that leads nowhere, this page seems to have grown over with digital moss. Let\\'s guide you back to familiar ground.',\n                textAlign: TextAlign.center,\n                style: TextStyle(\n                  fontSize: 17,\n                  color: Colors.grey[700],\n                  height: 1.5,\n                ),\n              ),\n              SizedBox(height: 34),\n              ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.green[700],\n                  foregroundColor: Colors.white,\n                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 16),\n                  elevation: 3,\n                  shape: RoundedRectangleBorder(\n                    borderRadius: BorderRadius.circular(14),\n                  ),\n                ),\n                child: Text(\n                  'Return to Garden',\n                  style: TextStyle(\n                    fontSize: 16,\n                    fontWeight: FontWeight.w500,\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "error_pages",
+    "tags": [
+        "404",
+        "error",
+        "green",
+        "nature",
+        "organic",
+        "elegant"
+    ],
+    "components": [
+        "Text",
+        "ElevatedButton",
+        "Column",
+        "Container",
+        "Scaffold"
+    ],
+    "layout_type": "Column"
+}

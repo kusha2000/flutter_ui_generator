@@ -1,0 +1,23 @@
+{
+    "prompt": "Compact green-accented dashboard with white background, hamburger menu, Olivia greeting, single-column green metric cards, and Recent Actions with dense layout.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        backgroundColor: Colors.white,\n        elevation: 0,\n        leading: Icon(Icons.menu, color: Colors.green[800]),\n        title: Text('Control Panel', style: TextStyle(color: Colors.green[800], fontWeight: FontWeight.w600)),\n      ),\n      body: SingleChildScrollView(\n        padding: EdgeInsets.all(10),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.start,\n          children: [\n            Text('Hi, Olivia!', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.black87)),\n            SizedBox(height: 12),\n            Column(\n              children: [\n                _buildMetricCard('8,901', 'Orders', Colors.green[100]!, Icons.trending_up),\n                SizedBox(height: 8),\n                _buildMetricCard('5,678', 'Users', Colors.green[100]!, Icons.person_add),\n                SizedBox(height: 8),\n                _buildMetricCard('89%', 'Rating', Colors.green[100]!, Icons.star),\n                SizedBox(height: 8),\n                _buildMetricCard('\\$40K', 'Revenue', Colors.green[100]!, Icons.monetization_on),\n              ],\n            ),\n            SizedBox(height: 16),\n            Text('Recent Actions', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.green[800])),\n            SizedBox(height: 8),\n            _buildActivityItem(Icons.shopping_cart, 'Order Processed', 'Order #6789', '1 min ago'),\n            _buildActivityItem(Icons.person, 'User Added', 'Olivia Green joined', '3 min ago'),\n            _buildActivityItem(Icons.payment, 'Payment', '\\$1,499.99', '7 min ago'),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildMetricCard(String value, String label, Color bgColor, IconData icon) {\n    return Container(\n      padding: EdgeInsets.all(10),\n      decoration: BoxDecoration(\n        color: bgColor,\n        borderRadius: BorderRadius.circular(8),\n        boxShadow: [BoxShadow(color: Colors.grey[300]!, blurRadius: 4, offset: Offset(0, 1))],\n      ),\n      child: Column(\n        crossAxisAlignment: CrossAxisAlignment.start,\n        children: [\n          Row(\n            mainAxisAlignment: MainAxisAlignment.spaceBetween,\n            children: [\n              Icon(icon, color: Colors.green[800], size: 20),\n              Icon(Icons.more_vert, color: Colors.grey[600], size: 12),\n            ],\n          ),\n          SizedBox(height: 6),\n          Text(value, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87)),\n          Text(label, style: TextStyle(fontSize: 10, color: Colors.grey[600])),\n        ],\n      ),\n    );\n  }\n\n  Widget _buildActivityItem(IconData icon, String title, String subtitle, String time) {\n    return Container(\n      margin: EdgeInsets.only(bottom: 8),\n      padding: EdgeInsets.all(8),\n      decoration: BoxDecoration(\n        color: Colors.white,\n        borderRadius: BorderRadius.circular(6),\n        border: Border.all(color: Colors.green[200]!),\n      ),\n      child: Row(\n        children: [\n          CircleAvatar(\n            radius: 16,\n            backgroundColor: Colors.green[100],\n            child: Icon(icon, color: Colors.green[800], size: 16),\n          ),\n          SizedBox(width: 8),\n          Expanded(\n            child: Column(\n              crossAxisAlignment: CrossAxisAlignment.start,\n              children: [\n                Text(title, style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12, color: Colors.black87)),\n                Text(subtitle, style: TextStyle(color: Colors.grey[600], fontSize: 10)),\n              ],\n            ),\n          ),\n          Text(time, style: TextStyle(color: Colors.grey[500], fontSize: 9)),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "dashboard",
+    "tags": [
+        "dashboard",
+        "metrics",
+        "cards",
+        "activity",
+        "appbar",
+        "compact"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Column",
+        "Container",
+        "Icon",
+        "Text",
+        "SingleChildScrollView"
+    ],
+    "layout_type": "Column"
+}

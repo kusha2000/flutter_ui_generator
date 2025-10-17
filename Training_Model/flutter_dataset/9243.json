@@ -1,0 +1,22 @@
+{
+    "prompt": "Blue drawer menu page",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Home', style: TextStyle(color: Colors.white)),\n        backgroundColor: Colors.blue,\n        iconTheme: IconThemeData(color: Colors.white),\n      ),\n      drawer: Drawer(\n        child: Column(\n          children: [\n            UserAccountsDrawerHeader(\n              decoration: BoxDecoration(color: Colors.blue),\n              currentAccountPicture: CircleAvatar(\n                backgroundColor: Colors.white,\n                child: Icon(Icons.person, color: Colors.blue, size: 40),\n              ),\n              accountName: Text('John Doe', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),\n              accountEmail: Text('john.doe@example.com', style: TextStyle(fontSize: 14)),\n            ),\n            ListTile(\n              leading: Icon(Icons.home, color: Colors.blue),\n              title: Text('Dashboard'),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.person, color: Colors.blue),\n              title: Text('Profile'),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.settings, color: Colors.blue),\n              title: Text('Settings'),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.help, color: Colors.blue),\n              title: Text('Help'),\n              onTap: () {},\n            ),\n            Divider(),\n            ListTile(\n              leading: Icon(Icons.exit_to_app, color: Colors.red),\n              title: Text('Logout'),\n              onTap: () {},\n            ),\n          ],\n        ),\n      ),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            Text(\n              'Welcome!',\n              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.blue),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Use the drawer menu to navigate',\n              style: TextStyle(fontSize: 16, color: Colors.grey[600]),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "drawer",
+        "menu",
+        "navigation",
+        "profile",
+        "sidebar",
+        "appbar"
+    ],
+    "components": [
+        "Drawer",
+        "AppBar",
+        "ListTile",
+        "UserAccountsDrawerHeader",
+        "CircleAvatar",
+        "Divider"
+    ],
+    "layout_type": "Column"
+}

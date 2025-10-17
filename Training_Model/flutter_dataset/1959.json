@@ -1,0 +1,22 @@
+{
+    "prompt": "Create a full-screen map page with a top app bar titled 'Map View', a back arrow, and a floating action button in the bottom-right corner for current location. The map should fill the screen below the app bar, using a clean Material Design layout with blue app bar and FAB colors.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Map View'),\n        backgroundColor: Colors.blue,\n        foregroundColor: Colors.white,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back),\n          onPressed: () {},\n        ),\n      ),\n      body: Container(\n        width: double.infinity,\n        height: double.infinity,\n        color: Colors.grey[300],\n        child: Center(\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Icon(\n                Icons.map,\n                size: 100,\n                color: Colors.grey[600],\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Map View Area',\n                style: TextStyle(\n                  fontSize: 18,\n                  color: Colors.grey[600],\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {},\n        backgroundColor: Colors.blue,\n        child: Icon(\n          Icons.my_location,\n          color: Colors.white,\n        ),\n      ),\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "map",
+        "navigation",
+        "location",
+        "gps",
+        "full-screen",
+        "floating-action-button"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "FloatingActionButton",
+        "Icon",
+        "Text"
+    ],
+    "layout_type": "Scaffold"
+}

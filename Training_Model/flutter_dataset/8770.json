@@ -1,0 +1,23 @@
+{
+    "prompt": "Pastel product category cards",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFFFF0F5),\n      appBar: AppBar(\n        backgroundColor: Colors.transparent,\n        elevation: 0,\n        title: Text(\n          'Categories',\n          style: TextStyle(\n            color: Colors.black,\n            fontSize: 24,\n            fontWeight: FontWeight.bold,\n          ),\n        ),\n        centerTitle: true,\n      ),\n      body: Padding(\n        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),\n        child: ListView(\n          children: [\n            _buildCategoryCard(Icons.shopping_bag, 'Electronics', Colors.purple),\n            _buildCategoryCard(Icons.headphones, 'Audio', Colors.purple),\n            _buildCategoryCard(Icons.laptop, 'Computers', Colors.purple),\n            _buildCategoryCard(Icons.checkroom, 'Fashion', Colors.purple),\n            _buildCategoryCard(Icons.book, 'Books', Colors.purple),\n            _buildCategoryCard(Icons.home, 'Home', Colors.purple),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildCategoryCard(IconData icon, String title, Color iconColor) {\n    return Container(\n      margin: EdgeInsets.symmetric(vertical: 8.0),\n      padding: EdgeInsets.all(16.0),\n      decoration: BoxDecoration(\n        color: Colors.white,\n        borderRadius: BorderRadius.circular(12),\n        boxShadow: [\n          BoxShadow(\n            color: Colors.black12,\n            blurRadius: 4,\n            offset: Offset(0, 2),\n          ),\n        ],\n      ),\n      child: Row(\n        children: [\n          Icon(\n            icon,\n            size: 40,\n            color: iconColor,\n          ),\n          SizedBox(width: 16),\n          Text(\n            title,\n            style: TextStyle(\n              fontSize: 18,\n              fontWeight: FontWeight.w500,\n              color: Colors.grey[800],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "e-commerce",
+    "tags": [
+        "categories",
+        "list",
+        "cards",
+        "icons",
+        "pastel",
+        "shopping"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "Container",
+        "Icon",
+        "Text",
+        "Row"
+    ],
+    "layout_type": "ListView"
+}

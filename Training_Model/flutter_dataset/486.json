@@ -1,0 +1,21 @@
+{
+    "prompt": "Design a loading page with a warm beige background (0xFFFFF3E0). Center a circular progress indicator with a golden yellow color (0xFFFFCA28). Above the indicator, place an icon (Icons.hourglass_empty) in the same golden color, sized at 40px, positioned 16 pixels above. Below the indicator, display the text 'Loading Content...' in a 16px font with a brown color (0xFF6D4C41), positioned 20 pixels below. Use a Column widget within a Scaffold, ensuring vertical centering.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFFFF3E0),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            Icon(\n              Icons.hourglass_empty,\n              size: 40,\n              color: Color(0xFFFFCA28),\n            ),\n            SizedBox(height: 16),\n            CircularProgressIndicator(\n              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFFFCA28)),\n            ),\n            SizedBox(height: 20),\n            Text(\n              'Loading Content...',\n              style: TextStyle(\n                fontSize: 16,\n                color: Color(0xFF6D4C41),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "progress",
+        "circular",
+        "icon",
+        "warm"
+    ],
+    "components": [
+        "Scaffold",
+        "CircularProgressIndicator",
+        "Text",
+        "Column",
+        "Center",
+        "Icon"
+    ],
+    "layout_type": "Column"
+}

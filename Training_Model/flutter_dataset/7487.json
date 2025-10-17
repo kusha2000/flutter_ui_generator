@@ -1,0 +1,22 @@
+{
+    "prompt": "Blue colour theme Loading",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> with SingleTickerProviderStateMixin {\n  late AnimationController _controller;\n  late Animation<double> _pulseAnimation;\n\n  @override\n  void initState() {\n    super.initState();\n    _controller = AnimationController(\n      duration: Duration(seconds: 1),\n      vsync: this,\n    )..repeat(reverse: true);\n    _pulseAnimation = Tween<double>(begin: 1.0, end: 1.3).animate(\n      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),\n    );\n  }\n\n  @override\n  void dispose() {\n    _controller.dispose();\n    super.dispose();\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFE3F2FD),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            Stack(\n              alignment: Alignment.center,\n              children: [\n                ScaleTransition(\n                  scale: _pulseAnimation,\n                  child: Container(\n                    width: 80,\n                    height: 80,\n                    decoration: BoxDecoration(\n                      shape: BoxShape.circle,\n                      color: Color(0xFF0D47A1).withOpacity(0.5),\n                    ),\n                  ),\n                ),\n                CircularProgressIndicator(\n                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF0D47A1)),\n                ),\n              ],\n            ),\n            SizedBox(height: 24),\n            Text(\n              'Fetching Data...',\n              style: TextStyle(\n                fontSize: 20,\n                color: Color(0xFF1976D2),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "progress",
+        "circular",
+        "animation",
+        "pulsating"
+    ],
+    "components": [
+        "Scaffold",
+        "CircularProgressIndicator",
+        "Text",
+        "Column",
+        "Center",
+        "ScaleTransition",
+        "Container"
+    ],
+    "layout_type": "Column"
+}

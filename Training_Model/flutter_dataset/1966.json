@@ -1,0 +1,22 @@
+{
+    "prompt": "Full-screen map with rounded top edges and light blue background. Bottom navigation bar with teal icons for Map (selected), Search, and Profile, on a white background with slight shadow. Centered FAB with white background and purple GPS icon. No app bar. Modern Material Design.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        width: double.infinity,\n        height: double.infinity,\n        decoration: BoxDecoration(\n          color: Colors.blue[100],\n          borderRadius: BorderRadius.vertical(top: Radius.circular(16)),\n        ),\n        child: Center(\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Icon(\n                Icons.map,\n                size: 100,\n                color: Colors.blue[600],\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Map View Area',\n                style: TextStyle(\n                  fontSize: 18,\n                  color: Colors.blue[600],\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n      bottomNavigationBar: BottomNavigationBar(\n        items: [\n          BottomNavigationBarItem(\n            icon: Icon(Icons.map, color: Colors.teal),\n            label: 'Map',\n          ),\n          BottomNavigationBarItem(\n            icon: Icon(Icons.search, color: Colors.teal),\n            label: 'Search',\n          ),\n          BottomNavigationBarItem(\n            icon: Icon(Icons.person, color: Colors.teal),\n            label: 'Profile',\n          ),\n        ],\n        backgroundColor: Colors.white,\n        elevation: 8,\n        selectedItemColor: Colors.teal,\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {},\n        backgroundColor: Colors.white,\n        child: Icon(\n          Icons.my_location,\n          color: Colors.purple,\n        ),\n      ),\n      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "map",
+        "navigation",
+        "location",
+        "gps",
+        "bottom-navigation",
+        "floating-action-button"
+    ],
+    "components": [
+        "Scaffold",
+        "Container",
+        "BottomNavigationBar",
+        "FloatingActionButton",
+        "Icon",
+        "Text"
+    ],
+    "layout_type": "Scaffold"
+}

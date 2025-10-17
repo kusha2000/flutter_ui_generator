@@ -1,0 +1,26 @@
+{
+    "prompt": "Design a clean expense tracker app with a white background, bold balance display, colorful horizontal category cards, detailed recent transactions list, and a floating action button for adding expenses.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        title: Text('Expense Tracker', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),\n        backgroundColor: Colors.white,\n        elevation: 0,\n        centerTitle: true,\n      ),\n      body: Column(\n        children: [\n          Container(\n            padding: EdgeInsets.all(24),\n            child: Column(\n              children: [\n                Text('Current Balance', style: TextStyle(fontSize: 16, color: Colors.grey[600])),\n                SizedBox(height: 8),\n                Container(\n                  decoration: BoxDecoration(\n                    boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10, offset: Offset(0, 2))]\n                  ),\n                  child: Text('2,450.00', style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Colors.black))\n                )\n              ]\n            )\n          ),\n          Container(\n            height: 120,\n            child: ListView(\n              scrollDirection: Axis.horizontal,\n              padding: EdgeInsets.symmetric(horizontal: 16),\n              children: [\n                _buildCategoryCard('Food', Icons.restaurant, Colors.orange),\n                _buildCategoryCard('Transport', Icons.directions_car, Colors.blue),\n                _buildCategoryCard('Shopping', Icons.shopping_bag, Colors.pink),\n                _buildCategoryCard('Bills', Icons.receipt, Colors.green)\n              ]\n            )\n          ),\n          SizedBox(height: 16),\n          Expanded(\n            child: ListView(\n              padding: EdgeInsets.all(16),\n              children: [\n                _buildTransactionItem('Grocery Store', 'Food', 'Today', '-45.20', Icons.restaurant, Colors.orange),\n                Divider(height: 24),\n                _buildTransactionItem('Gas Station', 'Transport', 'Yesterday', '-32.50', Icons.directions_car, Colors.blue),\n                Divider(height: 24),\n                _buildTransactionItem('Online Shopping', 'Shopping', '2 days ago', '-89.99', Icons.shopping_bag, Colors.pink),\n                Divider(height: 24),\n                _buildTransactionItem('Electricity Bill', 'Bills', '3 days ago', '-125.00', Icons.receipt, Colors.green)\n              ]\n            )\n          )\n        ]\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {},\n        child: Icon(Icons.add, color: Colors.white),\n        backgroundColor: Colors.blue[600]\n      )\n    );\n  }\n  \n  Widget _buildCategoryCard(String title, IconData icon, Color color) {\n    return Container(\n      width: 100,\n      margin: EdgeInsets.only(right: 12),\n      decoration: BoxDecoration(\n        color: color.withOpacity(0.1),\n        borderRadius: BorderRadius.circular(16),\n        border: Border.all(color: color.withOpacity(0.3))\n      ),\n      child: Column(\n        mainAxisAlignment: MainAxisAlignment.center,\n        children: [\n          Icon(icon, color: color, size: 32),\n          SizedBox(height: 8),\n          Text(title, style: TextStyle(fontWeight: FontWeight.w600, color: color))\n        ]\n      )\n    );\n  }\n  \n  Widget _buildTransactionItem(String title, String category, String date, String amount, IconData icon, Color color) {\n    return Row(\n      children: [\n        Container(\n          padding: EdgeInsets.all(12),\n          decoration: BoxDecoration(\n            color: color.withOpacity(0.1),\n            borderRadius: BorderRadius.circular(12)\n          ),\n          child: Icon(icon, color: color, size: 24)\n        ),\n        SizedBox(width: 12),\n        Expanded(\n          child: Column(\n            crossAxisAlignment: CrossAxisAlignment.start,\n            children: [\n              Text(title, style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16)),\n              Text('category • date', style: TextStyle(color: Colors.grey[600], fontSize: 14))\n            ]\n          )\n        ),\n        Text(amount, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.red[600]))\n      ]\n    );\n  }\n}",
+    "category": "finance",
+    "tags": [
+        "expense",
+        "tracker",
+        "finance",
+        "budget",
+        "transactions",
+        "balance",
+        "categories"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Column",
+        "ListView",
+        "Container",
+        "FloatingActionButton",
+        "Text",
+        "Icon",
+        "Divider"
+    ],
+    "layout_type": "Column"
+}

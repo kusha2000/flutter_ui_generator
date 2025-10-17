@@ -1,0 +1,21 @@
+{
+    "prompt": "Center white indicator on gradient background loading page.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            colors: [Color(0xFF7B1FA2), Color(0xFF1976D2)],\n            begin: Alignment.topCenter,\n            end: Alignment.bottomCenter,\n          ),\n        ),\n        child: Center(\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Container(\n                decoration: BoxDecoration(\n                  shape: BoxShape.circle,\n                  boxShadow: [\n                    BoxShadow(\n                      color: Colors.black26,\n                      blurRadius: 8,\n                      offset: Offset(0, 2),\n                    ),\n                  ],\n                ),\n                child: CircularProgressIndicator(\n                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),\n                ),\n              ),\n              SizedBox(height: 20),\n              Text(\n                'Processing...',\n                style: TextStyle(\n                  fontSize: 22,\n                  color: Color(0xFFB0BEC5),\n                  fontWeight: FontWeight.bold,\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "gradient",
+        "progress",
+        "circular",
+        "shadow"
+    ],
+    "components": [
+        "Scaffold",
+        "CircularProgressIndicator",
+        "Text",
+        "Column",
+        "Center",
+        "Container"
+    ],
+    "layout_type": "Column"
+}

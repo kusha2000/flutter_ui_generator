@@ -1,0 +1,24 @@
+{
+    "prompt": "Build a clean user role management UI with search and user cards showing avatars, names, emails, roles, and edit buttons.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('User Role Management'),\n        backgroundColor: Colors.blue[600],\n        foregroundColor: Colors.white,\n        elevation: 2,\n        actions: [\n          IconButton(\n            icon: Icon(Icons.settings),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      body: Column(\n        children: [\n          Container(\n            padding: EdgeInsets.all(16),\n            child: TextField(\n              decoration: InputDecoration(\n                hintText: 'Search users by name or email',\n                prefixIcon: Icon(Icons.search, color: Colors.grey[600]),\n                border: OutlineInputBorder(\n                  borderRadius: BorderRadius.circular(25),\n                  borderSide: BorderSide(color: Colors.grey[300]!),\n                ),\n                focusedBorder: OutlineInputBorder(\n                  borderRadius: BorderRadius.circular(25),\n                  borderSide: BorderSide(color: Colors.blue[600]!),\n                ),\n                fillColor: Colors.grey[50],\n                filled: true,\n              ),\n            ),\n          ),\n          Expanded(\n            child: ListView(\n              padding: EdgeInsets.symmetric(horizontal: 16),\n              children: [\n                _buildUserCard('John Smith', 'john.smith@company.com', 'Admin', Colors.red[600]!),\n                _buildUserCard('Sarah Johnson', 'sarah.j@company.com', 'Editor', Colors.blue[600]!),\n                _buildUserCard('Mike Davis', 'mike.davis@company.com', 'Viewer', Colors.green[600]!),\n                _buildUserCard('Emily Brown', 'emily.brown@company.com', 'Editor', Colors.blue[600]!),\n                _buildUserCard('David Wilson', 'david.w@company.com', 'Viewer', Colors.green[600]!),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n\n  Widget _buildUserCard(String name, String email, String role, Color roleColor) {\n    return Card(\n      margin: EdgeInsets.only(bottom: 12),\n      elevation: 2,\n      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),\n      child: Padding(\n        padding: EdgeInsets.all(16),\n        child: Row(\n          children: [\n            CircleAvatar(\n              radius: 25,\n              backgroundColor: Colors.grey[300],\n              child: Icon(Icons.person, color: Colors.grey[600], size: 30),\n            ),\n            SizedBox(width: 16),\n            Expanded(\n              child: Column(\n                crossAxisAlignment: CrossAxisAlignment.start,\n                children: [\n                  Text(\n                    name,\n                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),\n                  ),\n                  SizedBox(height: 4),\n                  Text(\n                    email,\n                    style: TextStyle(fontSize: 14, color: Colors.grey[600]),\n                  ),\n                  SizedBox(height: 8),\n                  ElevatedButton(\n                    onPressed: () {},\n                    child: Text('Edit Role'),\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Colors.blue[600],\n                      foregroundColor: Colors.white,\n                      shape: RoundedRectangleBorder(\n                        borderRadius: BorderRadius.circular(20),\n                      ),\n                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),\n                    ),\n                  ),\n                ],\n              ),\n            ),\n            Container(\n              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),\n              decoration: BoxDecoration(\n                color: roleColor,\n                borderRadius: BorderRadius.circular(15),\n              ),\n              child: Text(\n                role,\n                style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "admin_dashboard",
+    "tags": [
+        "user_management",
+        "roles",
+        "permissions",
+        "admin",
+        "search",
+        "cards",
+        "list"
+    ],
+    "components": [
+        "AppBar",
+        "TextField",
+        "ListView",
+        "Card",
+        "CircleAvatar",
+        "ElevatedButton",
+        "Container"
+    ],
+    "layout_type": "Column"
+}

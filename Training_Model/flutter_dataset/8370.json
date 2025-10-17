@@ -1,0 +1,22 @@
+{
+    "prompt": "Contacts list with message preview",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Chats', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),\n        backgroundColor: Colors.white,\n        elevation: 1,\n        actions: [\n          IconButton(\n            icon: Icon(Icons.search, color: Colors.black),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      backgroundColor: Colors.white,\n      body: ListView.separated(\n        itemCount: 15,\n        separatorBuilder: (context, index) => Divider(height: 1, color: Colors.grey[300]),\n        itemBuilder: (context, index) {\n          return ListTile(\n            contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),\n            leading: CircleAvatar(\n              radius: 25,\n              backgroundColor: Colors.blue[100],\n              child: Text('U${index + 1}', style: TextStyle(color: Colors.blue[800])),\n            ),\n            title: Text(\n              'User ${index + 1}',\n              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),\n            ),\n            subtitle: Text(\n              'Hey there! How are you doing today?',\n              style: TextStyle(color: Colors.grey[600], fontSize: 14),\n              maxLines: 1,\n              overflow: TextOverflow.ellipsis,\n            ),\n            trailing: Text(\n              '12:${(index % 60).toString().padLeft(2, '0')}',\n              style: TextStyle(color: Colors.grey[500], fontSize: 12),\n            ),\n            onTap: () {},\n          );\n        },\n      ),\n    );\n  }\n}",
+    "category": "messaging",
+    "tags": [
+        "chat",
+        "list",
+        "messaging",
+        "contacts",
+        "communication"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "ListTile",
+        "CircleAvatar",
+        "Text",
+        "IconButton"
+    ],
+    "layout_type": "ListView"
+}

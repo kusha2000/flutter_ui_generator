@@ -1,0 +1,23 @@
+{
+    "prompt": "Light admin dashboard with muted stats, activities, button.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[100],\n      body: SingleChildScrollView(\n        padding: EdgeInsets.all(16),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.start,\n          children: [\n            SizedBox(height: 16),\n            Text('Admin Overview', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),\n            SizedBox(height: 16),\n            GridView.count(\n              crossAxisCount: 2,\n              crossAxisSpacing: 12,\n              mainAxisSpacing: 12,\n              shrinkWrap: true,\n              physics: NeverScrollableScrollPhysics(),\n              children: [\n                _buildStatCard('Total Users', '2,134', Colors.grey[300]!),\n                _buildStatCard('Revenue', '\\$67,430', Colors.blue[200]!),\n                _buildStatCard('Orders', '1,056', Colors.green[200]!),\n                _buildStatCard('Growth', '15.3%', Colors.purple[200]!),\n              ],\n            ),\n            SizedBox(height: 24),\n            Text('Recent Activities', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),\n            SizedBox(height: 16),\n            ...List.generate(5, (index) => _buildActivityItem('User ${index + 1} performed action', '${index + 1}m ago')),\n          ],\n        ),\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {},\n        child: Icon(Icons.add),\n        backgroundColor: Colors.blue,\n      ),\n      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,\n      bottomNavigationBar: BottomNavigationBar(\n        items: [\n          BottomNavigationBarItem(icon: Icon(Icons.dashboard), label: 'Dashboard'),\n          BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Users'),\n          BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: 'Reports'),\n        ],\n        selectedItemColor: Colors.blue,\n        unselectedItemColor: Colors.grey,\n      ),\n    );\n  }\n\n  Widget _buildStatCard(String title, String value, Color color) {\n    return Container(\n      padding: EdgeInsets.all(16),\n      decoration: BoxDecoration(\n        color: color,\n        borderRadius: BorderRadius.circular(12),\n        border: Border.all(color: Colors.grey[400]!),\n      ),\n      child: Column(\n        crossAxisAlignment: CrossAxisAlignment.start,\n        children: [\n          Text(title, style: TextStyle(color: Colors.black87, fontSize: 12)),\n          SizedBox(height: 8),\n          Text(value, style: TextStyle(color: Colors.black87, fontSize: 20, fontWeight: FontWeight.bold)),\n        ],\n      ),\n    );\n  }\n\n  Widget _buildActivityItem(String activity, String time) {\n    return Padding(\n      padding: EdgeInsets.only(bottom: 12),\n      child: Row(\n        children: [\n          CircleAvatar(\n            backgroundImage: NetworkImage('https://via.placeholder.com/40'),\n            radius: 20,\n          ),\n          SizedBox(width: 12),\n          Expanded(\n            child: Column(\n              crossAxisAlignment: CrossAxisAlignment.start,\n              children: [\n                Text(activity, style: TextStyle(fontWeight: FontWeight.w500)),\n                Text(time, style: TextStyle(color: Colors.grey[600], fontSize: 12)),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "admin",
+    "tags": [
+        "dashboard",
+        "admin",
+        "statistics",
+        "activities",
+        "light theme",
+        "bottom navigation"
+    ],
+    "components": [
+        "Scaffold",
+        "GridView",
+        "Column",
+        "CircleAvatar",
+        "FloatingActionButton",
+        "BottomNavigationBar",
+        "Text"
+    ],
+    "layout_type": "Column"
+}

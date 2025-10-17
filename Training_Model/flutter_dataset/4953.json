@@ -1,0 +1,25 @@
+{
+    "prompt": "Futuristic neon photo gallery UI.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFF0D1B2A),\n      appBar: AppBar(\n        backgroundColor: Color(0xFF000000),\n        elevation: 0,\n        leading: Icon(Icons.arrow_back, color: Color(0xFF26C6DA)),\n        title: Text('Neon Gallery', style: TextStyle(color: Color(0xFF00E676), fontWeight: FontWeight.bold)),\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(18.0),\n        child: Column(\n          children: [\n            Container(\n              height: 360,\n              width: double.infinity,\n              decoration: BoxDecoration(\n                borderRadius: BorderRadius.circular(14),\n                boxShadow: [BoxShadow(color: Colors.purple.withOpacity(0.3), blurRadius: 12, offset: Offset(0, 4))],\n                image: DecorationImage(\n                  image: NetworkImage('https://images.unsplash.com/photo-1516321310763-383e2b7b4f0b?w=600'),\n                  fit: BoxFit.cover,\n                ),\n              ),\n            ),\n            SizedBox(height: 20),\n            Container(\n              height: 90,\n              padding: EdgeInsets.symmetric(horizontal: 10),\n              decoration: BoxDecoration(\n                border: Border.all(color: Color(0xFF26C6DA), width: 2),\n                borderRadius: BorderRadius.circular(8),\n              ),\n              child: ListView.builder(\n                scrollDirection: Axis.horizontal,\n                itemCount: 6,\n                itemBuilder: (context, index) {\n                  return Container(\n                    width: 70,\n                    height: 70,\n                    margin: EdgeInsets.symmetric(horizontal: 10),\n                    decoration: BoxDecoration(\n                      borderRadius: BorderRadius.circular(8),\n                      image: DecorationImage(\n                        image: NetworkImage('https://images.unsplash.com/photo-15163213107${index + 3}63-383e2b7b4f0b?w=200'),\n                        fit: BoxFit.cover,\n                      ),\n                    ),\n                  );\n                },\n              ),\n            ),\n            SizedBox(height: 24),\n            Row(\n              mainAxisAlignment: MainAxisAlignment.center,\n              children: [\n                Container(\n                  padding: EdgeInsets.all(14),\n                  decoration: BoxDecoration(\n                    color: Color(0xCC1C2526),\n                    shape: BoxShape.circle,\n                  ),\n                  child: Icon(Icons.favorite, color: Color(0xFFEC407A), size: 26),\n                ),\n                SizedBox(width: 16),\n                Container(\n                  padding: EdgeInsets.all(14),\n                  decoration: BoxDecoration(\n                    color: Color(0xCC1C2526),\n                    shape: BoxShape.circle,\n                  ),\n                  child: Icon(Icons.share, color: Color(0xFF00E676), size: 26),\n                ),\n                SizedBox(width: 16),\n                Container(\n                  padding: EdgeInsets.all(14),\n                  decoration: BoxDecoration(\n                    color: Color(0xCC1C2526),\n                    shape: BoxShape.circle,\n                  ),\n                  child: Icon(Icons.download, color: Color(0xFF26C6DA), size: 26),\n                ),\n              ],\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "media",
+    "tags": [
+        "gallery",
+        "photo",
+        "viewer",
+        "image",
+        "thumbnails",
+        "actions",
+        "neon",
+        "futuristic"
+    ],
+    "components": [
+        "Scaffold",
+        "Container",
+        "ListView",
+        "Icon",
+        "AppBar",
+        "Column",
+        "Row"
+    ],
+    "layout_type": "Column"
+}

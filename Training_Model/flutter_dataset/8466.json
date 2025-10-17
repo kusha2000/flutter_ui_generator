@@ -1,0 +1,22 @@
+{
+    "prompt": "Vibrant 404 page",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.yellow[200],\n      body: Padding(\n        padding: const EdgeInsets.all(16.0),\n        child: Stack(\n          alignment: Alignment.center,\n          children: [\n            Column(\n              mainAxisAlignment: MainAxisAlignment.center,\n              crossAxisAlignment: CrossAxisAlignment.center,\n              children: [\n                SizedBox(height: 60),\n                Text(\n                  '404',\n                  style: TextStyle(\n                    fontSize: 76,\n                    fontWeight: FontWeight.bold,\n                    color: Colors.red[700],\n                  ),\n                ),\n                SizedBox(height: 16),\n                Text(\n                  'Lost in Space?',\n                  style: TextStyle(\n                    fontSize: 30,\n                    fontWeight: FontWeight.bold,\n                    color: Colors.black,\n                  ),\n                ),\n                SizedBox(height: 20),\n                Text(\n                  'This page doesn’t exist or has been moved.',\n                  textAlign: TextAlign.center,\n                  style: TextStyle(\n                    fontSize: 16,\n                    color: Colors.black,\n                    height: 1.5,\n                  ),\n                ),\n                SizedBox(height: 24),\n                ElevatedButton(\n                  onPressed: () {},\n                  style: ElevatedButton.styleFrom(\n                    backgroundColor: Colors.red[700],\n                    foregroundColor: Colors.white,\n                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),\n                    shape: RoundedRectangleBorder(\n                      borderRadius: BorderRadius.circular(50),\n                    ),\n                  ),\n                  child: Text(\n                    'Go Home',\n                    style: TextStyle(fontSize: 16),\n                  ),\n                ),\n              ],\n            ),\n            Positioned(\n              top: 100,\n              child: Icon(\n                Icons.rocket,\n                size: 50,\n                color: Colors.black54,\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "error_pages",
+    "tags": [
+        "404",
+        "error",
+        "not_found",
+        "vibrant",
+        "icon",
+        "stack"
+    ],
+    "components": [
+        "Text",
+        "ElevatedButton",
+        "Column",
+        "Scaffold",
+        "Stack",
+        "Icon"
+    ],
+    "layout_type": "Stack"
+}

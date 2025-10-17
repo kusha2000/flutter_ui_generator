@@ -1,0 +1,19 @@
+{
+    "prompt": "Create professional forgot password with white background and full-width column layout. Include black bold title, gray subtitle, blue contact support button above email field, TextField with gray border and icon, blue reset button with white text, and blue back to login link with consistent spacing.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: Padding(\n        padding: const EdgeInsets.all(28.0),\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          crossAxisAlignment: CrossAxisAlignment.stretch,\n          children: [\n            Text(\n              'Forgot Your Password?',\n              style: TextStyle(\n                fontSize: 30,\n                fontWeight: FontWeight.bold,\n                color: Colors.black,\n              ),\n              textAlign: TextAlign.center,\n            ),\n            SizedBox(height: 20),\n            Text(\n              'Enter your email to receive a password reset link.',\n              style: TextStyle(\n                fontSize: 16,\n                color: Colors.grey[600],\n              ),\n              textAlign: TextAlign.center,\n            ),\n            SizedBox(height: 20),\n            TextButton(\n              onPressed: () {},\n              child: Text(\n                'Contact Support',\n                style: TextStyle(color: Colors.blue[600], fontSize: 16),\n              ),\n            ),\n            SizedBox(height: 20),\n            TextField(\n              keyboardType: TextInputType.emailAddress,\n              decoration: InputDecoration(\n                hintText: 'Email Address',\n                hintStyle: TextStyle(color: Colors.grey),\n                border: OutlineInputBorder(\n                  borderSide: BorderSide(color: Colors.grey[400]!),\n                ),\n                prefixIcon: Icon(Icons.email, color: Colors.grey[400]),\n              ),\n            ),\n            SizedBox(height: 20),\n            ElevatedButton(\n              onPressed: () {},\n              style: ElevatedButton.styleFrom(\n                backgroundColor: Colors.blue[600],\n                padding: EdgeInsets.symmetric(vertical: 16),\n                shape: RoundedRectangleBorder(\n                  borderRadius: BorderRadius.circular(12.0),\n                ),\n              ),\n              child: Text(\n                'Send Reset Link',\n                style: TextStyle(fontSize: 16, color: Colors.white),\n              ),\n            ),\n            SizedBox(height: 20),\n            TextButton(\n              onPressed: () {},\n              child: Text(\n                'Back to Login',\n                style: TextStyle(color: Colors.blue[600], fontSize: 16),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "authentication",
+    "tags": [
+        "forgot-password",
+        "email",
+        "reset",
+        "light-theme",
+        "professional"
+    ],
+    "components": [
+        "TextField",
+        "ElevatedButton",
+        "TextButton",
+        "Text"
+    ],
+    "layout_type": "Column"
+}

@@ -1,0 +1,25 @@
+{
+    "prompt": "Minimal Attendance Tracker page",
+    "flutter_code": "class GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        backgroundColor: Colors.white,\n        elevation: 1,\n        title: Text('Attendance', style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w500)),\n        centerTitle: true,\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(24),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.center,\n          children: [\n            SizedBox(height: 20),\n            Text('Welcome Back, Alex', style: TextStyle(fontSize: 28, fontWeight: FontWeight.w300, color: Colors.black87)),\n            SizedBox(height: 8),\n            Text('December 15, 2023', style: TextStyle(fontSize: 16, color: Colors.grey.shade600)),\n            SizedBox(height: 40),\n            Row(\n              mainAxisAlignment: MainAxisAlignment.spaceEvenly,\n              children: [\n                Column(\n                  children: [\n                    Icon(Icons.check_circle, color: Colors.green, size: 32),\n                    SizedBox(height: 8),\n                    Text('Present', style: TextStyle(fontSize: 14, color: Colors.grey.shade700)),\n                    Text('20', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black87)),\n                  ],\n                ),\n                Column(\n                  children: [\n                    Icon(Icons.cancel, color: Colors.red, size: 32),\n                    SizedBox(height: 8),\n                    Text('Absent', style: TextStyle(fontSize: 14, color: Colors.grey.shade700)),\n                    Text('1', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black87)),\n                  ],\n                ),\n                Column(\n                  children: [\n                    Icon(Icons.calendar_today, color: Colors.grey.shade600, size: 32),\n                    SizedBox(height: 8),\n                    Text('Total', style: TextStyle(fontSize: 14, color: Colors.grey.shade700)),\n                    Text('21', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black87)),\n                  ],\n                ),\n              ],\n            ),\n            SizedBox(height: 50),\n            SizedBox(\n              width: double.infinity,\n              child: ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.blue.shade600,\n                  padding: EdgeInsets.symmetric(vertical: 18),\n                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),\n                  elevation: 2,\n                ),\n                child: Text('MARK ATTENDANCE', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white, letterSpacing: 1)),\n              ),\n            ),\n            SizedBox(height: 50),\n            Align(\n              alignment: Alignment.centerLeft,\n              child: Text('Recent Activity', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black87)),\n            ),\n            SizedBox(height: 16),\n            Expanded(\n              child: ListView.builder(\n                itemCount: 4,\n                itemBuilder: (context, index) {\n                  final dates = ['December 14, 2023', 'December 13, 2023', 'December 12, 2023', 'December 11, 2023'];\n                  final hours = ['8.5 hours', '9.0 hours', '8.0 hours', '8.8 hours'];\n                  return Container(\n                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 8),\n                    decoration: BoxDecoration(\n                      border: Border(bottom: BorderSide(color: Colors.grey.shade200, width: 1)),\n                    ),\n                    child: Row(\n                      mainAxisAlignment: MainAxisAlignment.spaceBetween,\n                      children: [\n                        Text(dates[index], style: TextStyle(fontSize: 15, color: Colors.black87)),\n                        Text(hours[index], style: TextStyle(fontSize: 15, color: Colors.grey.shade600)),\n                      ],\n                    ),\n                  );\n                },\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "productivity",
+    "tags": [
+        "attendance",
+        "minimalist",
+        "simple",
+        "clean",
+        "tracking",
+        "work"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Padding",
+        "Column",
+        "Row",
+        "Text",
+        "Icon",
+        "ElevatedButton",
+        "ListView"
+    ],
+    "layout_type": "Column"
+}

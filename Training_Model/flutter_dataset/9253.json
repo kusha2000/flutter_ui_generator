@@ -1,0 +1,23 @@
+{
+    "prompt": "Clean drawer navigation",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        title: Text('Home', style: TextStyle(color: Colors.white)),\n        backgroundColor: Colors.red,\n        iconTheme: IconThemeData(color: Colors.white),\n        actions: [\n          IconButton(\n            icon: Icon(Icons.notifications),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      drawer: Drawer(\n        child: Column(\n          children: [\n            UserAccountsDrawerHeader(\n              decoration: BoxDecoration(color: Colors.red),\n              currentAccountPicture: CircleAvatar(\n                backgroundColor: Colors.white,\n                child: Icon(Icons.person, color: Colors.red, size: 40),\n              ),\n              accountName: Text('Noah Lee', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),\n              accountEmail: Text('noah.lee@example.com', style: TextStyle(fontSize: 14, color: Colors.grey[600])),\n            ),\n            Divider(),\n            ListTile(\n              leading: Icon(Icons.home, color: Colors.red),\n              title: Text('Home', style: TextStyle(color: Colors.red)),\n              trailing: Icon(Icons.arrow_forward_ios, color: Colors.red, size: 16),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.person, color: Colors.red),\n              title: Text('Profile', style: TextStyle(color: Colors.red)),\n              trailing: Icon(Icons.arrow_forward_ios, color: Colors.red, size: 16),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.settings, color: Colors.red),\n              title: Text('Settings', style: TextStyle(color: Colors.red)),\n              trailing: Icon(Icons.arrow_forward_ios, color: Colors.red, size: 16),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.exit_to_app, color: Colors.red),\n              title: Text('Logout', style: TextStyle(color: Colors.red)),\n              trailing: Icon(Icons.arrow_forward_ios, color: Colors.red, size: 16),\n              onTap: () {},\n            ),\n          ],\n        ),\n      ),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            Text(\n              'Welcome, Noah!',\n              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.red),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Check notifications or use the menu',\n              style: TextStyle(fontSize: 16, color: Colors.grey[600]),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "drawer",
+        "menu",
+        "navigation",
+        "profile",
+        "appbar actions",
+        "sidebar"
+    ],
+    "components": [
+        "Drawer",
+        "AppBar",
+        "ListTile",
+        "UserAccountsDrawerHeader",
+        "CircleAvatar",
+        "Divider",
+        "IconButton"
+    ],
+    "layout_type": "Column"
+}

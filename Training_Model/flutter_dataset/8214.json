@@ -1,0 +1,22 @@
+{
+    "prompt": "User profile page",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: Center(\n        child: Padding(\n          padding: const EdgeInsets.all(24.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            crossAxisAlignment: CrossAxisAlignment.center,\n            children: [\n              Container(\n                width: 120,\n                height: 120,\n                decoration: BoxDecoration(\n                  shape: BoxShape.circle,\n                  boxShadow: [\n                    BoxShadow(\n                      color: Colors.grey.withOpacity(0.3),\n                      spreadRadius: 2,\n                      blurRadius: 8,\n                      offset: Offset(0, 4),\n                    ),\n                  ],\n                ),\n                child: CircleAvatar(\n                  radius: 60,\n                  backgroundColor: Colors.grey[300],\n                  child: Icon(\n                    Icons.person,\n                    size: 60,\n                    color: Colors.grey[600],\n                  ),\n                ),\n              ),\n              SizedBox(height: 24),\n              Text(\n                'John Doe',\n                style: TextStyle(\n                  fontSize: 28,\n                  fontWeight: FontWeight.bold,\n                  color: Colors.grey[800],\n                ),\n              ),\n              SizedBox(height: 8),\n              Text(\n                'john.doe@example.com',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.grey[600],\n                ),\n              ),\n              SizedBox(height: 40),\n              Row(\n                mainAxisAlignment: MainAxisAlignment.spaceEvenly,\n                children: [\n                  ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Colors.blue,\n                      foregroundColor: Colors.white,\n                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),\n                      shape: RoundedRectangleBorder(\n                        borderRadius: BorderRadius.circular(25),\n                      ),\n                    ),\n                    child: Text('Edit Profile'),\n                  ),\n                  ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Colors.blue,\n                      foregroundColor: Colors.white,\n                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),\n                      shape: RoundedRectangleBorder(\n                        borderRadius: BorderRadius.circular(25),\n                      ),\n                    ),\n                    child: Text('Settings'),\n                  ),\n                  ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Colors.blue,\n                      foregroundColor: Colors.white,\n                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),\n                      shape: RoundedRectangleBorder(\n                        borderRadius: BorderRadius.circular(25),\n                      ),\n                    ),\n                    child: Text('Logout'),\n                  ),\n                ],\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "profile",
+    "tags": [
+        "profile",
+        "user",
+        "avatar",
+        "buttons",
+        "centered",
+        "modern"
+    ],
+    "components": [
+        "CircleAvatar",
+        "Text",
+        "ElevatedButton",
+        "Container",
+        "Row",
+        "Column"
+    ],
+    "layout_type": "Column"
+}

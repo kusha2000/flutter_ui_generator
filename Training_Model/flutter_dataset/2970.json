@@ -1,0 +1,22 @@
+{
+    "prompt": "Minimalist full-screen map page with white top app bar, 'Minimal Map' title, and bottom-right GPS FAB. Map area pure white with no decoration, emphasizing simplicity and clarity with Material Design.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Minimal Map'),\n        backgroundColor: Colors.white,\n        foregroundColor: Colors.black,\n        elevation: 0,\n      ),\n      body: Container(\n        width: double.infinity,\n        height: double.infinity,\n        color: Colors.white,\n        child: Center(\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Icon(\n                Icons.map,\n                size: 100,\n                color: Colors.grey[600],\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Map View Area',\n                style: TextStyle(\n                  fontSize: 18,\n                  color: Colors.grey[600],\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {},\n        backgroundColor: Colors.transparent,\n        elevation: 0,\n        shape: CircleBorder(side: BorderSide(color: Colors.grey, width: 1)),\n        child: Icon(\n          Icons.my_location,\n          color: Colors.grey,\n        ),\n      ),\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "map",
+        "navigation",
+        "location",
+        "gps",
+        "minimalist",
+        "floating-action-button"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "FloatingActionButton",
+        "Icon",
+        "Text"
+    ],
+    "layout_type": "Scaffold"
+}

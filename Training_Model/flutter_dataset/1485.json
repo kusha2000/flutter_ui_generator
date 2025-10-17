@@ -1,0 +1,23 @@
+{
+    "prompt": "Create a loading page with off-white background, centered bold red circular progress indicator with three orbiting gray dots, 'Please Hold...' italic text below positioned 24 pixels under the indicator, using Column layout in a Scaffold.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> with SingleTickerProviderStateMixin {\n  late AnimationController _controller;\n\n  @override\n  void initState() {\n    super.initState();\n    _controller = AnimationController(\n      duration: Duration(seconds: 2),\n      vsync: this,\n    )..repeat();\n  }\n\n  @override\n  void dispose() {\n    _controller.dispose();\n    super.dispose();\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFF8F8F8),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            Stack(\n              alignment: Alignment.center,\n              children: [\n                CircularProgressIndicator(\n                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFE53935)),\n                ),\n                AnimatedBuilder(\n                  animation: _controller,\n                  builder: (context, child) {\n                    return Transform.rotate(\n                      angle: _controller.value * 2 * 3.14159,\n                      child: Stack(\n                        children: [\n                          Positioned(\n                            top: 0,\n                            child: Container(width: 8, height: 8, decoration: BoxDecoration(color: Color(0xFF757575), shape: BoxShape.circle)),\n                          ),\n                          Positioned(\n                            top: 20 * (1 - _controller.value),\n                            left: 20,\n                            child: Container(width: 8, height: 8, decoration: BoxDecoration(color: Color(0xFF757575), shape: BoxShape.circle)),\n                          ),\n                          Positioned(\n                            top: 20 * _controller.value,\n                            right: 20,\n                            child: Container(width: 8, height: 8, decoration: BoxDecoration(color: Color(0xFF757575), shape: BoxShape.circle)),\n                          ),\n                        ],\n                      ),\n                    );\n                  },\n                ),\n              ],\n            ),\n            SizedBox(height: 24),\n            Text(\n              'Please Hold...',\n              style: TextStyle(\n                fontSize: 18,\n                color: Color(0xFF424242),\n                fontStyle: FontStyle.italic,\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "progress",
+        "circular",
+        "animation",
+        "orbiting"
+    ],
+    "components": [
+        "Scaffold",
+        "CircularProgressIndicator",
+        "Text",
+        "Column",
+        "Center",
+        "Stack",
+        "AnimatedBuilder",
+        "Container"
+    ],
+    "layout_type": "Column"
+}

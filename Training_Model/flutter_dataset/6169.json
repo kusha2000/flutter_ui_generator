@@ -1,0 +1,26 @@
+{
+    "prompt": "Glassmorphism wishlist neon floating pink button",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  List<Map<String, dynamic>> wishlistItems = [\n    {'name': 'Wireless Headphones', 'price': '99.99', 'icon': Icons.headphones},\n    {'name': 'Smartphone', 'price': '699.99', 'icon': Icons.phone_android},\n    {'name': 'Laptop', 'price': '1299.99', 'icon': Icons.laptop},\n    {'name': 'Watch', 'price': '299.99', 'icon': Icons.watch},\n  ];\n\n  void removeItem(int index) {\n    setState(() {\n      wishlistItems.removeAt(index);\n    });\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFF0A1F44),\n      appBar: AppBar(\n        backgroundColor: Color(0xFF0A1F44),\n        elevation: 0,\n        title: Row(\n          children: [\n            Icon(Icons.favorite, color: Colors.cyanAccent, size: 24),\n            SizedBox(width: 8),\n            Text('Wishlist', style: TextStyle(color: Colors.greenAccent, fontSize: 20, fontFamily: 'Orbitron')),\n          ],\n        ),\n      ),\n      body: wishlistItems.isEmpty\n          ? Center(\n              child: Column(\n                mainAxisAlignment: MainAxisAlignment.center,\n                children: [\n                  Icon(Icons.favorite_border, size: 80, color: Colors.cyanAccent.withOpacity(0.5)),\n                  SizedBox(height: 16),\n                  Text('Your wishlist is empty', style: TextStyle(fontSize: 18, color: Colors.cyanAccent, fontFamily: 'Orbitron')),\n                ],\n              ),\n            )\n          : GridView.builder(\n              padding: EdgeInsets.all(16),\n              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(\n                crossAxisCount: 2,\n                crossAxisSpacing: 12,\n                mainAxisSpacing: 12,\n                childAspectRatio: 0.8,\n              ),\n              itemCount: wishlistItems.length,\n              itemBuilder: (context, index) {\n                final item = wishlistItems[index];\n                return Container(\n                  decoration: BoxDecoration(\n                    color: Colors.white.withOpacity(0.1),\n                    borderRadius: BorderRadius.circular(12),\n                    border: Border.all(color: Colors.cyanAccent.withOpacity(0.3)),\n                  ),\n                  child: ClipRRect(\n                    borderRadius: BorderRadius.circular(12),\n                    child: BackdropFilter(\n                      filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),\n                      child: Column(\n                        mainAxisAlignment: MainAxisAlignment.center,\n                        children: [\n                          Align(\n                            alignment: Alignment.topRight,\n                            child: IconButton(\n                              icon: Icon(Icons.favorite, color: Colors.cyanAccent, size: 20),\n                              onPressed: () => removeItem(index),\n                            ),\n                          ),\n                          Icon(item['icon'], size: 40, color: Colors.greenAccent),\n                          SizedBox(height: 8),\n                          Text(\n                            item['name'],\n                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.white, fontFamily: 'Orbitron'),\n                            textAlign: TextAlign.center,\n                          ),\n                          SizedBox(height: 4),\n                          Text(\n                            item['price'],\n                            style: TextStyle(fontSize: 12, color: Colors.greenAccent, fontWeight: FontWeight.w600),\n                          ),\n                        ],\n                      ),\n                    ),\n                  ),\n                );\n              },\n            ),\n      floatingActionButton: FloatingActionButton(\n        backgroundColor: Colors.pinkAccent,\n        child: Icon(Icons.add, color: Colors.black),\n        onPressed: () {},\n      ),\n    );\n  }\n}",
+    "category": "e-commerce",
+    "tags": [
+        "wishlist",
+        "futuristic",
+        "grid",
+        "heart",
+        "favorite",
+        "shopping",
+        "product",
+        "card",
+        "glassmorphism"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "GridView",
+        "Container",
+        "Icon",
+        "FloatingActionButton",
+        "Column"
+    ],
+    "layout_type": "Grid"
+}

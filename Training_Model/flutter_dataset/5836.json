@@ -1,0 +1,24 @@
+{
+    "prompt": "Followers page with white background and text tabs.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  bool isFollowersSelected = true;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        backgroundColor: Colors.white,\n        elevation: 0,\n        leading: Icon(Icons.arrow_back, color: Colors.black),\n        title: Text('Followers', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),\n        actions: [Icon(Icons.search, color: Colors.black), SizedBox(width: 12)],\n        centerTitle: true,\n      ),\n      body: Column(\n        children: [\n          Container(\n            padding: EdgeInsets.all(12),\n            child: Row(\n              mainAxisAlignment: MainAxisAlignment.center,\n              children: [\n                GestureDetector(\n                  onTap: () => setState(() => isFollowersSelected = false),\n                  child: Container(\n                    padding: EdgeInsets.symmetric(vertical: 8),\n                    decoration: BoxDecoration(\n                      border: Border(bottom: BorderSide(color: !isFollowersSelected ? Colors.black : Colors.transparent, width: 2)),\n                    ),\n                    child: Text(\n                      'Following',\n                      style: TextStyle(\n                        color: !isFollowersSelected ? Colors.black : Colors.grey,\n                        fontWeight: FontWeight.w600,\n                      ),\n                    ),\n                  ),\n                ),\n                SizedBox(width: 16),\n                GestureDetector(\n                  onTap: () => setState(() => isFollowersSelected = true),\n                  child: Container(\n                    padding: EdgeInsets.symmetric(vertical: 8),\n                    decoration: BoxDecoration(\n                      border: Border(bottom: BorderSide(color: isFollowersSelected ? Colors.black : Colors.transparent, width: 2)),\n                    ),\n                    child: Text(\n                      'Followers',\n                      style: TextStyle(\n                        color: isFollowersSelected ? Colors.black : Colors.grey,\n                        fontWeight: FontWeight.w600,\n                      ),\n                    ),\n                  ),\n                ),\n              ],\n            ),\n          ),\n          Expanded(\n            child: ListView.builder(\n              padding: EdgeInsets.symmetric(horizontal: 12),\n              itemCount: 10,\n              itemBuilder: (context, index) {\n                return ListTile(\n                  contentPadding: EdgeInsets.symmetric(vertical: 8),\n                  leading: CircleAvatar(\n                    radius: 25,\n                    backgroundColor: Colors.grey[300],\n                    backgroundImage: NetworkImage('https://picsum.photos/50/50?random=$index'),\n                  ),\n                  title: Text(\n                    'User Name ${index + 1}',\n                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),\n                  ),\n                  subtitle: Text(\n                    '@username${index + 1}',\n                    style: TextStyle(color: Colors.grey[600]),\n                  ),\n                  trailing: OutlinedButton(\n                    onPressed: () {},\n                    style: OutlinedButton.styleFrom(\n                      side: BorderSide(color: Colors.black),\n                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),\n                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),\n                    ),\n                    child: Text('Follow', style: TextStyle(color: Colors.black)),\n                  ),\n                );\n              },\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "social_media",
+    "tags": [
+        "followers",
+        "following",
+        "list",
+        "profile",
+        "social",
+        "tabs",
+        "follow_button",
+        "monochrome"
+    ],
+    "components": [
+        "AppBar",
+        "TabBar",
+        "ListView",
+        "ListTile",
+        "CircleAvatar",
+        "OutlinedButton"
+    ],
+    "layout_type": "Column"
+}

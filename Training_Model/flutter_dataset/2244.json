@@ -1,0 +1,22 @@
+{
+    "prompt": "Create dark drawer menu with black app bar, gradient profile section containing avatar and user details, white navigation items with hover effects, and main area with welcome message and activity cards.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Dashboard', style: TextStyle(color: Colors.white)),\n        backgroundColor: Colors.black,\n        iconTheme: IconThemeData(color: Colors.white),\n      ),\n      drawer: Drawer(\n        child: Container(\n          color: Colors.grey[900],\n          child: Column(\n            children: [\n              UserAccountsDrawerHeader(\n                decoration: BoxDecoration(\n                  gradient: LinearGradient(\n                    colors: [Colors.deepPurple, Colors.indigo],\n                    begin: Alignment.topLeft,\n                    end: Alignment.bottomRight,\n                  ),\n                ),\n                currentAccountPicture: CircleAvatar(\n                  backgroundColor: Colors.white,\n                  child: Icon(Icons.person, color: Colors.deepPurple, size: 40),\n                ),\n                accountName: Text('Sarah Wilson', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),\n                accountEmail: Text('sarah.wilson@company.com', style: TextStyle(fontSize: 14, color: Colors.grey[300])),\n              ),\n              ListTile(\n                leading: Icon(Icons.home, color: Colors.white),\n                title: Text('Home', style: TextStyle(color: Colors.white)),\n                onTap: () {},\n              ),\n              ListTile(\n                leading: Icon(Icons.message, color: Colors.white),\n                title: Text('Messages', style: TextStyle(color: Colors.white)),\n                onTap: () {},\n              ),\n              ListTile(\n                leading: Icon(Icons.notifications, color: Colors.white),\n                title: Text('Notifications', style: TextStyle(color: Colors.white)),\n                onTap: () {},\n              ),\n              ListTile(\n                leading: Icon(Icons.analytics, color: Colors.white),\n                title: Text('Analytics', style: TextStyle(color: Colors.white)),\n                onTap: () {},\n              ),\n              ListTile(\n                leading: Icon(Icons.account_circle, color: Colors.white),\n                title: Text('Account', style: TextStyle(color: Colors.white)),\n                onTap: () {},\n              ),\n              Divider(color: Colors.grey[700]),\n              ListTile(\n                leading: Icon(Icons.exit_to_app, color: Colors.red[300]),\n                title: Text('Sign Out', style: TextStyle(color: Colors.red[300])),\n                onTap: () {},\n              ),\n            ],\n          ),\n        ),\n      ),\n      backgroundColor: Colors.grey[850],\n      body: Padding(\n        padding: EdgeInsets.all(16),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.start,\n          children: [\n            Text(\n              'Welcome Back!',\n              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),\n            ),\n            SizedBox(height: 20),\n            Card(\n              color: Colors.grey[800],\n              child: Padding(\n                padding: EdgeInsets.all(16),\n                child: Text(\n                  'Recent Activity',\n                  style: TextStyle(fontSize: 18, color: Colors.white),\n                ),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "drawer",
+        "menu",
+        "dark-theme",
+        "navigation",
+        "gradient",
+        "modern"
+    ],
+    "components": [
+        "Drawer",
+        "AppBar",
+        "ListTile",
+        "UserAccountsDrawerHeader",
+        "Card",
+        "LinearGradient"
+    ],
+    "layout_type": "Column"
+}

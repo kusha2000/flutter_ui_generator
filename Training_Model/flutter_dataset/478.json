@@ -1,0 +1,21 @@
+{
+    "prompt": "Design a minimalist loading page positioned at the top section of the screen rather than center, creating space for additional content below. Use a pure white background with the progress indicator and text positioned in the upper third of the screen using MainAxisAlignment.start with top padding of 120 pixels. Display a small green circular progress indicator (0xFF4CAF50) with default size, followed by 'Initializing...' text in small font size (14px) and gray color (0xFF666666), spaced 16 pixels below the indicator. This layout is ideal for pages where loading occurs while other static content remains visible below the loading section.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: Padding(\n        padding: EdgeInsets.only(top: 120),\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.start,\n          children: [\n            CircularProgressIndicator(\n              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF4CAF50)),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Initializing...',\n              style: TextStyle(\n                fontSize: 14,\n                color: Color(0xFF666666),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "top",
+        "minimal",
+        "green",
+        "initialize",
+        "padding"
+    ],
+    "components": [
+        "Scaffold",
+        "Padding",
+        "CircularProgressIndicator",
+        "Text",
+        "Column"
+    ],
+    "layout_type": "Column"
+}

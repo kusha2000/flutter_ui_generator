@@ -1,0 +1,22 @@
+{
+    "prompt": "Design minimalist drawer menu with white background and green app bar. Include simple header with circular user avatar, 'Emma Wilson' username in bold, and email in gray. Add compact navigation items: Home, Profile, Settings, Logout with small icons and minimal padding. Main content shows centered welcome message in green with gray subtitle using tight Material Design spacing.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        title: Text('Home', style: TextStyle(color: Colors.white)),\n        backgroundColor: Colors.green,\n        iconTheme: IconThemeData(color: Colors.white),\n      ),\n      drawer: Drawer(\n        child: Column(\n          children: [\n            UserAccountsDrawerHeader(\n              decoration: BoxDecoration(color: Colors.green),\n              currentAccountPicture: CircleAvatar(\n                backgroundColor: Colors.white,\n                child: Icon(Icons.person, color: Colors.green, size: 30),\n              ),\n              accountName: Text('Emma Wilson', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),\n              accountEmail: Text('emma.wilson@example.com', style: TextStyle(fontSize: 12, color: Colors.grey[600])),\n              margin: EdgeInsets.zero,\n            ),\n            Divider(height: 1, thickness: 1),\n            ListTile(\n              contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),\n              leading: Icon(Icons.home, color: Colors.green, size: 20),\n              title: Text('Home', style: TextStyle(fontSize: 14)),\n              onTap: () {},\n            ),\n            ListTile(\n              contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),\n              leading: Icon(Icons.person, color: Colors.green, size: 20),\n              title: Text('Profile', style: TextStyle(fontSize: 14)),\n              onTap: () {},\n            ),\n            ListTile(\n              contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),\n              leading: Icon(Icons.settings, color: Colors.green, size: 20),\n              title: Text('Settings', style: TextStyle(fontSize: 14)),\n              onTap: () {},\n            ),\n            ListTile(\n              contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),\n              leading: Icon(Icons.exit_to_app, color: Colors.red, size: 20),\n              title: Text('Logout', style: TextStyle(fontSize: 14)),\n              onTap: () {},\n            ),\n          ],\n        ),\n      ),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            Text(\n              'Hello, Emma!',\n              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.green),\n            ),\n            SizedBox(height: 8),\n            Text(\n              'Use the menu to navigate',\n              style: TextStyle(fontSize: 14, color: Colors.grey[600]),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "drawer",
+        "menu",
+        "navigation",
+        "profile",
+        "minimalist",
+        "sidebar"
+    ],
+    "components": [
+        "Drawer",
+        "AppBar",
+        "ListTile",
+        "UserAccountsDrawerHeader",
+        "CircleAvatar",
+        "Divider"
+    ],
+    "layout_type": "Column"
+}

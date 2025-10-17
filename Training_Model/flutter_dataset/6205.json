@@ -1,0 +1,22 @@
+{
+    "prompt": "Dark discover screen with rounded illustration",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.black,\n      body: SafeArea(\n        child: Padding(\n          padding: const EdgeInsets.all(16.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Expanded(\n                flex: 3,\n                child: Container(\n                  decoration: BoxDecoration(\n                    color: Colors.grey[800],\n                    borderRadius: BorderRadius.circular(16),\n                  ),\n                  child: Icon(\n                    Icons.explore,\n                    size: 90,\n                    color: Colors.white,\n                  ),\n                ),\n              ),\n              SizedBox(height: 20),\n              Text(\n                'Discover Now',\n                style: TextStyle(\n                  fontSize: 24,\n                  fontWeight: FontWeight.bold,\n                  color: Colors.white,\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 20),\n              Text(\n                'Unlock powerful tools to streamline your workflow.',\n                style: TextStyle(\n                  fontSize: 14,\n                  color: Colors.grey[400],\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 20),\n              SizedBox(\n                width: double.infinity,\n                height: 48,\n                child: ElevatedButton(\n                  onPressed: () {},\n                  style: ElevatedButton.styleFrom(\n                    backgroundColor: Colors.green,\n                    shape: RoundedRectangleBorder(\n                      borderRadius: BorderRadius.circular(8),\n                    ),\n                  ),\n                  child: Text(\n                    'Get Started',\n                    style: TextStyle(\n                      fontSize: 16,\n                      color: Colors.white,\n                    ),\n                  ),\n                ),\n              ),\n              SizedBox(height: 20),\n              TextButton(\n                onPressed: () {},\n                child: Text(\n                  'Skip',\n                  style: TextStyle(\n                    fontSize: 16,\n                    color: Colors.grey[400],\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "onboarding",
+    "tags": [
+        "onboarding",
+        "dark-theme",
+        "welcome",
+        "get-started",
+        "skip"
+    ],
+    "components": [
+        "Container",
+        "Icon",
+        "Text",
+        "ElevatedButton",
+        "TextButton",
+        "Column",
+        "SafeArea"
+    ],
+    "layout_type": "Column"
+}

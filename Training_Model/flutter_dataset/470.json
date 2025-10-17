@@ -1,0 +1,20 @@
+{
+    "prompt": "Design a 404 Not Found page with a light green background (Colors.green[100]). Show '404' in bold dark green (Colors.green[900], font size 72). Display 'Oops, Page Not Found' in green (Colors.green[700], font size 26, semi-bold). Include a message 'The page you’re looking for doesn’t exist.' in gray (Colors.grey[600], font size 16). Add a green 'Back to Home' button with rounded corners (borderRadius: 8) and white text. Use a Column layout with mainAxisAlignment.start and crossAxisAlignment.center to position content at the top center. Apply padding of 24.0 on all sides. Use a Scaffold with the light green background, and add a subtle shadow to the button (elevation: 6).",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.green[100],\n      body: Padding(\n        padding: const EdgeInsets.all(24.0),\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.start,\n          crossAxisAlignment: CrossAxisAlignment.center,\n          children: [\n            SizedBox(height: 100),\n            Text(\n              '404',\n              style: TextStyle(\n                fontSize: 72,\n                fontWeight: FontWeight.bold,\n                color: Colors.green[900],\n              ),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Oops, Page Not Found',\n              style: TextStyle(\n                fontSize: 26,\n                fontWeight: FontWeight.w600,\n                color: Colors.green[700],\n              ),\n            ),\n            SizedBox(height: 20),\n            Text(\n              'The page you’re looking for doesn’t exist.',\n              textAlign: TextAlign.center,\n              style: TextStyle(\n                fontSize: 16,\n                color: Colors.grey[600],\n                height: 1.5,\n              ),\n            ),\n            SizedBox(height: 24),\n            ElevatedButton(\n              onPressed: () {},\n              style: ElevatedButton.styleFrom(\n                backgroundColor: Colors.green[700],\n                foregroundColor: Colors.white,\n                padding: EdgeInsets.symmetric(horizontal: 32, vertical: 14),\n                shape: RoundedRectangleBorder(\n                  borderRadius: BorderRadius.circular(8),\n                ),\n                elevation: 6,\n              ),\n              child: Text(\n                'Back to Home',\n                style: TextStyle(fontSize: 16),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "error_pages",
+    "tags": [
+        "404",
+        "error",
+        "not_found",
+        "green",
+        "button",
+        "top_aligned"
+    ],
+    "components": [
+        "Text",
+        "ElevatedButton",
+        "Column",
+        "Scaffold"
+    ],
+    "layout_type": "Column"
+}

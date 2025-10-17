@@ -1,0 +1,21 @@
+{
+    "prompt": "Create a compact profile page with top-aligned layout featuring small circular profile picture at top left, user name in bold black text and email in gray aligned left below. Place three action buttons in vertical stack on right side with blue background, white text, and rounded corners using minimal padding for space-efficient design.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: SafeArea(\n        child: Padding(\n          padding: const EdgeInsets.all(16.0),\n          child: Row(\n            crossAxisAlignment: CrossAxisAlignment.start,\n            children: [\n              Column(\n                crossAxisAlignment: CrossAxisAlignment.start,\n                children: [\n                  CircleAvatar(\n                    radius: 50,\n                    backgroundColor: Colors.grey[300],\n                    child: Icon(\n                      Icons.person,\n                      size: 50,\n                      color: Colors.grey[700],\n                    ),\n                  ),\n                  SizedBox(height: 16),\n                  Text(\n                    'Tom Harris',\n                    style: TextStyle(\n                      fontSize: 24,\n                      fontWeight: FontWeight.bold,\n                      color: Colors.black,\n                    ),\n                  ),\n                  SizedBox(height: 6),\n                  Text(\n                    'tom.harris@example.com',\n                    style: TextStyle(\n                      fontSize: 14,\n                      color: Colors.grey[600],\n                    ),\n                  ),\n                ],\n              ),\n              Spacer(),\n              Column(\n                children: [\n                  ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Colors.blue,\n                      foregroundColor: Colors.white,\n                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),\n                      shape: RoundedRectangleBorder(\n                        borderRadius: BorderRadius.circular(15),\n                      ),\n                      minimumSize: Size(120, 40),\n                    ),\n                    child: Text('Edit Profile'),\n                  ),\n                  SizedBox(height: 10),\n                  ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Colors.blue,\n                      foregroundColor: Colors.white,\n                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),\n                      shape: RoundedRectangleBorder(\n                        borderRadius: BorderRadius.circular(15),\n                      ),\n                      minimumSize: Size(120, 40),\n                    ),\n                    child: Text('Settings'),\n                  ),\n                  SizedBox(height: 10),\n                  ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Colors.blue,\n                      foregroundColor: Colors.white,\n                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),\n                      shape: RoundedRectangleBorder(\n                        borderRadius: BorderRadius.circular(15),\n                      ),\n                      minimumSize: Size(120, 40),\n                    ),\n                    child: Text('Logout'),\n                  ),\n                ],\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "profile",
+    "tags": [
+        "profile",
+        "user",
+        "avatar",
+        "buttons",
+        "compact",
+        "left-aligned"
+    ],
+    "components": [
+        "CircleAvatar",
+        "Text",
+        "ElevatedButton",
+        "Row",
+        "Column"
+    ],
+    "layout_type": "Row"
+}

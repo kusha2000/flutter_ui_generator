@@ -1,0 +1,26 @@
+{
+    "prompt": "Create a clean monochrome flashcards UI with white background, central rectangular card with black border, black text, square black flip button, thin black arrows for navigation, top fraction progress indicator, minimalist sans-serif header with black icons, and bottom outline buttons for actions. Focus on functional, minimalist, high-contrast design.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  bool showAnswer = false;\n  int currentCard = 1;\n  int totalCards = 10;\n  bool isFavorite = false;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        backgroundColor: Colors.white,\n        elevation: 0,\n        title: Text('Vocabulary Words', style: TextStyle(color: Colors.black, fontSize: 20, fontFamily: 'Roboto')),\n        actions: [\n          IconButton(icon: Icon(Icons.settings, color: Colors.black), onPressed: () {}),\n          IconButton(icon: Icon(Icons.menu, color: Colors.black), onPressed: () {}),\n        ],\n      ),\n      body: Column(\n        children: [\n          Padding(\n            padding: EdgeInsets.all(16),\n            child: Text('$currentCard/$totalCards', style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold)),\n          ),\n          Expanded(\n            child: Center(\n              child: Column(\n                mainAxisAlignment: MainAxisAlignment.center,\n                children: [\n                  IconButton(\n                    icon: Icon(Icons.arrow_drop_up, size: 40, color: Colors.black),\n                    onPressed: () {},\n                  ),\n                  Container(\n                    width: 300,\n                    height: 180,\n                    decoration: BoxDecoration(\n                      border: Border.all(color: Colors.black, width: 1),\n                    ),\n                    child: Center(\n                      child: Padding(\n                        padding: EdgeInsets.all(20),\n                        child: Text(\n                          showAnswer ? 'Big' : 'What is a synonym for large?',\n                          style: TextStyle(fontSize: 18, color: Colors.black, fontFamily: 'Roboto'),\n                          textAlign: TextAlign.center,\n                        ),\n                      ),\n                    ),\n                  ),\n                  IconButton(\n                    icon: Icon(Icons.arrow_drop_down, size: 40, color: Colors.black),\n                    onPressed: () {},\n                  ),\n                ],\n              ),\n            ),\n          ),\n          Padding(\n            padding: EdgeInsets.symmetric(vertical: 20),\n            child: ElevatedButton(\n              onPressed: () {\n                setState(() {\n                  showAnswer = !showAnswer;\n                });\n              },\n              style: ElevatedButton.styleFrom(\n                backgroundColor: Colors.black,\n                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),\n                shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),\n              ),\n              child: Text('Flip', style: TextStyle(color: Colors.white, fontSize: 16)),\n            ),\n          ),\n          Container(\n            padding: EdgeInsets.all(16),\n            child: Row(\n              mainAxisAlignment: MainAxisAlignment.spaceEvenly,\n              children: [\n                OutlinedButton(\n                  style: OutlinedButton.styleFrom(side: BorderSide(color: Colors.black)),\n                  onPressed: () {},\n                  child: Text('Shuffle', style: TextStyle(color: Colors.black)),\n                ),\n                OutlinedButton(\n                  style: OutlinedButton.styleFrom(side: BorderSide(color: Colors.black)),\n                  onPressed: () {},\n                  child: Text('Restart', style: TextStyle(color: Colors.black)),\n                ),\n                OutlinedButton(\n                  style: OutlinedButton.styleFrom(side: BorderSide(color: Colors.black)),\n                  onPressed: () {\n                    setState(() {\n                      isFavorite = !isFavorite;\n                    });\n                  },\n                  child: Text(isFavorite ? 'Unfavorite' : 'Favorite', style: TextStyle(color: Colors.black)),\n                ),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "education",
+    "tags": [
+        "flashcards",
+        "study",
+        "monochrome",
+        "minimalist",
+        "navigation",
+        "progress"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "Text",
+        "IconButton",
+        "ElevatedButton",
+        "OutlinedButton",
+        "Row",
+        "Column",
+        "Padding"
+    ],
+    "layout_type": "Column"
+}

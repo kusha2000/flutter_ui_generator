@@ -1,0 +1,23 @@
+{
+    "prompt": "Orange app bar with vibrant drawer menu",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFFFF8E1),\n      appBar: AppBar(\n        title: Text('Dashboard', style: TextStyle(color: Colors.white)),\n        backgroundColor: Colors.orange,\n        iconTheme: IconThemeData(color: Colors.white),\n      ),\n      drawer: Drawer(\n        elevation: 8,\n        child: Column(\n          children: [\n            UserAccountsDrawerHeader(\n              decoration: BoxDecoration(color: Colors.orange),\n              currentAccountPicture: CircleAvatar(\n                backgroundColor: Colors.white,\n                child: Icon(Icons.person, color: Colors.orange, size: 40),\n              ),\n              accountName: Text('Liam Davis', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),\n              accountEmail: Text('liam.davis@example.com', style: TextStyle(fontSize: 14, color: Colors.grey[300])),\n            ),\n            Divider(),\n            ListTile(\n              leading: Icon(Icons.dashboard, color: Colors.orange),\n              title: Text('Dashboard', style: TextStyle(fontWeight: FontWeight.bold)),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.person_outline, color: Colors.orange),\n              title: Text('Profile', style: TextStyle(fontWeight: FontWeight.bold)),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.settings, color: Colors.orange),\n              title: Text('Settings', style: TextStyle(fontWeight: FontWeight.bold)),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.help_outline, color: Colors.orange),\n              title: Text('Help', style: TextStyle(fontWeight: FontWeight.bold)),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.logout, color: Colors.red),\n              title: Text('Logout', style: TextStyle(fontWeight: FontWeight.bold)),\n              onTap: () {},\n            ),\n          ],\n        ),\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {},\n        backgroundColor: Colors.orange,\n        child: Icon(Icons.add, color: Colors.white),\n      ),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            Text(\n              'Welcome, Liam!',\n              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.orange),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Tap the + button to add content',\n              style: TextStyle(fontSize: 16, color: Colors.grey[600]),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "drawer",
+        "menu",
+        "navigation",
+        "profile",
+        "floating action button",
+        "sidebar"
+    ],
+    "components": [
+        "Drawer",
+        "AppBar",
+        "ListTile",
+        "UserAccountsDrawerHeader",
+        "CircleAvatar",
+        "Divider",
+        "FloatingActionButton"
+    ],
+    "layout_type": "Column"
+}
