@@ -1,0 +1,22 @@
+{
+    "prompt": "Vibrant gradient chat list",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Conversations', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),\n        backgroundColor: Colors.lightBlue,\n        elevation: 1,\n        actions: [\n          IconButton(\n            icon: Icon(Icons.search, color: Colors.white),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            colors: [Colors.lightBlue[100]!, Colors.white],\n            begin: Alignment.topCenter,\n            end: Alignment.bottomCenter,\n          ),\n        ),\n        child: ListView.separated(\n          itemCount: 15,\n          separatorBuilder: (context, index) => Divider(height: 1, color: Colors.grey[400]),\n          itemBuilder: (context, index) {\n            return ListTile(\n              contentPadding: EdgeInsets.symmetric(horizontal: 14, vertical: 7),\n              leading: Container(\n                width: 52,\n                height: 52,\n                decoration: BoxDecoration(\n                  shape: BoxShape.rectangle,\n                  borderRadius: BorderRadius.circular(8),\n                  border: Border.all(color: Colors.grey[300]!),\n                  color: Colors.blue[100],\n                ),\n                child: Center(child: Text('U${index + 1}', style: TextStyle(color: Colors.blue[800]))),\n              ),\n              title: Text(\n                'User ${index + 1}',\n                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.blue[900]),\n              ),\n              subtitle: Text(\n                'Hey there! How are you doing today?',\n                style: TextStyle(color: Colors.grey[700], fontSize: 14),\n                maxLines: 1,\n                overflow: TextOverflow.ellipsis,\n              ),\n              trailing: Text(\n                '12:${(index % 60).toString().padLeft(2, '0')}',\n                style: TextStyle(color: Colors.grey[500], fontSize: 12),\n              ),\n              onTap: () {},\n            );\n          },\n        ),\n      ),\n    );\n  }\n}",
+    "category": "messaging",
+    "tags": [
+        "chat",
+        "list",
+        "gradient",
+        "messaging",
+        "vibrant"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "ListTile",
+        "Container",
+        "Text",
+        "IconButton"
+    ],
+    "layout_type": "ListView"
+}

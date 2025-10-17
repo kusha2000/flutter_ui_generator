@@ -1,0 +1,25 @@
+{
+    "prompt": "Full-screen preview with dark modern camera UI.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[900],\n      appBar: AppBar(\n        backgroundColor: Colors.black.withOpacity(0.5),\n        elevation: 0,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back, color: Colors.white),\n          onPressed: () {},\n        ),\n        actions: [\n          IconButton(\n            icon: Icon(Icons.flash_off, color: Colors.white),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      body: Column(\n        children: [\n          Expanded(\n            child: Container(\n              color: Colors.black,\n              child: Center(\n                child: Icon(\n                  Icons.camera_alt,\n                  size: 80,\n                  color: Colors.white70,\n                ),\n              ),\n            ),\n          ),\n          Container(\n            height: 120,\n            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),\n            child: Row(\n              mainAxisAlignment: MainAxisAlignment.spaceBetween,\n              crossAxisAlignment: CrossAxisAlignment.center,\n              children: [\n                SizedBox(width: 60),\n                GestureDetector(\n                  onTap: () {},\n                  child: Container(\n                    width: 80,\n                    height: 80,\n                    decoration: BoxDecoration(\n                      shape: BoxShape.circle,\n                      color: Colors.red,\n                      boxShadow: [\n                        BoxShadow(\n                          color: Colors.red.withOpacity(0.4),\n                          blurRadius: 12,\n                          spreadRadius: 2,\n                        ),\n                      ],\n                    ),\n                    child: Center(\n                      child: Container(\n                        width: 60,\n                        height: 60,\n                        decoration: BoxDecoration(\n                          shape: BoxShape.circle,\n                          color: Colors.red[700],\n                        ),\n                      ),\n                    ),\n                  ),\n                ),\n                Container(\n                  width: 60,\n                  height: 60,\n                  decoration: BoxDecoration(\n                    shape: BoxShape.circle,\n                    color: Colors.grey[800],\n                    border: Border.all(color: Colors.white30, width: 1),\n                  ),\n                  child: Icon(\n                    Icons.photo,\n                    color: Colors.white70,\n                  ),\n                ),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "camera",
+    "tags": [
+        "camera",
+        "photo",
+        "capture",
+        "preview",
+        "gallery",
+        "flash",
+        "dark",
+        "modern"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "Icon",
+        "GestureDetector",
+        "Row",
+        "Column"
+    ],
+    "layout_type": "Column"
+}

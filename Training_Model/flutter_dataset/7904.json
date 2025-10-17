@@ -1,0 +1,21 @@
+{
+    "prompt": "Material toggle interface",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  bool isDarkMode = false;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[100],\n      appBar: AppBar(\n        title: Text('Theme Settings'),\n        backgroundColor: Colors.blue,\n        foregroundColor: Colors.white,\n        elevation: 4,\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(16),\n        child: Card(\n          elevation: 2,\n          shape: RoundedRectangleBorder(\n            borderRadius: BorderRadius.circular(12),\n          ),\n          child: Container(\n            padding: EdgeInsets.all(24),\n            child: Column(\n              mainAxisSize: MainAxisSize.min,\n              crossAxisAlignment: CrossAxisAlignment.start,\n              children: [\n                Text(\n                  'Appearance',\n                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(\n                    fontWeight: FontWeight.w500,\n                  ),\n                ),\n                SizedBox(height: 8),\n                Text(\n                  'Choose between light and dark theme',\n                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(\n                    color: Colors.grey[600],\n                  ),\n                ),\n                SizedBox(height: 24),\n                Row(\n                  mainAxisAlignment: MainAxisAlignment.spaceBetween,\n                  children: [\n                    Expanded(\n                      child: Column(\n                        crossAxisAlignment: CrossAxisAlignment.start,\n                        children: [\n                          Text(\n                            'Dark Theme',\n                            style: Theme.of(context).textTheme.titleMedium,\n                          ),\n                          SizedBox(height: 4),\n                          Text(\n                            'Use dark colors for better viewing in low light',\n                            style: Theme.of(context).textTheme.bodySmall?.copyWith(\n                              color: Colors.grey[600],\n                            ),\n                          ),\n                        ],\n                      ),\n                    ),\n                    Switch.adaptive(\n                      value: isDarkMode,\n                      onChanged: (value) {\n                        setState(() {\n                          isDarkMode = value;\n                        });\n                      },\n                      activeColor: Colors.blue,\n                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,\n                    ),\n                  ],\n                ),\n              ],\n            ),\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "settings",
+    "tags": [
+        "material design",
+        "switch",
+        "card",
+        "elevation",
+        "typography",
+        "accessibility",
+        "guidelines"
+    ],
+    "components": [
+        "Switch",
+        "Card",
+        "AppBar",
+        "Text"
+    ],
+    "layout_type": "Column"
+}

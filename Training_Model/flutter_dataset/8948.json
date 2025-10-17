@@ -1,0 +1,25 @@
+{
+    "prompt": "Minimalist Photo Viewer",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFFFFFFF),\n      appBar: AppBar(\n        backgroundColor: Colors.transparent,\n        elevation: 0,\n        leading: Icon(Icons.arrow_back, color: Colors.black),\n        title: Text('Photo Viewer', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(20.0),\n        child: Column(\n          children: [\n            Container(\n              height: 320,\n              width: double.infinity,\n              decoration: BoxDecoration(\n                borderRadius: BorderRadius.circular(16),\n                boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 8, offset: Offset(0, 4))],\n                image: DecorationImage(\n                  image: NetworkImage('https://images.unsplash.com/photo-1519125323398-675f0b1d3d0c?w=600'),\n                  fit: BoxFit.cover,\n                ),\n              ),\n            ),\n            SizedBox(height: 24),\n            Container(\n              height: 94,\n              padding: EdgeInsets.all(12),\n              decoration: BoxDecoration(\n                color: Color(0xFFF5F5F5),\n                borderRadius: BorderRadius.circular(8),\n              ),\n              child: ListView.builder(\n                scrollDirection: Axis.horizontal,\n                itemCount: 5,\n                itemBuilder: (context, index) {\n                  return Container(\n                    width: 70,\n                    height: 70,\n                    margin: EdgeInsets.symmetric(horizontal: 6),\n                    decoration: BoxDecoration(\n                      borderRadius: BorderRadius.circular(8),\n                      image: DecorationImage(\n                        image: NetworkImage('https://images.unsplash.com/photo-15191253233${index + 9}8-675f0b1d3d0c?w=200'),\n                        fit: BoxFit.cover,\n                      ),\n                    ),\n                  );\n                },\n              ),\n            ),\n            SizedBox(height: 32),\n            Row(\n              mainAxisAlignment: MainAxisAlignment.spaceEvenly,\n              children: [\n                Container(\n                  padding: EdgeInsets.all(16),\n                  decoration: BoxDecoration(\n                    color: Color(0xFFE0E0E0),\n                    shape: BoxShape.circle,\n                  ),\n                  child: Icon(Icons.favorite, color: Color(0xFFFF5252), size: 28),\n                ),\n                Container(\n                  padding: EdgeInsets.all(16),\n                  decoration: BoxDecoration(\n                    color: Color(0xFFE0E0E0),\n                    shape: BoxShape.circle,\n                  ),\n                  child: Icon(Icons.share, color: Color(0xFF2196F3), size: 28),\n                ),\n                Container(\n                  padding: EdgeInsets.all(16),\n                  decoration: BoxDecoration(\n                    color: Color(0xFFE0E0E0),\n                    shape: BoxShape.circle,\n                  ),\n                  child: Icon(Icons.download, color: Color(0xFF757575), size: 28),\n                ),\n              ],\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "media",
+    "tags": [
+        "gallery",
+        "photo",
+        "viewer",
+        "image",
+        "thumbnails",
+        "actions",
+        "minimalist",
+        "light"
+    ],
+    "components": [
+        "Scaffold",
+        "Container",
+        "ListView",
+        "Icon",
+        "AppBar",
+        "Column",
+        "Row"
+    ],
+    "layout_type": "Column"
+}

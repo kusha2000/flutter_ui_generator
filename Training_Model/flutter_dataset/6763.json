@@ -1,0 +1,24 @@
+{
+    "prompt": "Gradient product categories page with animated colored cards",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            begin: Alignment.topLeft,\n            end: Alignment.bottomRight,\n            colors: [Colors.purple[200]!, Colors.pink[200]!],\n          ),\n        ),\n        child: Column(\n          children: [\n            AppBar(\n              backgroundColor: Colors.transparent,\n              elevation: 0,\n              title: Text(\n                'Shop Categories',\n                style: TextStyle(\n                  color: Colors.white,\n                  fontSize: 24,\n                  fontWeight: FontWeight.bold,\n                  shadows: [\n                    Shadow(\n                      offset: Offset(1, 1),\n                      blurRadius: 3,\n                      color: Colors.black26,\n                    ),\n                  ],\n                ),\n              ),\n              centerTitle: true,\n            ),\n            Expanded(\n              child: Padding(\n                padding: EdgeInsets.all(16.0),\n                child: GridView.count(\n                  crossAxisCount: 3,\n                  crossAxisSpacing: 12,\n                  mainAxisSpacing: 12,\n                  childAspectRatio: 0.9,\n                  children: [\n                    _buildCategoryCard(Icons.shopping_bag, 'Electronics', Colors.orange),\n                    _buildCategoryCard(Icons.headphones, 'Audio', Colors.green),\n                    _buildCategoryCard(Icons.laptop, 'Computers', Colors.blue),\n                    _buildCategoryCard(Icons.checkroom, 'Fashion', Colors.pink),\n                    _buildCategoryCard(Icons.book, 'Books', Colors.purple),\n                    _buildCategoryCard(Icons.home, 'Home', Colors.teal),\n                  ],\n                ),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildCategoryCard(IconData icon, String title, Color cardColor) {\n    return Container(\n      decoration: BoxDecoration(\n        color: cardColor,\n        borderRadius: BorderRadius.circular(20),\n        boxShadow: [\n          BoxShadow(\n            color: cardColor.withOpacity(0.3),\n            blurRadius: 8,\n            offset: Offset(0, 6),\n          ),\n        ],\n      ),\n      child: Column(\n        mainAxisAlignment: MainAxisAlignment.center,\n        children: [\n          Icon(\n            icon,\n            size: 35,\n            color: Colors.white,\n          ),\n          SizedBox(height: 8),\n          Text(\n            title,\n            textAlign: TextAlign.center,\n            style: TextStyle(\n              fontSize: 13,\n              fontWeight: FontWeight.w600,\n              color: Colors.white,\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "e-commerce",
+    "tags": [
+        "categories",
+        "gradient",
+        "colorful",
+        "grid",
+        "cards",
+        "vibrant",
+        "shopping"
+    ],
+    "components": [
+        "Scaffold",
+        "Container",
+        "AppBar",
+        "GridView",
+        "Icon",
+        "Text",
+        "BoxDecoration"
+    ],
+    "layout_type": "GridView"
+}

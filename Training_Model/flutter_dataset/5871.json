@@ -1,0 +1,25 @@
+{
+    "prompt": "Small screen tracker with timer and tasks.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  bool isRunning = false;\n  int seconds = 0;\n  String currentTask = 'Task 1';\n  TextEditingController taskController = TextEditingController();\n\n  String formatTime(int totalSeconds) {\n    int hours = totalSeconds ~/ 3600;\n    int minutes = (totalSeconds % 3600) ~/ 60;\n    int secs = totalSeconds % 60;\n    return '${hours.toString().padLeft(2, '0')}:${minutes.toString().padLeft(2, '0')}:${secs.toString().padLeft(2, '0')}';\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[200],\n      appBar: AppBar(\n        title: Text('Time Tracker', style: TextStyle(fontWeight: FontWeight.w600)),\n        backgroundColor: Colors.teal[600],\n        foregroundColor: Colors.white,\n        elevation: 0,\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(8),\n        child: Column(\n          children: [\n            Text(\n              formatTime(seconds),\n              style: TextStyle(\n                fontSize: 24,\n                fontWeight: FontWeight.bold,\n                fontFamily: 'RobotoMono',\n                color: Colors.teal[900],\n              ),\n            ),\n            SizedBox(height: 8),\n            ElevatedButton(\n              onPressed: () => setState(() => isRunning = !isRunning),\n              style: ElevatedButton.styleFrom(\n                backgroundColor: isRunning ? Colors.orange[600] : Colors.teal[600],\n                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),\n                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n              ),\n              child: Text(\n                isRunning ? 'PAUSE' : 'START',\n                style: TextStyle(fontSize: 14, color: Colors.white),\n              ),\n            ),\n            SizedBox(height: 8),\n            TextField(\n              controller: taskController,\n              decoration: InputDecoration(\n                hintText: 'Task',\n                border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),\n                contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),\n              ),\n            ),\n            SizedBox(height: 8),\n            if (isRunning)\n              Card(\n                color: Colors.teal[50],\n                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n                child: Padding(\n                  padding: EdgeInsets.all(8),\n                  child: Row(\n                    children: [\n                      Expanded(\n                        child: Column(\n                          crossAxisAlignment: CrossAxisAlignment.start,\n                          children: [\n                            Text(currentTask, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),\n                            Text('${formatTime(seconds)} elapsed', style: TextStyle(color: Colors.teal[700])),\n                          ],\n                        ),\n                      ),\n                      IconButton(\n                        onPressed: () => setState(() => isRunning = false),\n                        icon: Icon(Icons.stop, color: Colors.red[600]),\n                        padding: EdgeInsets.zero,\n                      ),\n                    ],\n                  ),\n                ),\n              ),\n            SizedBox(height: 8),\n            Expanded(\n              child: ListView.separated(\n                itemCount: 3,\n                separatorBuilder: (context, index) => SizedBox(height: 4),\n                itemBuilder: (context, index) => ListTile(\n                  title: Text('Task ${index + 1}', style: TextStyle(fontSize: 14)),\n                  subtitle: Text('1h ${index * 15}m • Today', style: TextStyle(fontSize: 12)),\n                  contentPadding: EdgeInsets.symmetric(horizontal: 8),\n                  tileColor: Colors.white,\n                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),\n                ),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "productivity",
+    "tags": [
+        "timer",
+        "tracking",
+        "productivity",
+        "task",
+        "compact",
+        "minimal"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Text",
+        "ElevatedButton",
+        "TextField",
+        "Card",
+        "ListView",
+        "ListTile",
+        "IconButton"
+    ],
+    "layout_type": "Column"
+}

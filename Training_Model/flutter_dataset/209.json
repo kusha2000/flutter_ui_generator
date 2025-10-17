@@ -1,0 +1,22 @@
+{
+    "prompt": "Design a playful onboarding screen with a bright yellow background (Colors.yellow[200]). Feature a rounded square illustration at the top (using a Container with 20px border radius) occupying 30% of the screen height, filled with a soft orange (Colors.orange[100]). Place a black icon (Icons.favorite, size 100) in the center. Below, add a bold heading in black (font size 26px, FontWeight.w900) with the text 'Let’s Have Fun!'. Include a subtitle in dark gray (Colors.grey[800], font size 16px) describing the app’s engaging features. At the bottom, include an orange 'Join Now' button (Colors.orange, 12px radius) and a 'Skip' text button in gray. Use 24px padding, center-align text, and add 16px spacing for a cheerful, inviting look.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.yellow[200],\n      body: SafeArea(\n        child: Padding(\n          padding: const EdgeInsets.all(24.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Expanded(\n                flex: 3,\n                child: Container(\n                  decoration: BoxDecoration(\n                    color: Colors.orange[100],\n                    borderRadius: BorderRadius.circular(20),\n                  ),\n                  child: Icon(\n                    Icons.favorite,\n                    size: 100,\n                    color: Colors.black,\n                  ),\n                ),\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Let’s Have Fun!',\n                style: TextStyle(\n                  fontSize: 26,\n                  fontWeight: FontWeight.w900,\n                  color: Colors.black,\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Dive into a world of excitement and creativity.',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.grey[800],\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 16),\n              SizedBox(\n                width: double.infinity,\n                height: 50,\n                child: ElevatedButton(\n                  onPressed: () {},\n                  style: ElevatedButton.styleFrom(\n                    backgroundColor: Colors.orange,\n                    shape: RoundedRectangleBorder(\n                      borderRadius: BorderRadius.circular(12),\n                    ),\n                  ),\n                  child: Text(\n                    'Join Now',\n                    style: TextStyle(\n                      fontSize: 16,\n                      color: Colors.white,\n                    ),\n                  ),\n                ),\n              ),\n              SizedBox(height: 16),\n              TextButton(\n                onPressed: () {},\n                child: Text(\n                  'Skip',\n                  style: TextStyle(\n                    fontSize: 16,\n                    color: Colors.grey[800],\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "onboarding",
+    "tags": [
+        "onboarding",
+        "playful",
+        "welcome",
+        "join-now",
+        "skip"
+    ],
+    "components": [
+        "Container",
+        "Icon",
+        "Text",
+        "ElevatedButton",
+        "TextButton",
+        "Column",
+        "SafeArea"
+    ],
+    "layout_type": "Column"
+}

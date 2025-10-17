@@ -1,0 +1,22 @@
+{
+    "prompt": "Futuristic drawer menu with dark gray background, cyan app bar, header featuring circular avatar and Lucas Walker details, navigation items with cyan icons and glowing effects, and neon glow welcome message.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[900],\n      appBar: AppBar(\n        title: Text('Dashboard', style: TextStyle(color: Colors.white)),\n        backgroundColor: Colors.cyan,\n        iconTheme: IconThemeData(color: Colors.white),\n      ),\n      drawer: Drawer(\n        child: Column(\n          children: [\n            UserAccountsDrawerHeader(\n              decoration: BoxDecoration(color: Colors.cyan),\n              currentAccountPicture: CircleAvatar(\n                backgroundColor: Colors.white,\n                child: Icon(Icons.person, color: Colors.cyan, size: 40),\n              ),\n              accountName: Text('Lucas Walker', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),\n              accountEmail: Text('lucas.walker@example.com', style: TextStyle(fontSize: 14, color: Colors.grey[300])),\n            ),\n            Divider(color: Colors.grey[700]),\n            ListTile(\n              leading: Icon(Icons.dashboard, color: Colors.cyan, shadows: [Shadow(color: Colors.cyanAccent, blurRadius: 8)]),\n              title: Text('Dashboard', style: TextStyle(color: Colors.cyan)),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.person, color: Colors.cyan, shadows: [Shadow(color: Colors.cyanAccent, blurRadius: 8)]),\n              title: Text('Profile', style: TextStyle(color: Colors.cyan)),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.settings, color: Colors.cyan, shadows: [Shadow(color: Colors.cyanAccent, blurRadius: 8)]),\n              title: Text('Settings', style: TextStyle(color: Colors.cyan)),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.help, color: Colors.cyan, shadows: [Shadow(color: Colors.cyanAccent, blurRadius: 8)]),\n              title: Text('Help', style: TextStyle(color: Colors.cyan)),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.exit_to_app, color: Colors.red, shadows: [Shadow(color: Colors.cyanAccent, blurRadius: 8)]),\n              title: Text('Logout', style: TextStyle(color: Colors.cyan)),\n              onTap: () {},\n            ),\n          ],\n        ),\n      ),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            Text(\n              'Welcome, Lucas!',\n              style: TextStyle(\n                fontSize: 32,\n                fontWeight: FontWeight.bold,\n                color: Colors.cyan,\n                shadows: [Shadow(color: Colors.cyanAccent, blurRadius: 12, offset: Offset(0, 0))],\n              ),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Use the drawer to navigate',\n              style: TextStyle(fontSize: 16, color: Colors.grey[600]),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "drawer",
+        "menu",
+        "navigation",
+        "profile",
+        "futuristic",
+        "sidebar"
+    ],
+    "components": [
+        "Drawer",
+        "AppBar",
+        "ListTile",
+        "UserAccountsDrawerHeader",
+        "CircleAvatar",
+        "Divider"
+    ],
+    "layout_type": "Column"
+}

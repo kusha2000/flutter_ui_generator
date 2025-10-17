@@ -1,0 +1,19 @@
+{
+    "prompt": "Dark reset",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[900],\n      body: Center(\n        child: Container(\n          constraints: BoxConstraints(maxWidth: 400),\n          padding: const EdgeInsets.all(24.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            crossAxisAlignment: CrossAxisAlignment.center,\n            children: [\n              Text(\n                'Forgot Password',\n                style: TextStyle(\n                  fontSize: 28,\n                  fontWeight: FontWeight.bold,\n                  color: Colors.white,\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Provide your email to reset your password.',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.grey[400],\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 16),\n              TextField(\n                keyboardType: TextInputType.emailAddress,\n                decoration: InputDecoration(\n                  hintText: 'Enter Email',\n                  hintStyle: TextStyle(color: Colors.white70),\n                  border: OutlineInputBorder(\n                    borderRadius: BorderRadius.circular(8.0),\n                  ),\n                  prefixIcon: Icon(Icons.email, color: Colors.teal[300]),\n                  filled: true,\n                  fillColor: Colors.grey[800],\n                ),\n              ),\n              SizedBox(height: 16),\n              ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.teal[400],\n                  padding: EdgeInsets.symmetric(vertical: 16),\n                  shape: RoundedRectangleBorder(\n                    borderRadius: BorderRadius.circular(8.0),\n                  ),\n                ),\n                child: Text(\n                  'Reset Password',\n                  style: TextStyle(fontSize: 16, color: Colors.white),\n                ),\n              ),\n              SizedBox(height: 16),\n              TextButton(\n                onPressed: () {},\n                child: Text(\n                  'Back to Login',\n                  style: TextStyle(color: Colors.teal[300], fontSize: 16),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "authentication",
+    "tags": [
+        "forgot-password",
+        "email",
+        "reset",
+        "dark-theme",
+        "professional"
+    ],
+    "components": [
+        "TextField",
+        "ElevatedButton",
+        "TextButton",
+        "Text"
+    ],
+    "layout_type": "Column"
+}

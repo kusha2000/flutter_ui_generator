@@ -1,0 +1,22 @@
+{
+    "prompt": "Design an onboarding screen with a nature-inspired theme featuring a green gradient background (from Colors.green[700] to Colors.green[200]). Place a circular illustration at the top (using a Container with a circular shape) occupying 30% of the screen height, filled with a soft white (Colors.white70). Add an icon (Icons.park, size 100, color green) in the center. Below, include a bold heading in white (font size 26px, FontWeight.bold) with the text 'Grow with Us'. Add a subtitle in light gray (Colors.grey[300], font size 16px) explaining the app’s eco-friendly features. At the bottom, include a teal 'Start Journey' button (Colors.teal, 12px radius) and a 'Skip' text button in white. Use 20px padding, center-align text, and ensure 16px spacing between elements for a fresh, organic look.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            begin: Alignment.topCenter,\n            end: Alignment.bottomCenter,\n            colors: [Colors.green[700]!, Colors.green[200]!],\n          ),\n        ),\n        child: SafeArea(\n          child: Padding(\n            padding: const EdgeInsets.all(20.0),\n            child: Column(\n              mainAxisAlignment: MainAxisAlignment.center,\n              children: [\n                Expanded(\n                  flex: 3,\n                  child: Container(\n                    decoration: BoxDecoration(\n                      shape: BoxShape.circle,\n                      color: Colors.white70,\n                    ),\n                    child: Icon(\n                      Icons.park,\n                      size: 100,\n                      color: Colors.green,\n                    ),\n                  ),\n                ),\n                SizedBox(height: 16),\n                Text(\n                  'Grow with Us',\n                  style: TextStyle(\n                    fontSize: 26,\n                    fontWeight: FontWeight.bold,\n                    color: Colors.white,\n                  ),\n                  textAlign: TextAlign.center,\n                ),\n                SizedBox(height: 16),\n                Text(\n                  'Join our eco-friendly community and make a difference.',\n                  style: TextStyle(\n                    fontSize: 16,\n                    color: Colors.grey[300],\n                  ),\n                  textAlign: TextAlign.center,\n                ),\n                SizedBox(height: 16),\n                SizedBox(\n                  width: double.infinity,\n                  height: 50,\n                  child: ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Colors.teal,\n                      shape: RoundedRectangleBorder(\n                        borderRadius: BorderRadius.circular(12),\n                      ),\n                    ),\n                    child: Text(\n                      'Start Journey',\n                      style: TextStyle(\n                        fontSize: 16,\n                        color: Colors.white,\n                      ),\n                    ),\n                  ),\n                ),\n                SizedBox(height: 16),\n                TextButton(\n                  onPressed: () {},\n                  child: Text(\n                    'Skip',\n                    style: TextStyle(\n                      fontSize: 16,\n                      color: Colors.white,\n                    ),\n                  ),\n                ),\n              ],\n            ),\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "onboarding",
+    "tags": [
+        "onboarding",
+        "nature",
+        "gradient",
+        "start-journey",
+        "skip"
+    ],
+    "components": [
+        "Container",
+        "Icon",
+        "Text",
+        "ElevatedButton",
+        "TextButton",
+        "Column",
+        "SafeArea"
+    ],
+    "layout_type": "Column"
+}

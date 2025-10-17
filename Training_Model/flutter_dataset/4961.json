@@ -1,0 +1,22 @@
+{
+    "prompt": "Map with search bar and compass FAB.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Explore'),\n        backgroundColor: Colors.green,\n        foregroundColor: Colors.white,\n      ),\n      body: Column(\n        children: [\n          Container(\n            padding: EdgeInsets.all(16),\n            color: Colors.white,\n            child: TextField(\n              decoration: InputDecoration(\n                hintText: 'Search locations...',\n                prefixIcon: Icon(Icons.search, color: Colors.grey),\n                suffixIcon: Icon(Icons.filter_list, color: Colors.grey),\n                border: OutlineInputBorder(\n                  borderRadius: BorderRadius.circular(25),\n                  borderSide: BorderSide(color: Colors.grey[300]!),\n                ),\n                filled: true,\n                fillColor: Colors.grey[100],\n              ),\n            ),\n          ),\n          Expanded(\n            child: Container(\n              color: Colors.grey[300],\n              child: Center(\n                child: Column(\n                  mainAxisAlignment: MainAxisAlignment.center,\n                  children: [\n                    Icon(\n                      Icons.explore,\n                      size: 100,\n                      color: Colors.grey[600],\n                    ),\n                    SizedBox(height: 16),\n                    Text(\n                      'Explore Map Area',\n                      style: TextStyle(\n                        fontSize: 18,\n                        color: Colors.grey[600],\n                      ),\n                    ),\n                  ],\n                ),\n              ),\n            ),\n          ),\n        ],\n      ),\n      bottomNavigationBar: BottomNavigationBar(\n        currentIndex: 0,\n        items: [\n          BottomNavigationBarItem(\n            icon: Icon(Icons.map),\n            label: 'Map',\n          ),\n          BottomNavigationBarItem(\n            icon: Icon(Icons.list),\n            label: 'List',\n          ),\n          BottomNavigationBarItem(\n            icon: Icon(Icons.favorite),\n            label: 'Favorites',\n          ),\n        ],\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {},\n        backgroundColor: Colors.green,\n        child: Icon(\n          Icons.explore,\n          color: Colors.white,\n        ),\n      ),\n      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "map",
+        "search",
+        "bottom-navigation",
+        "explore",
+        "filter",
+        "compass"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "TextField",
+        "Container",
+        "BottomNavigationBar",
+        "FloatingActionButton"
+    ],
+    "layout_type": "Column"
+}

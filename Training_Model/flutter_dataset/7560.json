@@ -1,0 +1,25 @@
+{
+    "prompt": "Minimalist math quiz page",
+    "flutter_code": "class GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        backgroundColor: Colors.white,\n        elevation: 0,\n        title: Text(\n          'Math Quiz',\n          style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.w300, fontSize: 24, letterSpacing: 1.2),\n        ),\n        centerTitle: true,\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(24.0),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.center,\n          children: [\n            SizedBox(height: 20),\n            Container(\n              height: 2,\n              width: double.infinity,\n              child: LinearProgressIndicator(\n                value: 7/12,\n                backgroundColor: Colors.grey[200],\n                valueColor: AlwaysStoppedAnimation<Color>(Colors.grey[600]!),\n              ),\n            ),\n            SizedBox(height: 20),\n            Row(\n              mainAxisAlignment: MainAxisAlignment.spaceBetween,\n              children: [\n                Text(\n                  '7 / 12',\n                  style: TextStyle(fontSize: 14, color: Colors.grey[500], letterSpacing: 0.8),\n                ),\n                Container(\n                  width: 40,\n                  height: 40,\n                  child: CircularProgressIndicator(\n                    value: 7/12,\n                    backgroundColor: Colors.grey[200],\n                    valueColor: AlwaysStoppedAnimation<Color>(Colors.grey[600]!),\n                    strokeWidth: 2,\n                  ),\n                ),\n              ],\n            ),\n            SizedBox(height: 60),\n            Container(\n              padding: EdgeInsets.symmetric(horizontal: 32, vertical: 40),\n              decoration: BoxDecoration(\n                color: Colors.white,\n                borderRadius: BorderRadius.circular(8),\n                boxShadow: [BoxShadow(color: Colors.grey[200]!, blurRadius: 20, spreadRadius: -5, offset: Offset(0, 10))],\n              ),\n              child: Text(\n                'What is 15 + 27?',\n                style: TextStyle(fontSize: 26, fontWeight: FontWeight.w300, color: Colors.grey[800], letterSpacing: 0.5),\n                textAlign: TextAlign.center,\n              ),\n            ),\n            SizedBox(height: 50),\n            Expanded(\n              child: ListView(\n                children: [\n                  _buildMinimalOption('42'),\n                  SizedBox(height: 20),\n                  _buildMinimalOption('41'),\n                  SizedBox(height: 20),\n                  _buildMinimalOption('43'),\n                  SizedBox(height: 20),\n                  _buildMinimalOption('44'),\n                ],\n              ),\n            ),\n            SizedBox(height: 30),\n            Container(\n              width: 120,\n              height: 44,\n              child: ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.grey[800],\n                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),\n                  elevation: 0,\n                ),\n                child: Text(\n                  'Next',\n                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.white, letterSpacing: 0.8),\n                ),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildMinimalOption(String answer) {\n    return Container(\n      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),\n      decoration: BoxDecoration(\n        color: Colors.white,\n        borderRadius: BorderRadius.circular(4),\n        border: Border.all(color: Colors.grey[300]!, width: 1),\n      ),\n      child: Center(\n        child: Text(\n          answer,\n          style: TextStyle(fontSize: 20, color: Colors.grey[700], fontWeight: FontWeight.w300, letterSpacing: 0.5),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "education",
+    "tags": [
+        "quiz",
+        "minimal",
+        "clean",
+        "typography",
+        "mathematics",
+        "simple"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Column",
+        "Container",
+        "Text",
+        "LinearProgressIndicator",
+        "CircularProgressIndicator",
+        "ListView",
+        "ElevatedButton"
+    ],
+    "layout_type": "Column"
+}

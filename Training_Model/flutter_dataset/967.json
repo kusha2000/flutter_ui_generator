@@ -1,0 +1,23 @@
+{
+    "prompt": "Develop a map view page with a full-screen map and a modern dark theme. Include a top app bar with the title 'Dark Map' in white text, a black background (Colors.black), and a white back arrow icon. Add a floating action button in the top-right corner with a green GPS icon (Colors.green) and a dark grey background (Colors.grey[900]). The map area should have a dark background (Colors.grey[900]) with a subtle white grid overlay (simulated with a semi-transparent Container). Use Material Design principles, ensuring high contrast and a sleek, futuristic aesthetic. Add a 4px padding around the map container for spacing.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Dark Map'),\n        backgroundColor: Colors.black,\n        foregroundColor: Colors.white,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back),\n          onPressed: () {},\n        ),\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(4),\n        child: Container(\n          width: double.infinity,\n          height: double.infinity,\n          color: Colors.grey[900],\n          child: Stack(\n            children: [\n              Center(\n                child: Column(\n                  mainAxisAlignment: MainAxisAlignment.center,\n                  children: [\n                    Icon(\n                      Icons.map,\n                      size: 100,\n                      color: Colors.grey[400],\n                    ),\n                    SizedBox(height: 16),\n                    Text(\n                      'Map View Area',\n                      style: TextStyle(\n                        fontSize: 18,\n                        color: Colors.grey[400],\n                      ),\n                    ),\n                  ],\n                ),\n              ),\n              Container(\n                decoration: BoxDecoration(\n                  color: Colors.white.withOpacity(0.1),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {},\n        backgroundColor: Colors.grey[900],\n        child: Icon(\n          Icons.my_location,\n          color: Colors.green,\n        ),\n      ),\n      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "map",
+        "navigation",
+        "location",
+        "gps",
+        "dark-theme",
+        "floating-action-button"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "Stack",
+        "FloatingActionButton",
+        "Icon",
+        "Text"
+    ],
+    "layout_type": "Scaffold"
+}

@@ -1,0 +1,23 @@
+{
+    "prompt": "Create a categorized notifications page with collapsible sections like 'Recent', 'Earlier Today', and 'This Week'. Include a bold title, grouped items with avatars, messages, and timestamps. Use expansion tiles, white background, and dividers for clarity.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        backgroundColor: Colors.white,\n        elevation: 0,\n        title: Text(\n          'Notifications',\n          style: TextStyle(\n            fontSize: 24,\n            fontWeight: FontWeight.bold,\n            color: Colors.grey[800],\n          ),\n        ),\n      ),\n      body: ListView(\n        padding: EdgeInsets.all(16),\n        children: [\n          ExpansionTile(\n            initiallyExpanded: true,\n            title: Text(\n              'Recent',\n              style: TextStyle(\n                fontWeight: FontWeight.w600,\n                fontSize: 16,\n                color: Colors.grey[800],\n              ),\n            ),\n            children: List.generate(3, (index) => _buildNotificationItem(index, true)),\n          ),\n          Divider(color: Colors.grey[300]),\n          ExpansionTile(\n            initiallyExpanded: true,\n            title: Text(\n              'Earlier Today',\n              style: TextStyle(\n                fontWeight: FontWeight.w600,\n                fontSize: 16,\n                color: Colors.grey[800],\n              ),\n            ),\n            children: List.generate(3, (index) => _buildNotificationItem(index + 3, false)),\n          ),\n          Divider(color: Colors.grey[300]),\n          ExpansionTile(\n            title: Text(\n              'This Week',\n              style: TextStyle(\n                fontWeight: FontWeight.w600,\n                fontSize: 16,\n                color: Colors.grey[800],\n              ),\n            ),\n            children: List.generate(2, (index) => _buildNotificationItem(index + 6, false)),\n          ),\n        ],\n      ),\n    );\n  }\n\n  Widget _buildNotificationItem(int index, bool isUnread) {\n    return Container(\n      margin: EdgeInsets.symmetric(vertical: 4),\n      decoration: BoxDecoration(\n        color: isUnread ? Colors.blue[50] : Colors.white,\n        borderRadius: BorderRadius.circular(8),\n      ),\n      child: ListTile(\n        contentPadding: EdgeInsets.all(12),\n        leading: Stack(\n          children: [\n            CircleAvatar(\n              radius: 20,\n              backgroundColor: Colors.indigo[200 + (index * 50) % 400],\n              child: Icon(\n                Icons.person,\n                color: Colors.indigo[700],\n                size: 20,\n              ),\n            ),\n            if (isUnread)\n              Positioned(\n                right: 0,\n                top: 0,\n                child: Container(\n                  width: 10,\n                  height: 10,\n                  decoration: BoxDecoration(\n                    color: Colors.blue,\n                    shape: BoxShape.circle,\n                  ),\n                ),\n              ),\n          ],\n        ),\n        title: Text(\n          'User ${index + 1}',\n          style: TextStyle(\n            fontWeight: FontWeight.w600,\n            color: Colors.grey[800],\n            fontSize: 14,\n          ),\n        ),\n        subtitle: Column(\n          crossAxisAlignment: CrossAxisAlignment.start,\n          children: [\n            SizedBox(height: 4),\n            Text(\n              'Notification message content here.',\n              style: TextStyle(\n                color: Colors.grey[600],\n                fontSize: 13,\n              ),\n            ),\n            SizedBox(height: 6),\n            Text(\n              '${index + 1} hours ago',\n              style: TextStyle(\n                color: Colors.grey[500],\n                fontSize: 11,\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "social",
+    "tags": [
+        "notifications",
+        "categorized",
+        "expandable",
+        "grouped",
+        "organized",
+        "sections"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "ExpansionTile",
+        "ListTile",
+        "CircleAvatar",
+        "Divider"
+    ],
+    "layout_type": "ListView"
+}

@@ -1,0 +1,26 @@
+{
+    "prompt": "Create a light-themed quiz UI with title 'Geography Quiz', progress tracker (3/10), circular progress, and main question card. List four answer options in shadowed rounded cards, and include a bottom blue 'Next Question' button.",
+    "flutter_code": "class GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[50],\n      appBar: AppBar(\n        backgroundColor: Colors.blue[600],\n        elevation: 0,\n        title: Text(\n          'Geography Quiz',\n          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),\n        ),\n        centerTitle: true,\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(20.0),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.center,\n          children: [\n            SizedBox(height: 20),\n            Row(\n              mainAxisAlignment: MainAxisAlignment.spaceBetween,\n              children: [\n                Text(\n                  'Question 3 of 10',\n                  style: TextStyle(fontSize: 16, color: Colors.grey[600]),\n                ),\n                Container(\n                  width: 60,\n                  height: 60,\n                  child: CircularProgressIndicator(\n                    value: 0.3,\n                    backgroundColor: Colors.grey[300],\n                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue[600]!),\n                    strokeWidth: 6,\n                  ),\n                ),\n              ],\n            ),\n            SizedBox(height: 40),\n            Container(\n              padding: EdgeInsets.all(24),\n              decoration: BoxDecoration(\n                color: Colors.white,\n                borderRadius: BorderRadius.circular(16),\n                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10, spreadRadius: 2)],\n              ),\n              child: Text(\n                'What is the capital of France?',\n                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.grey[800]),\n                textAlign: TextAlign.center,\n              ),\n            ),\n            SizedBox(height: 30),\n            Expanded(\n              child: ListView(\n                children: [\n                  _buildAnswerOption('A', 'Paris'),\n                  SizedBox(height: 16),\n                  _buildAnswerOption('B', 'London'),\n                  SizedBox(height: 16),\n                  _buildAnswerOption('C', 'Berlin'),\n                  SizedBox(height: 16),\n                  _buildAnswerOption('D', 'Madrid'),\n                ],\n              ),\n            ),\n            SizedBox(height: 20),\n            Container(\n              width: double.infinity,\n              height: 56,\n              child: ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.blue[600],\n                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),\n                  elevation: 3,\n                ),\n                child: Text(\n                  'Next Question',\n                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),\n                ),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildAnswerOption(String letter, String answer) {\n    return Container(\n      padding: EdgeInsets.all(20),\n      decoration: BoxDecoration(\n        color: Colors.white,\n        borderRadius: BorderRadius.circular(12),\n        border: Border.all(color: Colors.grey[300]!, width: 2),\n        boxShadow: [BoxShadow(color: Colors.black05, blurRadius: 5, spreadRadius: 1)],\n      ),\n      child: Row(\n        children: [\n          Container(\n            width: 40,\n            height: 40,\n            decoration: BoxDecoration(\n              color: Colors.blue[100],\n              borderRadius: BorderRadius.circular(20),\n            ),\n            child: Center(\n              child: Text(\n                letter,\n                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue[600]),\n              ),\n            ),\n          ),\n          SizedBox(width: 16),\n          Expanded(\n            child: Text(\n              answer,\n              style: TextStyle(fontSize: 18, color: Colors.grey[800]),\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "education",
+    "tags": [
+        "quiz",
+        "education",
+        "questions",
+        "multiple-choice",
+        "progress",
+        "buttons",
+        "cards"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Column",
+        "Container",
+        "Text",
+        "CircularProgressIndicator",
+        "ListView",
+        "ElevatedButton",
+        "Row"
+    ],
+    "layout_type": "Column"
+}

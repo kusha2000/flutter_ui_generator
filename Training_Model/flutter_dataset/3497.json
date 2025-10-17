@@ -1,0 +1,23 @@
+{
+    "prompt": "Build a corporate Terms & Conditions screen with navy app bar, scrollable black text card, and sticky 'Decline' and 'Accept' buttons in a responsive, formal layout.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFEDF2F7),\n      appBar: AppBar(\n        backgroundColor: Color(0xFF1A365D),\n        centerTitle: true,\n        title: Text(\n          'Terms & Conditions',\n          style: TextStyle(\n            color: Colors.white,\n            fontSize: 20,\n            fontWeight: FontWeight.bold,\n          ),\n        ),\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back, color: Colors.white),\n          onPressed: () {},\n        ),\n      ),\n      body: Column(\n        children: [\n          Expanded(\n            child: SingleChildScrollView(\n              padding: EdgeInsets.all(16),\n              child: Card(\n                elevation: 0,\n                shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),\n                child: Padding(\n                  padding: EdgeInsets.all(20),\n                  child: Text(\n                    'Terms and Conditions\\n\\n1. Acceptance\\nBy using this app, you agree to these terms.\\n\\n2. License\\nPersonal use only is permitted.\\n\\n3. Disclaimer\\nNo warranties are provided.',\n                    style: TextStyle(\n                      fontSize: 16,\n                      height: 1.5,\n                      color: Colors.black,\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n          Container(\n            padding: EdgeInsets.all(16),\n            color: Colors.white,\n            child: Row(\n              children: [\n                Expanded(\n                  child: ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Color(0xFF718096),\n                      foregroundColor: Colors.white,\n                      padding: EdgeInsets.symmetric(vertical: 14),\n                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),\n                    ),\n                    child: Text('Decline', style: TextStyle(fontSize: 16)),\n                  ),\n                ),\n                SizedBox(width: 12),\n                Expanded(\n                  child: ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Color(0xFF1A365D),\n                      foregroundColor: Colors.white,\n                      padding: EdgeInsets.symmetric(vertical: 14),\n                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),\n                    ),\n                    child: Text('Accept', style: TextStyle(fontSize: 16)),\n                  ),\n                ),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "legal",
+    "tags": [
+        "terms",
+        "conditions",
+        "legal",
+        "corporate",
+        "scrollable",
+        "buttons",
+        "formal"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "SingleChildScrollView",
+        "Card",
+        "Text",
+        "ElevatedButton"
+    ],
+    "layout_type": "Column"
+}

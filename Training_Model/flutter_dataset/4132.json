@@ -1,0 +1,24 @@
+{
+    "prompt": "Compact product cards with circular icon placeholders",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    final products = [\n      {'name': 'Wireless Headphones', 'description': 'Quality sound', 'price': '99.99', 'icon': Icons.headphones},\n      {'name': 'Smartphone', 'description': 'Latest tech', 'price': '699.99', 'icon': Icons.phone_android},\n      {'name': 'Laptop Computer', 'description': 'High performance', 'price': '1299.99', 'icon': Icons.laptop},\n    ];\n\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        title: Text('Products', style: TextStyle(color: Colors.black)),\n        backgroundColor: Colors.white,\n        elevation: 0,\n        actions: [\n          IconButton(\n            icon: Icon(Icons.search, color: Colors.black),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      body: ListView.builder(\n        padding: EdgeInsets.all(10),\n        itemCount: products.length,\n        itemBuilder: (context, index) {\n          final product = products[index];\n          return Card(\n            margin: EdgeInsets.only(bottom: 6),\n            elevation: 2,\n            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n            child: Padding(\n              padding: EdgeInsets.all(10),\n              child: Row(\n                children: [\n                  CircleAvatar(\n                    radius: 20,\n                    backgroundColor: Colors.grey[200],\n                    child: Icon(product['icon'] as IconData, size: 20, color: Colors.grey[600]),\n                  ),\n                  SizedBox(width: 10),\n                  Expanded(\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.start,\n                      children: [\n                        Text(\n                          product['name'] as String,\n                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),\n                        ),\n                        SizedBox(height: 4),\n                        Text(\n                          product['description'] as String,\n                          style: TextStyle(fontSize: 12, color: Colors.grey[600]),\n                        ),\n                      ],\n                    ),\n                  ),\n                  Column(\n                    children: [\n                      Text(\n                        product['price'] as String,\n                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.green),\n                      ),\n                      IconButton(\n                        icon: Icon(Icons.add_shopping_cart, color: Colors.blue),\n                        onPressed: () {},\n                      ),\n                    ],\n                  ),\n                ],\n              ),\n            ),\n          );\n        },\n      ),\n    );\n  }\n}",
+    "category": "e-commerce",
+    "tags": [
+        "products",
+        "list",
+        "cards",
+        "shopping",
+        "add-to-cart",
+        "scrollable",
+        "compact"
+    ],
+    "components": [
+        "ListView",
+        "Card",
+        "CircleAvatar",
+        "Icon",
+        "Text",
+        "IconButton",
+        "Row"
+    ],
+    "layout_type": "ListView"
+}

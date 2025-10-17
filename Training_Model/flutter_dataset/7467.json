@@ -1,0 +1,20 @@
+{
+    "prompt": "404 right-aligned",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.pink[50],\n      body: Padding(\n        padding: const EdgeInsets.all(28.0),\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          crossAxisAlignment: CrossAxisAlignment.end,\n          children: [\n            Text(\n              '404',\n              style: TextStyle(\n                fontSize: 70,\n                fontWeight: FontWeight.bold,\n                color: Colors.purple[700],\n              ),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Page Missing',\n              style: TextStyle(\n                fontSize: 24,\n                fontWeight: FontWeight.w600,\n                color: Colors.purple[500],\n              ),\n            ),\n            SizedBox(height: 20),\n            Text(\n              'We couldn’t find the page you’re looking for.',\n              style: TextStyle(\n                fontSize: 16,\n                color: Colors.grey[600],\n                height: 1.5,\n              ),\n            ),\n            SizedBox(height: 24),\n            ElevatedButton(\n              onPressed: () {},\n              style: ElevatedButton.styleFrom(\n                backgroundColor: Colors.purple[700],\n                foregroundColor: Colors.white,\n                padding: EdgeInsets.symmetric(horizontal: 32, vertical: 14),\n                shape: RoundedRectangleBorder(\n                  borderRadius: BorderRadius.circular(10),\n                  side: BorderSide(color: Colors.purple[900]!),\n                ),\n              ),\n              child: Text(\n                'Home',\n                style: TextStyle(fontSize: 16),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "error_pages",
+    "tags": [
+        "404",
+        "error",
+        "not_found",
+        "pastel",
+        "button",
+        "right_aligned"
+    ],
+    "components": [
+        "Text",
+        "ElevatedButton",
+        "Column",
+        "Scaffold"
+    ],
+    "layout_type": "Column"
+}

@@ -1,0 +1,25 @@
+{
+    "prompt": "Elegant dark gallery with thumbnails and actions.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFF121212),\n      appBar: AppBar(\n        backgroundColor: Color(0xFF1C2526),\n        elevation: 0,\n        leading: Icon(Icons.arrow_back, color: Colors.white),\n        title: Text('Night Gallery', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(16.0),\n        child: Column(\n          children: [\n            Container(\n              height: MediaQuery.of(context).size.height * 0.6,\n              width: double.infinity,\n              decoration: BoxDecoration(\n                borderRadius: BorderRadius.circular(8),\n                boxShadow: [BoxShadow(color: Colors.blue.withOpacity(0.2), blurRadius: 10, offset: Offset(0, 4))],\n                image: DecorationImage(\n                  image: NetworkImage('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600'),\n                  fit: BoxFit.cover,\n                ),\n              ),\n            ),\n            SizedBox(height: 20),\n            Container(\n              height: 80,\n              padding: EdgeInsets.symmetric(horizontal: 8),\n              decoration: BoxDecoration(\n                color: Color(0xCC1C2526),\n                borderRadius: BorderRadius.circular(8),\n              ),\n              child: ListView.builder(\n                scrollDirection: Axis.horizontal,\n                itemCount: 6,\n                itemBuilder: (context, index) {\n                  return Container(\n                    width: 60,\n                    height: 60,\n                    margin: EdgeInsets.symmetric(horizontal: 8),\n                    decoration: BoxDecoration(\n                      borderRadius: BorderRadius.circular(4),\n                      image: DecorationImage(\n                        image: NetworkImage('https://images.unsplash.com/photo-15196813937${index + 4}-d120267933ba?w=200'),\n                        fit: BoxFit.cover,\n                      ),\n                    ),\n                  );\n                },\n              ),\n            ),\n            SizedBox(height: 24),\n            Row(\n              mainAxisAlignment: MainAxisAlignment.center,\n              children: [\n                Container(\n                  padding: EdgeInsets.all(10),\n                  decoration: BoxDecoration(\n                    color: Color(0xFF2E2E2E),\n                    borderRadius: BorderRadius.circular(8),\n                  ),\n                  child: Icon(Icons.star, color: Color(0xFFFFD700), size: 24),\n                ),\n                SizedBox(width: 12),\n                Container(\n                  padding: EdgeInsets.all(10),\n                  decoration: BoxDecoration(\n                    color: Color(0xFF2E2E2E),\n                    borderRadius: BorderRadius.circular(8),\n                  ),\n                  child: Icon(Icons.share, color: Color(0xFF4CAF50), size: 24),\n                ),\n                SizedBox(width: 12),\n                Container(\n                  padding: EdgeInsets.all(10),\n                  decoration: BoxDecoration(\n                    color: Color(0xFF2E2E2E),\n                    borderRadius: BorderRadius.circular(8),\n                  ),\n                  child: Icon(Icons.download, color: Color(0xFF2196F3), size: 24),\n                ),\n                SizedBox(width: 12),\n                Container(\n                  padding: EdgeInsets.all(10),\n                  decoration: BoxDecoration(\n                    color: Color(0xFF2E2E2E),\n                    borderRadius: BorderRadius.circular(8),\n                  ),\n                  child: Icon(Icons.info, color: Color(0xFFFFFFFF), size: 24),\n                ),\n              ],\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "media",
+    "tags": [
+        "gallery",
+        "photo",
+        "viewer",
+        "image",
+        "thumbnails",
+        "actions",
+        "dark",
+        "modern"
+    ],
+    "components": [
+        "Scaffold",
+        "Container",
+        "ListView",
+        "Icon",
+        "AppBar",
+        "Column",
+        "Row"
+    ],
+    "layout_type": "Column"
+}

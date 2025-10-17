@@ -1,0 +1,26 @@
+{
+    "prompt": "Pop culture quiz screen with dark theme, amber AppBar, horizontal progress, bold question card, grid answers, and bottom next button.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[900],\n      appBar: AppBar(\n        flexibleSpace: Container(\n          decoration: BoxDecoration(\n            gradient: LinearGradient(\n              colors: [Colors.amber[800]!, Colors.amber[600]!],\n              begin: Alignment.topLeft,\n              end: Alignment.bottomRight,\n            ),\n          ),\n        ),\n        title: Text(\n          'Pop Culture Quiz',\n          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),\n        ),\n        centerTitle: true,\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(16.0),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.center,\n          children: [\n            SizedBox(height: 16),\n            Text(\n              'Question 7 of 10',\n              style: TextStyle(fontSize: 16, color: Colors.grey[400]),\n            ),\n            SizedBox(height: 8),\n            LinearProgressIndicator(\n              value: 7 / 10,\n              backgroundColor: Colors.grey[700],\n              valueColor: AlwaysStoppedAnimation<Color>(Colors.amber[600]!),\n              minHeight: 6,\n            ),\n            SizedBox(height: 24),\n            Container(\n              padding: EdgeInsets.all(20),\n              decoration: BoxDecoration(\n                color: Colors.grey[850],\n                border: Border.all(color: Colors.amber[600]!, width: 2),\n                borderRadius: BorderRadius.circular(12),\n              ),\n              child: Text(\n                'Which band performed \"Bohemian Rhapsody\"?',\n                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white70),\n                textAlign: TextAlign.center,\n              ),\n            ),\n            SizedBox(height: 24),\n            Expanded(\n              child: GridView.count(\n                crossAxisCount: 2,\n                crossAxisSpacing: 16,\n                mainAxisSpacing: 16,\n                children: [\n                  _buildAnswerOption('A', 'Queen', Colors.amber),\n                  _buildAnswerOption('B', 'The Beatles', Colors.amber),\n                  _buildAnswerOption('C', 'Led Zeppelin', Colors.amber),\n                  _buildAnswerOption('D', 'The Rolling Stones', Colors.amber),\n                ],\n              ),\n            ),\n            SizedBox(height: 20),\n            Container(\n              width: double.infinity,\n              height: 56,\n              child: ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.amber[600],\n                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),\n                  elevation: 3,\n                ),\n                child: Text(\n                  'Next Question',\n                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black87),\n                ),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildAnswerOption(String letter, String answer, MaterialColor color) {\n    return Container(\n      padding: EdgeInsets.all(16),\n      decoration: BoxDecoration(\n        color: Colors.grey[850],\n        borderRadius: BorderRadius.circular(12),\n        boxShadow: [BoxShadow(color: color[400]!.withOpacity(0.3), blurRadius: 6, spreadRadius: 1)],\n      ),\n      child: Column(\n        mainAxisAlignment: MainAxisAlignment.center,\n        children: [\n          Container(\n            width: 32,\n            height: 32,\n            decoration: BoxDecoration(\n              color: color[200],\n              shape: BoxShape.circle,\n            ),\n            child: Center(\n              child: Text(\n                letter,\n                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87),\n              ),\n            ),\n          ),\n          SizedBox(height: 8),\n          Text(\n            answer,\n            style: TextStyle(fontSize: 16, color: Colors.white70),\n            textAlign: TextAlign.center,\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "education",
+    "tags": [
+        "quiz",
+        "education",
+        "pop-culture",
+        "multiple-choice",
+        "progress",
+        "cards",
+        "button",
+        "grid"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Column",
+        "Container",
+        "Text",
+        "LinearProgressIndicator",
+        "GridView",
+        "ElevatedButton"
+    ],
+    "layout_type": "Column"
+}

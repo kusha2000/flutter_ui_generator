@@ -1,0 +1,21 @@
+{
+    "prompt": "Design a loading page with a horizontal layout arrangement where the circular progress indicator and loading text are positioned side by side instead of vertically stacked. Use a light gray background (0xFFF5F5F5) with a teal-colored progress indicator (0xFF009688). Place the progress indicator on the left side, followed by 'Loading content...' text positioned 20 pixels to the right in dark gray (0xFF424242) with font size 16px. The entire content should be centered horizontally and vertically using a Row widget within a Center widget, creating a compact and space-efficient loading interface suitable for inline loading states or smaller screen areas.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFF5F5F5),\n      body: Center(\n        child: Row(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            CircularProgressIndicator(\n              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF009688)),\n            ),\n            SizedBox(width: 20),\n            Text(\n              'Loading content...',\n              style: TextStyle(\n                fontSize: 16,\n                color: Color(0xFF424242),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "horizontal",
+        "row",
+        "teal",
+        "inline",
+        "compact"
+    ],
+    "components": [
+        "Scaffold",
+        "Row",
+        "CircularProgressIndicator",
+        "Text",
+        "Center"
+    ],
+    "layout_type": "Row"
+}

@@ -1,0 +1,21 @@
+{
+    "prompt": "Create a 404 Not Found page with a white background and a subtle gray border (BorderSide(color: Colors.grey[300])). Display '404' in bold orange (Colors.orange[800], font size 70). Show 'Page Not Found' in orange (Colors.orange[600], font size 24, semi-bold). Include a message 'This page is unavailable or has been moved.' in gray (Colors.grey[600], font size 16). Add an orange 'Go Home' button with rounded corners (borderRadius: 10) and white text. Use a Column layout with mainAxisAlignment.center and crossAxisAlignment.center. Wrap the Column in a Container with a white background and a gray border (border: Border.all(color: Colors.grey[300])). Apply padding of 24.0 inside the Container. Use a Scaffold with a transparent background.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.transparent,\n      body: Center(\n        child: Container(\n          decoration: BoxDecoration(\n            color: Colors.white,\n            border: Border.all(color: Colors.grey[300]!),\n          ),\n          padding: const EdgeInsets.all(24.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            crossAxisAlignment: CrossAxisAlignment.center,\n            mainAxisSize: MainAxisSize.min,\n            children: [\n              Text(\n                '404',\n                style: TextStyle(\n                  fontSize: 70,\n                  fontWeight: FontWeight.bold,\n                  color: Colors.orange[800],\n                ),\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Page Not Found',\n                style: TextStyle(\n                  fontSize: 24,\n                  fontWeight: FontWeight.w600,\n                  color: Colors.orange[600],\n                ),\n              ),\n              SizedBox(height: 20),\n              Text(\n                'This page is unavailable or has been moved.',\n                textAlign: TextAlign.center,\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.grey[600],\n                  height: 1.5,\n                ),\n              ),\n              SizedBox(height: 24),\n              ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.orange[800],\n                  foregroundColor: Colors.white,\n                  padding: EdgeInsets.symmetric(horizontal: 32, vertical: 14),\n                  shape: RoundedRectangleBorder(\n                    borderRadius: BorderRadius.circular(10),\n                  ),\n                ),\n                child: Text(\n                  'Go Home',\n                  style: TextStyle(fontSize: 16),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "error_pages",
+    "tags": [
+        "404",
+        "error",
+        "not_found",
+        "orange",
+        "button",
+        "border"
+    ],
+    "components": [
+        "Text",
+        "ElevatedButton",
+        "Column",
+        "Scaffold",
+        "Container"
+    ],
+    "layout_type": "Column"
+}

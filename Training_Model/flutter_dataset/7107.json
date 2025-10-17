@@ -1,0 +1,22 @@
+{
+    "prompt": "Business Splash Screen",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFF8F9FA),\n      body: SafeArea(\n        child: Padding(\n          padding: EdgeInsets.symmetric(horizontal: 32),\n          child: Column(\n            children: [\n              SizedBox(height: 80),\n              Container(\n                width: 160,\n                height: 80,\n                decoration: BoxDecoration(\n                  color: Color(0xFF1E3A8A),\n                  borderRadius: BorderRadius.circular(8),\n                  boxShadow: [\n                    BoxShadow(\n                      color: Color(0xFF1E3A8A).withOpacity(0.1),\n                      blurRadius: 10,\n                      offset: Offset(0, 4),\n                    ),\n                  ],\n                ),\n                child: Center(\n                  child: Text(\n                    'CORP',\n                    style: TextStyle(\n                      fontSize: 24,\n                      fontWeight: FontWeight.bold,\n                      color: Colors.white,\n                      letterSpacing: 2,\n                    ),\n                  ),\n                ),\n              ),\n              SizedBox(height: 50),\n              Text(\n                'Enterprise Solutions',\n                style: TextStyle(\n                  fontSize: 28,\n                  fontWeight: FontWeight.w700,\n                  color: Color(0xFF1F2937),\n                  height: 1.2,\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Empowering businesses with innovative\\ntechnology solutions since 2020',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Color(0xFF6B7280),\n                  fontWeight: FontWeight.w400,\n                  height: 1.5,\n                ),\n                textAlign: TextAlign.center,\n              ),\n              Spacer(),\n              Container(\n                width: 30,\n                height: 30,\n                child: CircularProgressIndicator(\n                  strokeWidth: 2,\n                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF1E3A8A)),\n                ),\n              ),\n              SizedBox(height: 20),\n              Text(\n                'Loading...',\n                style: TextStyle(\n                  fontSize: 14,\n                  color: Color(0xFF9CA3AF),\n                  fontWeight: FontWeight.w500,\n                ),\n              ),\n              SizedBox(height: 60),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "onboarding",
+    "tags": [
+        "splash",
+        "business",
+        "corporate",
+        "professional",
+        "blue",
+        "enterprise"
+    ],
+    "components": [
+        "Container",
+        "Column",
+        "Text",
+        "CircularProgressIndicator",
+        "BoxDecoration",
+        "Padding"
+    ],
+    "layout_type": "Column"
+}

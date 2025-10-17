@@ -1,0 +1,27 @@
+{
+    "prompt": "Create a dark product reviews page with black background and neon highlights. Show product image, title, price, and star rating. Display reviews in dark cards with avatar, name, stars, date, and text. Add glowing review button.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.black,\n      appBar: AppBar(\n        title: Text('Reviews'),\n        backgroundColor: Colors.grey[900],\n        foregroundColor: Colors.white,\n        elevation: 0,\n      ),\n      body: SingleChildScrollView(\n        padding: EdgeInsets.all(16),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.start,\n          children: [\n            Container(\n              height: 180,\n              width: double.infinity,\n              decoration: BoxDecoration(\n                color: Colors.grey[800],\n                borderRadius: BorderRadius.circular(16),\n                border: Border.all(color: Colors.cyan, width: 2),\n              ),\n              child: Icon(Icons.headphones, size: 60, color: Colors.cyan),\n            ),\n            SizedBox(height: 20),\n            Text(\n              'Premium Gaming Headset',\n              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: Colors.white),\n            ),\n            SizedBox(height: 8),\n            Text(\n              '129.99',\n              style: TextStyle(fontSize: 22, color: Colors.greenAccent, fontWeight: FontWeight.w600),\n            ),\n            SizedBox(height: 12),\n            Row(\n              children: [\n                ...List.generate(5, (index) => Icon(Icons.star, color: Colors.amber, size: 24)),\n                SizedBox(width: 12),\n                Text('4.8 (892 reviews)', style: TextStyle(color: Colors.grey[300], fontSize: 16)),\n              ],\n            ),\n            SizedBox(height: 28),\n            Text(\n              'User Reviews',\n              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white),\n            ),\n            SizedBox(height: 20),\n            ...List.generate(4, (index) => Container(\n              margin: EdgeInsets.only(bottom: 20),\n              padding: EdgeInsets.all(20),\n              decoration: BoxDecoration(\n                color: Colors.grey[900],\n                borderRadius: BorderRadius.circular(16),\n                border: Border.all(color: Colors.blue, width: 1),\n              ),\n              child: Column(\n                crossAxisAlignment: CrossAxisAlignment.start,\n                children: [\n                  Row(\n                    children: [\n                      CircleAvatar(\n                        radius: 20,\n                        backgroundColor: Colors.cyan,\n                        child: Icon(Icons.person, color: Colors.black),\n                      ),\n                      SizedBox(width: 12),\n                      Expanded(\n                        child: Column(\n                          crossAxisAlignment: CrossAxisAlignment.start,\n                          children: [\n                            Text(\n                              'Gamer${index + 1}',\n                              style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white),\n                            ),\n                            Text(\n                              '${index + 1} week${index == 0 ? '' : 's'} ago',\n                              style: TextStyle(color: Colors.grey[400], fontSize: 12),\n                            ),\n                          ],\n                        ),\n                      ),\n                    ],\n                  ),\n                  SizedBox(height: 12),\n                  Row(\n                    children: List.generate(5, (starIndex) => Icon(\n                      Icons.star,\n                      color: starIndex < 5 ? Colors.amber : Colors.grey[600],\n                      size: 18,\n                    )),\n                  ),\n                  SizedBox(height: 12),\n                  Text(\n                    'Outstanding build quality and crystal clear audio. Perfect for gaming sessions.',\n                    style: TextStyle(fontSize: 15, color: Colors.grey[200]),\n                  ),\n                ],\n              ),\n            )),\n          ],\n        ),\n      ),\n      floatingActionButton: Container(\n        decoration: BoxDecoration(\n          borderRadius: BorderRadius.circular(30),\n          gradient: LinearGradient(\n            colors: [Colors.cyan, Colors.blue],\n          ),\n        ),\n        child: FloatingActionButton(\n          onPressed: () {},\n          child: Icon(Icons.rate_review, color: Colors.white),\n          backgroundColor: Colors.transparent,\n          elevation: 0,\n        ),\n      ),\n    );\n  }\n}",
+    "category": "ecommerce",
+    "tags": [
+        "reviews",
+        "dark-theme",
+        "gaming",
+        "neon",
+        "gradient",
+        "avatar",
+        "premium"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "SingleChildScrollView",
+        "Column",
+        "Container",
+        "Text",
+        "Row",
+        "Icon",
+        "CircleAvatar",
+        "FloatingActionButton"
+    ],
+    "layout_type": "Column"
+}

@@ -1,0 +1,22 @@
+{
+    "prompt": "Vertical verification",
+    "flutter_code": "import 'package:flutter/material.dart';\nimport 'package:flutter/services.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  List<TextEditingController> controllers = List.generate(6, (index) => TextEditingController());\n  List<FocusNode> focusNodes = List.generate(6, (index) => FocusNode());\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.blue[100],\n      body: SafeArea(\n        child: Padding(\n          padding: EdgeInsets.all(32.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Text(\n                'Enter Your Code',\n                style: TextStyle(\n                  fontSize: 28,\n                  fontWeight: FontWeight.bold,\n                  color: Colors.white,\n                ),\n              ),\n              SizedBox(height: 16),\n              Text(\n                'We sent a 6-digit code to your phone',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.white,\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 40),\n              Column(\n                mainAxisAlignment: MainAxisAlignment.center,\n                children: List.generate(6, (index) => \n                  Padding(\n                    padding: EdgeInsets.symmetric(vertical: 8),\n                    child: Container(\n                      width: 50,\n                      height: 50,\n                      decoration: BoxDecoration(\n                        shape: BoxShape.circle,\n                        border: Border.all(\n                          color: focusNodes[index].hasFocus ? Colors.blue[900]! : Colors.white,\n                          width: 2,\n                        ),\n                      ),\n                      child: TextField(\n                        controller: controllers[index],\n                        focusNode: focusNodes[index],\n                        textAlign: TextAlign.center,\n                        keyboardType: TextInputType.number,\n                        maxLength: 1,\n                        style: TextStyle(color: Colors.white),\n                        decoration: InputDecoration(\n                          counterText: '',\n                          border: InputBorder.none,\n                        ),\n                        onChanged: (value) {\n                          if (value.isNotEmpty && index < 5) {\n                            focusNodes[index + 1].requestFocus();\n                          }\n                        },\n                      ),\n                    ),\n                  ),\n                ),\n              ),\n              SizedBox(height: 40),\n              SizedBox(\n                width: double.infinity,\n                height: 50,\n                child: ElevatedButton(\n                  onPressed: () {},\n                  style: ElevatedButton.styleFrom(\n                    backgroundColor: Colors.blue[900],\n                    shape: RoundedRectangleBorder(\n                      borderRadius: BorderRadius.circular(8),\n                    ),\n                  ),\n                  child: Text(\n                    'Submit',\n                    style: TextStyle(fontSize: 18, color: Colors.white),\n                  ),\n                ),\n              ),\n              SizedBox(height: 24),\n              TextButton(\n                onPressed: () {},\n                child: Text(\n                  'Resend Code',\n                  style: TextStyle(\n                    color: Colors.white,\n                    fontSize: 16,\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "authentication",
+    "tags": [
+        "otp",
+        "verification",
+        "input",
+        "form",
+        "authentication",
+        "vertical",
+        "circular"
+    ],
+    "components": [
+        "TextField",
+        "ElevatedButton",
+        "TextButton",
+        "Container",
+        "Column"
+    ],
+    "layout_type": "Column"
+}

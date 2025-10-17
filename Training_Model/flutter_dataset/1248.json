@@ -1,0 +1,22 @@
+{
+    "prompt": "Create a modern drawer menu with light gray background and teal app bar with bold white title. Include header with circular avatar showing user icon, username 'Jane Smith' in bold black text, and email 'jane.smith@example.com' in gray. Add divider and navigation items: Home (house), Profile (person), Settings (gear), Logout (exit). Use ListTiles with left-aligned icons, clean sans-serif font, and hover effects. Main content shows centered welcome message in large bold teal font with gray subtitle. Apply Material Design with 16px padding and consistent spacing.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[200],\n      appBar: AppBar(\n        title: Text('Home', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),\n        backgroundColor: Colors.teal,\n        iconTheme: IconThemeData(color: Colors.white),\n      ),\n      drawer: Drawer(\n        child: Column(\n          children: [\n            UserAccountsDrawerHeader(\n              decoration: BoxDecoration(color: Colors.teal),\n              currentAccountPicture: CircleAvatar(\n                backgroundColor: Colors.white,\n                child: Icon(Icons.person, color: Colors.teal, size: 40),\n              ),\n              accountName: Text('Jane Smith', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),\n              accountEmail: Text('jane.smith@example.com', style: TextStyle(fontSize: 14, color: Colors.grey[600])),\n            ),\n            Divider(),\n            ListTile(\n              leading: Icon(Icons.house, color: Colors.teal),\n              title: Text('Home', style: TextStyle(fontFamily: 'Roboto')),\n              hoverColor: Colors.teal.withOpacity(0.1),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.person, color: Colors.teal),\n              title: Text('Profile', style: TextStyle(fontFamily: 'Roboto')),\n              hoverColor: Colors.teal.withOpacity(0.1),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.settings, color: Colors.teal),\n              title: Text('Settings', style: TextStyle(fontFamily: 'Roboto')),\n              hoverColor: Colors.teal.withOpacity(0.1),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.exit_to_app, color: Colors.red),\n              title: Text('Logout', style: TextStyle(fontFamily: 'Roboto')),\n              hoverColor: Colors.teal.withOpacity(0.1),\n              onTap: () {},\n            ),\n          ],\n        ),\n      ),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            Text(\n              'Welcome, Jane!',\n              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.teal),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Explore the app using the menu',\n              style: TextStyle(fontSize: 16, color: Colors.grey[600]),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "drawer",
+        "menu",
+        "navigation",
+        "profile",
+        "sidebar",
+        "appbar"
+    ],
+    "components": [
+        "Drawer",
+        "AppBar",
+        "ListTile",
+        "UserAccountsDrawerHeader",
+        "CircleAvatar",
+        "Divider"
+    ],
+    "layout_type": "Column"
+}

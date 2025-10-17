@@ -1,0 +1,22 @@
+{
+    "prompt": "Create a vibrant onboarding screen with pink gradient background (from dark to light pink). Feature rounded square illustration at top (30% screen height) using 16px border radius container filled with soft white. Place pink music note icon (size 90) in center. Add bold white 'Feel the Beat' heading (24px, FontWeight.w800) and light pink subtitle (14px) describing music features. Include pink 'Start Vibing' button (10px radius) and white 'Skip' text button at bottom. Use 20px padding, center-align text, and 16px spacing for lively, energetic look.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            begin: Alignment.topCenter,\n            end: Alignment.bottomCenter,\n            colors: [Colors.pink[400]!, Colors.pink[100]!],\n          ),\n        ),\n        child: SafeArea(\n          child: Padding(\n            padding: const EdgeInsets.all(20.0),\n            child: Column(\n              mainAxisAlignment: MainAxisAlignment.center,\n              children: [\n                Expanded(\n                  flex: 3,\n                  child: Container(\n                    decoration: BoxDecoration(\n                      color: Colors.white70,\n                      borderRadius: BorderRadius.circular(16),\n                    ),\n                    child: Icon(\n                      Icons.music_note,\n                      size: 90,\n                      color: Colors.pink[600],\n                    ),\n                  ),\n                ),\n                SizedBox(height: 16),\n                Text(\n                  'Feel the Beat',\n                  style: TextStyle(\n                    fontSize: 24,\n                    fontWeight: FontWeight.w800,\n                    color: Colors.white,\n                  ),\n                  textAlign: TextAlign.center,\n                ),\n                SizedBox(height: 16),\n                Text(\n                  'Enjoy music like never before with our app.',\n                  style: TextStyle(\n                    fontSize: 14,\n                    color: Colors.pink[200],\n                  ),\n                  textAlign: TextAlign.center,\n                ),\n                SizedBox(height: 16),\n                SizedBox(\n                  width: double.infinity,\n                  height: 48,\n                  child: ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Colors.pink[600],\n                      shape: RoundedRectangleBorder(\n                        borderRadius: BorderRadius.circular(10),\n                      ),\n                    ),\n                    child: Text(\n                      'Start Vibing',\n                      style: TextStyle(\n                        fontSize: 16,\n                        color: Colors.white,\n                      ),\n                    ),\n                  ),\n                ),\n                SizedBox(height: 16),\n                TextButton(\n                  onPressed: () {},\n                  child: Text(\n                    'Skip',\n                    style: TextStyle(\n                      fontSize: 16,\n                      color: Colors.white,\n                    ),\n                  ),\n                ),\n              ],\n            ),\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "onboarding",
+    "tags": [
+        "onboarding",
+        "vibrant",
+        "music",
+        "start-vibing",
+        "skip"
+    ],
+    "components": [
+        "Container",
+        "Icon",
+        "Text",
+        "ElevatedButton",
+        "TextButton",
+        "Column",
+        "SafeArea"
+    ],
+    "layout_type": "Column"
+}

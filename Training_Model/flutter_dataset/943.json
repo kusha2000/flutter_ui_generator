@@ -1,0 +1,26 @@
+{
+    "prompt": "Create a playful camera interface with a pastel pink background and a full-screen preview area with soft rounded corners. Place a heart-shaped capture button at the bottom center, colored in pastel blue with a subtle shadow. Include a transparent app bar with a back arrow on the left and a flash toggle on the right, both in white. Position the gallery thumbnail at the bottom right with a star-shaped frame. Use generous padding and playful shapes for a fun, approachable aesthetic.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFFFC1CC),\n      appBar: AppBar(\n        backgroundColor: Colors.transparent,\n        elevation: 0,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back, color: Colors.white),\n          onPressed: () {},\n        ),\n        actions: [\n          IconButton(\n            icon: Icon(Icons.flash_off, color: Colors.white),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      body: Column(\n        children: [\n          Expanded(\n            child: Padding(\n              padding: EdgeInsets.all(20.0),\n              child: Container(\n                decoration: BoxDecoration(\n                  color: Colors.black,\n                  borderRadius: BorderRadius.circular(20),\n                ),\n                child: Center(\n                  child: Icon(\n                    Icons.camera_alt,\n                    size: 80,\n                    color: Colors.white70,\n                  ),\n                ),\n              ),\n            ),\n          ),\n          Container(\n            height: 120,\n            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),\n            child: Row(\n              mainAxisAlignment: MainAxisAlignment.spaceBetween,\n              children: [\n                SizedBox(width: 60),\n                GestureDetector(\n                  onTap: () {},\n                  child: ClipPath(\n                    clipper: HeartClipper(),\n                    child: Container(\n                      width: 80,\n                      height: 80,\n                      color: Color(0xFFB3E5FC),\n                      child: Center(\n                        child: Container(\n                          width: 60,\n                          height: 60,\n                          color: Color(0xFF81D4FA),\n                        ),\n                      ),\n                    ),\n                  ),\n                ),\n                ClipPath(\n                  clipper: StarClipper(),\n                  child: Container(\n                    width: 60,\n                    height: 60,\n                    color: Colors.black54,\n                    child: Icon(\n                      Icons.photo,\n                      color: Colors.white70,\n                    ),\n                  ),\n                ),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}\n\nclass HeartClipper extends CustomClipper<Path> {\n  @override\n  Path getClip(Size size) {\n    final path = Path();\n    double w = size.width;\n    double h = size.height;\n    path.moveTo(0.5 * w, h * 0.35);\n    path.cubicTo(0.2 * w, h * 0.1, -0.25 * w, h * 0.6, 0.5 * w, h);\n    path.moveTo(0.5 * w, h * 0.35);\n    path.cubicTo(0.8 * w, h * 0.1, 1.25 * w, h * 0.6, 0.5 * w, h);\n    return path;\n  }\n  @override\n  bool shouldReclip(CustomClipper<Path> oldClipper) => true;\n}\n\nclass StarClipper extends CustomClipper<Path> {\n  @override\n  Path getClip(Size size) {\n    final path = Path();\n    double w = size.width;\n    double h = size.height;\n    for (int i = 0; i < 5; i++) {\n      double angle = (i / 5) * 2 * 3.14159 - 3.14159 / 2;\n      double innerAngle = angle + 3.14159 / 5;\n      path.lineTo(w / 2 + w / 2 * math.cos(angle), h / 2 + h / 2 * math.sin(angle));\n      path.lineTo(w / 2 + w / 4 * math.cos(innerAngle), h / 2 + h / 4 * math.sin(innerAngle));\n    }\n    path.close();\n    return path;\n  }\n  @override\n  bool shouldReclip(CustomClipper<Path> oldClipper) => true;\n}",
+    "category": "camera",
+    "tags": [
+        "camera",
+        "photo",
+        "capture",
+        "preview",
+        "gallery",
+        "flash",
+        "playful",
+        "pastel"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "Icon",
+        "GestureDetector",
+        "Row",
+        "Column",
+        "CustomClipper"
+    ],
+    "layout_type": "Column"
+}

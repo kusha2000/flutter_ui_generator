@@ -1,0 +1,24 @@
+{
+    "prompt": "Modern Location Picker Page",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        backgroundColor: Colors.white,\n        elevation: 0,\n        leading: Icon(Icons.arrow_back, color: Colors.black),\n        title: Text('Select Location', style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w600)),\n      ),\n      body: Column(\n        children: [\n          Padding(\n            padding: EdgeInsets.all(16.0),\n            child: Container(\n              decoration: BoxDecoration(\n                color: Colors.grey[100],\n                borderRadius: BorderRadius.circular(12),\n                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2))]\n              ),\n              child: TextField(\n                decoration: InputDecoration(\n                  hintText: 'Search for location',\n                  prefixIcon: Icon(Icons.search, color: Colors.grey[600]),\n                  border: InputBorder.none,\n                  contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12)\n                ),\n              ),\n            ),\n          ),\n          Container(\n            margin: EdgeInsets.symmetric(horizontal: 16),\n            padding: EdgeInsets.all(16),\n            decoration: BoxDecoration(\n              color: Colors.blue[50],\n              borderRadius: BorderRadius.circular(12),\n              border: Border.all(color: Colors.blue[200]!)\n            ),\n            child: Row(\n              children: [\n                Icon(Icons.my_location, color: Colors.blue[700]),\n                SizedBox(width: 12),\n                Text('Use current location', style: TextStyle(color: Colors.blue[700], fontSize: 16, fontWeight: FontWeight.w500))\n              ],\n            ),\n          ),\n          Expanded(\n            child: ListView.builder(\n              padding: EdgeInsets.all(16),\n              itemCount: 5,\n              itemBuilder: (context, index) {\n                List<String> locations = ['New York, NY', 'Los Angeles, CA', 'Chicago, IL', 'Houston, TX', 'Phoenix, AZ'];\n                List<String> addresses = ['123 Broadway St', '456 Sunset Blvd', '789 Michigan Ave', '321 Main St', '654 Central Ave'];\n                return Container(\n                  margin: EdgeInsets.only(bottom: 12),\n                  padding: EdgeInsets.all(16),\n                  decoration: BoxDecoration(\n                    color: Colors.white,\n                    borderRadius: BorderRadius.circular(8),\n                    boxShadow: [BoxShadow(color: Colors.black08, blurRadius: 2, offset: Offset(0, 1))]\n                  ),\n                  child: Row(\n                    children: [\n                      Icon(Icons.location_pin, color: Colors.grey[600]),\n                      SizedBox(width: 12),\n                      Expanded(\n                        child: Column(\n                          crossAxisAlignment: CrossAxisAlignment.start,\n                          children: [\n                            Text(locations[index], style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),\n                            Text(addresses[index], style: TextStyle(color: Colors.grey[600], fontSize: 14))\n                          ],\n                        ),\n                      )\n                    ],\n                  ),\n                );\n              },\n            ),\n          ),\n          Padding(\n            padding: EdgeInsets.all(16),\n            child: SizedBox(\n              width: double.infinity,\n              height: 48,\n              child: ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.blue[700],\n                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))\n                ),\n                child: Text('Confirm Location', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w600)),\n              ),\n            ),\n          )\n        ],\n      ),\n    );\n  }\n}",
+    "category": "location_services",
+    "tags": [
+        "location",
+        "picker",
+        "search",
+        "current_location",
+        "list",
+        "modern",
+        "clean"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "TextField",
+        "ListView",
+        "ElevatedButton",
+        "Container",
+        "Icon"
+    ],
+    "layout_type": "Column"
+}

@@ -1,0 +1,23 @@
+{
+    "prompt": "Create colorful drawer menu with white background and pink app bar. Include header with circular user avatar, 'Ethan Harris' username in bold black, and email in gray. Add navigation items: Home, Profile, Settings, Logout with different colored icons (blue, green, yellow, red) and black text. Include centered welcome message in pink and gradient background following Material Design spacing.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        title: Text('Home', style: TextStyle(color: Colors.white)),\n        backgroundColor: Colors.pink,\n        iconTheme: IconThemeData(color: Colors.white),\n      ),\n      drawer: Drawer(\n        child: Column(\n          children: [\n            UserAccountsDrawerHeader(\n              decoration: BoxDecoration(color: Colors.pink),\n              currentAccountPicture: CircleAvatar(\n                backgroundColor: Colors.white,\n                child: Icon(Icons.person, color: Colors.pink, size: 40),\n              ),\n              accountName: Text('Ethan Harris', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),\n              accountEmail: Text('ethan.harris@example.com', style: TextStyle(fontSize: 14, color: Colors.grey[600])),\n            ),\n            Divider(),\n            ListTile(\n              leading: Icon(Icons.home, color: Colors.blue),\n              title: Text('Home'),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.person, color: Colors.green),\n              title: Text('Profile'),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.settings, color: Colors.yellow),\n              title: Text('Settings'),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.exit_to_app, color: Colors.red),\n              title: Text('Logout'),\n              onTap: () {},\n            ),\n          ],\n        ),\n      ),\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            colors: [Colors.pink[100], Colors.white],\n            begin: Alignment.topCenter,\n            end: Alignment.bottomCenter,\n          ),\n        ),\n        child: Center(\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Text(\n                'Welcome, Ethan!',\n                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.pink),\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Explore the app',\n                style: TextStyle(fontSize: 16, color: Colors.grey[600]),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "drawer",
+        "menu",
+        "navigation",
+        "profile",
+        "gradient",
+        "sidebar"
+    ],
+    "components": [
+        "Drawer",
+        "AppBar",
+        "ListTile",
+        "UserAccountsDrawerHeader",
+        "CircleAvatar",
+        "Divider",
+        "Container"
+    ],
+    "layout_type": "Column"
+}

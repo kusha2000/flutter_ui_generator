@@ -1,0 +1,22 @@
+{
+    "prompt": "Monochrome gray onboarding with brush icon, creativity heading, create button, and skip.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[300],\n      body: SafeArea(\n        child: Padding(\n          padding: const EdgeInsets.all(20.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Expanded(\n                flex: 3,\n                child: Container(\n                  decoration: BoxDecoration(\n                    color: Colors.grey[500],\n                    borderRadius: BorderRadius.circular(10),\n                  ),\n                  child: Icon(\n                    Icons.brush,\n                    size: 90,\n                    color: Colors.white,\n                  ),\n                ),\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Unleash Creativity',\n                style: TextStyle(\n                  fontSize: 26,\n                  fontWeight: FontWeight.w700,\n                  color: Colors.black,\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Express yourself with our creative tools.',\n                style: TextStyle(\n                  fontSize: 15,\n                  color: Colors.grey[600],\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 16),\n              SizedBox(\n                width: double.infinity,\n                height: 48,\n                child: ElevatedButton(\n                  onPressed: () {},\n                  style: ElevatedButton.styleFrom(\n                    backgroundColor: Colors.grey[700],\n                    shape: RoundedRectangleBorder(\n                      borderRadius: BorderRadius.circular(10),\n                    ),\n                  ),\n                  child: Text(\n                    'Create Now',\n                    style: TextStyle(\n                      fontSize: 16,\n                      color: Colors.white,\n                    ),\n                  ),\n                ),\n              ),\n              SizedBox(height: 16),\n              TextButton(\n                onPressed: () {},\n                child: Text(\n                  'Skip',\n                  style: TextStyle(\n                    fontSize: 16,\n                    color: Colors.grey[600],\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "onboarding",
+    "tags": [
+        "onboarding",
+        "monochrome",
+        "creative",
+        "create-now",
+        "skip"
+    ],
+    "components": [
+        "Container",
+        "Icon",
+        "Text",
+        "ElevatedButton",
+        "TextButton",
+        "Column",
+        "SafeArea"
+    ],
+    "layout_type": "Column"
+}

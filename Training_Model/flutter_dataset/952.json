@@ -1,0 +1,25 @@
+{
+    "prompt": "Design a photo gallery viewer with a retro, vintage aesthetic. The main image, showing a classic car, should have 20px rounded corners and a sepia filter with a subtle brown shadow (opacity 0.1, blur 8px). Include a horizontal thumbnail gallery with 5 images (90x90px, 12px corners, 8px spacing) in a beige container (#F5E8C7). Place three action buttons in a centered row at the bottom: an orange heart icon (#FF7043), a green share icon (#4CAF50), and a brown download icon (#6D4C41), each in a circular container with 16px padding and a cream background (#FFFDE7). Use a light brown scaffold background (#D7CCC8) with 20px padding. The app bar should have a brown background (#6D4C41), a white back arrow, and a title 'Vintage Gallery' in white bold text with a retro font style. The design should feel nostalgic and warm with generous spacing.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFD7CCC8),\n      appBar: AppBar(\n        backgroundColor: Color(0xFF6D4C41),\n        elevation: 0,\n        leading: Icon(Icons.arrow_back, color: Colors.white),\n        title: Text('Vintage Gallery', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontFamily: 'Roboto')),\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(20.0),\n        child: Column(\n          children: [\n            Container(\n              height: 340,\n              width: double.infinity,\n              decoration: BoxDecoration(\n                borderRadius: BorderRadius.circular(20),\n                boxShadow: [BoxShadow(color: Colors.brown.withOpacity(0.1), blurRadius: 8, offset: Offset(0, 4))],\n                image: DecorationImage(\n                  image: NetworkImage('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600'),\n                  fit: BoxFit.cover,\n                  colorFilter: ColorFilter.mode(Colors.brown.withOpacity(0.2), BlendMode.multiply),\n                ),\n              ),\n            ),\n            SizedBox(height: 24),\n            Container(\n              height: 110,\n              padding: EdgeInsets.symmetric(horizontal: 8),\n              decoration: BoxDecoration(\n                color: Color(0xFFF5E8C7),\n                borderRadius: BorderRadius.circular(8),\n              ),\n              child: ListView.builder(\n                scrollDirection: Axis.horizontal,\n                itemCount: 5,\n                itemBuilder: (context, index) {\n                  return Container(\n                    width: 90,\n                    height: 90,\n                    margin: EdgeInsets.symmetric(horizontal: 8),\n                    decoration: BoxDecoration(\n                      borderRadius: BorderRadius.circular(12),\n                      image: DecorationImage(\n                        image: NetworkImage('https://images.unsplash.com/photo-15033767803${index + 3}3-7e6692767b70?w=200'),\n                        fit: BoxFit.cover,\n                        colorFilter: ColorFilter.mode(Colors.brown.withOpacity(0.2), BlendMode.multiply),\n                      ),\n                    ),\n                  );\n                },\n              ),\n            ),\n            SizedBox(height: 28),\n            Row(\n              mainAxisAlignment: MainAxisAlignment.center,\n              children: [\n                Container(\n                  padding: EdgeInsets.all(16),\n                  decoration: BoxDecoration(\n                    color: Color(0xFFFFFDE7),\n                    shape: BoxShape.circle,\n                  ),\n                  child: Icon(Icons.favorite, color: Color(0xFFFF7043), size: 28),\n                ),\n                SizedBox(width: 16),\n                Container(\n                  padding: EdgeInsets.all(16),\n                  decoration: BoxDecoration(\n                    color: Color(0xFFFFFDE7),\n                    shape: BoxShape.circle,\n                  ),\n                  child: Icon(Icons.share, color: Color(0xFF4CAF50), size: 28),\n                ),\n                SizedBox(width: 16),\n                Container(\n                  padding: EdgeInsets.all(16),\n                  decoration: BoxDecoration(\n                    color: Color(0xFFFFFDE7),\n                    shape: BoxShape.circle,\n                  ),\n                  child: Icon(Icons.download, color: Color(0xFF6D4C41), size: 28),\n                ),\n              ],\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "media",
+    "tags": [
+        "gallery",
+        "photo",
+        "viewer",
+        "image",
+        "thumbnails",
+        "actions",
+        "vintage",
+        "retro"
+    ],
+    "components": [
+        "Scaffold",
+        "Container",
+        "ListView",
+        "Icon",
+        "AppBar",
+        "Column",
+        "Row"
+    ],
+    "layout_type": "Column"
+}

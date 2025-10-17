@@ -1,0 +1,19 @@
+{
+    "prompt": "create the forgot password screen",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[100],\n      body: Padding(\n        padding: const EdgeInsets.all(24.0),\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          crossAxisAlignment: CrossAxisAlignment.stretch,\n          children: [\n            Text(\n              'Password Reset',\n              style: TextStyle(\n                fontSize: 30,\n                fontWeight: FontWeight.bold,\n                color: Colors.black,\n              ),\n              textAlign: TextAlign.center,\n            ),\n            SizedBox(height: 20),\n            Text(\n              'Enter your email for a reset link.',\n              style: TextStyle(\n                fontSize: 16,\n                color: Colors.grey[600],\n              ),\n              textAlign: TextAlign.center,\n            ),\n            SizedBox(height: 20),\n            Container(\n              decoration: BoxDecoration(\n                color: Colors.white,\n                borderRadius: BorderRadius.circular(8.0),\n                boxShadow: [\n                  BoxShadow(\n                    color: Colors.grey[400]!,\n                    offset: Offset(4, 4),\n                    blurRadius: 4,\n                  ),\n                  BoxShadow(\n                    color: Colors.white,\n                    offset: Offset(-4, -4),\n                    blurRadius: 4,\n                  ),\n                ],\n              ),\n              child: TextField(\n                keyboardType: TextInputType.emailAddress,\n                decoration: InputDecoration(\n                  hintText: 'Email',\n                  hintStyle: TextStyle(color: Colors.grey),\n                  border: OutlineInputBorder(\n                    borderRadius: BorderRadius.circular(8.0),\n                    borderSide: BorderSide.none,\n                  ),\n                  prefixIcon: Icon(Icons.email, color: Colors.grey),\n                ),\n              ),\n            ),\n            SizedBox(height: 20),\n            Container(\n              decoration: BoxDecoration(\n                boxShadow: [\n                  BoxShadow(\n                    color: Colors.grey[400]!,\n                    offset: Offset(4, 4),\n                    blurRadius: 4,\n                  ),\n                  BoxShadow(\n                    color: Colors.white,\n                    offset: Offset(-4, -4),\n                    blurRadius: 4,\n                  ),\n                ],\n              ),\n              child: ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.grey[300],\n                  padding: EdgeInsets.symmetric(vertical: 16),\n                  shape: RoundedRectangleBorder(\n                    borderRadius: BorderRadius.circular(8.0),\n                  ),\n                ),\n                child: Text(\n                  'Send',\n                  style: TextStyle(fontSize: 16, color: Colors.black),\n                ),\n              ),\n            ),\n            SizedBox(height: 20),\n            TextButton(\n              onPressed: () {},\n              child: Text(\n                'Back to Login',\n                style: TextStyle(color: Colors.grey[600], fontSize: 16),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "authentication",
+    "tags": [
+        "forgot-password",
+        "email",
+        "reset",
+        "neumorphic",
+        "light-theme"
+    ],
+    "components": [
+        "TextField",
+        "ElevatedButton",
+        "TextButton",
+        "Text"
+    ],
+    "layout_type": "Column"
+}

@@ -1,0 +1,24 @@
+{
+    "prompt": "Modern coming soon page",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            begin: Alignment.topLeft,\n            end: Alignment.bottomRight,\n            colors: [Color(0xFF6A1B9A), Color(0xFF1A237E)],\n          ),\n        ),\n        child: SafeArea(\n          child: Padding(\n            padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 48.0),\n            child: Column(\n              mainAxisAlignment: MainAxisAlignment.center,\n              crossAxisAlignment: CrossAxisAlignment.center,\n              children: [\n                Text(\n                  'Coming Soon',\n                  style: TextStyle(\n                    fontSize: 48,\n                    fontWeight: FontWeight.bold,\n                    color: Colors.white,\n                    letterSpacing: 2.0,\n                  ),\n                  textAlign: TextAlign.center,\n                ),\n                SizedBox(height: 24),\n                Text(\n                  'We\\'re launching something amazing!\\nStay tuned for exciting features.',\n                  style: TextStyle(\n                    fontSize: 18,\n                    color: Colors.white70,\n                    height: 1.5,\n                  ),\n                  textAlign: TextAlign.center,\n                ),\n                SizedBox(height: 48),\n                CircularProgressIndicator(\n                  value: 0.7,\n                  backgroundColor: Colors.white24,\n                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),\n                  strokeWidth: 6,\n                ),\n                SizedBox(height: 16),\n                Text(\n                  '70% Complete',\n                  style: TextStyle(\n                    fontSize: 16,\n                    color: Colors.white70,\n                  ),\n                ),\n                SizedBox(height: 48),\n                Container(\n                  width: double.infinity,\n                  child: TextField(\n                    decoration: InputDecoration(\n                      hintText: 'Enter your email',\n                      hintStyle: TextStyle(color: Colors.white54),\n                      filled: true,\n                      fillColor: Colors.white.withOpacity(0.1),\n                      border: OutlineInputBorder(\n                        borderRadius: BorderRadius.circular(25),\n                        borderSide: BorderSide.none,\n                      ),\n                      contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),\n                    ),\n                    style: TextStyle(color: Colors.white),\n                  ),\n                ),\n                SizedBox(height: 16),\n                SizedBox(\n                  width: double.infinity,\n                  child: ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Colors.white,\n                      foregroundColor: Color(0xFF6A1B9A),\n                      padding: EdgeInsets.symmetric(vertical: 16),\n                      shape: RoundedRectangleBorder(\n                        borderRadius: BorderRadius.circular(25),\n                      ),\n                    ),\n                    child: Text(\n                      'Subscribe',\n                      style: TextStyle(\n                        fontSize: 16,\n                        fontWeight: FontWeight.bold,\n                      ),\n                    ),\n                  ),\n                ),\n                SizedBox(height: 48),\n                Row(\n                  mainAxisAlignment: MainAxisAlignment.center,\n                  children: [\n                    Icon(Icons.facebook, color: Colors.white70, size: 32),\n                    SizedBox(width: 24),\n                    Icon(Icons.face, color: Colors.white70, size: 32),\n                    SizedBox(width: 24),\n                    Icon(Icons.alternate_email, color: Colors.white70, size: 32),\n                  ],\n                ),\n              ],\n            ),\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "marketing",
+    "tags": [
+        "coming_soon",
+        "landing_page",
+        "email_subscription",
+        "progress",
+        "gradient",
+        "dark_theme"
+    ],
+    "components": [
+        "Container",
+        "Text",
+        "CircularProgressIndicator",
+        "TextField",
+        "ElevatedButton",
+        "Icon",
+        "Row",
+        "Column"
+    ],
+    "layout_type": "Column"
+}

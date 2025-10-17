@@ -1,0 +1,23 @@
+{
+    "prompt": "Rotating Progress Loading",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> with SingleTickerProviderStateMixin {\n  late AnimationController _controller;\n\n  @override\n  void initState() {\n    super.initState();\n    _controller = AnimationController(\n      duration: Duration(seconds: 2),\n      vsync: this,\n    )..repeat();\n  }\n\n  @override\n  void dispose() {\n    _controller.dispose();\n    super.dispose();\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            Stack(\n              alignment: Alignment.center,\n              children: [\n                AnimatedBuilder(\n                  animation: _controller,\n                  builder: (context, child) {\n                    return Transform.rotate(\n                      angle: _controller.value * 2 * 3.14159,\n                      child: Container(\n                        width: 60,\n                        height: 60,\n                        decoration: BoxDecoration(\n                          border: Border.all(color: Color(0xFFFF5722), width: 2),\n                        ),\n                      ),\n                    );\n                  },\n                ),\n                CircularProgressIndicator(\n                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFFF5722)),\n                ),\n              ],\n            ),\n            SizedBox(height: 20),\n            Text(\n              'Almost Ready...',\n              style: TextStyle(\n                fontSize: 18,\n                color: Color(0xFF616161),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "progress",
+        "circular",
+        "animation",
+        "square"
+    ],
+    "components": [
+        "Scaffold",
+        "CircularProgressIndicator",
+        "Text",
+        "Column",
+        "Center",
+        "Stack",
+        "AnimatedBuilder",
+        "Container"
+    ],
+    "layout_type": "Column"
+}

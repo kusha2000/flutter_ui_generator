@@ -1,0 +1,24 @@
+{
+    "prompt": "Cream theme product categories list",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFFAFAFA),\n      appBar: AppBar(\n        backgroundColor: Color(0xFFFAFAFA),\n        elevation: 0,\n        title: Text(\n          'Categories',\n          style: TextStyle(\n            color: Colors.black87,\n            fontSize: 24,\n            fontWeight: FontWeight.w300,\n            letterSpacing: 0.5,\n          ),\n        ),\n        centerTitle: true,\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(20.0),\n        child: Column(\n          children: [\n            _buildCategoryListItem(Icons.shopping_bag, 'Electronics', Colors.lightBlue[100]!),\n            SizedBox(height: 16),\n            _buildCategoryListItem(Icons.headphones, 'Audio', Colors.lightGreen[100]!),\n            SizedBox(height: 16),\n            _buildCategoryListItem(Icons.laptop, 'Computers', Colors.orange[100]!),\n            SizedBox(height: 16),\n            _buildCategoryListItem(Icons.checkroom, 'Fashion', Colors.pink[100]!),\n            SizedBox(height: 16),\n            _buildCategoryListItem(Icons.book, 'Books', Colors.purple[100]!),\n            SizedBox(height: 16),\n            _buildCategoryListItem(Icons.home, 'Home', Colors.teal[100]!),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildCategoryListItem(IconData icon, String title, Color iconBgColor) {\n    return Container(\n      height: 70,\n      decoration: BoxDecoration(\n        color: Colors.white,\n        borderRadius: BorderRadius.circular(12),\n        boxShadow: [\n          BoxShadow(\n            color: Colors.black.withOpacity(0.05),\n            blurRadius: 6,\n            offset: Offset(0, 2),\n          ),\n        ],\n      ),\n      child: Padding(\n        padding: EdgeInsets.symmetric(horizontal: 16),\n        child: Row(\n          children: [\n            Container(\n              width: 50,\n              height: 50,\n              decoration: BoxDecoration(\n                color: iconBgColor,\n                shape: BoxShape.circle,\n              ),\n              child: Icon(\n                icon,\n                size: 24,\n                color: Colors.grey[600],\n              ),\n            ),\n            SizedBox(width: 20),\n            Expanded(\n              child: Text(\n                title,\n                style: TextStyle(\n                  fontSize: 18,\n                  fontWeight: FontWeight.w400,\n                  color: Colors.black87,\n                ),\n              ),\n            ),\n            Icon(\n              Icons.arrow_forward_ios,\n              size: 16,\n              color: Colors.grey[400],\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "e-commerce",
+    "tags": [
+        "categories",
+        "list",
+        "minimal",
+        "cards",
+        "pastel",
+        "elegant",
+        "navigation"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Column",
+        "Container",
+        "Row",
+        "Icon",
+        "Text"
+    ],
+    "layout_type": "Column"
+}

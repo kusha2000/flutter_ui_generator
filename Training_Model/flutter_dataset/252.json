@@ -1,0 +1,23 @@
+{
+    "prompt": "Create a professional drawer menu page with a light blue background and a navy blue app bar. The drawer should have a header with a circular avatar (user icon), user name 'Olivia Clark' in bold white, and email 'olivia.clark@example.com' in light gray. Below, add a divider, followed by menu items: Overview (overview icon), Profile (person icon), Settings (settings icon), Support (support agent icon), and Logout (exit icon). Use ListTiles with navy blue icons and text, and add a selected state highlight for the Overview item. The main content should display a centered welcome message in navy blue with a gray subtitle, and include a bottom navigation bar with Home and Profile icons. Use Material Design with 16px padding and consistent spacing.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.blue[50],\n      appBar: AppBar(\n        title: Text('Overview', style: TextStyle(color: Colors.white)),\n        backgroundColor: Colors.blue[900],\n        iconTheme: IconThemeData(color: Colors.white),\n      ),\n      drawer: Drawer(\n        child: Column(\n          children: [\n            UserAccountsDrawerHeader(\n              decoration: BoxDecoration(color: Colors.blue[900]),\n              currentAccountPicture: CircleAvatar(\n                backgroundColor: Colors.white,\n                child: Icon(Icons.person, color: Colors.blue[900], size: 40),\n              ),\n              accountName: Text('Olivia Clark', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),\n              accountEmail: Text('olivia.clark@example.com', style: TextStyle(fontSize: 14, color: Colors.grey[300])),\n            ),\n            Divider(),\n            ListTile(\n              leading: Icon(Icons.space_dashboard, color: Colors.blue[900]),\n              title: Text('Overview', style: TextStyle(color: Colors.blue[900])),\n              selected: true,\n              selectedTileColor: Colors.blue[100],\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.person, color: Colors.blue[900]),\n              title: Text('Profile', style: TextStyle(color: Colors.blue[900])),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.settings, color: Colors.blue[900]),\n              title: Text('Settings', style: TextStyle(color: Colors.blue[900])),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.support_agent, color: Colors.blue[900]),\n              title: Text('Support', style: TextStyle(color: Colors.blue[900])),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.exit_to_app, color: Colors.red),\n              title: Text('Logout', style: TextStyle(color: Colors.blue[900])),\n              onTap: () {},\n            ),\n          ],\n        ),\n      ),\n      bottomNavigationBar: BottomNavigationBar(\n        items: [\n          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),\n          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),\n        ],\n        selectedItemColor: Colors.blue[900],\n        unselectedItemColor: Colors.grey,\n      ),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            Text(\n              'Welcome, Olivia!',\n              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.blue[900]),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Use the drawer or bottom bar to navigate',\n              style: TextStyle(fontSize: 16, color: Colors.grey[600]),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "drawer",
+        "menu",
+        "navigation",
+        "profile",
+        "bottom navigation",
+        "sidebar"
+    ],
+    "components": [
+        "Drawer",
+        "AppBar",
+        "ListTile",
+        "UserAccountsDrawerHeader",
+        "CircleAvatar",
+        "Divider",
+        "BottomNavigationBar"
+    ],
+    "layout_type": "Column"
+}

@@ -1,0 +1,24 @@
+{
+    "prompt": "Forest green leaf toggle interface.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  bool isDarkMode = false;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.green[800],\n      body: Center(\n        child: Container(\n          decoration: BoxDecoration(\n            border: Border.all(color: Colors.brown),\n            borderRadius: BorderRadius.circular(12),\n          ),\n          padding: EdgeInsets.all(24),\n          child: Column(\n            mainAxisSize: MainAxisSize.min,\n            children: [\n              Text(\n                'Light Mode',\n                style: TextStyle(\n                  fontSize: 18,\n                  fontFamily: 'Georgia',\n                  color: Colors.green[200],\n                ),\n              ),\n              SizedBox(height: 16),\n              AnimatedCrossFade(\n                firstChild: Icon(Icons.park, color: Colors.green[200], size: 40),\n                secondChild: Icon(Icons.park, color: Colors.olive[700], size: 40),\n                crossFadeState: isDarkMode ? CrossFadeState.showSecond : CrossFadeState.showFirst,\n                duration: Duration(milliseconds: 300),\n              ),\n              SizedBox(height: 16),\n              AnimatedContainer(\n                duration: Duration(milliseconds: 300),\n                width: 80,\n                height: 40,\n                decoration: BoxDecoration(\n                  borderRadius: BorderRadius.circular(20),\n                  color: isDarkMode ? Colors.olive[700] : Colors.green[200],\n                ),\n                child: Stack(\n                  children: [\n                    AnimatedAlign(\n                      duration: Duration(milliseconds: 300),\n                      alignment: isDarkMode ? Alignment.centerRight : Alignment.centerLeft,\n                      child: Container(\n                        width: 36,\n                        height: 36,\n                        margin: EdgeInsets.all(2),\n                        decoration: BoxDecoration(\n                          shape: BoxShape.circle,\n                          color: Colors.white,\n                        ),\n                      ),\n                    ),\n                  ],\n                ),\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Dark Mode',\n                style: TextStyle(\n                  fontSize: 18,\n                  fontFamily: 'Georgia',\n                  color: Colors.olive[700],\n                ),\n              ),\n              SizedBox(height: 16),\n              GestureDetector(\n                onTap: () {\n                  setState(() {\n                    isDarkMode = !isDarkMode;\n                  });\n                },\n                child: Container(\n                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),\n                  decoration: BoxDecoration(\n                    color: Colors.brown,\n                    borderRadius: BorderRadius.circular(8),\n                  ),\n                  child: Text(\n                    'Toggle',\n                    style: TextStyle(color: Colors.white, fontSize: 16),\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "settings",
+    "tags": [
+        "toggle",
+        "switch",
+        "dark mode",
+        "light mode",
+        "theme",
+        "nature",
+        "animation",
+        "icon"
+    ],
+    "components": [
+        "AnimatedContainer",
+        "AnimatedAlign",
+        "Text",
+        "GestureDetector",
+        "AnimatedCrossFade",
+        "Icon"
+    ],
+    "layout_type": "Column"
+}

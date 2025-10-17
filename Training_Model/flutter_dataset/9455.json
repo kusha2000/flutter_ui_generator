@@ -1,0 +1,20 @@
+{
+    "prompt": "Centered 404 error page",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: Padding(\n        padding: const EdgeInsets.all(24.0),\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          crossAxisAlignment: CrossAxisAlignment.center,\n          children: [\n            Text(\n              '404',\n              style: TextStyle(\n                fontSize: 72,\n                fontWeight: FontWeight.bold,\n                color: Colors.grey[800],\n              ),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Page Not Found',\n              style: TextStyle(\n                fontSize: 24,\n                fontWeight: FontWeight.w500,\n                color: Colors.grey[600],\n              ),\n            ),\n            SizedBox(height: 24),\n            Text(\n              'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.',\n              textAlign: TextAlign.center,\n              style: TextStyle(\n                fontSize: 16,\n                color: Colors.grey[600],\n                height: 1.5,\n              ),\n            ),\n            SizedBox(height: 32),\n            ElevatedButton(\n              onPressed: () {},\n              style: ElevatedButton.styleFrom(\n                backgroundColor: Colors.blue,\n                foregroundColor: Colors.white,\n                padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),\n                shape: RoundedRectangleBorder(\n                  borderRadius: BorderRadius.circular(8),\n                ),\n              ),\n              child: Text(\n                'Go Back Home',\n                style: TextStyle(fontSize: 16),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "error_pages",
+    "tags": [
+        "404",
+        "error",
+        "not_found",
+        "navigation",
+        "button",
+        "minimal"
+    ],
+    "components": [
+        "Text",
+        "ElevatedButton",
+        "Column",
+        "Scaffold"
+    ],
+    "layout_type": "Column"
+}

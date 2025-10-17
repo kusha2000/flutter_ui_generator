@@ -1,0 +1,21 @@
+{
+    "prompt": "Submit app rating screen",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  int selectedRating = 0;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: Center(\n        child: Padding(\n          padding: EdgeInsets.all(32.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Container(\n                width: 80,\n                height: 80,\n                decoration: BoxDecoration(\n                  gradient: LinearGradient(\n                    colors: [Colors.blue, Colors.purple],\n                  ),\n                  borderRadius: BorderRadius.circular(16),\n                ),\n                child: Icon(Icons.star, color: Colors.white, size: 40),\n              ),\n              SizedBox(height: 32),\n              Text(\n                'Rate Our App',\n                style: TextStyle(\n                  fontSize: 28,\n                  fontWeight: FontWeight.bold,\n                  color: Colors.grey[800],\n                ),\n              ),\n              SizedBox(height: 16),\n              Text(\n                'How was your experience with our app?\\nYour feedback helps us improve!',\n                textAlign: TextAlign.center,\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.grey[600],\n                  height: 1.4,\n                ),\n              ),\n              SizedBox(height: 32),\n              Row(\n                mainAxisAlignment: MainAxisAlignment.center,\n                children: List.generate(5, (index) {\n                  return GestureDetector(\n                    onTap: () => setState(() => selectedRating = index + 1),\n                    child: Padding(\n                      padding: EdgeInsets.symmetric(horizontal: 4),\n                      child: Icon(\n                        selectedRating > index ? Icons.star : Icons.star_border,\n                        color: Colors.amber,\n                        size: 40,\n                      ),\n                    ),\n                  );\n                }),\n              ),\n              SizedBox(height: 48),\n              SizedBox(\n                width: double.infinity,\n                height: 50,\n                child: ElevatedButton(\n                  onPressed: selectedRating > 0 ? () {} : null,\n                  style: ElevatedButton.styleFrom(\n                    backgroundColor: Colors.blue,\n                    shape: RoundedRectangleBorder(\n                      borderRadius: BorderRadius.circular(25),\n                    ),\n                  ),\n                  child: Text(\n                    'Submit Rating',\n                    style: TextStyle(fontSize: 16, color: Colors.white),\n                  ),\n                ),\n              ),\n              SizedBox(height: 12),\n              SizedBox(\n                width: double.infinity,\n                height: 50,\n                child: OutlinedButton(\n                  onPressed: () {},\n                  style: OutlinedButton.styleFrom(\n                    side: BorderSide(color: Colors.blue),\n                    shape: RoundedRectangleBorder(\n                      borderRadius: BorderRadius.circular(25),\n                    ),\n                  ),\n                  child: Text(\n                    'Maybe Later',\n                    style: TextStyle(fontSize: 16, color: Colors.blue),\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "feedback",
+    "tags": [
+        "rating",
+        "feedback",
+        "stars",
+        "review",
+        "app_rating",
+        "user_experience"
+    ],
+    "components": [
+        "Icon",
+        "Text",
+        "ElevatedButton",
+        "OutlinedButton",
+        "GestureDetector"
+    ],
+    "layout_type": "Column"
+}

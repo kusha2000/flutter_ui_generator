@@ -1,0 +1,24 @@
+{
+    "prompt": "Create a minimal camera UI: centered preview with white border, teal capture button, transparent top bar with black back and flash icons, circular gallery thumbnail, light gray background, compact layout.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[200],\n      appBar: AppBar(\n        backgroundColor: Colors.transparent,\n        elevation: 0,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back, color: Colors.black),\n          onPressed: () {},\n        ),\n        actions: [\n          IconButton(\n            icon: Icon(Icons.flash_off, color: Colors.black),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      body: Column(\n        mainAxisAlignment: MainAxisAlignment.center,\n        children: [\n          Container(\n            width: 50,\n            height: 50,\n            decoration: BoxDecoration(\n              shape: BoxShape.circle,\n              color: Colors.grey[400],\n              border: Border.all(color: Colors.white, width: 2),\n            ),\n            child: Icon(\n              Icons.photo,\n              color: Colors.black54,\n            ),\n          ),\n          SizedBox(height: 20),\n          Container(\n            width: 250,\n            height: 400,\n            decoration: BoxDecoration(\n              color: Colors.black,\n              border: Border.all(color: Colors.white, width: 5),\n            ),\n            child: Center(\n              child: Icon(\n                Icons.camera_alt,\n                size: 60,\n                color: Colors.white70,\n              ),\n            ),\n          ),\n          SizedBox(height: 20),\n          GestureDetector(\n            onTap: () {},\n            child: Container(\n              width: 100,\n              height: 50,\n              decoration: BoxDecoration(\n                color: Colors.teal,\n                borderRadius: BorderRadius.circular(10),\n              ),\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "camera",
+    "tags": [
+        "camera",
+        "photo",
+        "capture",
+        "preview",
+        "gallery",
+        "flash",
+        "compact",
+        "minimal"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "Icon",
+        "GestureDetector",
+        "Column"
+    ],
+    "layout_type": "Column"
+}

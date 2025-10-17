@@ -1,0 +1,22 @@
+{
+    "prompt": "Dark splash with glowing logo dots loading",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFF121212),\n      body: SafeArea(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            Spacer(flex: 2),\n            Container(\n              width: 100,\n              height: 100,\n              decoration: BoxDecoration(\n                color: Color(0xFF1DB954),\n                shape: BoxShape.circle,\n                boxShadow: [\n                  BoxShadow(\n                    color: Color(0xFF1DB954).withOpacity(0.3),\n                    blurRadius: 20,\n                    spreadRadius: 5,\n                  ),\n                ],\n              ),\n              child: Icon(\n                Icons.flash_on,\n                size: 50,\n                color: Colors.white,\n              ),\n            ),\n            SizedBox(height: 40),\n            Text(\n              'VELOCITY',\n              style: TextStyle(\n                fontSize: 28,\n                fontWeight: FontWeight.w900,\n                color: Colors.white,\n                letterSpacing: 4,\n              ),\n            ),\n            SizedBox(height: 8),\n            Text(\n              'Fast. Reliable. Secure.',\n              style: TextStyle(\n                fontSize: 14,\n                color: Colors.grey[400],\n                fontWeight: FontWeight.w400,\n              ),\n            ),\n            Spacer(flex: 3),\n            Row(\n              mainAxisAlignment: MainAxisAlignment.center,\n              children: [\n                _buildDot(),\n                SizedBox(width: 8),\n                _buildDot(),\n                SizedBox(width: 8),\n                _buildDot(),\n              ],\n            ),\n            SizedBox(height: 20),\n            Text(\n              'v1.0.0',\n              style: TextStyle(\n                fontSize: 12,\n                color: Colors.grey[600],\n              ),\n            ),\n            SizedBox(height: 20),\n          ],\n        ),\n      ),\n    );\n  }\n  \n  Widget _buildDot() {\n    return Container(\n      width: 8,\n      height: 8,\n      decoration: BoxDecoration(\n        color: Color(0xFF1DB954),\n        shape: BoxShape.circle,\n      ),\n    );\n  }\n}",
+    "category": "onboarding",
+    "tags": [
+        "splash",
+        "dark",
+        "minimal",
+        "modern",
+        "loading",
+        "version"
+    ],
+    "components": [
+        "Container",
+        "Column",
+        "Row",
+        "Icon",
+        "Text",
+        "BoxDecoration"
+    ],
+    "layout_type": "Column"
+}

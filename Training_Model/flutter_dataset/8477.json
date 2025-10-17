@@ -1,0 +1,22 @@
+{
+    "prompt": "Orange loading screen",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFFAFAFA),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            SizedBox(\n              width: 60,\n              height: 60,\n              child: CircularProgressIndicator(\n                valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFFF9800)),\n                strokeWidth: 5.0,\n              ),\n            ),\n            SizedBox(height: 32),\n            Text(\n              'AppName',\n              style: TextStyle(\n                fontSize: 24,\n                fontWeight: FontWeight.bold,\n                color: Color(0xFF212121),\n              ),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Loading your experience...',\n              style: TextStyle(\n                fontSize: 14,\n                color: Color(0xFF757575),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "branding",
+        "large",
+        "orange",
+        "app",
+        "title"
+    ],
+    "components": [
+        "Scaffold",
+        "SizedBox",
+        "CircularProgressIndicator",
+        "Text",
+        "Column",
+        "Center"
+    ],
+    "layout_type": "Column"
+}

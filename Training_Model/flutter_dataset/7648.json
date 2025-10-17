@@ -1,0 +1,25 @@
+{
+    "prompt": "Fun email subscribe coming soon page",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        color: Color(0xFFB3E5FC),\n        child: SafeArea(\n          child: Padding(\n            padding: EdgeInsets.symmetric(horizontal: 28.0, vertical: 36.0),\n            child: Column(\n              mainAxisAlignment: MainAxisAlignment.center,\n              crossAxisAlignment: CrossAxisAlignment.center,\n              children: [\n                Row(\n                  mainAxisAlignment: MainAxisAlignment.center,\n                  children: [\n                    Icon(Icons.alternate_email, color: Colors.grey[800], size: 30),\n                    SizedBox(width: 20),\n                    Icon(Icons.camera_alt, color: Colors.grey[800], size: 30),\n                    SizedBox(width: 20),\n                    Icon(Icons.facebook, color: Colors.grey[800], size: 30),\n                  ],\n                ),\n                SizedBox(height: 32),\n                Transform.rotate(\n                  angle: -0.05,\n                  child: Text(\n                    'Coming Soon',\n                    style: TextStyle(\n                      fontSize: 46,\n                      fontWeight: FontWeight.w800,\n                      color: Color(0xFF8E24AA),\n                      fontFamily: 'Rounded',\n                    ),\n                    textAlign: TextAlign.center,\n                  ),\n                ),\n                SizedBox(height: 20),\n                Text(\n                  'Our app is launching with fun features!',\n                  style: TextStyle(\n                    fontSize: 16,\n                    color: Colors.grey[800],\n                    fontFamily: 'Handwritten',\n                    height: 1.4,\n                  ),\n                  textAlign: TextAlign.center,\n                ),\n                SizedBox(height: 40),\n                LinearProgressIndicator(\n                  value: 0.6,\n                  backgroundColor: Colors.grey[300],\n                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFEC407A)),\n                  minHeight: 10,\n                ),\n                SizedBox(height: 12),\n                Text(\n                  '60% Complete',\n                  style: TextStyle(\n                    fontSize: 14,\n                    color: Colors.grey[800],\n                  ),\n                ),\n                SizedBox(height: 40),\n                Container(\n                  width: double.infinity,\n                  child: TextField(\n                    decoration: InputDecoration(\n                      hintText: 'Enter your email',\n                      hintStyle: TextStyle(color: Colors.grey[600]),\n                      filled: true,\n                      fillColor: Colors.white,\n                      border: OutlineInputBorder(\n                        borderRadius: BorderRadius.circular(20),\n                        borderSide: BorderSide.none,\n                      ),\n                      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),\n                    ),\n                    style: TextStyle(color: Colors.black87),\n                  ),\n                ),\n                SizedBox(height: 16),\n                SizedBox(\n                  width: double.infinity,\n                  child: ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Color(0xFFFBC02D),\n                      foregroundColor: Colors.black,\n                      padding: EdgeInsets.symmetric(vertical: 14),\n                      shape: RoundedRectangleBorder(\n                        borderRadius: BorderRadius.circular(20),\n                      ),\n                    ),\n                    child: Text(\n                      'Subscribe',\n                      style: TextStyle(\n                        fontSize: 16,\n                        fontWeight: FontWeight.w600,\n                      ),\n                    ),\n                  ),\n                ),\n              ],\n            ),\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "marketing",
+    "tags": [
+        "coming_soon",
+        "landing_page",
+        "email_subscription",
+        "progress",
+        "playful",
+        "light_theme"
+    ],
+    "components": [
+        "Container",
+        "Text",
+        "LinearProgressIndicator",
+        "TextField",
+        "ElevatedButton",
+        "Icon",
+        "Row",
+        "Column",
+        "Transform"
+    ],
+    "layout_type": "Column"
+}

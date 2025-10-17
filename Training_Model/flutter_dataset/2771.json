@@ -1,0 +1,22 @@
+{
+    "prompt": "Design a bright yellow categories page with centered 'Categories' app bar in white text with shadow. Display 6 product cards in a 2-column grid, each with orange icon, black label, bold shadows, minimal padding.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.yellow[300],\n      appBar: AppBar(\n        backgroundColor: Colors.yellow[300],\n        elevation: 0,\n        title: Text(\n          'Categories',\n          style: TextStyle(\n            color: Colors.white,\n            fontSize: 24,\n            fontWeight: FontWeight.bold,\n            shadows: [Shadow(color: Colors.black, blurRadius: 2, offset: Offset(1, 1))],\n          ),\n        ),\n        centerTitle: true,\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(8.0),\n        child: GridView.count(\n          crossAxisCount: 2,\n          crossAxisSpacing: 8,\n          mainAxisSpacing: 8,\n          childAspectRatio: 1.2,\n          children: [\n            _buildCategoryCard(Icons.shopping_bag, 'Electronics', Colors.orange),\n            _buildCategoryCard(Icons.headphones, 'Audio', Colors.orange),\n            _buildCategoryCard(Icons.laptop, 'Computers', Colors.orange),\n            _buildCategoryCard(Icons.checkroom, 'Fashion', Colors.orange),\n            _buildCategoryCard(Icons.book, 'Books', Colors.orange),\n            _buildCategoryCard(Icons.home, 'Home', Colors.orange),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildCategoryCard(IconData icon, String title, Color iconColor) {\n    return Container(\n      decoration: BoxDecoration(\n        color: Colors.white,\n        borderRadius: BorderRadius.circular(0),\n        boxShadow: [\n          BoxShadow(\n            color: Colors.black45,\n            blurRadius: 6,\n            offset: Offset(0, 3),\n          ),\n        ],\n      ),\n      child: Column(\n        mainAxisAlignment: MainAxisAlignment.center,\n        children: [\n          Icon(\n            icon,\n            size: 40,\n            color: iconColor,\n          ),\n          SizedBox(height: 12),\n          Text(\n            title,\n            style: TextStyle(\n              fontSize: 16,\n              fontWeight: FontWeight.w600,\n              color: Colors.black,\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "e-commerce",
+    "tags": [
+        "categories",
+        "grid",
+        "cards",
+        "icons",
+        "vibrant",
+        "shopping"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "GridView",
+        "Container",
+        "Icon",
+        "Text"
+    ],
+    "layout_type": "GridView"
+}

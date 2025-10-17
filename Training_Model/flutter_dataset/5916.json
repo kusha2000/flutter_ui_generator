@@ -1,0 +1,24 @@
+{
+    "prompt": "Animated dark/light mode toggle with glowing border.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  bool isDarkMode = false;\n  bool showCheck = false;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.black,\n      body: Center(\n        child: Container(\n          decoration: BoxDecoration(\n            border: Border.all(color: isDarkMode ? Colors.red : Colors.white, width: 2),\n            borderRadius: BorderRadius.circular(12),\n          ),\n          padding: EdgeInsets.all(24),\n          child: Column(\n            mainAxisSize: MainAxisSize.min,\n            children: [\n              Text(\n                'MODE SWITCH',\n                style: TextStyle(\n                  fontSize: 20,\n                  fontWeight: FontWeight.bold,\n                  color: Colors.white,\n                  letterSpacing: 2,\n                ),\n              ),\n              SizedBox(height: 16),\n              AnimatedCrossFade(\n                firstChild: Container(),\n                secondChild: Icon(Icons.check_circle, color: Colors.green, size: 40),\n                crossFadeState: showCheck ? CrossFadeState.showSecond : CrossFadeState.showFirst,\n                duration: Duration(milliseconds: 300),\n              ),\n              SizedBox(height: 16),\n              AnimatedContainer(\n                duration: Duration(milliseconds: 300),\n                curve: Curves.easeInOut,\n                width: 100,\n                height: 50,\n                decoration: BoxDecoration(\n                  borderRadius: BorderRadius.circular(25),\n                  color: isDarkMode ? Colors.red : Colors.white,\n                ),\n                child: Stack(\n                  children: [\n                    AnimatedAlign(\n                      duration: Duration(milliseconds: 300),\n                      alignment: isDarkMode ? Alignment.centerRight : Alignment.centerLeft,\n                      child: Container(\n                        width: 46,\n                        height: 46,\n                        margin: EdgeInsets.all(2),\n                        decoration: BoxDecoration(\n                          shape: BoxShape.circle,\n                          color: Colors.black,\n                        ),\n                      ),\n                    ),\n                  ],\n                ),\n              ),\n              SizedBox(height: 16),\n              GestureDetector(\n                onTap: () {\n                  setState(() {\n                    isDarkMode = !isDarkMode;\n                    showCheck = true;\n                    Future.delayed(Duration(milliseconds: 500), () {\n                      setState(() {\n                        showCheck = false;\n                      });\n                    });\n                  });\n                },\n                child: Container(\n                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),\n                  decoration: BoxDecoration(\n                    color: Colors.grey[800],\n                    borderRadius: BorderRadius.circular(8),\n                  ),\n                  child: Text(\n                    'Toggle',\n                    style: TextStyle(color: Colors.white, fontSize: 16),\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "settings",
+    "tags": [
+        "toggle",
+        "switch",
+        "dark mode",
+        "light mode",
+        "theme",
+        "bold",
+        "animation",
+        "icon"
+    ],
+    "components": [
+        "AnimatedContainer",
+        "AnimatedAlign",
+        "Text",
+        "GestureDetector",
+        "AnimatedCrossFade",
+        "Icon"
+    ],
+    "layout_type": "Column"
+}

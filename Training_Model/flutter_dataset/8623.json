@@ -1,0 +1,23 @@
+{
+    "prompt": "Black-white theme notifications alerts",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        backgroundColor: Colors.white,\n        elevation: 0,\n        title: Text(\n          'Notifications',\n          style: TextStyle(\n            fontSize: 24,\n            fontWeight: FontWeight.bold,\n            color: Colors.black,\n          ),\n        ),\n      ),\n      body: ListView.builder(\n        padding: EdgeInsets.all(12),\n        itemCount: 10,\n        itemBuilder: (context, index) {\n          bool isUnread = index % 2 == 0;\n          return Container(\n            margin: EdgeInsets.only(bottom: 8),\n            decoration: BoxDecoration(\n              border: Border.all(color: Colors.black, width: 0.5),\n              borderRadius: BorderRadius.circular(0),\n            ),\n            child: ListTile(\n              contentPadding: EdgeInsets.all(8),\n              leading: Stack(\n                children: [\n                  CircleAvatar(\n                    radius: 20,\n                    backgroundColor: Colors.grey[300],\n                    child: Icon(Icons.person, color: Colors.black),\n                  ),\n                  if (isUnread)\n                    Positioned(\n                      right: 0,\n                      top: 0,\n                      child: Container(\n                        width: 8,\n                        height: 8,\n                        decoration: BoxDecoration(\n                          color: Colors.black,\n                          shape: BoxShape.circle,\n                        ),\n                      ),\n                    ),\n                ],\n              ),\n              title: Text(\n                'User ${index + 1}',\n                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),\n              ),\n              subtitle: Text(\n                'New notification...',\n                style: TextStyle(color: Colors.black, fontSize: 14),\n              ),\n              trailing: Text(\n                '${index + 1} min ago',\n                style: TextStyle(color: Colors.grey[700], fontSize: 12),\n              ),\n            ),\n          );\n        },\n      ),\n    );\n  }\n}",
+    "category": "social",
+    "tags": [
+        "notifications",
+        "list",
+        "cards",
+        "avatar",
+        "timestamps",
+        "scrollable",
+        "monochrome"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "ListTile",
+        "CircleAvatar",
+        "Container"
+    ],
+    "layout_type": "ListView"
+}

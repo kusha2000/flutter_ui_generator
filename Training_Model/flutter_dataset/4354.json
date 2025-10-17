@@ -1,0 +1,26 @@
+{
+    "prompt": "Bold task manager with red theme.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  int _selectedIndex = 0;\n  List<Map<String, dynamic>> tasks = [\n    {'title': 'FINISH REPORT', 'description': 'Complete quarterly report', 'priority': 'High', 'dueDate': '2025-08-10', 'completed': false, 'priorityColor': Colors.red},\n    {'title': 'TEAM MEETING', 'description': 'Discuss project milestones', 'priority': 'Medium', 'dueDate': '2025-08-12', 'completed': true, 'priorityColor': Colors.orange},\n    {'title': 'UPDATE DOCS', 'description': 'Revise API documentation', 'priority': 'Low', 'dueDate': '2025-08-15', 'completed': false, 'priorityColor': Colors.green}\n  ];\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.black,\n      appBar: AppBar(\n        title: Text('Bold Tasks', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24, fontFamily: 'Roboto')),\n        backgroundColor: Colors.red,\n        foregroundColor: Colors.white,\n        elevation: 2,\n        actions: [IconButton(icon: Icon(Icons.notifications), onPressed: () {})],\n      ),\n      body: ListView.builder(\n        padding: EdgeInsets.all(16),\n        itemCount: tasks.length,\n        itemBuilder: (context, index) {\n          final task = tasks[index];\n          return Card(\n            margin: EdgeInsets.only(bottom: 12),\n            elevation: 0,\n            color: Colors.white,\n            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n            child: Padding(\n              padding: EdgeInsets.all(16),\n              child: Row(\n                children: [\n                  Checkbox(\n                    value: task['completed'],\n                    onChanged: (value) { setState(() { task['completed'] = value!; }); },\n                    activeColor: Colors.red,\n                    checkColor: Colors.black,\n                  ),\n                  SizedBox(width: 12),\n                  Expanded(\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.start,\n                      children: [\n                        Text(\n                          task['title'],\n                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black, decoration: task['completed'] ? TextDecoration.lineThrough : null),\n                        ),\n                        SizedBox(height: 4),\n                        Text(\n                          task['description'],\n                          style: TextStyle(fontSize: 14, color: Colors.grey[800]),\n                        ),\n                        SizedBox(height: 8),\n                        Row(\n                          children: [\n                            Container(\n                              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),\n                              decoration: BoxDecoration(color: task['priorityColor'], borderRadius: BorderRadius.circular(12)),\n                              child: Text(task['priority'], style: TextStyle(color: Colors.white, fontSize: 12)),\n                            ),\n                            SizedBox(width: 12),\n                            Icon(Icons.calendar_today, size: 16, color: Colors.grey[800]),\n                            SizedBox(width: 4),\n                            Text(task['dueDate'], style: TextStyle(fontSize: 12, color: Colors.grey[800])),\n                          ],\n                        ),\n                      ],\n                    ),\n                  ),\n                  IconButton(icon: Icon(Icons.more_vert, color: Colors.black), onPressed: () {}),\n                ],\n              ),\n            ),\n          );\n        },\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {},\n        backgroundColor: Colors.red,\n        child: Icon(Icons.add, color: Colors.white, size: 32),\n      ),\n      bottomNavigationBar: BottomNavigationBar(\n        backgroundColor: Colors.black,\n        selectedItemColor: Colors.red,\n        unselectedItemColor: Colors.white70,\n        currentIndex: _selectedIndex,\n        onTap: (index) { setState(() { _selectedIndex = index; }); },\n        items: [\n          BottomNavigationBarItem(icon: Icon(Icons.task_alt), label: 'Tasks'),\n          BottomNavigationBarItem(icon: Icon(Icons.folder_outlined), label: 'Projects'),\n          BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profile'),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "productivity",
+    "tags": [
+        "task",
+        "manager",
+        "todo",
+        "list",
+        "checkbox",
+        "cards",
+        "navigation",
+        "material design",
+        "bold"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "Card",
+        "Checkbox",
+        "FloatingActionButton",
+        "BottomNavigationBar"
+    ],
+    "layout_type": "Column with ListView"
+}

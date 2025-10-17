@@ -1,0 +1,24 @@
+{
+    "prompt": "Recently viewed Products horizontal",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFF5F5DC),\n      appBar: AppBar(\n        backgroundColor: Color(0xFFF5F5DC),\n        elevation: 0,\n        title: Text(\n          'Recently Viewed',\n          style: TextStyle(\n            color: Colors.navy,\n            fontWeight: FontWeight.bold,\n            fontSize: 20,\n          ),\n        ),\n        centerTitle: true,\n      ),\n      body: SingleChildScrollView(\n        scrollDirection: Axis.horizontal,\n        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),\n        child: Row(\n          children: List.generate(8, (index) {\n            return Container(\n              width: 200,\n              margin: EdgeInsets.only(right: 12),\n              decoration: BoxDecoration(\n                color: Colors.white,\n                borderRadius: BorderRadius.circular(12),\n                border: Border.all(color: Colors.grey[300]!),\n              ),\n              child: Padding(\n                padding: EdgeInsets.all(8),\n                child: Column(\n                  children: [\n                    Container(\n                      width: 60,\n                      height: 60,\n                      decoration: BoxDecoration(\n                        shape: BoxShape.circle,\n                        color: Colors.grey[200],\n                      ),\n                      child: Icon(\n                        Icons.shopping_bag_outlined,\n                        color: Colors.grey[400],\n                        size: 28,\n                      ),\n                    ),\n                    SizedBox(height: 8),\n                    Text(\n                      'Product Name ${index + 1}',\n                      style: TextStyle(\n                        fontWeight: FontWeight.bold,\n                        fontSize: 14,\n                        color: Colors.navy,\n                      ),\n                      textAlign: TextAlign.center,\n                    ),\n                    SizedBox(height: 4),\n                    Text(\n                      'Brief description',\n                      style: TextStyle(\n                        color: Colors.grey[600],\n                        fontSize: 10,\n                      ),\n                      textAlign: TextAlign.center,\n                    ),\n                    SizedBox(height: 8),\n                    Row(\n                      mainAxisAlignment: MainAxisAlignment.center,\n                      children: [\n                        Text(\n                          '${(29.99 + index * 10).toStringAsFixed(2)}',\n                          style: TextStyle(\n                            fontWeight: FontWeight.bold,\n                            fontSize: 14,\n                            color: Colors.green,\n                          ),\n                        ),\n                        SizedBox(width: 8),\n                        Text(\n                          '${(39.99 + index * 10).toStringAsFixed(2)}',\n                          style: TextStyle(\n                            decoration: TextDecoration.lineThrough,\n                            color: Colors.red,\n                            fontSize: 10,\n                          ),\n                        ),\n                      ],\n                    ),\n                    Spacer(),\n                    ElevatedButton(\n                      onPressed: () {},\n                      style: ElevatedButton.styleFrom(\n                        backgroundColor: Colors.navy,\n                        foregroundColor: Colors.white,\n                        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),\n                        shape: RoundedRectangleBorder(\n                          borderRadius: BorderRadius.circular(6),\n                        ),\n                      ),\n                      child: Text(\n                        'Add to Cart',\n                        style: TextStyle(fontSize: 10),\n                      ),\n                    ),\n                  ],\n                ),\n              ),\n            );\n          }),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "e-commerce",
+    "tags": [
+        "recently_viewed",
+        "products",
+        "horizontal_scroll",
+        "cards",
+        "pastel"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "SingleChildScrollView",
+        "Row",
+        "Column",
+        "Container",
+        "ElevatedButton",
+        "Text",
+        "Icon"
+    ],
+    "layout_type": "SingleChildScrollView"
+}

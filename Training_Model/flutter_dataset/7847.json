@@ -1,0 +1,22 @@
+{
+    "prompt": "Retro theme QR Scanner",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  bool isFlashOn = false;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.beige,\n      appBar: AppBar(\n        backgroundColor: Colors.beige,\n        elevation: 0,\n        leading: IconButton(\n          icon: Icon(Icons.photo_library, color: Colors.black),\n          onPressed: () {},\n        ),\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(20),\n        child: Column(\n          children: [\n            SizedBox(height: 20),\n            Text(\n              'QR Code Scan',\n              style: TextStyle(\n                fontSize: 24,\n                fontFamily: 'Courier',\n                fontWeight: FontWeight.bold,\n                color: Colors.green.shade900,\n              ),\n            ),\n            SizedBox(height: 40),\n            Container(\n              width: 240,\n              height: 240,\n              decoration: BoxDecoration(\n                border: Border.all(color: Colors.black, width: 4),\n              ),\n            ),\n            SizedBox(height: 20),\n            Text(\n              'Position QR code here',\n              style: TextStyle(\n                fontSize: 14,\n                color: Colors.black,\n                fontFamily: 'Courier',\n              ),\n            ),\n            Spacer(),\n            ElevatedButton.icon(\n              onPressed: () {\n                setState(() {\n                  isFlashOn = !isFlashOn;\n                });\n              },\n              icon: Icon(\n                isFlashOn ? Icons.flash_on : Icons.flash_off,\n                color: Colors.white,\n              ),\n              label: Text(\n                'Flash',\n                style: TextStyle(color: Colors.white),\n              ),\n              style: ElevatedButton.styleFrom(\n                backgroundColor: isFlashOn ? Colors.green.shade700 : Colors.grey.shade600,\n                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),\n                shape: RoundedRectangleBorder(\n                  borderRadius: BorderRadius.zero,\n                ),\n              ),\n            ),\n            SizedBox(height: 20),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "camera",
+    "tags": [
+        "qr",
+        "scanner",
+        "camera",
+        "viewfinder",
+        "flash",
+        "gallery",
+        "retro"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "ElevatedButton",
+        "Text"
+    ],
+    "layout_type": "Column"
+}

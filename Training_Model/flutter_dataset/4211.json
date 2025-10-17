@@ -1,0 +1,22 @@
+{
+    "prompt": "Cozy onboarding with warm brown background",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.brown[200],\n      body: SafeArea(\n        child: Padding(\n          padding: const EdgeInsets.all(24.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Expanded(\n                flex: 2,\n                child: Container(\n                  decoration: BoxDecoration(\n                    shape: BoxShape.circle,\n                    color: Colors.brown[50],\n                  ),\n                  child: Icon(\n                    Icons.home,\n                    size: 80,\n                    color: Colors.brown[800],\n                  ),\n                ),\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Feel at Home',\n                style: TextStyle(\n                  fontSize: 26,\n                  fontWeight: FontWeight.w700,\n                  color: Colors.brown[800],\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Create a cozy experience with our app’s features.',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.brown[400],\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 16),\n              SizedBox(\n                width: double.infinity,\n                height: 50,\n                child: ElevatedButton(\n                  onPressed: () {},\n                  style: ElevatedButton.styleFrom(\n                    backgroundColor: Colors.brown[600],\n                    shape: RoundedRectangleBorder(\n                      borderRadius: BorderRadius.circular(12),\n                    ),\n                  ),\n                  child: Text(\n                    'Begin',\n                    style: TextStyle(\n                      fontSize: 16,\n                      color: Colors.white,\n                    ),\n                  ),\n                ),\n              ),\n              SizedBox(height: 16),\n              TextButton(\n                onPressed: () {},\n                child: Text(\n                  'Skip',\n                  style: TextStyle(\n                    fontSize: 16,\n                    color: Colors.brown[50],\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "onboarding",
+    "tags": [
+        "onboarding",
+        "cozy",
+        "welcome",
+        "begin",
+        "skip"
+    ],
+    "components": [
+        "Container",
+        "Icon",
+        "Text",
+        "ElevatedButton",
+        "TextButton",
+        "Column",
+        "SafeArea"
+    ],
+    "layout_type": "Column"
+}

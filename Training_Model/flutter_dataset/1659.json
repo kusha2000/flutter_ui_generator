@@ -1,0 +1,24 @@
+{
+    "prompt": "Create a minimalist app lock screen with a clean white background and subtle shadows. Place a thin-outlined lock icon at the top, show 'Access Control' in thin black typography, 'PIN Required' subtitle in grey, 4 small circular PIN dots that fill with teal when active, and a borderless numeric keypad with dark grey text. Maintain generous white space and breathing room between elements.",
+    "flutter_code": "class GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  String pin = '';\n  final int pinLength = 4;\n\n  void _onNumberPressed(String number) {\n    if (pin.length < pinLength) {\n      setState(() {\n        pin += number;\n      });\n    }\n  }\n\n  void _onDeletePressed() {\n    if (pin.isNotEmpty) {\n      setState(() {\n        pin = pin.substring(0, pin.length - 1);\n      });\n    }\n  }\n\n  Widget _buildPinDot(bool filled) {\n    return Container(\n      width: 40,\n      height: 40,\n      decoration: BoxDecoration(\n        shape: BoxShape.circle,\n        border: Border.all(color: Colors.grey[300]!, width: 1),\n        color: filled ? Colors.teal[300] : Colors.transparent,\n      ),\n      child: filled ? Container(\n        width: 12,\n        height: 12,\n        decoration: BoxDecoration(\n          shape: BoxShape.circle,\n          color: Colors.teal,\n        ),\n      ) : null,\n    );\n  }\n\n  Widget _buildKeypadButton(String text, {VoidCallback? onPressed}) {\n    return Container(\n      width: 65,\n      height: 65,\n      child: TextButton(\n        onPressed: onPressed,\n        style: TextButton.styleFrom(\n          backgroundColor: Colors.transparent,\n          foregroundColor: Colors.grey[700],\n          shape: CircleBorder(),\n          overlayColor: Colors.grey[100],\n        ),\n        child: Text(text, style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400)),\n      ),\n    );\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: Container(\n        decoration: BoxDecoration(\n          color: Colors.white,\n          boxShadow: [\n            BoxShadow(\n              color: Colors.grey.withOpacity(0.05),\n              blurRadius: 10,\n              spreadRadius: 1,\n            ),\n          ],\n        ),\n        child: Padding(\n          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 60),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            children: [\n              Icon(Icons.lock_outline, size: 70, color: Colors.grey[400]),\n              SizedBox(height: 50),\n              Text('Access Control', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300, color: Colors.black87, letterSpacing: 1.2)),\n              SizedBox(height: 8),\n              Text('PIN Required', style: TextStyle(fontSize: 14, color: Colors.grey[500], fontWeight: FontWeight.w300)),\n              SizedBox(height: 70),\n              Row(\n                mainAxisAlignment: MainAxisAlignment.center,\n                children: List.generate(pinLength, (index) => Padding(\n                  padding: EdgeInsets.symmetric(horizontal: 15),\n                  child: _buildPinDot(index < pin.length),\n                )),\n              ),\n              SizedBox(height: 70),\n              GridView.builder(\n                shrinkWrap: true,\n                physics: NeverScrollableScrollPhysics(),\n                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(\n                  crossAxisCount: 3,\n                  crossAxisSpacing: 30,\n                  mainAxisSpacing: 25,\n                  childAspectRatio: 1,\n                ),\n                itemCount: 12,\n                itemBuilder: (context, index) {\n                  if (index < 9) {\n                    String number = (index + 1).toString();\n                    return _buildKeypadButton(number, onPressed: () => _onNumberPressed(number));\n                  } else if (index == 9) {\n                    return Container();\n                  } else if (index == 10) {\n                    return _buildKeypadButton('0', onPressed: () => _onNumberPressed('0'));\n                  } else {\n                    return _buildKeypadButton('⌫', onPressed: _onDeletePressed);\n                  }\n                },\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "security",
+    "tags": [
+        "app_lock",
+        "minimalist",
+        "clean",
+        "teal",
+        "subtle",
+        "elegant"
+    ],
+    "components": [
+        "Scaffold",
+        "Container",
+        "Column",
+        "Icon",
+        "Text",
+        "TextButton",
+        "GridView",
+        "Row"
+    ],
+    "layout_type": "Column"
+}

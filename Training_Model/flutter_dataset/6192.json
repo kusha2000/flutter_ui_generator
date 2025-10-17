@@ -1,0 +1,22 @@
+{
+    "prompt": "White chat page with messages, input, send button.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  final TextEditingController _messageController = TextEditingController();\n  final List<Map<String, dynamic>> messages = [\n    {'text': 'Hey there!', 'isSent': false},\n    {'text': 'Hello! How are you?', 'isSent': true},\n    {'text': 'I\\'m doing great, thanks!', 'isSent': false},\n    {'text': 'Awesome!', 'isSent': true},\n  ];\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        backgroundColor: Colors.white,\n        elevation: 0,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back, color: Colors.black),\n          onPressed: () {},\n        ),\n        title: Text('John Doe', style: TextStyle(color: Colors.black, fontSize: 18)),\n      ),\n      body: Column(\n        children: [\n          Expanded(\n            child: ListView.builder(\n              padding: EdgeInsets.all(8),\n              itemCount: messages.length,\n              itemBuilder: (context, index) {\n                final message = messages[index];\n                return Align(\n                  alignment: message['isSent'] ? Alignment.centerRight : Alignment.centerLeft,\n                  child: Container(\n                    margin: EdgeInsets.symmetric(vertical: 2),\n                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 6),\n                    decoration: BoxDecoration(\n                      color: message['isSent'] ? Colors.blue[200] : Colors.grey[200],\n                      borderRadius: BorderRadius.zero,\n                    ),\n                    child: Text(\n                      message['text'],\n                      style: TextStyle(\n                        color: message['isSent'] ? Colors.white : Colors.black,\n                        fontSize: 14,\n                      ),\n                    ),\n                  ),\n                );\n              },\n            ),\n          ),\n          Container(\n            padding: EdgeInsets.all(8),\n            decoration: BoxDecoration(\n              color: Colors.white,\n              border: Border(top: BorderSide(color: Colors.grey[300]!)),\n            ),\n            child: Row(\n              children: [\n                Expanded(\n                  child: TextField(\n                    controller: _messageController,\n                    decoration: InputDecoration(\n                      hintText: 'Message...',\n                      border: OutlineInputBorder(\n                        borderRadius: BorderRadius.zero,\n                        borderSide: BorderSide(color: Colors.grey[300]!),\n                      ),\n                      contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 6),\n                    ),\n                  ),\n                ),\n                SizedBox(width: 4),\n                Container(\n                  color: Colors.blue[200],\n                  child: IconButton(\n                    icon: Icon(Icons.send, color: Colors.white, size: 18),\n                    onPressed: () {},\n                  ),\n                ),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "messaging",
+    "tags": [
+        "chat",
+        "messaging",
+        "conversation",
+        "input",
+        "send",
+        "minimalist",
+        "light_theme"
+    ],
+    "components": [
+        "AppBar",
+        "ListView",
+        "TextField",
+        "Container",
+        "IconButton"
+    ],
+    "layout_type": "Column"
+}

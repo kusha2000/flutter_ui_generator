@@ -1,0 +1,20 @@
+{
+    "prompt": "Design a dark theme 404 Not Found page with a deep dark background (Colors.grey[900]). Feature a large, glowing '404' text in bright cyan (Colors.cyan) with a bold font weight and increased letter spacing (2.0). Display 'Oops! Page Not Found' as the subtitle in white color. Include an atmospheric description 'Looks like you've ventured into the digital void. The page you're seeking has disappeared into cyberspace.' in light gray (Colors.grey[300]). Add a futuristic neon-style 'Return to Safety' button with cyan background, dark text, and a subtle glow effect using elevation. Use a Column layout centered both vertically and horizontally with dramatic spacing (SizedBox height: 32 between elements). Apply padding of 32.0 for a spacious feel.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[900],\n      body: Padding(\n        padding: const EdgeInsets.all(32.0),\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          crossAxisAlignment: CrossAxisAlignment.center,\n          children: [\n            Text(\n              '404',\n              style: TextStyle(\n                fontSize: 80,\n                fontWeight: FontWeight.bold,\n                color: Colors.cyan,\n                letterSpacing: 2.0,\n              ),\n            ),\n            SizedBox(height: 20),\n            Text(\n              'Oops! Page Not Found',\n              style: TextStyle(\n                fontSize: 28,\n                fontWeight: FontWeight.w600,\n                color: Colors.white,\n              ),\n            ),\n            SizedBox(height: 32),\n            Text(\n              'Looks like you\\'ve ventured into the digital void. The page you\\'re seeking has disappeared into cyberspace.',\n              textAlign: TextAlign.center,\n              style: TextStyle(\n                fontSize: 18,\n                color: Colors.grey[300],\n                height: 1.6,\n              ),\n            ),\n            SizedBox(height: 40),\n            ElevatedButton(\n              onPressed: () {},\n              style: ElevatedButton.styleFrom(\n                backgroundColor: Colors.cyan,\n                foregroundColor: Colors.grey[900],\n                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 18),\n                elevation: 8,\n                shape: RoundedRectangleBorder(\n                  borderRadius: BorderRadius.circular(12),\n                ),\n              ),\n              child: Text(\n                'Return to Safety',\n                style: TextStyle(\n                  fontSize: 18,\n                  fontWeight: FontWeight.bold,\n                ),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "error_pages",
+    "tags": [
+        "404",
+        "error",
+        "dark_theme",
+        "cyber",
+        "neon",
+        "futuristic"
+    ],
+    "components": [
+        "Text",
+        "ElevatedButton",
+        "Column",
+        "Scaffold"
+    ],
+    "layout_type": "Column"
+}

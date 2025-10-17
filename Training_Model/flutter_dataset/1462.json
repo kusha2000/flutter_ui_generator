@@ -1,0 +1,21 @@
+{
+    "prompt": "Create a retro-inspired 404 Not Found page with a purple-to-pink gradient background. Show a bold deep purple '404' with subtle letter spacing, a subtitle 'Error Detected', and a dark gray retro-tech message. Include a vintage-style purple 'Reboot System' button with rounded corners. Use classic spacing (14, 20, 28, 36) and padding of 25 for a nostalgic layout.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            begin: Alignment.topRight,\n            end: Alignment.bottomLeft,\n            colors: [Colors.purple[100]!, Colors.pink[100]!],\n          ),\n        ),\n        child: Padding(\n          padding: const EdgeInsets.all(25.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            crossAxisAlignment: CrossAxisAlignment.center,\n            children: [\n              Text(\n                '404',\n                style: TextStyle(\n                  fontSize: 82,\n                  fontWeight: FontWeight.w800,\n                  color: Colors.purple[800],\n                  letterSpacing: 1.5,\n                ),\n              ),\n              SizedBox(height: 14),\n              Text(\n                'Error Detected',\n                style: TextStyle(\n                  fontSize: 28,\n                  fontWeight: FontWeight.w600,\n                  color: Colors.purple[800],\n                ),\n              ),\n              SizedBox(height: 28),\n              Text(\n                'System malfunction detected! The requested file has been corrupted or moved to another dimension. Please reboot your navigation.',\n                textAlign: TextAlign.center,\n                style: TextStyle(\n                  fontSize: 18,\n                  color: Colors.grey[700],\n                  height: 1.4,\n                ),\n              ),\n              SizedBox(height: 36),\n              ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.purple[800],\n                  foregroundColor: Colors.white,\n                  padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),\n                  elevation: 4,\n                  shape: RoundedRectangleBorder(\n                    borderRadius: BorderRadius.circular(10),\n                  ),\n                ),\n                child: Text(\n                  'Reboot System',\n                  style: TextStyle(\n                    fontSize: 17,\n                    fontWeight: FontWeight.w600,\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "error_pages",
+    "tags": [
+        "404",
+        "error",
+        "retro",
+        "vintage",
+        "purple",
+        "computing"
+    ],
+    "components": [
+        "Text",
+        "ElevatedButton",
+        "Column",
+        "Container",
+        "Scaffold"
+    ],
+    "layout_type": "Column"
+}

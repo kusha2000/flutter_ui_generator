@@ -1,0 +1,24 @@
+{
+    "prompt": "Create a minimalist camera interface with clean lines and a soft color palette. Use a light grey background with the preview area featuring rounded corners and subtle drop shadow. Position the capture button as a large white circle with a thin grey border at the bottom center. Include a simple top bar with minimal icons and a small gallery preview thumbnail with soft corners. The design should emphasize simplicity and ease of use with plenty of white space and gentle transitions throughout the interface.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFF5F5F5),\n      appBar: AppBar(\n        backgroundColor: Color(0xFFF5F5F5),\n        elevation: 0,\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back, color: Colors.grey[700], size: 20),\n          onPressed: () {},\n        ),\n        actions: [\n          IconButton(\n            icon: Icon(Icons.flash_off, color: Colors.grey[700], size: 20),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      body: Column(\n        children: [\n          Expanded(\n            child: Padding(\n              padding: EdgeInsets.all(24.0),\n              child: Container(\n                decoration: BoxDecoration(\n                  color: Colors.white,\n                  borderRadius: BorderRadius.circular(12),\n                  boxShadow: [\n                    BoxShadow(\n                      color: Colors.black.withOpacity(0.05),\n                      blurRadius: 10,\n                      offset: Offset(0, 2),\n                    ),\n                  ],\n                ),\n                child: Center(\n                  child: Icon(\n                    Icons.camera_alt_outlined,\n                    size: 60,\n                    color: Colors.grey[400],\n                  ),\n                ),\n              ),\n            ),\n          ),\n          Container(\n            height: 120,\n            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),\n            child: Row(\n              mainAxisAlignment: MainAxisAlignment.spaceBetween,\n              crossAxisAlignment: CrossAxisAlignment.center,\n              children: [\n                Container(\n                  width: 50,\n                  height: 50,\n                  decoration: BoxDecoration(\n                    color: Colors.white,\n                    borderRadius: BorderRadius.circular(6),\n                    boxShadow: [\n                      BoxShadow(\n                        color: Colors.black.withOpacity(0.05),\n                        blurRadius: 5,\n                      ),\n                    ],\n                  ),\n                  child: Icon(\n                    Icons.photo_outlined,\n                    color: Colors.grey[500],\n                    size: 20,\n                  ),\n                ),\n                GestureDetector(\n                  onTap: () {},\n                  child: Container(\n                    width: 70,\n                    height: 70,\n                    decoration: BoxDecoration(\n                      shape: BoxShape.circle,\n                      color: Colors.white,\n                      border: Border.all(\n                        color: Colors.grey[300]!,\n                        width: 2,\n                      ),\n                      boxShadow: [\n                        BoxShadow(\n                          color: Colors.black.withOpacity(0.1),\n                          blurRadius: 8,\n                        ),\n                      ],\n                    ),\n                  ),\n                ),\n                SizedBox(width: 50),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "camera",
+    "tags": [
+        "camera",
+        "minimalist",
+        "clean",
+        "simple",
+        "light",
+        "subtle",
+        "elegant"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "Container",
+        "Icon",
+        "GestureDetector",
+        "Row",
+        "Column"
+    ],
+    "layout_type": "Column"
+}

@@ -1,0 +1,24 @@
+{
+    "prompt": "Health Splash Screen",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFF0FDF4),\n      body: Stack(\n        children: [\n          Positioned(\n            top: 150,\n            right: -50,\n            child: Container(\n              width: 200,\n              height: 200,\n              decoration: BoxDecoration(\n                color: Color(0xFF10B981).withOpacity(0.05),\n                shape: BoxShape.circle,\n              ),\n            ),\n          ),\n          Positioned(\n            bottom: 100,\n            left: -80,\n            child: Container(\n              width: 250,\n              height: 250,\n              decoration: BoxDecoration(\n                color: Color(0xFF059669).withOpacity(0.03),\n                shape: BoxShape.circle,\n              ),\n            ),\n          ),\n          SafeArea(\n            child: Column(\n              mainAxisAlignment: MainAxisAlignment.center,\n              children: [\n                Spacer(flex: 2),\n                Stack(\n                  alignment: Alignment.center,\n                  children: [\n                    Container(\n                      width: 140,\n                      height: 140,\n                      child: CircularProgressIndicator(\n                        strokeWidth: 3,\n                        value: 0.7,\n                        valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF10B981)),\n                        backgroundColor: Color(0xFF10B981).withOpacity(0.1),\n                      ),\n                    ),\n                    Container(\n                      width: 110,\n                      height: 110,\n                      decoration: BoxDecoration(\n                        color: Color(0xFF10B981),\n                        shape: BoxShape.circle,\n                        boxShadow: [\n                          BoxShadow(\n                            color: Color(0xFF10B981).withOpacity(0.3),\n                            blurRadius: 20,\n                            offset: Offset(0, 8),\n                          ),\n                        ],\n                      ),\n                      child: Icon(\n                        Icons.favorite,\n                        size: 55,\n                        color: Colors.white,\n                      ),\n                    ),\n                  ],\n                ),\n                SizedBox(height: 45),\n                Text(\n                  'VitalLife',\n                  style: TextStyle(\n                    fontSize: 34,\n                    fontWeight: FontWeight.w700,\n                    color: Color(0xFF065F46),\n                    letterSpacing: 1,\n                  ),\n                ),\n                SizedBox(height: 12),\n                Text(\n                  'Your journey to wellness starts here',\n                  style: TextStyle(\n                    fontSize: 16,\n                    color: Color(0xFF10B981),\n                    fontWeight: FontWeight.w500,\n                  ),\n                ),\n                Spacer(flex: 3),\n                Container(\n                  width: 40,\n                  height: 40,\n                  child: CircularProgressIndicator(\n                    strokeWidth: 3,\n                    valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF10B981)),\n                  ),\n                ),\n                SizedBox(height: 15),\n                Text(\n                  'Loading your health data...',\n                  style: TextStyle(\n                    fontSize: 14,\n                    color: Color(0xFF6B7280),\n                    fontWeight: FontWeight.w400,\n                  ),\n                ),\n                SizedBox(height: 50),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "onboarding",
+    "tags": [
+        "splash",
+        "health",
+        "fitness",
+        "wellness",
+        "green",
+        "heart"
+    ],
+    "components": [
+        "Stack",
+        "Positioned",
+        "Container",
+        "Column",
+        "Icon",
+        "Text",
+        "CircularProgressIndicator",
+        "BoxDecoration"
+    ],
+    "layout_type": "Stack"
+}

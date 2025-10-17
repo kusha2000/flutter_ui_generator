@@ -1,0 +1,22 @@
+{
+    "prompt": "retro colot theme chat UI",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Messages', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),\n        backgroundColor: Colors.brown[600],\n        elevation: 1,\n        actions: [\n          IconButton(\n            icon: Icon(Icons.search, color: Colors.white),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      backgroundColor: Color(0xFFFFFDD0),\n      body: ListView.separated(\n        itemCount: 15,\n        separatorBuilder: (context, index) => Divider(height: 2, color: Colors.brown[400]),\n        itemBuilder: (context, index) {\n          return ListTile(\n            contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),\n            leading: Container(\n              width: 48,\n              height: 48,\n              decoration: BoxDecoration(\n                borderRadius: BorderRadius.circular(8),\n                color: Colors.brown[100],\n              ),\n              child: Center(child: Text('U${index + 1}', style: TextStyle(color: Colors.brown[800]))),\n            ),\n            title: Text(\n              'User ${index + 1}',\n              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.brown[800]),\n            ),\n            subtitle: Text(\n              'Hey there! How are you doing today?',\n              style: TextStyle(color: Colors.grey[600], fontSize: 14),\n              maxLines: 1,\n              overflow: TextOverflow.ellipsis,\n            ),\n            trailing: Text(\n              '12:${(index % 60).toString().padLeft(2, '0')}',\n              style: TextStyle(color: Colors.grey[500], fontSize: 12),\n            ),\n            onTap: () {},\n          );\n        },\n      ),\n    );\n  }\n}",
+    "category": "messaging",
+    "tags": [
+        "chat",
+        "list",
+        "retro",
+        "messaging",
+        "vintage"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "ListTile",
+        "Container",
+        "Text",
+        "IconButton"
+    ],
+    "layout_type": "ListView"
+}

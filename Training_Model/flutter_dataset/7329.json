@@ -1,0 +1,24 @@
+{
+    "prompt": "Analytics page with purple metrics",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.black,\n      appBar: AppBar(\n        backgroundColor: Colors.black,\n        elevation: 0,\n        title: Text(\n          'Analytics Hub',\n          style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),\n        ),\n        actions: [\n          IconButton(\n            icon: Icon(Icons.settings, color: Colors.white),\n            onPressed: () {},\n          ),\n        ],\n      ),\n      body: SingleChildScrollView(\n        padding: EdgeInsets.all(16.0),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.start,\n          children: [\n            GridView.count(\n              crossAxisCount: 2,\n              shrinkWrap: true,\n              physics: NeverScrollableScrollPhysics(),\n              crossAxisSpacing: 12,\n              mainAxisSpacing: 12,\n              childAspectRatio: 1.5,\n              children: [\n                _buildMetricCard('Active Sessions', '12,847', Icons.people, Colors.purple),\n                _buildMetricCard('Page Views', '89,234', Icons.visibility, Colors.purple),\n                _buildMetricCard('Bounce Rate', '24.5%', Icons.bounce_rate, Colors.purple),\n                _buildMetricCard('Avg Session', '4:32m', Icons.timer, Colors.purple),\n              ],\n            ),\n            SizedBox(height: 24),\n            Container(\n              height: 220,\n              decoration: BoxDecoration(\n                gradient: LinearGradient(\n                  colors: [Colors.purple.withOpacity(0.2), Colors.purple.withOpacity(0.05)],\n                  begin: Alignment.topLeft,\n                  end: Alignment.bottomRight,\n                ),\n                borderRadius: BorderRadius.circular(16),\n                border: Border.all(color: Colors.purple.withOpacity(0.3)),\n              ),\n              child: Center(\n                child: Text(\n                  'Line Chart Visualization',\n                  style: TextStyle(color: Colors.white70, fontSize: 16),\n                ),\n              ),\n            ),\n            SizedBox(height: 24),\n            Text(\n              'Key Metrics',\n              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),\n            ),\n            SizedBox(height: 12),\n            _buildStatsList(),\n          ],\n        ),\n      ),\n    );\n  }\n\n  Widget _buildMetricCard(String title, String value, IconData icon, Color color) {\n    return Container(\n      padding: EdgeInsets.all(16),\n      decoration: BoxDecoration(\n        gradient: LinearGradient(\n          colors: [color.withOpacity(0.8), color.withOpacity(0.6)],\n          begin: Alignment.topLeft,\n          end: Alignment.bottomRight,\n        ),\n        borderRadius: BorderRadius.circular(16),\n      ),\n      child: Column(\n        crossAxisAlignment: CrossAxisAlignment.start,\n        children: [\n          Icon(icon, color: Colors.white, size: 24),\n          SizedBox(height: 8),\n          Text(title, style: TextStyle(color: Colors.white70, fontSize: 12)),\n          SizedBox(height: 4),\n          Text(value, style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),\n        ],\n      ),\n    );\n  }\n\n  Widget _buildStatsList() {\n    return Column(\n      children: [\n        _buildStatItem('Unique Visitors', '34,567', Icons.person_outline),\n        _buildStatItem('Returning Users', '15,432', Icons.refresh),\n        _buildStatItem('New Registrations', '2,345', Icons.person_add),\n        _buildStatItem('Mobile Traffic', '67.8%', Icons.phone_android),\n      ],\n    );\n  }\n\n  Widget _buildStatItem(String label, String value, IconData icon) {\n    return Container(\n      margin: EdgeInsets.only(bottom: 8),\n      padding: EdgeInsets.all(12),\n      decoration: BoxDecoration(\n        color: Colors.grey[900],\n        borderRadius: BorderRadius.circular(8),\n      ),\n      child: Row(\n        children: [\n          Icon(icon, color: Colors.purple, size: 20),\n          SizedBox(width: 12),\n          Expanded(child: Text(label, style: TextStyle(color: Colors.white70))),\n          Text(value, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "analytics",
+    "tags": [
+        "dashboard",
+        "dark-theme",
+        "analytics",
+        "metrics",
+        "purple",
+        "grid",
+        "stats"
+    ],
+    "components": [
+        "AppBar",
+        "Container",
+        "GridView",
+        "Column",
+        "Row",
+        "Icon",
+        "Text"
+    ],
+    "layout_type": "Column"
+}

@@ -1,0 +1,23 @@
+{
+    "prompt": "Create a modern drawer menu with light gray background and blue-gray app bar. Include header with circular avatar (user icon), username 'Sophia Adams' in bold white, and email 'sophia.adams@example.com' in light gray. Add divider and menu items: Dashboard (dashboard), Profile (person), Settings (settings), Help (help), Logout (exit). Use ListTiles with blue-gray icons and text, adding subtle border radius to each tile. Main content displays centered welcome message in blue-gray with gray subtitle, and includes card-based container for welcome message. Apply Material Design with 16px padding and consistent spacing.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[200],\n      appBar: AppBar(\n        title: Text('Dashboard', style: TextStyle(color: Colors.white)),\n        backgroundColor: Colors.blueGrey,\n        iconTheme: IconThemeData(color: Colors.white),\n      ),\n      drawer: Drawer(\n        child: Column(\n          children: [\n            UserAccountsDrawerHeader(\n              decoration: BoxDecoration(color: Colors.blueGrey),\n              currentAccountPicture: CircleAvatar(\n                backgroundColor: Colors.white,\n                child: Icon(Icons.person, color: Colors.blueGrey, size: 40),\n              ),\n              accountName: Text('Sophia Adams', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),\n              accountEmail: Text('sophia.adams@example.com', style: TextStyle(fontSize: 14, color: Colors.grey[300])),\n            ),\n            Divider(),\n            ListTile(\n              leading: Icon(Icons.dashboard, color: Colors.blueGrey),\n              title: Text('Dashboard', style: TextStyle(color: Colors.blueGrey)),\n              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.person, color: Colors.blueGrey),\n              title: Text('Profile', style: TextStyle(color: Colors.blueGrey)),\n              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.settings, color: Colors.blueGrey),\n              title: Text('Settings', style: TextStyle(color: Colors.blueGrey)),\n              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.help, color: Colors.blueGrey),\n              title: Text('Help', style: TextStyle(color: Colors.blueGrey)),\n              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n              onTap: () {},\n            ),\n            ListTile(\n              leading: Icon(Icons.exit_to_app, color: Colors.red),\n              title: Text('Logout', style: TextStyle(color: Colors.blueGrey)),\n              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n              onTap: () {},\n            ),\n          ],\n        ),\n      ),\n      body: Center(\n        child: Card(\n          margin: EdgeInsets.all(16),\n          child: Padding(\n            padding: EdgeInsets.all(16),\n            child: Column(\n              mainAxisSize: MainAxisSize.min,\n              children: [\n                Text(\n                  'Welcome, Sophia!',\n                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.blueGrey),\n                ),\n                SizedBox(height: 16),\n                Text(\n                  'Use the drawer to navigate',\n                  style: TextStyle(fontSize: 16, color: Colors.grey[600]),\n                ),\n              ],\n            ),\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "navigation",
+    "tags": [
+        "drawer",
+        "menu",
+        "navigation",
+        "profile",
+        "card",
+        "sidebar"
+    ],
+    "components": [
+        "Drawer",
+        "AppBar",
+        "ListTile",
+        "UserAccountsDrawerHeader",
+        "CircleAvatar",
+        "Divider",
+        "Card"
+    ],
+    "layout_type": "Column"
+}

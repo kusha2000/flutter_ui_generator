@@ -1,0 +1,19 @@
+{
+    "prompt": "Minimalist forgot password with underline input",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.grey[200],\n      body: Center(\n        child: Container(\n          constraints: BoxConstraints(maxWidth: 350),\n          padding: const EdgeInsets.all(20.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            crossAxisAlignment: CrossAxisAlignment.center,\n            children: [\n              Text(\n                'Forgot Your Password?',\n                style: TextStyle(\n                  fontSize: 26,\n                  fontWeight: FontWeight.w600,\n                  color: Colors.black,\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 15),\n              Text(\n                'Submit your email to get a reset link.',\n                style: TextStyle(\n                  fontSize: 16,\n                  color: Colors.grey[700],\n                ),\n                textAlign: TextAlign.center,\n              ),\n              SizedBox(height: 15),\n              TextField(\n                keyboardType: TextInputType.emailAddress,\n                decoration: InputDecoration(\n                  hintText: 'Email',\n                  hintStyle: TextStyle(color: Colors.grey),\n                  border: UnderlineInputBorder(),\n                ),\n              ),\n              SizedBox(height: 15),\n              OutlinedButton(\n                onPressed: () {},\n                style: OutlinedButton.styleFrom(\n                  padding: EdgeInsets.symmetric(vertical: 12),\n                  side: BorderSide(color: Colors.black),\n                ),\n                child: Text(\n                  'Send Link',\n                  style: TextStyle(fontSize: 16, color: Colors.black),\n                ),\n              ),\n              SizedBox(height: 15),\n              TextButton(\n                onPressed: () {},\n                child: Text(\n                  'Go Back',\n                  style: TextStyle(color: Colors.grey[700], fontSize: 16),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "authentication",
+    "tags": [
+        "forgot-password",
+        "email",
+        "reset",
+        "minimalist",
+        "light-theme"
+    ],
+    "components": [
+        "TextField",
+        "OutlinedButton",
+        "TextButton",
+        "Text"
+    ],
+    "layout_type": "Column"
+}

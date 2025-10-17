@@ -1,0 +1,24 @@
+{
+    "prompt": "Vertical minimalist product list with left circular icons",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    final products = [\n      {'name': 'Wireless Headphones', 'description': 'Premium quality sound', 'price': '99.99', 'icon': Icons.headphones},\n      {'name': 'Smartphone', 'description': 'Latest technology device', 'price': '699.99', 'icon': Icons.phone_android},\n      {'name': 'Laptop Computer', 'description': 'High performance machine', 'price': '1299.99', 'icon': Icons.laptop},\n    ];\n\n    return Scaffold(\n      backgroundColor: Colors.white,\n      appBar: AppBar(\n        title: Text('Products', style: TextStyle(color: Colors.black)),\n        backgroundColor: Colors.white,\n        elevation: 0,\n      ),\n      body: ListView.builder(\n        padding: EdgeInsets.all(12),\n        itemCount: products.length,\n        itemBuilder: (context, index) {\n          final product = products[index];\n          return Card(\n            margin: EdgeInsets.only(bottom: 8),\n            elevation: 0,\n            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n            child: Padding(\n              padding: EdgeInsets.all(12),\n              child: Column(\n                crossAxisAlignment: CrossAxisAlignment.start,\n                children: [\n                  Row(\n                    children: [\n                      CircleAvatar(\n                        radius: 20,\n                        backgroundColor: Colors.grey[200],\n                        child: Icon(product['icon'] as IconData, size: 20, color: Colors.grey[600]),\n                      ),\n                      SizedBox(width: 12),\n                      Expanded(\n                        child: Column(\n                          crossAxisAlignment: CrossAxisAlignment.start,\n                          children: [\n                            Text(\n                              product['name'] as String,\n                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),\n                            ),\n                            SizedBox(height: 4),\n                            Text(\n                              product['description'] as String,\n                              style: TextStyle(fontSize: 12, color: Colors.grey[600]),\n                            ),\n                          ],\n                        ),\n                      ),\n                      Text(\n                        product['price'] as String,\n                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.blue),\n                      ),\n                    ],\n                  ),\n                  SizedBox(height: 12),\n                  ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Colors.teal,\n                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),\n                    ),\n                    child: Text('Add to Cart', style: TextStyle(color: Colors.white)),\n                  ),\n                ],\n              ),\n            ),\n          );\n        },\n      ),\n    );\n  }\n}",
+    "category": "e-commerce",
+    "tags": [
+        "products",
+        "list",
+        "cards",
+        "shopping",
+        "add-to-cart",
+        "scrollable",
+        "minimalist"
+    ],
+    "components": [
+        "ListView",
+        "Card",
+        "CircleAvatar",
+        "Icon",
+        "Text",
+        "ElevatedButton",
+        "Row"
+    ],
+    "layout_type": "ListView"
+}

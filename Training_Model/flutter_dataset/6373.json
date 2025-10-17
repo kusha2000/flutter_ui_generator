@@ -1,0 +1,23 @@
+{
+    "prompt": "Simple chat list layout",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text(\n          'Chats',\n          style: TextStyle(\n            color: Colors.black87,\n            fontWeight: FontWeight.w400,\n            fontSize: 24,\n          ),\n        ),\n        backgroundColor: Colors.white,\n        elevation: 0,\n        centerTitle: false,\n      ),\n      backgroundColor: Colors.white,\n      body: ListView.builder(\n        itemCount: 14,\n        itemBuilder: (context, index) {\n          return Container(\n            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),\n            decoration: BoxDecoration(\n              border: Border(\n                bottom: BorderSide(\n                  color: Colors.grey[100]!,\n                  width: 0.5,\n                ),\n              ),\n            ),\n            child: Row(\n              crossAxisAlignment: CrossAxisAlignment.center,\n              children: [\n                CircleAvatar(\n                  radius: 20,\n                  backgroundColor: Colors.grey[200],\n                  child: Text(\n                    'M${index + 1}',\n                    style: TextStyle(\n                      color: Colors.grey[600],\n                      fontSize: 14,\n                      fontWeight: FontWeight.w500,\n                    ),\n                  ),\n                ),\n                SizedBox(width: 16),\n                Expanded(\n                  child: Column(\n                    crossAxisAlignment: CrossAxisAlignment.start,\n                    children: [\n                      Text(\n                        'Contact ${index + 1}',\n                        style: TextStyle(\n                          fontSize: 16,\n                          fontWeight: FontWeight.w400,\n                          color: Colors.black87,\n                        ),\n                      ),\n                      SizedBox(height: 4),\n                      Text(\n                        'Hello, how are you doing?',\n                        style: TextStyle(\n                          fontSize: 14,\n                          color: Colors.grey[600],\n                        ),\n                        maxLines: 1,\n                        overflow: TextOverflow.ellipsis,\n                      ),\n                    ],\n                  ),\n                ),\n                Text(\n                  '${index + 10}:30',\n                  style: TextStyle(\n                    fontSize: 13,\n                    color: Colors.grey[500],\n                  ),\n                ),\n              ],\n            ),\n          );\n        },\n      ),\n    );\n  }\n}",
+    "category": "messaging",
+    "tags": [
+        "chat",
+        "minimalist",
+        "clean",
+        "simple",
+        "typography",
+        "elegant"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "Container",
+        "Row",
+        "Column",
+        "CircleAvatar"
+    ],
+    "layout_type": "ListView"
+}

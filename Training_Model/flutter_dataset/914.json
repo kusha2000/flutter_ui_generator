@@ -1,0 +1,23 @@
+{
+    "prompt": "Design a professional dark/light mode toggle interface with a white background and a sleek toggle switch. Use a deep blue accent for dark mode and a light blue for light mode, with a rectangular thumb and a smooth slide animation. Place a 'Theme' label to the right of the switch in a modern sans-serif font. Use a Row layout within a container with a thin border and subtle shadow. Include a tooltip that appears on hover with 'Toggle Theme' text.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  bool isDarkMode = false;\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: Center(\n        child: Container(\n          decoration: BoxDecoration(\n            border: Border.all(color: Colors.grey[300]!),\n            borderRadius: BorderRadius.circular(8),\n            boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4)],\n          ),\n          padding: EdgeInsets.all(20),\n          child: Row(\n            mainAxisSize: MainAxisSize.min,\n            children: [\n              Tooltip(\n                message: 'Toggle Theme',\n                child: AnimatedContainer(\n                  duration: Duration(milliseconds: 300),\n                  width: 70,\n                  height: 35,\n                  decoration: BoxDecoration(\n                    borderRadius: BorderRadius.circular(10),\n                    color: isDarkMode ? Colors.blue[900] : Colors.blue[200],\n                  ),\n                  child: Stack(\n                    children: [\n                      AnimatedAlign(\n                        duration: Duration(milliseconds: 300),\n                        alignment: isDarkMode ? Alignment.centerRight : Alignment.centerLeft,\n                        child: Container(\n                          width: 31,\n                          height: 31,\n                          margin: EdgeInsets.all(2),\n                          decoration: BoxDecoration(\n                            borderRadius: BorderRadius.circular(8),\n                            color: Colors.white,\n                          ),\n                        ),\n                      ),\n                    ],\n                  ),\n                ),\n              ),\n              SizedBox(width: 16),\n              Text(\n                'Theme',\n                style: TextStyle(\n                  fontSize: 18,\n                  fontWeight: FontWeight.w600,\n                  color: Colors.grey[800],\n                ),\n              ),\n              SizedBox(width: 16),\n              GestureDetector(\n                onTap: () {\n                  setState(() {\n                    isDarkMode = !isDarkMode;\n                  });\n                },\n                child: Container(\n                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),\n                  decoration: BoxDecoration(\n                    color: Colors.blue,\n                    borderRadius: BorderRadius.circular(8),\n                  ),\n                  child: Text(\n                    'Switch',\n                    style: TextStyle(color: Colors.white, fontSize: 14),\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "settings",
+    "tags": [
+        "toggle",
+        "switch",
+        "dark mode",
+        "light mode",
+        "theme",
+        "professional",
+        "animation",
+        "tooltip"
+    ],
+    "components": [
+        "AnimatedContainer",
+        "AnimatedAlign",
+        "Text",
+        "GestureDetector",
+        "Tooltip"
+    ],
+    "layout_type": "Row"
+}

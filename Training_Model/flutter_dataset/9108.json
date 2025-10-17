@@ -1,0 +1,24 @@
+{
+    "prompt": "Consumer Mobile Splash Screen",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: Stack(\n        children: [\n          // Background floating elements\n          Positioned(\n            top: 100,\n            right: 50,\n            child: Container(\n              width: 80,\n              height: 80,\n              decoration: BoxDecoration(\n                color: Colors.orange.withOpacity(0.1),\n                shape: BoxShape.circle,\n              ),\n            ),\n          ),\n          Positioned(\n            top: 200,\n            left: 30,\n            child: Container(\n              width: 60,\n              height: 60,\n              decoration: BoxDecoration(\n                color: Colors.blue.withOpacity(0.1),\n                borderRadius: BorderRadius.circular(10),\n              ),\n            ),\n          ),\n          SafeArea(\n            child: Column(\n              mainAxisAlignment: MainAxisAlignment.center,\n              children: [\n                Spacer(flex: 2),\n                Container(\n                  width: 140,\n                  height: 140,\n                  decoration: BoxDecoration(\n                    gradient: LinearGradient(\n                      colors: [Colors.orange, Colors.pink, Colors.purple],\n                      begin: Alignment.topLeft,\n                      end: Alignment.bottomRight,\n                    ),\n                    shape: BoxShape.circle,\n                    boxShadow: [\n                      BoxShadow(\n                        color: Colors.grey.withOpacity(0.3),\n                        blurRadius: 15,\n                        offset: Offset(0, 8),\n                      ),\n                    ],\n                  ),\n                  child: Icon(\n                    Icons.palette,\n                    size: 70,\n                    color: Colors.white,\n                  ),\n                ),\n                SizedBox(height: 35),\n                Text(\n                  'ColorPop',\n                  style: TextStyle(\n                    fontSize: 36,\n                    fontWeight: FontWeight.w800,\n                    color: Color(0xFF2D3436),\n                    letterSpacing: 1,\n                  ),\n                ),\n                SizedBox(height: 10),\n                Text(\n                  'Unleash your creativity',\n                  style: TextStyle(\n                    fontSize: 16,\n                    color: Colors.grey[600],\n                    fontWeight: FontWeight.w400,\n                  ),\n                ),\n                Spacer(flex: 3),\n                Padding(\n                  padding: EdgeInsets.symmetric(horizontal: 60),\n                  child: Container(\n                    height: 4,\n                    decoration: BoxDecoration(\n                      gradient: LinearGradient(\n                        colors: [Colors.orange, Colors.pink, Colors.purple],\n                      ),\n                      borderRadius: BorderRadius.circular(2),\n                    ),\n                  ),\n                ),\n                SizedBox(height: 40),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "onboarding",
+    "tags": [
+        "splash",
+        "light",
+        "colorful",
+        "creative",
+        "gradient",
+        "geometric"
+    ],
+    "components": [
+        "Stack",
+        "Positioned",
+        "Container",
+        "Column",
+        "Icon",
+        "Text",
+        "BoxDecoration",
+        "LinearGradient"
+    ],
+    "layout_type": "Stack"
+}

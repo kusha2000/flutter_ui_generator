@@ -1,0 +1,21 @@
+{
+    "prompt": "Create a vibrant orange and red themed 404 Not Found page with high visual impact. Set a warm gradient background from light orange (Colors.orange[100]) to light red (Colors.red[100]). Feature a bold '404' in deep orange (Colors.deepOrange[800]) with heavy font weight (FontWeight.w800). Display 'Lost in Space' as an adventurous subtitle in the same deep orange. Include an engaging message 'Houston, we have a problem! The page you\\'re looking for has drifted away into the vast expanse of the internet.' in dark gray text. Add a distinctive 'Launch Back Home' button with deep orange background, rounded corners (BorderRadius.circular(30)), and prominent elevation of 6. Use Column layout with dramatic spacing: 16, 24, 30, and 38 pixels between elements. Apply padding of 26.0 for optimal visual balance.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Container(\n        decoration: BoxDecoration(\n          gradient: LinearGradient(\n            begin: Alignment.topLeft,\n            end: Alignment.bottomRight,\n            colors: [Colors.orange[100]!, Colors.red[100]!],\n          ),\n        ),\n        child: Padding(\n          padding: const EdgeInsets.all(26.0),\n          child: Column(\n            mainAxisAlignment: MainAxisAlignment.center,\n            crossAxisAlignment: CrossAxisAlignment.center,\n            children: [\n              Text(\n                '404',\n                style: TextStyle(\n                  fontSize: 88,\n                  fontWeight: FontWeight.w800,\n                  color: Colors.deepOrange[800],\n                ),\n              ),\n              SizedBox(height: 16),\n              Text(\n                'Lost in Space',\n                style: TextStyle(\n                  fontSize: 30,\n                  fontWeight: FontWeight.bold,\n                  color: Colors.deepOrange[800],\n                ),\n              ),\n              SizedBox(height: 30),\n              Text(\n                'Houston, we have a problem! The page you\\'re looking for has drifted away into the vast expanse of the internet.',\n                textAlign: TextAlign.center,\n                style: TextStyle(\n                  fontSize: 19,\n                  color: Colors.grey[700],\n                  height: 1.4,\n                ),\n              ),\n              SizedBox(height: 38),\n              ElevatedButton(\n                onPressed: () {},\n                style: ElevatedButton.styleFrom(\n                  backgroundColor: Colors.deepOrange[800],\n                  foregroundColor: Colors.white,\n                  padding: EdgeInsets.symmetric(horizontal: 34, vertical: 16),\n                  elevation: 6,\n                  shape: RoundedRectangleBorder(\n                    borderRadius: BorderRadius.circular(30),\n                  ),\n                ),\n                child: Text(\n                  'Launch Back Home',\n                  style: TextStyle(\n                    fontSize: 17,\n                    fontWeight: FontWeight.w600,\n                  ),\n                ),\n              ),\n            ],\n          ),\n        ),\n      ),\n    );\n  }\n}",
+    "category": "error_pages",
+    "tags": [
+        "404",
+        "error",
+        "orange",
+        "space",
+        "adventure",
+        "vibrant"
+    ],
+    "components": [
+        "Text",
+        "ElevatedButton",
+        "Column",
+        "Container",
+        "Scaffold"
+    ],
+    "layout_type": "Column"
+}

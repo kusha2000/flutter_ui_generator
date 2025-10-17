@@ -1,0 +1,21 @@
+{
+    "prompt": "Design a dark-themed loading page with a sleek, modern aesthetic. The background should be a deep charcoal gray (0xFF121212). At the center, place a circular progress indicator with a bright teal color (0xFF26A69A). Above the indicator, include a bold 'Please Wait' text in white (0xFFFFFFFF) with a font size of 20px, positioned 16 pixels above the indicator. Use a Column widget within a Scaffold, ensuring the content is vertically centered. Add a subtle fade-in animation for the text to enhance the user experience.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFF121212),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: [\n            AnimatedOpacity(\n              opacity: 1.0,\n              duration: Duration(seconds: 1),\n              child: Text(\n                'Please Wait',\n                style: TextStyle(\n                  fontSize: 20,\n                  color: Colors.white,\n                  fontWeight: FontWeight.bold,\n                ),\n              ),\n            ),\n            SizedBox(height: 16),\n            CircularProgressIndicator(\n              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF26A69A)),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "dark",
+        "progress",
+        "circular",
+        "animation"
+    ],
+    "components": [
+        "Scaffold",
+        "CircularProgressIndicator",
+        "Text",
+        "Column",
+        "Center",
+        "AnimatedOpacity"
+    ],
+    "layout_type": "Column"
+}

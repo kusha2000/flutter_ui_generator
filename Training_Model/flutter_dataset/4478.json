@@ -1,0 +1,21 @@
+{
+    "prompt": "Top loading screen with green indicator.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.white,\n      body: Padding(\n        padding: EdgeInsets.only(top: 120),\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.start,\n          children: [\n            CircularProgressIndicator(\n              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF4CAF50)),\n            ),\n            SizedBox(height: 16),\n            Text(\n              'Initializing...',\n              style: TextStyle(\n                fontSize: 14,\n                color: Color(0xFF666666),\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "loading",
+    "tags": [
+        "loading",
+        "top",
+        "minimal",
+        "green",
+        "initialize",
+        "padding"
+    ],
+    "components": [
+        "Scaffold",
+        "Padding",
+        "CircularProgressIndicator",
+        "Text",
+        "Column"
+    ],
+    "layout_type": "Column"
+}

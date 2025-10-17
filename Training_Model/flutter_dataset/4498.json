@@ -1,0 +1,24 @@
+{
+    "prompt": "Pastel Terms & Conditions screen with buttons.",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Color(0xFFE9D8FD),\n      appBar: AppBar(\n        backgroundColor: Color(0xFFFBB6CE),\n        centerTitle: true,\n        title: Text(\n          'Terms & Conditions',\n          style: TextStyle(\n            color: Color(0xFF553C9A),\n            fontSize: 20,\n            fontWeight: FontWeight.bold,\n          ),\n        ),\n        leading: IconButton(\n          icon: Icon(Icons.arrow_back, color: Color(0xFF553C9A)),\n          onPressed: () {},\n        ),\n      ),\n      body: Column(\n        children: [\n          Expanded(\n            child: SingleChildScrollView(\n              padding: EdgeInsets.all(20),\n              child: Card(\n                elevation: 3,\n                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),\n                child: Padding(\n                  padding: EdgeInsets.all(20),\n                  child: Text(\n                    'Terms and Conditions\\n\\n1. Acceptance\\nBy using this app, you agree to these terms.\\n\\n2. License\\nPersonal use only is permitted.\\n\\n3. Disclaimer\\nNo warranties are provided.',\n                    style: TextStyle(\n                      fontSize: 16,\n                      height: 1.6,\n                      color: Color(0xFF4A5568),\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n          Container(\n            padding: EdgeInsets.all(16),\n            color: Colors.white,\n            child: Row(\n              children: [\n                Expanded(\n                  child: OutlinedButton(\n                    onPressed: () {},\n                    style: OutlinedButton.styleFrom(\n                      foregroundColor: Color(0xFF553C9A),\n                      side: BorderSide(color: Color(0xFFFBB6CE)),\n                      padding: EdgeInsets.symmetric(vertical: 14),\n                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n                    ),\n                    child: Text('Decline', style: TextStyle(fontSize: 16)),\n                  ),\n                ),\n                SizedBox(width: 12),\n                Expanded(\n                  child: ElevatedButton(\n                    onPressed: () {},\n                    style: ElevatedButton.styleFrom(\n                      backgroundColor: Color(0xFF553C9A),\n                      foregroundColor: Colors.white,\n                      padding: EdgeInsets.symmetric(vertical: 14),\n                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),\n                    ),\n                    child: Text('Accept', style: TextStyle(fontSize: 16)),\n                  ),\n                ),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}",
+    "category": "legal",
+    "tags": [
+        "terms",
+        "conditions",
+        "legal",
+        "pastel",
+        "scrollable",
+        "buttons",
+        "friendly"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "SingleChildScrollView",
+        "Card",
+        "Text",
+        "OutlinedButton",
+        "ElevatedButton"
+    ],
+    "layout_type": "Column"
+}

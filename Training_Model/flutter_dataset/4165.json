@@ -1,0 +1,26 @@
+{
+    "prompt": "Dark black wishlist circular heart icons",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatefulWidget {\n  @override\n  _GeneratedWidgetState createState() => _GeneratedWidgetState();\n}\n\nclass _GeneratedWidgetState extends State<GeneratedWidget> {\n  List<Map<String, dynamic>> wishlistItems = [\n    {'name': 'Wireless Headphones', 'price': '99.99', 'icon': Icons.headphones},\n    {'name': 'Smartphone', 'price': '699.99', 'icon': Icons.phone_android},\n    {'name': 'Laptop', 'price': '1299.99', 'icon': Icons.laptop},\n    {'name': 'Watch', 'price': '299.99', 'icon': Icons.watch},\n  ];\n\n  void removeItem(int index) {\n    setState(() {\n      wishlistItems.removeAt(index);\n    });\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.black,\n      appBar: AppBar(\n        backgroundColor: Colors.black,\n        elevation: 0,\n        title: Row(\n          children: [\n            Icon(Icons.favorite, color: Colors.white, size: 24),\n            SizedBox(width: 8),\n            Text('Wishlist', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),\n          ],\n        ),\n      ),\n      body: wishlistItems.isEmpty\n          ? Center(\n              child: Column(\n                mainAxisAlignment: MainAxisAlignment.center,\n                children: [\n                  Icon(Icons.favorite_border, size: 80, color: Colors.grey[700]),\n                  SizedBox(height: 16),\n                  Text('Your wishlist is empty', style: TextStyle(fontSize: 18, color: Colors.grey[500])),\n                ],\n              ),\n            )\n          : ListView.builder(\n              padding: EdgeInsets.all(16),\n              itemCount: wishlistItems.length,\n              itemBuilder: (context, index) {\n                final item = wishlistItems[index];\n                return Container(\n                  margin: EdgeInsets.only(bottom: 12),\n                  decoration: BoxDecoration(\n                    color: Colors.grey[900],\n                    borderRadius: BorderRadius.circular(12),\n                    border: Border.all(color: Colors.grey[700], width: 1),\n                  ),\n                  child: ListTile(\n                    contentPadding: EdgeInsets.all(16),\n                    leading: CircleAvatar(\n                      radius: 30,\n                      backgroundColor: Colors.grey[800],\n                      child: Icon(item['icon'], size: 28, color: Colors.white),\n                    ),\n                    title: Text(\n                      item['name'],\n                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white),\n                    ),\n                    subtitle: Text(\n                      item['price'],\n                      style: TextStyle(fontSize: 14, color: Colors.green[400], fontWeight: FontWeight.w600),\n                    ),\n                    trailing: IconButton(\n                      icon: Icon(Icons.favorite, color: Colors.white, size: 24),\n                      onPressed: () => removeItem(index),\n                    ),\n                  ),\n                );\n              },\n            ),\n      floatingActionButton: FloatingActionButton(\n        backgroundColor: Colors.green[400],\n        child: Icon(Icons.add, color: Colors.black),\n        onPressed: () {},\n      ),\n    );\n  }\n}",
+    "category": "e-commerce",
+    "tags": [
+        "wishlist",
+        "dark",
+        "list",
+        "heart",
+        "favorite",
+        "shopping",
+        "product",
+        "card"
+    ],
+    "components": [
+        "Scaffold",
+        "AppBar",
+        "ListView",
+        "ListTile",
+        "FloatingActionButton",
+        "Container",
+        "Icon",
+        "CircleAvatar"
+    ],
+    "layout_type": "Column"
+}

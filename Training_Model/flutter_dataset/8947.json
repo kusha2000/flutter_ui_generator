@@ -1,0 +1,24 @@
+{
+    "prompt": "Premium Photo Viewer",
+    "flutter_code": "import 'package:flutter/material.dart';\n\nclass GeneratedWidget extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.black,\n      appBar: AppBar(\n        backgroundColor: Colors.black,\n        elevation: 0,\n        leading: Icon(Icons.arrow_back, color: Colors.white),\n        title: Text('Gallery', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),\n        actions: [Icon(Icons.more_vert, color: Colors.white)],\n      ),\n      body: Padding(\n        padding: EdgeInsets.all(16.0),\n        child: Column(\n          children: [\n            Container(\n              height: 300,\n              width: double.infinity,\n              decoration: BoxDecoration(\n                border: Border.all(color: Colors.white, width: 1),\n                image: DecorationImage(\n                  image: NetworkImage('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500'),\n                  fit: BoxFit.cover,\n                ),\n              ),\n            ),\n            SizedBox(height: 20),\n            Container(\n              height: 80,\n              padding: EdgeInsets.symmetric(vertical: 8),\n              decoration: BoxDecoration(\n                color: Colors.grey[900],\n                borderRadius: BorderRadius.circular(8),\n              ),\n              child: ListView.builder(\n                scrollDirection: Axis.horizontal,\n                itemCount: 6,\n                itemBuilder: (context, index) {\n                  return Container(\n                    width: 60,\n                    margin: EdgeInsets.symmetric(horizontal: 4),\n                    decoration: BoxDecoration(\n                      border: Border.all(color: Colors.grey[700]!, width: 1),\n                      image: DecorationImage(\n                        image: NetworkImage('https://images.unsplash.com/photo-150690592534${index + 6}-21bda4d32df4?w=200'),\n                        fit: BoxFit.cover,\n                      ),\n                    ),\n                  );\n                },\n              ),\n            ),\n            SizedBox(height: 30),\n            Row(\n              mainAxisAlignment: MainAxisAlignment.spaceEvenly,\n              children: [\n                Container(\n                  padding: EdgeInsets.all(16),\n                  decoration: BoxDecoration(\n                    color: Colors.red,\n                    shape: BoxShape.circle,\n                  ),\n                  child: Icon(Icons.favorite, color: Colors.white, size: 24),\n                ),\n                Container(\n                  padding: EdgeInsets.all(16),\n                  decoration: BoxDecoration(\n                    color: Colors.white,\n                    shape: BoxShape.circle,\n                  ),\n                  child: Icon(Icons.share, color: Colors.black, size: 24),\n                ),\n                Container(\n                  padding: EdgeInsets.all(16),\n                  decoration: BoxDecoration(\n                    color: Colors.white,\n                    shape: BoxShape.circle,\n                  ),\n                  child: Icon(Icons.download, color: Colors.black, size: 24),\n                ),\n              ],\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}",
+    "category": "media",
+    "tags": [
+        "gallery",
+        "photo",
+        "viewer",
+        "dark-theme",
+        "modern",
+        "premium",
+        "high-contrast"
+    ],
+    "components": [
+        "Scaffold",
+        "Container",
+        "ListView",
+        "Icon",
+        "AppBar",
+        "Column",
+        "Row"
+    ],
+    "layout_type": "Column"
+}
