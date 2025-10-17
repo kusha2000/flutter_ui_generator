@@ -181,6 +181,24 @@ class AITypeSection extends StatelessWidget {
                       const SizedBox(height: 16),
                       _buildAIButton(
                         context,
+                        'OpenRouter',
+                        'llama-3.3-70b-instruct',
+                        Icons.code,
+                        const LinearGradient(
+                          colors: [Color(0xFF0078D4), Color(0xFF106EBE)],
+                        ),
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => OpenRouterGeneratedWidget(),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(height: 16),
+                      _buildAIButton(
+                        context,
                         'DeepSeek',
                         'Advanced reasoning AI',
                         Icons.psychology_alt,
