@@ -27,6 +27,7 @@ class BaseLLMService(ABC):
             'groq': 'GroqGeneratedWidget',
             'cohere': 'CohereGeneratedWidget',
             'huggingface': 'HuggingFaceGeneratedWidget',
+            'openrouter': 'OpenRouterGeneratedWidget'
         }
         return service_widget_mapping.get(self.service_type, 'GeneratedWidget')
     

@@ -32,7 +32,7 @@ app.add_middleware(
 )
 
 # Initialize LLM service
-SERVICE_TYPE = 'huggingface'  # Options: 'gemini', 'openai', 'claude'
+SERVICE_TYPE = 'openrouter'  # Options: 'gemini', 'openai', 'claude'
 
 try:
     logger.info(f"🚀 Initializing {SERVICE_TYPE.upper()} service...")
@@ -50,6 +50,9 @@ try:
     elif SERVICE_TYPE.lower() == 'huggingface':
         llm_service = HuggingFaceService()
         logger.info("✅ huggingFace service initialized successfully")
+    elif SERVICE_TYPE.lower() == 'openrouter':
+        llm_service = OpenRouterService()
+        logger.info("✅ openrouter service initialized successfully")
     else:
         raise ValueError(f"Unsupported LLM service: {SERVICE_TYPE}")
         
