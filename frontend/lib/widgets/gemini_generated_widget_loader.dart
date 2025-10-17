@@ -6,298 +6,192 @@ class GeminiGeneratedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
-    final TextTheme textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
     appBar: AppBar(
+    title: const Text('Create Account'),
     backgroundColor: colorScheme.primary,
-    title: Text(
-    'Dashboard',
-    style: textTheme.headlineSmall?.copyWith(color: colorScheme.onPrimary),
-    ),
-    centerTitle: false,
-    actions: [
-    IconButton(
-    icon: Icon(Icons.notifications_none, color: colorScheme.onPrimary),
-    onPressed: () {},
-    ),
-    IconButton(
-    icon: Icon(Icons.settings, color: colorScheme.onPrimary),
-    onPressed: () {},
-    ),
-    const SizedBox(width: 8),
-    ],
-    elevation: 4,
+    foregroundColor: colorScheme.onPrimary,
+    elevation: 0, // Modern apps often have flat app bars
     ),
     body: SingleChildScrollView(
-    padding: const EdgeInsets.all(16.0),
+    padding: const EdgeInsets.all(24.0), // Increased padding for a spacious feel
     child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.stretch,
     children: [
-    // Welcome Card
-    Card(
-    elevation: 4,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-    margin: const EdgeInsets.only(bottom: 24),
-    child: Container(
-    padding: const EdgeInsets.all(24),
-    decoration: BoxDecoration(
-    gradient: LinearGradient(
-    colors: [colorScheme.primary.withOpacity(0.8), colorScheme.primary],
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    ),
-    borderRadius: BorderRadius.circular(16),
-    ),
-    child: Row(
-    children: [
-    CircleAvatar(
-    radius: 32,
-    backgroundColor: colorScheme.onPrimary,
-    child: Icon(Icons.person, size: 40, color: colorScheme.primary),
-    ),
-    const SizedBox(width: 16),
-    Expanded(
-    child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
+    // Header Text
     Text(
-    'Welcome Back, John!',
-    style: textTheme.headlineSmall?.copyWith(
-    color: colorScheme.onPrimary,
+    'Join us today!',
+    style: TextStyle(
+    fontSize: 32,
     fontWeight: FontWeight.bold,
+    color: colorScheme.onSurface,
     ),
-    ),
-    const SizedBox(height: 4),
-    Text(
-    'Here\'s your daily overview.',
-    style: textTheme.bodyMedium?.copyWith(
-    color: colorScheme.onPrimary.withOpacity(0.8),
-    ),
-    ),
-    ],
-    ),
-    ),
-    IconButton(
-    icon: Icon(Icons.edit, color: colorScheme.onPrimary),
-    onPressed: () {},
-    ),
-    ],
-    ),
-    ),
-    ),
-
-    // Quick Stats Grid
-    Text(
-    'Quick Stats',
-    style: textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+    textAlign: TextAlign.center,
     ),
     const SizedBox(height: 16),
-    GridView.count(
-    shrinkWrap: true,
-    physics: const NeverScrollableScrollPhysics(),
-    crossAxisCount: MediaQuery.sizeOf(context).width > 600 ? 4 : 2,
-    crossAxisSpacing: 16,
-    mainAxisSpacing: 16,
-    children: [
-    _buildStatCard(
-    context,
-    icon: Icons.trending_up,
-    title: 'Sales',
-    value: '\$12,450',
-    color: colorScheme.tertiary,
+    Text(
+    'Create an account to unlock exclusive features.',
+    style: TextStyle(
+    fontSize: 16,
+    color: colorScheme.onSurfaceVariant,
     ),
-    _buildStatCard(
-    context,
-    icon: Icons.shopping_cart,
-    title: 'Orders',
-    value: '3,210',
-    color: colorScheme.secondary,
+    textAlign: TextAlign.center,
     ),
-    _buildStatCard(
-    context,
-    icon: Icons.people,
-    title: 'Users',
-    value: '1,890',
-    color: colorScheme.error,
-    ),
-    _buildStatCard(
-    context,
-    icon: Icons.attach_money,
-    title: 'Revenue',
-    value: '\$8,760',
-    color: colorScheme.surfaceTint,
-    ),
-    ],
-    ),
-
     const SizedBox(height: 32),
 
-    // Recent Activity
-    Text(
-    'Recent Activity',
-    style: textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+    // Name Field
+    TextFormField(
+    decoration: InputDecoration(
+    labelText: 'Full Name',
+    hintText: 'Enter your full name',
+    prefixIcon: const Icon(Icons.person_outline),
+    border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12), // Rounded corners
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(color: colorScheme.outline.withOpacity(0.5)),
+    ),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(color: colorScheme.primary, width: 2),
+    ),
+    contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+    ),
+    keyboardType: TextInputType.name,
+    textCapitalization: TextCapitalization.words,
     ),
     const SizedBox(height: 16),
-    Card(
-    elevation: 2,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-    child: Column(
-    children: [
-    _buildActivityListTile(
-    context,
-    icon: Icons.check_circle_outline,
-    title: 'Order #12345 confirmed',
-    subtitle: 'New order from Jane Doe',
-    time: '2 min ago',
-    color: Colors.green,
-    ),
-    Divider(height: 0, indent: 16, endIndent: 16, color: colorScheme.outlineVariant),
-    _buildActivityListTile(
-    context,
-    icon: Icons.payment,
-    title: 'Payment processed',
-    subtitle: 'Subscription renewal for John Smith',
-    time: '1 hour ago',
-    color: Colors.blue,
-    ),
-    Divider(height: 0, indent: 16, endIndent: 16, color: colorScheme.outlineVariant),
-    _buildActivityListTile(
-    context,
-    icon: Icons.person_add,
-    title: 'New user registered',
-    subtitle: 'Welcome, Alice Johnson!',
-    time: '3 hours ago',
-    color: Colors.purple,
-    ),
-    Divider(height: 0, indent: 16, endIndent: 16, color: colorScheme.outlineVariant),
-    _buildActivityListTile(
-    context,
-    icon: Icons.warning_amber,
-    title: 'Low stock alert',
-    subtitle: 'Product X is running low',
-    time: 'Yesterday',
-    color: Colors.orange,
-    ),
-    ],
-    ),
-    ),
 
+    // Email Field
+    TextFormField(
+    decoration: InputDecoration(
+    labelText: 'Email Address',
+    hintText: 'Enter your email',
+    prefixIcon: const Icon(Icons.email_outlined),
+    border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(color: colorScheme.outline.withOpacity(0.5)),
+    ),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(color: colorScheme.primary, width: 2),
+    ),
+    contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+    ),
+    keyboardType: TextInputType.emailAddress,
+    ),
+    const SizedBox(height: 16),
+
+    // Password Field
+    TextFormField(
+    obscureText: true,
+    decoration: InputDecoration(
+    labelText: 'Password',
+    hintText: 'Enter your password',
+    prefixIcon: const Icon(Icons.lock_outline),
+    suffixIcon: IconButton(
+    icon: const Icon(Icons.visibility_off_outlined), // Placeholder for toggle
+    onPressed: () {
+      // Implement password visibility toggle
+    },
+    ),
+    border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(color: colorScheme.outline.withOpacity(0.5)),
+    ),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(color: colorScheme.primary, width: 2),
+    ),
+    contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+    ),
+    ),
+    const SizedBox(height: 16),
+
+    // Confirm Password Field
+    TextFormField(
+    obscureText: true,
+    decoration: InputDecoration(
+    labelText: 'Confirm Password',
+    hintText: 'Re-enter your password',
+    prefixIcon: const Icon(Icons.lock_reset_outlined),
+    suffixIcon: IconButton(
+    icon: const Icon(Icons.visibility_off_outlined), // Placeholder for toggle
+    onPressed: () {
+      // Implement password visibility toggle
+    },
+    ),
+    border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(color: colorScheme.outline.withOpacity(0.5)),
+    ),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(color: colorScheme.primary, width: 2),
+    ),
+    contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+    ),
+    ),
     const SizedBox(height: 32),
 
-    // Call to Action Button
-    Center(
-    child: ElevatedButton.icon(
-    onPressed: () {},
+    // Register Button
+    ElevatedButton(
+    onPressed: () {
+      // Handle registration logic
+    },
     style: ElevatedButton.styleFrom(
-    backgroundColor: colorScheme.secondary,
-    foregroundColor: colorScheme.onSecondary,
-    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+    backgroundColor: colorScheme.primary,
+    foregroundColor: colorScheme.onPrimary,
+    padding: const EdgeInsets.symmetric(vertical: 16),
     shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(12),
     ),
-    elevation: 4,
+    elevation: 4, // Subtle elevation
     ),
-    icon: const Icon(Icons.add_circle_outline, size: 24),
-    label: Text(
-    'Add New Item',
-    style: textTheme.titleMedium?.copyWith(color: colorScheme.onSecondary),
-    ),
+    child: const Text(
+    'Register',
+    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
     ),
     ),
-    const SizedBox(height: 16),
+    const SizedBox(height: 24),
+
+    // Login Link
+    Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+    Text(
+    'Already have an account?',
+    style: TextStyle(color: colorScheme.onSurfaceVariant),
+    ),
+    TextButton(
+    onPressed: () {
+      // Navigate to login page
+    },
+    style: TextButton.styleFrom(
+    foregroundColor: colorScheme.primary,
+    padding: const EdgeInsets.symmetric(horizontal: 8),
+    ),
+    child: const Text(
+    'Login',
+    style: TextStyle(fontWeight: FontWeight.bold),
+    ),
+    ),
+    ],
+    ),
     ],
     ),
     ),
     );
   }
-
-  Widget _buildStatCard(
-  BuildContext context, {
-    required IconData icon,
-    required String title,
-    required String value,
-    required Color color,
-  }) {
-  final ColorScheme colorScheme = Theme.of(context).colorScheme;
-  final TextTheme textTheme = Theme.of(context).textTheme;
-
-  return Card(
-  elevation: 4,
-  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-  child: InkWell(
-  onTap: () {
-    // Handle tap
-  },
-  borderRadius: BorderRadius.circular(12),
-  child: Padding(
-  padding: const EdgeInsets.all(16.0),
-  child: Column(
-  crossAxisAlignment: CrossAxisAlignment.start,
-  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  children: [
-  Container(
-  padding: const EdgeInsets.all(8),
-  decoration: BoxDecoration(
-  color: color.withOpacity(0.15),
-  borderRadius: BorderRadius.circular(8),
-  ),
-  child: Icon(icon, color: color, size: 28),
-  ),
-  const SizedBox(height: 12),
-  Text(
-  title,
-  style: textTheme.titleMedium?.copyWith(
-  fontWeight: FontWeight.w500,
-  color: colorScheme.onSurface,
-  ),
-  ),
-  Text(
-  value,
-  style: textTheme.headlineSmall?.copyWith(
-  fontWeight: FontWeight.bold,
-  color: colorScheme.primary,
-  ),
-  ),
-  ],
-  ),
-  ),
-  ),
-  );
-}
-
-Widget _buildActivityListTile(
-BuildContext context, {
-  required IconData icon,
-  required String title,
-  required String subtitle,
-  required String time,
-  required Color color,
-}) {
-final ColorScheme colorScheme = Theme.of(context).colorScheme;
-final TextTheme textTheme = Theme.of(context).textTheme;
-
-return ListTile(
-leading: CircleAvatar(
-backgroundColor: color.withOpacity(0.15),
-child: Icon(icon, color: color),
-),
-title: Text(
-title,
-style: textTheme.titleMedium?.copyWith(color: colorScheme.onSurface),
-),
-subtitle: Text(
-subtitle,
-style: textTheme.bodyMedium?.copyWith(color: colorScheme.onSurfaceVariant),
-),
-trailing: Text(
-time,
-style: textTheme.bodySmall?.copyWith(color: colorScheme.outline),
-),
-onTap: () {
-  // Handle activity tap
-},
-contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-);
-}
 }
