@@ -74,15 +74,15 @@ class GroqService(BaseLLMService):
             
             # Priority order for code generation (best first)
             PRIORITY_MODELS = [
+                'openai/gpt-oss-120b',
+                'openai/gpt-oss-20b',
+                'groq/compound',
                 'llama-3.3-70b-versatile',
                 'llama-3.1-70b-versatile', 
                 'mixtral-8x7b-32768',
                 'llama-3.1-8b-instant',
                 'gemma2-9b-it',
                 'qwen/qwen3-32b',
-                'openai/gpt-oss-120b',
-                'openai/gpt-oss-20b',
-                'groq/compound',
                 'allam-2-7b',
                 'moonshotai/kimi-k2-instruct',
                 'meta-llama/llama-4-maverick-17b-128e-instruct',

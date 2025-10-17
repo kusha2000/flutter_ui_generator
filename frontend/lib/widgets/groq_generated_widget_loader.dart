@@ -5,54 +5,88 @@ class GroqGeneratedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
     return Scaffold(
-    body: Container(
-    decoration: const BoxDecoration(
-    gradient: LinearGradient(
-    begin: Alignment.topCenter,
-    end: Alignment.bottomCenter,
-    colors: [
-    Color(0xFF6366F1),
-    Color(0xFF8B94FC),
-    ],
+    appBar: AppBar(
+    title: const Text('Register'),
+    backgroundColor: Theme.of(context).colorScheme.primary,
     ),
-    ),
-    child: Center(
+    body: SingleChildScrollView(
+    child: Padding(
+    padding: const EdgeInsets.all(16.0),
     child: Column(
-    mainAxisAlignment: MainAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.stretch,
     children: [
-    const Icon(
-    Icons.home,
-    size: 64,
-    color: Colors.white,
+    const Text(
+    'Create an Account',
+    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+    textAlign: TextAlign.center,
+    ),
+    const SizedBox(height: 24),
+    TextFormField(
+    decoration: InputDecoration(
+    labelText: 'Full Name',
+    border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    ),
+    ),
     ),
     const SizedBox(height: 16),
-    const Text(
-    'Welcome',
-    style: TextStyle(
-    fontSize: 24,
-    color: Colors.white,
-    fontWeight: FontWeight.bold,
+    TextFormField(
+    decoration: InputDecoration(
+    labelText: 'Email',
+    border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
     ),
     ),
-    const SizedBox(height: 32),
+    keyboardType: TextInputType.emailAddress,
+    ),
+    const SizedBox(height: 16),
+    TextFormField(
+    obscureText: true,
+    decoration: InputDecoration(
+    labelText: 'Password',
+    border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    ),
+    ),
+    ),
+    const SizedBox(height: 16),
+    TextFormField(
+    obscureText: true,
+    decoration: InputDecoration(
+    labelText: 'Confirm Password',
+    border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    ),
+    ),
+    ),
+    const SizedBox(height: 24),
     ElevatedButton(
     style: ElevatedButton.styleFrom(
-    backgroundColor: const Color(0xFF8B94FC),
+    backgroundColor: Theme.of(context).colorScheme.primary,
     foregroundColor: Colors.white,
-    shape: const RoundedRectangleBorder(
-    borderRadius: BorderRadius.all(Radius.circular(8)),
+    padding: const EdgeInsets.symmetric(vertical: 16),
+    shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(12),
     ),
     ),
-    onPressed: () {
-      Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-      builder: (context) => const GroqGeneratedWidget(),
-      ),
-      );
-    },
-    child: const Text('Get Started'),
+    onPressed: () {},
+    child: const Text('Register'),
+    ),
+    const SizedBox(height: 16),
+    Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+    const Text('Already have an account?'),
+    TextButton(
+    style: TextButton.styleFrom(
+    foregroundColor: Theme.of(context).colorScheme.primary,
+    ),
+    onPressed: () {},
+    child: const Text('Login'),
+    ),
+    ],
     ),
     ],
     ),
