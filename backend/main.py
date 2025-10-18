@@ -11,6 +11,7 @@ from groqs.groq_services import GroqService
 from coheres.cohere_services import CohereService
 from huggingFace.huggingFace_services import HuggingFaceService
 from openRouter.openRouter_services import OpenRouterService
+from training_model.training_model_service import TrainingModelService
 
 # Configure logging
 logging.basicConfig(
@@ -66,6 +67,25 @@ def initialize_services():
 
 # Initialize services on startup
 initialize_services()
+
+# Initialize training model service
+training_model_service = None
+TRAINING_MODEL_PATH = "training_model/flutter_ui_retrieval_model.pkl"
+
+try:
+    import os
+    if os.path.exists(TRAINING_MODEL_PATH):
+        training_model_service = TrainingModelService(pkl_path=TRAINING_MODEL_PATH)
+        if training_model_service.load():
+            logger.info("✅ Training model loaded successfully")
+        else:
+            training_model_service = None
+            logger.warning("⚠️ Training model failed to load")
+    else:
+        logger.warning(f"⚠️ Training model file not found: {TRAINING_MODEL_PATH}")
+except Exception as e:
+    logger.error(f"❌ Error loading training model: {e}")
+    training_model_service = None
 
 def generate_code_with_service(service_name: str, service: Any, prompt: str) -> Dict[str, Any]:
     """Generate code using a single service"""
@@ -210,6 +230,25 @@ async def generate_ui(request: PromptRequest):
             for future in futures:
                 result = future.result()
                 results.append(result)
+        
+        # Generate code with training model
+        if training_model_service:
+            logger.info("🧠 Running training model...")
+            try:
+                training_result = training_model_service.get_code(request.prompt)
+                results.append(training_result)
+                logger.info("✅ Training model result added")
+            except Exception as e:
+                logger.error(f"❌ Training model failed: {e}")
+                results.append({
+                    "service": "training_model",
+                    "success": False,
+                    "error": str(e),
+                    "code": None,
+                    "widget_name": "TrainingModelGeneratedWidget",
+                    "model": None,
+                    "score": None
+                })
         
         # Calculate summary
         successful = sum(1 for r in results if r['success'])

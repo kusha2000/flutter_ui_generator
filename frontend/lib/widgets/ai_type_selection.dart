@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/widgets/huggingface_generated_widget_loader.dart';
-import 'package:frontend/widgets/openrouter_generated_widget_loader.dart';
-import 'package:frontend/widgets/copilot_generated_widget_loader.dart';
-import 'package:frontend/widgets/deepseek_generated_widget_loader.dart';
-import 'package:frontend/widgets/gemini_generated_widget_loader.dart';
-import 'package:frontend/widgets/cohere_generated_widget_loader.dart';
-import 'package:frontend/widgets/groq_generated_widget_loader.dart';
+import 'package:frontend/widgets/huggingface_generated_widget.dart';
+import 'package:frontend/widgets/openrouter_generated_widget.dart';
+import 'package:frontend/widgets/gemini_generated_widget.dart';
+import 'package:frontend/widgets/cohere_generated_widget.dart';
+import 'package:frontend/widgets/groq_generated_widget.dart';
+import 'package:frontend/widgets/training_model_widget.dart';
 
 class AITypeSection extends StatelessWidget {
   const AITypeSection({super.key});
@@ -199,8 +198,8 @@ class AITypeSection extends StatelessWidget {
                       const SizedBox(height: 16),
                       _buildAIButton(
                         context,
-                        'DeepSeek',
-                        'Advanced reasoning AI',
+                        'My Training Model',
+                        'Training Model',
                         Icons.psychology_alt,
                         const LinearGradient(
                           colors: [Color(0xFF9C27B0), Color(0xFF673AB7)],
@@ -209,7 +208,7 @@ class AITypeSection extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => DeepSeekGeneratedWidget(),
+                              builder: (context) => GeneratedWidget(),
                             ),
                           );
                         },
