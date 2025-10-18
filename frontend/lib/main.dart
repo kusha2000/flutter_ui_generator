@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/Screens/home_page.dart';
 import 'package:frontend/Screens/test_gemini_ui_generation.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'AI Flutter Generator',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: TestGeminiUIGeneration(),
+      home: UIGeneratorHomePage(),
     );
   }
 }

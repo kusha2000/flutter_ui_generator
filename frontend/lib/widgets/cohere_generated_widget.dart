@@ -7,123 +7,46 @@ class CohereGeneratedWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
-    title: const Text('Admin Dashboard'),
+    title: const Text('Login'),
     backgroundColor: Theme.of(context).colorScheme.primary,
     ),
     body: SingleChildScrollView(
     child: Padding(
-    padding: const EdgeInsets.all(16.0),
+    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
     child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
+    mainAxisAlignment: MainAxisAlignment.center,
     children: [
-    Text(
-    'Welcome, Admin',
-    style: Theme.of(context).textTheme.headlineSmall,
+    const Text(
+    'Welcome Back!',
+    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
     ),
     const SizedBox(height: 16),
-    Card(
-    elevation: 4,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(16.0),
+    TextFormField(
+    decoration: const InputDecoration(
+    labelText: 'Email',
+    border: OutlineInputBorder(),
     ),
-    child: Padding(
-    padding: const EdgeInsets.all(16.0),
-    child: Column(
-    children: [
-    Text(
-    'User Management',
-    style: Theme.of(context).textTheme.titleLarge,
-    ),
-    const SizedBox(height: 8),
-    Text(
-    'Manage user accounts and permissions.',
-    style: Theme.of(context).textTheme.bodyMedium,
     ),
     const SizedBox(height: 16),
-    ElevatedButton(
-    onPressed: () {},
-    style: ElevatedButton.styleFrom(
-    backgroundColor: Theme.of(context).colorScheme.secondary,
-    foregroundColor: Colors.white,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(8.0),
-    ),
-    ),
-    child: const Text('Manage Users'),
-    ),
-    ],
-    ),
+    TextFormField(
+    obscureText: true,
+    decoration: const InputDecoration(
+    labelText: 'Password',
+    border: OutlineInputBorder(),
     ),
     ),
     const SizedBox(height: 24),
-    Card(
-    elevation: 4,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(16.0),
-    ),
-    child: Padding(
-    padding: const EdgeInsets.all(16.0),
-    child: Column(
-    children: [
-    Text(
-    'Analytics',
-    style: Theme.of(context).textTheme.titleLarge,
-    ),
-    const SizedBox(height: 8),
-    Text(
-    'View and analyze user engagement metrics.',
-    style: Theme.of(context).textTheme.bodyMedium,
-    ),
-    const SizedBox(height: 16),
     ElevatedButton(
-    onPressed: () {},
     style: ElevatedButton.styleFrom(
     backgroundColor: Theme.of(context).colorScheme.secondary,
     foregroundColor: Colors.white,
+    padding: const EdgeInsets.symmetric(vertical: 16.0),
     shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(8.0),
+    borderRadius: BorderRadius.all(Radius.circular(8.0)),
     ),
     ),
-    child: const Text('View Analytics'),
-    ),
-    ],
-    ),
-    ),
-    ),
-    const SizedBox(height: 24),
-    Card(
-    elevation: 4,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(16.0),
-    ),
-    child: Padding(
-    padding: const EdgeInsets.all(16.0),
-    child: Column(
-    children: [
-    Text(
-    'Settings',
-    style: Theme.of(context).textTheme.titleLarge,
-    ),
-    const SizedBox(height: 8),
-    Text(
-    'Configure application settings.',
-    style: Theme.of(context).textTheme.bodyMedium,
-    ),
-    const SizedBox(height: 16),
-    ElevatedButton(
     onPressed: () {},
-    style: ElevatedButton.styleFrom(
-    backgroundColor: Theme.of(context).colorScheme.secondary,
-    foregroundColor: Colors.white,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(8.0),
-    ),
-    ),
-    child: const Text('Open Settings'),
-    ),
-    ],
-    ),
-    ),
+    child: const Text('Login'),
     ),
     ],
     ),
