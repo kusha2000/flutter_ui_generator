@@ -1,10 +1,12 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 import uvicorn
 import logging
 from typing import List, Dict, Any
 import asyncio
-from concurrent.futures import ThreadPoolExecutor
+import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from base.models import PromptRequest, CodeResponse
 from gemini.gemini_services import GeminiService
 from groqs.groq_services import GroqService
@@ -281,6 +283,117 @@ async def generate_ui(request: PromptRequest):
             status_code=500,
             detail=f"Generation failed: {str(e)}"
         )
+
+@app.post("/generate-ui-stream")
+async def generate_ui_stream(request: PromptRequest):
+    """
+    Generate Flutter UI code with real-time progress updates via Server-Sent Events
+    """
+    if not services or all(v is None for v in services.values()):
+        raise HTTPException(
+            status_code=503,
+            detail="No LLM services initialized. Please check server logs."
+        )
+    
+    if not request.prompt or not request.prompt.strip():
+        raise HTTPException(
+            status_code=400,
+            detail="Prompt cannot be empty"
+        )
+    
+    async def event_generator():
+        try:
+            logger.info("=" * 80)
+            logger.info(f"🎨 NEW STREAMING UI GENERATION REQUEST")
+            logger.info(f"📝 Prompt: {request.prompt}")
+            logger.info("=" * 80)
+            
+            # Send initialization message
+            yield f"data: {json.dumps({'type': 'init', 'message': 'Initializing generation...', 'service': 'system'})}\n\n"
+            await asyncio.sleep(0.1)
+            
+            results = []
+            total_services = len(services) + (1 if training_model_service else 0)
+            completed = 0
+            
+            # Process services sequentially to show progress
+            loop = asyncio.get_event_loop()
+            for service_name, service in services.items():
+                # Send progress update
+                yield f"data: {json.dumps({'type': 'progress', 'message': f'Generating with {service_name.upper()}...', 'service': service_name, 'completed': completed, 'total': total_services})}\n\n"
+                await asyncio.sleep(0.1)
+                
+                # Generate code in executor (non-blocking)
+                result = await loop.run_in_executor(
+                    None,
+                    generate_code_with_service,
+                    service_name,
+                    service,
+                    request.prompt
+                )
+                results.append(result)
+                completed += 1
+                
+                # Send completion for this service
+                status = 'success' if result['success'] else 'failed'
+                yield f"data: {json.dumps({'type': 'service_complete', 'service': service_name, 'status': status, 'completed': completed, 'total': total_services})}\n\n"
+                await asyncio.sleep(0.1)
+            
+            # Process training model
+            if training_model_service:
+                yield f"data: {json.dumps({'type': 'progress', 'message': 'Generating with TRAINING MODEL...', 'service': 'training_model', 'completed': completed, 'total': total_services})}\n\n"
+                await asyncio.sleep(0.1)
+                
+                try:
+                    training_result = await loop.run_in_executor(
+                        None,
+                        training_model_service.get_code,
+                        request.prompt
+                    )
+                    results.append(training_result)
+                    completed += 1
+                    yield f"data: {json.dumps({'type': 'service_complete', 'service': 'training_model', 'status': 'success', 'completed': completed, 'total': total_services})}\n\n"
+                except Exception as e:
+                    logger.error(f"❌ Training model failed: {e}")
+                    results.append({
+                        "service": "training_model",
+                        "success": False,
+                        "error": str(e),
+                        "code": None,
+                        "widget_name": "TrainingModelGeneratedWidget",
+                    })
+                    completed += 1
+                    yield f"data: {json.dumps({'type': 'service_complete', 'service': 'training_model', 'status': 'failed', 'completed': completed, 'total': total_services})}\n\n"
+                await asyncio.sleep(0.1)
+            
+            # Calculate summary
+            successful = sum(1 for r in results if r['success'])
+            failed = len(results) - successful
+            
+            logger.info("=" * 80)
+            logger.info(f"✅ STREAMING GENERATION COMPLETED")
+            logger.info(f"   Total services: {len(results)}")
+            logger.info(f"   Successful: {successful}")
+            logger.info(f"   Failed: {failed}")
+            logger.info("=" * 80)
+            
+            # Send final result
+            final_data = {
+                "type": "complete",
+                "results": results,
+                "summary": {
+                    "total_services": len(results),
+                    "successful": successful,
+                    "failed": failed,
+                }
+            }
+            yield f"data: {json.dumps(final_data)}\n\n"
+            
+        except Exception as e:
+            logger.error(f"❌ Streaming generation failed: {str(e)}")
+            yield f"data: {json.dumps({'type': 'error', 'message': str(e)})}\n\n"
+    
+    return StreamingResponse(event_generator(), media_type="text/event-stream")
 
 @app.get("/service-info")
 async def service_info():
