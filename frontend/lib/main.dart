@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/Screens/home_page.dart';
-import 'package:frontend/Screens/test_gemini_ui_generation.dart';
 import 'package:frontend/theme/app_theme.dart';
 import 'package:frontend/theme/theme_provider.dart';
 import 'package:provider/provider.dart';

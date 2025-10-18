@@ -4,91 +4,111 @@ class GeneratedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 2,
-        title: Text('Admin Dashboard', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
-        actions: [
-          Icon(Icons.notifications, color: Colors.grey[600]),
-          SizedBox(width: 16),
-          CircleAvatar(
-            backgroundImage: NetworkImage('https://via.placeholder.com/40'),
-            radius: 18,
-          ),
-          SizedBox(width: 16),
-        ],
-      ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Expanded(child: _buildStatCard('Total Users', '2,134', Colors.blue)),
-                SizedBox(width: 12),
-                Expanded(child: _buildStatCard('Revenue', '\$67,430', Colors.green)),
-              ],
-            ),
-            SizedBox(height: 12),
-            Row(
-              children: [
-                Expanded(child: _buildStatCard('Orders', '1,056', Colors.red)),
-                SizedBox(width: 12),
-                Expanded(child: _buildStatCard('Growth', '15.3%', Colors.purple)),
-              ],
-            ),
-            SizedBox(height: 24),
-            Text('Recent Activities', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-            SizedBox(height: 16),
-            ...List.generate(5, (index) => _buildActivityItem('User ${index + 1} performed action', '${index + 1}m ago')),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add),
-        backgroundColor: Colors.blue,
-      ),
-    );
-  }
-
-  Widget _buildStatCard(String title, String value, Color color) {
-    return Container(
-      padding: EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2))],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      backgroundColor: Color(0xFFF0FDF4),
+      body: Stack(
         children: [
-          Text(title, style: TextStyle(color: Colors.white, fontSize: 12)),
-          SizedBox(height: 8),
-          Text(value, style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildActivityItem(String activity, String time) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: 12),
-      child: Row(
-        children: [
-          CircleAvatar(
-            backgroundImage: NetworkImage('https://via.placeholder.com/40'),
-            radius: 20,
+          Positioned(
+            top: 150,
+            right: -50,
+            child: Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                color: Color(0xFF10B981).withOpacity(0.05),
+                shape: BoxShape.circle,
+              ),
+            ),
           ),
-          SizedBox(width: 12),
-          Expanded(
+          Positioned(
+            bottom: 100,
+            left: -80,
+            child: Container(
+              width: 250,
+              height: 250,
+              decoration: BoxDecoration(
+                color: Color(0xFF059669).withOpacity(0.03),
+                shape: BoxShape.circle,
+              ),
+            ),
+          ),
+          SafeArea(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(activity, style: TextStyle(fontWeight: FontWeight.w500)),
-                Text(time, style: TextStyle(color: Colors.grey[600], fontSize: 12)),
+                Spacer(flex: 2),
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Container(
+                      width: 140,
+                      height: 140,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 3,
+                        value: 0.7,
+                        valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF10B981)),
+                        backgroundColor: Color(0xFF10B981).withOpacity(0.1),
+                      ),
+                    ),
+                    Container(
+                      width: 110,
+                      height: 110,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF10B981),
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xFF10B981).withOpacity(0.3),
+                            blurRadius: 20,
+                            offset: Offset(0, 8),
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        Icons.favorite,
+                        size: 55,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 45),
+                Text(
+                  'VitalLife',
+                  style: TextStyle(
+                    fontSize: 34,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xFF065F46),
+                    letterSpacing: 1,
+                  ),
+                ),
+                SizedBox(height: 12),
+                Text(
+                  'Your journey to wellness starts here',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Color(0xFF10B981),
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                Spacer(flex: 3),
+                Container(
+                  width: 40,
+                  height: 40,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 3,
+                    valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF10B981)),
+                  ),
+                ),
+                SizedBox(height: 15),
+                Text(
+                  'Loading your health data...',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Color(0xFF6B7280),
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                SizedBox(height: 50),
               ],
             ),
           ),

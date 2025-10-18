@@ -5,131 +5,43 @@ class GroqGeneratedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
     return Scaffold(
-    appBar: AppBar(
-    title: const Text('Admin Dashboard'),
-    backgroundColor: Theme.of(context).colorScheme.primary,
-    elevation: 4,
+    body: Container(
+    width: double.infinity,
+    height: double.infinity,
+    decoration: const BoxDecoration(
+    gradient: LinearGradient(
+    colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
     ),
-    body: SingleChildScrollView(
-    child: Padding(
-    padding: const EdgeInsets.all(16.0),
-    child: Column(
-    children: [
-    Card(
-    elevation: 4,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(16),
     ),
-    child: Padding(
-    padding: const EdgeInsets.all(16.0),
+    child: SafeArea(
+    child: Center(
     child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
+    mainAxisSize: MainAxisSize.min,
     children: [
+    Icon(
+    Icons.flutter_dash,
+    size: size.width * 0.3,
+    color: Theme.of(context).colorScheme.primary,
+    ),
+    const SizedBox(height: 24),
     const Text(
-    'Overview',
-    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-    ),
-    const SizedBox(height: 8),
-    Row(
-    children: [
-    Expanded(
-    child: Card(
-    elevation: 2,
-    color: Theme.of(context).colorScheme.secondaryContainer,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(8),
-    ),
-    child: Padding(
-    padding: const EdgeInsets.all(16.0),
-    child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-    const Text(
-    'Users',
-    style: TextStyle(fontSize: 16),
-    ),
-    const SizedBox(height: 8),
-    Text(
-    '100',
-    style: TextStyle(fontSize: 24, color: Theme.of(context).colorScheme.primary),
-    ),
-    ],
-    ),
-    ),
-    ),
-    ),
-    const SizedBox(width: 16),
-    Expanded(
-    child: Card(
-    elevation: 2,
-    color: Theme.of(context).colorScheme.secondaryContainer,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(8),
-    ),
-    child: Padding(
-    padding: const EdgeInsets.all(16.0),
-    child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-    const Text(
-    'Orders',
-    style: TextStyle(fontSize: 16),
-    ),
-    const SizedBox(height: 8),
-    Text(
-    '500',
-    style: TextStyle(fontSize: 24, color: Theme.of(context).colorScheme.primary),
-    ),
-    ],
-    ),
-    ),
-    ),
-    ),
-    ],
-    ),
-    ],
-    ),
+    'Welcome to MyApp',
+    style: TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
     ),
     ),
     const SizedBox(height: 16),
-    Card(
-    elevation: 4,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(16),
-    ),
-    child: Padding(
-    padding: const EdgeInsets.all(16.0),
-    child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-    const Text(
-    'Actions',
-    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-    ),
-    const SizedBox(height: 8),
-    ElevatedButton(
-    style: ElevatedButton.styleFrom(
-    backgroundColor: Theme.of(context).colorScheme.primary,
-    foregroundColor: Theme.of(context).colorScheme.onPrimary,
-    ),
-    onPressed: () {},
-    child: const Text('Create User'),
-    ),
-    const SizedBox(height: 8),
-    ElevatedButton(
-    style: ElevatedButton.styleFrom(
-    backgroundColor: Theme.of(context).colorScheme.primary,
-    foregroundColor: Theme.of(context).colorScheme.onPrimary,
-    ),
-    onPressed: () {},
-    child: const Text('View Orders'),
+    const CircularProgressIndicator(
+    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
     ),
     ],
     ),
-    ),
-    ),
-    ],
     ),
     ),
     ),

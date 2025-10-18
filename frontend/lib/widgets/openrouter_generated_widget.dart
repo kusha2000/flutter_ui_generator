@@ -6,84 +6,48 @@ class OpenRouterGeneratedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    appBar: AppBar(
-    title: const Text('Admin Dashboard'),
-    backgroundColor: Theme.of(context).colorScheme.primary,
+    body: Container(
+    decoration: const BoxDecoration(
+    gradient: LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+    Color(0xFF6366F1),
+    Color(0xFF7F53AC),
+    ],
     ),
-    body: SingleChildScrollView(
-    child: Padding(
-    padding: const EdgeInsets.all(16.0),
+    ),
+    child: Center(
     child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
     children: [
-    const SizedBox(height: 16),
-    Card(
-    elevation: 4,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(8),
-    ),
-    child: Padding(
-    padding: const EdgeInsets.all(16.0),
-    child: Row(
-    children: [
-    const Icon(Icons.home, size: 24),
-    const SizedBox(width: 8),
-    Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: const [
-    Text('Total Users', style: TextStyle(fontSize: 16)),
-    Text('1000', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-    ],
-    ),
-    ],
-    ),
-    ),
+    const Icon(
+    Icons.home,
+    size: 64,
+    color: Colors.white,
     ),
     const SizedBox(height: 16),
-    Card(
-    elevation: 4,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(8),
-    ),
-    child: Padding(
-    padding: const EdgeInsets.all(16.0),
-    child: Row(
-    children: [
-    const Icon(Icons.search, size: 24),
-    const SizedBox(width: 8),
-    Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: const [
-    Text('Total Searches', style: TextStyle(fontSize: 16)),
-    Text('5000', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-    ],
-    ),
-    ],
+    const Text(
+    'Welcome to our App',
+    style: TextStyle(
+    fontSize: 24,
+    color: Colors.white,
+    fontWeight: FontWeight.bold,
     ),
     ),
-    ),
-    const SizedBox(height: 16),
+    const SizedBox(height: 32),
     ElevatedButton(
     style: ElevatedButton.styleFrom(
     backgroundColor: Theme.of(context).colorScheme.primary,
     foregroundColor: Colors.white,
+    shape: const RoundedRectangleBorder(
+    borderRadius: BorderRadius.all(Radius.circular(8)),
     ),
-    onPressed: () {},
-    child: const Text('Manage Users'),
     ),
-    const SizedBox(height: 16),
-    ElevatedButton(
-    style: ElevatedButton.styleFrom(
-    backgroundColor: Theme.of(context).colorScheme.primary,
-    foregroundColor: Colors.white,
-    ),
-    onPressed: () {},
-    child: const Text('Manage Settings'),
-    ),
-    const SizedBox(height: 16),
-    ListTile(
-    leading: const Icon(Icons.logout),
-    title: const Text('Logout'),
-    onTap: () {},
+    onPressed: () {
+      Navigator.pushReplacementNamed(context, '/home');
+    },
+    child: const Text('Get Started'),
     ),
     ],
     ),

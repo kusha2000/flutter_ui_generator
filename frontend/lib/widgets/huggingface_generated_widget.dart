@@ -5,97 +5,59 @@ class HuggingFaceGeneratedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Scaffold(
-    appBar: AppBar(
-    title: const Text('Admin Dashboard'),
-    backgroundColor: Theme.of(context).colorScheme.primary,
-    ),
-    drawer: Drawer(
-    child: ListView(
-    padding: EdgeInsets.zero,
-    children: <Widget>[
-    const DrawerHeader(
+    body: Center(
+    child: Container(
+    width: size.width * 0.8,
+    height: size.height * 0.6,
     decoration: BoxDecoration(
-    gradient: LinearGradient(colors: [Colors.blue, Colors.green]),
+    borderRadius: BorderRadius.circular(16.0),
+    gradient: LinearGradient(
+    colors: [colorScheme.primaryContainer, colorScheme.secondaryContainer],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
     ),
-    child: Text(
-    'Admin Menu',
-    style: TextStyle(color: Colors.white, fontSize: 24),
-    ),
-    ),
-    ListTile(
-    leading: const Icon(Icons.dashboard),
-    title: const Text('Dashboard'),
-    onTap: () {
-      Navigator.pop(context);
-    },
-    ),
-    ListTile(
-    leading:  Icon(Icons.abc),
-    title: const Text('Users'),
-    onTap: () {
-      Navigator.pop(context);
-    },
-    ),
-    ListTile(
-    leading: const Icon(Icons.settings),
-    title: const Text('Settings'),
-    onTap: () {
-      Navigator.pop(context);
-    },
-    ),
-    ListTile(
-    leading: const Icon(Icons.logout),
-    title: const Text('Logout'),
-    onTap: () {
-      Navigator.pop(context);
-    },
+    boxShadow: [
+    BoxShadow(
+    color: colorScheme.onSurface.withOpacity(0.25),
+    blurRadius: 8.0,
+    offset: Offset.zero,
     ),
     ],
     ),
-    ),
-    body: SingleChildScrollView(
     child: Padding(
     padding: const EdgeInsets.all(16.0),
     child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
+    mainAxisAlignment: MainAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.center,
     children: [
-     Card(
-    elevation: 4,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-    child: Padding(
-    padding: EdgeInsets.all(16.0),
-    child: Text(
-    'Welcome to Admin Dashboard',
-    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+    Image.asset(
+    'assets/logo.png',
+    width: 100.0,
+    height: 100.0,
+    ),
+    SizedBox(height: 16.0),
+    const Text(
+    'Welcome to Our App',
+    style: TextStyle(
+    fontSize: 24.0,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
     ),
     ),
-    ),
-    const SizedBox(height: 16),
-     Card(
-    elevation: 4,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-    child: Padding(
-    padding: EdgeInsets.all(16.0),
-    child: Text(
-    'Recent Activities',
-    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-    ),
-    ),
-    ),
-    const SizedBox(height: 16),
-     Card(
-    elevation: 4,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-    child: Padding(
-    padding: EdgeInsets.all(16.0),
-    child: Text(
-    'System Information',
-    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-    ),
+    SizedBox(height: 8.0),
+    const Text(
+    'Loading...',
+    style: TextStyle(
+    fontSize: 16.0,
+    color: Colors.white,
     ),
     ),
     ],
+    ),
     ),
     ),
     ),
