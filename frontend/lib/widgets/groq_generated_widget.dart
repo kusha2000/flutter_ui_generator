@@ -5,79 +5,129 @@ class GroqGeneratedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final primary = Theme.of(context).colorScheme.primary;
-    final onPrimary = Theme.of(context).colorScheme.onPrimary;
     return Scaffold(
     appBar: AppBar(
-    title: const Text('Login'),
-    backgroundColor: primary,
+    title: const Text('Admin Dashboard'),
+    backgroundColor: Theme.of(context).colorScheme.primary,
+    elevation: 4,
     ),
     body: SingleChildScrollView(
     child: Padding(
     padding: const EdgeInsets.all(16.0),
     child: Column(
-    crossAxisAlignment: CrossAxisAlignment.stretch,
+    children: [
+    Card(
+    elevation: 4,
+    shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(16),
+    ),
+    child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
     const Text(
-    'Welcome Back',
-    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-    textAlign: TextAlign.center,
+    'Overview',
+    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
     ),
-    const SizedBox(height: 24),
-    TextFormField(
-    decoration: const InputDecoration(
-    labelText: 'Email',
-    border: OutlineInputBorder(
-    borderRadius: BorderRadius.all(Radius.circular(12)),
-    ),
-    ),
-    keyboardType: TextInputType.emailAddress,
-    ),
-    const SizedBox(height: 16),
-    TextFormField(
-    decoration: const InputDecoration(
-    labelText: 'Password',
-    border: OutlineInputBorder(
-    borderRadius: BorderRadius.all(Radius.circular(12)),
-    ),
-    suffixIcon: Icon(Icons.visibility_off),
-    ),
-    obscureText: true,
-    ),
-    const SizedBox(height: 24),
-    ElevatedButton(
-    style: ElevatedButton.styleFrom(
-    backgroundColor: primary,
-    foregroundColor: onPrimary,
-    padding: const EdgeInsets.symmetric(vertical: 16),
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(12),
-    ),
-    ),
-    onPressed: () {},
-    child: const Text('Login'),
-    ),
-    const SizedBox(height: 12),
-    TextButton(
-    style: TextButton.styleFrom(
-    foregroundColor: primary,
-    ),
-    onPressed: () {},
-    child: const Text('Forgot Password?'),
-    ),
-    const SizedBox(height: 24),
+    const SizedBox(height: 8),
     Row(
-    mainAxisAlignment: MainAxisAlignment.center,
     children: [
-    const Text("Don't have an account?"),
-    TextButton(
-    style: TextButton.styleFrom(
-    foregroundColor: primary,
+    Expanded(
+    child: Card(
+    elevation: 2,
+    color: Theme.of(context).colorScheme.secondaryContainer,
+    shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(8),
     ),
-    onPressed: () {},
-    child: const Text('Sign Up'),
+    child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+    const Text(
+    'Users',
+    style: TextStyle(fontSize: 16),
+    ),
+    const SizedBox(height: 8),
+    Text(
+    '100',
+    style: TextStyle(fontSize: 24, color: Theme.of(context).colorScheme.primary),
     ),
     ],
+    ),
+    ),
+    ),
+    ),
+    const SizedBox(width: 16),
+    Expanded(
+    child: Card(
+    elevation: 2,
+    color: Theme.of(context).colorScheme.secondaryContainer,
+    shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(8),
+    ),
+    child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+    const Text(
+    'Orders',
+    style: TextStyle(fontSize: 16),
+    ),
+    const SizedBox(height: 8),
+    Text(
+    '500',
+    style: TextStyle(fontSize: 24, color: Theme.of(context).colorScheme.primary),
+    ),
+    ],
+    ),
+    ),
+    ),
+    ),
+    ],
+    ),
+    ],
+    ),
+    ),
+    ),
+    const SizedBox(height: 16),
+    Card(
+    elevation: 4,
+    shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(16),
+    ),
+    child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+    const Text(
+    'Actions',
+    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+    ),
+    const SizedBox(height: 8),
+    ElevatedButton(
+    style: ElevatedButton.styleFrom(
+    backgroundColor: Theme.of(context).colorScheme.primary,
+    foregroundColor: Theme.of(context).colorScheme.onPrimary,
+    ),
+    onPressed: () {},
+    child: const Text('Create User'),
+    ),
+    const SizedBox(height: 8),
+    ElevatedButton(
+    style: ElevatedButton.styleFrom(
+    backgroundColor: Theme.of(context).colorScheme.primary,
+    foregroundColor: Theme.of(context).colorScheme.onPrimary,
+    ),
+    onPressed: () {},
+    child: const Text('View Orders'),
+    ),
+    ],
+    ),
+    ),
     ),
     ],
     ),

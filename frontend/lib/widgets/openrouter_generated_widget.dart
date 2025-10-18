@@ -7,7 +7,7 @@ class OpenRouterGeneratedWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
-    title: const Text('Login'),
+    title: const Text('Admin Dashboard'),
     backgroundColor: Theme.of(context).colorScheme.primary,
     ),
     body: SingleChildScrollView(
@@ -15,44 +15,75 @@ class OpenRouterGeneratedWidget extends StatelessWidget {
     padding: const EdgeInsets.all(16.0),
     child: Column(
     children: [
-    const SizedBox(height: 32),
-    const Text(
-    'Welcome to Login',
-    style: TextStyle(fontSize: 24),
+    const SizedBox(height: 16),
+    Card(
+    elevation: 4,
+    shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(8),
+    ),
+    child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Row(
+    children: [
+    const Icon(Icons.home, size: 24),
+    const SizedBox(width: 8),
+    Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: const [
+    Text('Total Users', style: TextStyle(fontSize: 16)),
+    Text('1000', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+    ],
+    ),
+    ],
+    ),
+    ),
     ),
     const SizedBox(height: 16),
-    TextFormField(
-    decoration: const InputDecoration(
-    labelText: 'Email',
-    border: OutlineInputBorder(),
-    prefixIcon: Icon(Icons.email),
+    Card(
+    elevation: 4,
+    shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(8),
     ),
+    child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Row(
+    children: [
+    const Icon(Icons.search, size: 24),
+    const SizedBox(width: 8),
+    Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: const [
+    Text('Total Searches', style: TextStyle(fontSize: 16)),
+    Text('5000', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+    ],
     ),
-    const SizedBox(height: 16),
-    TextFormField(
-    obscureText: true,
-    decoration: const InputDecoration(
-    labelText: 'Password',
-    border: OutlineInputBorder(),
-    prefixIcon: Icon(Icons.lock),
+    ],
+    ),
     ),
     ),
     const SizedBox(height: 16),
     ElevatedButton(
     style: ElevatedButton.styleFrom(
     backgroundColor: Theme.of(context).colorScheme.primary,
-    foregroundColor: Theme.of(context).colorScheme.onPrimary,
+    foregroundColor: Colors.white,
     ),
     onPressed: () {},
-    child: const Text('Login'),
+    child: const Text('Manage Users'),
     ),
-    const SizedBox(height: 8),
-    TextButton(
-    style: TextButton.styleFrom(
-    foregroundColor: Theme.of(context).colorScheme.secondary,
+    const SizedBox(height: 16),
+    ElevatedButton(
+    style: ElevatedButton.styleFrom(
+    backgroundColor: Theme.of(context).colorScheme.primary,
+    foregroundColor: Colors.white,
     ),
     onPressed: () {},
-    child: const Text('Forgot Password'),
+    child: const Text('Manage Settings'),
+    ),
+    const SizedBox(height: 16),
+    ListTile(
+    leading: const Icon(Icons.logout),
+    title: const Text('Logout'),
+    onTap: () {},
     ),
     ],
     ),

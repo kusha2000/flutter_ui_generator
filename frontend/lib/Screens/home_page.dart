@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/widgets/ai_type_selection.dart';
+import 'package:frontend/theme/app_colors_light.dart';
+import 'package:frontend/theme/app_colors_dark.dart';
+import 'package:frontend/theme/theme_provider.dart';
+import 'package:provider/provider.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:speech_to_text/speech_to_text.dart' as stt;
@@ -105,7 +109,7 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
 
     try {
       final response = await http.post(
-        Uri.parse('http://172.26.120.94:8000/generate-ui'),
+        Uri.parse('http://192.168.8.213:8000/generate-ui'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'prompt': prompt}),
       );
@@ -144,37 +148,94 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = context.watch<ThemeProvider>();
+    final isDark = themeProvider.isDarkMode;
+    final primaryGradient =
+        isDark ? AppColorsDark.primaryGradient : AppColorsLight.primaryGradient;
+    final primary = isDark ? AppColorsDark.primary : AppColorsLight.primary;
+    final textOnPrimary =
+        isDark ? AppColorsDark.textOnPrimary : AppColorsLight.textOnPrimary;
+    final surface = isDark ? AppColorsDark.surface : AppColorsLight.surface;
+    final surfaceVariant =
+        isDark ? AppColorsDark.surfaceVariant : AppColorsLight.surfaceVariant;
+    final cardBorder =
+        isDark ? AppColorsDark.cardBorder : AppColorsLight.cardBorder;
+    final divider = isDark ? AppColorsDark.divider : AppColorsLight.divider;
+
     return Scaffold(
-      backgroundColor: Colors.grey[50],
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
+        automaticallyImplyLeading: false,
         title: Row(
           children: [
             Container(
               padding: EdgeInsets.all(8),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.blue.shade400, Colors.purple.shade400],
+                  colors: primaryGradient,
                 ),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Icon(Icons.auto_awesome, color: Colors.white, size: 24),
+              child: Icon(Icons.auto_awesome, color: textOnPrimary, size: 24),
             ),
-            SizedBox(width: 12),
+            SizedBox(width: 6),
             Text(
-              'AI UI Generator',
-              style: TextStyle(
-                color: Colors.black87,
-                fontWeight: FontWeight.bold,
-                fontSize: 22,
-              ),
+              'UI Generator',
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
           ],
         ),
         actions: [
+          // Theme Toggle Button
+          Container(
+            margin: EdgeInsets.only(right: 8),
+            decoration: BoxDecoration(
+              color: isDark ? surface : surfaceVariant,
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(
+                color: isDark ? cardBorder : divider,
+                width: 1,
+              ),
+            ),
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                borderRadius: BorderRadius.circular(12),
+                onTap: () {
+                  themeProvider.toggleTheme();
+                },
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        isDark ? Icons.light_mode : Icons.dark_mode,
+                        color: primary,
+                        size: 20,
+                      ),
+                      SizedBox(width: 6),
+                      Text(
+                        isDark ? 'Light' : 'Dark',
+                        style: TextStyle(
+                          color: primary,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
           IconButton(
-            icon: Icon(Icons.dashboard_customize, color: Colors.blue.shade700),
+            icon: Icon(Icons.dashboard_customize, color: primary),
             onPressed: () {
               Navigator.push(
                 context,
@@ -198,14 +259,16 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                 padding: EdgeInsets.all(24),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Colors.blue.shade400, Colors.purple.shade400],
+                    colors: primaryGradient,
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.blue.shade200.withOpacity(0.5),
+                      color: isDark
+                          ? AppColorsDark.shadowMedium
+                          : AppColorsLight.shadowMedium,
                       blurRadius: 20,
                       offset: Offset(0, 10),
                     ),
@@ -217,7 +280,7 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                     Text(
                       'Create Beautiful UIs',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: textOnPrimary,
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
                       ),
@@ -226,7 +289,7 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                     Text(
                       'Describe your UI with text or voice and watch the magic happen',
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.9),
+                        color: textOnPrimary.withOpacity(0.9),
                         fontSize: 16,
                       ),
                     ),
@@ -240,11 +303,20 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
               Container(
                 padding: EdgeInsets.all(24),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: isDark
+                      ? AppColorsDark.cardBackground
+                      : AppColorsLight.cardBackground,
                   borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: isDark
+                        ? AppColorsDark.cardBorder
+                        : AppColorsLight.cardBorder,
+                  ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: isDark
+                          ? AppColorsDark.shadowLight
+                          : AppColorsLight.shadowLight,
                       blurRadius: 15,
                       offset: Offset(0, 5),
                     ),
@@ -258,11 +330,7 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                       children: [
                         Text(
                           'Describe Your UI',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black87,
-                          ),
+                          style: Theme.of(context).textTheme.headlineMedium,
                         ),
                         ScaleTransition(
                           scale: _isListening
@@ -270,8 +338,10 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                               : AlwaysStoppedAnimation(1.0),
                           child: Material(
                             color: _isListening
-                                ? Colors.green
-                                : Colors.blue.shade400,
+                                ? (isDark
+                                    ? AppColorsDark.success
+                                    : AppColorsLight.success)
+                                : primary,
                             borderRadius: BorderRadius.circular(12),
                             elevation: _isListening ? 4 : 2,
                             child: InkWell(
@@ -285,14 +355,14 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                                   children: [
                                     Icon(
                                       _isListening ? Icons.stop : Icons.mic,
-                                      color: Colors.white,
+                                      color: textOnPrimary,
                                       size: 20,
                                     ),
                                     SizedBox(width: 6),
                                     Text(
                                       _isListening ? 'Stop' : 'Voice',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: textOnPrimary,
                                         fontWeight: FontWeight.w600,
                                         fontSize: 14,
                                       ),
@@ -311,42 +381,34 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                     TextField(
                       controller: _promptController,
                       maxLines: 4,
+                      style: Theme.of(context).textTheme.bodyLarge,
                       decoration: InputDecoration(
                         hintText:
                             'e.g., Create a login form with email and password fields...',
-                        hintStyle: TextStyle(color: Colors.grey.shade400),
-                        filled: true,
-                        fillColor: Colors.grey.shade50,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16),
-                          borderSide: BorderSide.none,
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16),
-                          borderSide: BorderSide(color: Colors.grey.shade200),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16),
-                          borderSide:
-                              BorderSide(color: Colors.blue.shade400, width: 2),
-                        ),
-                        contentPadding: EdgeInsets.all(20),
                       ),
                     ),
 
-                    if (_isListening || _voiceText.isNotEmpty) ...[
+                    if (_isListening) ...[
                       SizedBox(height: 12),
                       Container(
                         padding: EdgeInsets.all(12),
                         decoration: BoxDecoration(
                           color: _isListening
-                              ? Colors.green.shade50
-                              : Colors.blue.shade50,
+                              ? (isDark
+                                  ? AppColorsDark.success.withOpacity(0.1)
+                                  : AppColorsLight.success.withOpacity(0.1))
+                              : (isDark
+                                  ? AppColorsDark.info.withOpacity(0.1)
+                                  : AppColorsLight.info.withOpacity(0.1)),
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
                             color: _isListening
-                                ? Colors.green.shade300
-                                : Colors.blue.shade200,
+                                ? (isDark
+                                    ? AppColorsDark.success
+                                    : AppColorsLight.success)
+                                : (isDark
+                                    ? AppColorsDark.info
+                                    : AppColorsLight.info),
                           ),
                         ),
                         child: Row(
@@ -354,20 +416,27 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                             Icon(
                               _isListening ? Icons.mic : Icons.check_circle,
                               color: _isListening
-                                  ? Colors.green
-                                  : Colors.blue.shade700,
+                                  ? (isDark
+                                      ? AppColorsDark.success
+                                      : AppColorsLight.success)
+                                  : (isDark
+                                      ? AppColorsDark.info
+                                      : AppColorsLight.info),
                               size: 20,
                             ),
                             SizedBox(width: 8),
-                            Expanded(
-                              child: Text(
-                                _isListening ? 'Listening...' : _voiceText,
-                                style: TextStyle(
-                                  color: Colors.black87,
-                                  fontSize: 14,
-                                ),
-                              ),
-                            ),
+                            _isListening
+                                ? Expanded(
+                                    child: Text(
+                                      'Listening...',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium,
+                                    ),
+                                  )
+                                : SizedBox(
+                                    height: 1,
+                                  )
                           ],
                         ),
                       ),
@@ -383,15 +452,14 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                       height: 56,
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          colors: [
-                            Colors.blue.shade400,
-                            Colors.purple.shade400
-                          ],
+                          colors: primaryGradient,
                         ),
                         borderRadius: BorderRadius.circular(16),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.blue.shade200.withOpacity(0.5),
+                            color: isDark
+                                ? AppColorsDark.shadowMedium
+                                : AppColorsLight.shadowMedium,
                             blurRadius: 15,
                             offset: Offset(0, 8),
                           ),
@@ -419,14 +487,14 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                                           strokeWidth: 2,
                                           valueColor:
                                               AlwaysStoppedAnimation<Color>(
-                                                  Colors.white),
+                                                  textOnPrimary),
                                         ),
                                       ),
                                       SizedBox(width: 12),
                                       Text(
                                         'Generating...',
                                         style: TextStyle(
-                                          color: Colors.white,
+                                          color: textOnPrimary,
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -437,12 +505,12 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Icon(Icons.auto_awesome,
-                                          color: Colors.white),
+                                          color: textOnPrimary),
                                       SizedBox(width: 8),
                                       Text(
                                         'Generate UI',
                                         style: TextStyle(
-                                          color: Colors.white,
+                                          color: textOnPrimary,
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -465,18 +533,30 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                   margin: EdgeInsets.only(bottom: 24),
                   padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Colors.red.shade50,
+                    color: isDark
+                        ? AppColorsDark.error.withOpacity(0.1)
+                        : AppColorsLight.error.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: Colors.red.shade200),
+                    border: Border.all(
+                      color:
+                          isDark ? AppColorsDark.error : AppColorsLight.error,
+                    ),
                   ),
                   child: Row(
                     children: [
-                      Icon(Icons.error_outline, color: Colors.red.shade700),
+                      Icon(Icons.error_outline,
+                          color: isDark
+                              ? AppColorsDark.error
+                              : AppColorsLight.error),
                       SizedBox(width: 12),
                       Expanded(
                         child: Text(
                           _error,
-                          style: TextStyle(color: Colors.red.shade700),
+                          style: TextStyle(
+                            color: isDark
+                                ? AppColorsDark.error
+                                : AppColorsLight.error,
+                          ),
                         ),
                       ),
                     ],
@@ -488,27 +568,38 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                 padding: EdgeInsets.all(24),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Colors.amber.shade50, Colors.orange.shade50],
+                    colors: isDark
+                        ? [
+                            AppColorsDark.warning.withOpacity(0.15),
+                            AppColorsDark.accentLight.withOpacity(0.15),
+                          ]
+                        : [
+                            AppColorsLight.warning.withOpacity(0.1),
+                            AppColorsLight.accentLight.withOpacity(0.1),
+                          ],
                   ),
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Colors.amber.shade300, width: 2),
+                  border: Border.all(
+                    color:
+                        isDark ? AppColorsDark.warning : AppColorsLight.warning,
+                    width: 2,
+                  ),
                 ),
                 child: Column(
                   children: [
                     Icon(
                       Icons.info_outline_rounded,
-                      color: Colors.blue.shade600,
+                      color: isDark ? AppColorsDark.info : AppColorsLight.info,
                       size: 48,
                     ),
                     SizedBox(height: 16),
                     Text(
                       'After generating the UI, please refresh the app and navigate to UI Preview to see your creation',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.grey.shade700,
-                        height: 1.5,
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            fontSize: 15,
+                            height: 1.5,
+                          ),
                     ),
                     SizedBox(height: 20),
                     Container(
@@ -516,15 +607,16 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                       height: 56,
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          colors: [
-                            Colors.indigo.shade500,
-                            Colors.indigo.shade700
-                          ],
+                          colors: isDark
+                              ? AppColorsDark.accentGradient
+                              : AppColorsLight.accentGradient,
                         ),
                         borderRadius: BorderRadius.circular(16),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.indigo.shade300.withOpacity(0.5),
+                            color: isDark
+                                ? AppColorsDark.shadowMedium
+                                : AppColorsLight.shadowMedium,
                             blurRadius: 15,
                             offset: Offset(0, 8),
                           ),
@@ -547,12 +639,12 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(Icons.dashboard_rounded,
-                                    color: Colors.white, size: 24),
+                                    color: textOnPrimary, size: 24),
                                 SizedBox(width: 12),
                                 Text(
-                                  'Go to Dashboard',
+                                  'Go to UI Preview',
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: textOnPrimary,
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                   ),

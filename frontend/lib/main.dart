@@ -1,19 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/Screens/home_page.dart';
 import 'package:frontend/Screens/test_gemini_ui_generation.dart';
+import 'package:frontend/theme/app_theme.dart';
+import 'package:frontend/theme/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => ThemeProvider(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'AI Flutter Generator',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: UIGeneratorHomePage(),
+    return Consumer<ThemeProvider>(
+      builder: (context, themeProvider, child) {
+        return MaterialApp(
+          title: 'AI Flutter Generator',
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+          themeMode: themeProvider.themeMode,
+          home: UIGeneratorHomePage(),
+        );
+      },
     );
   }
 }

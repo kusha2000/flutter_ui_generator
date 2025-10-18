@@ -6,23 +6,43 @@ import 'package:frontend/widgets/gemini_generated_widget.dart';
 import 'package:frontend/widgets/cohere_generated_widget.dart';
 import 'package:frontend/widgets/groq_generated_widget.dart';
 import 'package:frontend/widgets/training_model_widget.dart';
+import 'package:frontend/theme/app_colors_light.dart';
+import 'package:frontend/theme/app_colors_dark.dart';
+import 'package:frontend/theme/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class AITypeSection extends StatelessWidget {
   const AITypeSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = context.watch<ThemeProvider>();
+    final isDark = themeProvider.isDarkMode;
+    final backgroundColor =
+        isDark ? AppColorsDark.background : AppColorsLight.background;
+    final primaryGradient =
+        isDark ? AppColorsDark.primaryGradient : AppColorsLight.primaryGradient;
+    final textPrimary =
+        isDark ? AppColorsDark.textPrimary : AppColorsLight.textPrimary;
+    final textSecondary =
+        isDark ? AppColorsDark.textSecondary : AppColorsLight.textSecondary;
+
     return Scaffold(
-      backgroundColor: Colors.grey[50],
+      backgroundColor: backgroundColor,
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Colors.white,
-              Colors.grey.shade50,
-            ],
+            colors: isDark
+                ? [
+                    AppColorsDark.background,
+                    AppColorsDark.surface,
+                  ]
+                : [
+                    AppColorsLight.surface,
+                    AppColorsLight.background,
+                  ],
           ),
         ),
         child: SafeArea(
@@ -49,23 +69,24 @@ class AITypeSection extends StatelessWidget {
                         height: 44,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
-                            colors: [
-                              Colors.indigo.shade400,
-                              Colors.indigo.shade600
-                            ],
+                            colors: primaryGradient,
                           ),
                           borderRadius: BorderRadius.circular(12),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.indigo.shade200.withOpacity(0.5),
+                              color: isDark
+                                  ? AppColorsDark.shadowMedium
+                                  : AppColorsLight.shadowMedium,
                               blurRadius: 10,
                               offset: const Offset(0, 4),
                             ),
                           ],
                         ),
-                        child: const Icon(
+                        child: Icon(
                           Icons.arrow_back_ios_new,
-                          color: Colors.white,
+                          color: isDark
+                              ? AppColorsDark.textOnPrimary
+                              : AppColorsLight.textOnPrimary,
                           size: 20,
                         ),
                       ),
@@ -75,20 +96,20 @@ class AITypeSection extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             'Choose Your',
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w400,
-                              color: Colors.black54,
+                              color: textSecondary,
                             ),
                           ),
-                          const Text(
+                          Text(
                             'AI Assistant',
                             style: TextStyle(
                               fontSize: 32,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black87,
+                              color: textPrimary,
                             ),
                           ),
                           const SizedBox(height: 4),
@@ -97,10 +118,7 @@ class AITypeSection extends StatelessWidget {
                             height: 4,
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
-                                colors: [
-                                  Colors.indigo.shade400,
-                                  Colors.deepPurple.shade400
-                                ],
+                                colors: primaryGradient,
                               ),
                               borderRadius: BorderRadius.circular(2),
                             ),
@@ -120,14 +138,20 @@ class AITypeSection extends StatelessWidget {
                       children: [
                         _buildAIButton(
                           context,
+                          isDark,
                           'Gemini',
                           'gemini-2.5-flash-preview-05-20',
                           Icons.auto_awesome,
                           LinearGradient(
-                            colors: [
-                              Colors.indigo.shade400,
-                              Colors.indigo.shade600
-                            ],
+                            colors: isDark
+                                ? [
+                                    AppColorsDark.primary,
+                                    AppColorsDark.primaryDark
+                                  ]
+                                : [
+                                    AppColorsLight.primary,
+                                    AppColorsLight.primaryDark
+                                  ],
                           ),
                           () {
                             Navigator.push(
@@ -141,14 +165,14 @@ class AITypeSection extends StatelessWidget {
                         const SizedBox(height: 16),
                         _buildAIButton(
                           context,
+                          isDark,
                           'Groq',
                           'groq/compound',
                           Icons.chat_bubble_outline,
                           LinearGradient(
-                            colors: [
-                              Colors.teal.shade400,
-                              Colors.teal.shade600
-                            ],
+                            colors: isDark
+                                ? [Color(0xFF14B8A6), Color(0xFF0F766E)]
+                                : [Color(0xFF14B8A6), Color(0xFF0D9488)],
                           ),
                           () {
                             Navigator.push(
@@ -162,14 +186,14 @@ class AITypeSection extends StatelessWidget {
                         const SizedBox(height: 16),
                         _buildAIButton(
                           context,
+                          isDark,
                           'Cohere',
                           'command-r-plus-08-2024',
                           Icons.psychology,
                           LinearGradient(
-                            colors: [
-                              Colors.cyan.shade400,
-                              Colors.cyan.shade600
-                            ],
+                            colors: isDark
+                                ? [Color(0xFF06B6D4), Color(0xFF0891B2)]
+                                : [Color(0xFF22D3EE), Color(0xFF06B6D4)],
                           ),
                           () {
                             Navigator.push(
@@ -183,14 +207,17 @@ class AITypeSection extends StatelessWidget {
                         const SizedBox(height: 16),
                         _buildAIButton(
                           context,
+                          isDark,
                           'HuggingFace',
                           'Qwen2.5-Coder-7B-Instruct',
                           Icons.smart_toy,
                           LinearGradient(
-                            colors: [
-                              Colors.amber.shade400,
-                              Colors.orange.shade500
-                            ],
+                            colors: isDark
+                                ? [AppColorsDark.warning, Color(0xFFF97316)]
+                                : [
+                                    AppColorsLight.warning,
+                                    AppColorsLight.warningLight
+                                  ],
                           ),
                           () {
                             Navigator.push(
@@ -205,14 +232,20 @@ class AITypeSection extends StatelessWidget {
                         const SizedBox(height: 16),
                         _buildAIButton(
                           context,
+                          isDark,
                           'OpenRouter',
                           'llama-3.3-70b-instruct',
                           Icons.code,
                           LinearGradient(
-                            colors: [
-                              Colors.deepPurple.shade400,
-                              Colors.deepPurple.shade600
-                            ],
+                            colors: isDark
+                                ? [
+                                    AppColorsDark.secondary,
+                                    AppColorsDark.secondaryDark
+                                  ]
+                                : [
+                                    AppColorsLight.secondary,
+                                    AppColorsLight.secondaryDark
+                                  ],
                           ),
                           () {
                             Navigator.push(
@@ -227,11 +260,17 @@ class AITypeSection extends StatelessWidget {
                         const SizedBox(height: 16),
                         _buildAIButton(
                           context,
+                          isDark,
                           'My Training Model',
                           'Training Model',
                           Icons.psychology_alt,
                           LinearGradient(
-                            colors: [Colors.pink.shade400, Colors.red.shade400],
+                            colors: isDark
+                                ? [AppColorsDark.accent, Color(0xFFDC2626)]
+                                : [
+                                    AppColorsLight.accent,
+                                    AppColorsLight.accentLight
+                                  ],
                           ),
                           () {
                             Navigator.push(
@@ -257,22 +296,35 @@ class AITypeSection extends StatelessWidget {
 
   Widget _buildAIButton(
     BuildContext context,
+    bool isDark,
     String title,
     String subtitle,
     IconData icon,
     Gradient gradient,
     VoidCallback onTap,
   ) {
+    final cardBackground =
+        isDark ? AppColorsDark.cardBackground : AppColorsLight.cardBackground;
+    final textPrimary =
+        isDark ? AppColorsDark.textPrimary : AppColorsLight.textPrimary;
+    final textSecondary =
+        isDark ? AppColorsDark.textSecondary : AppColorsLight.textSecondary;
+    final cardBorder =
+        isDark ? AppColorsDark.cardBorder : AppColorsLight.cardBorder;
+    final shadowColor =
+        isDark ? AppColorsDark.shadowLight : AppColorsLight.shadowLight;
+
     return GestureDetector(
       onTap: onTap,
       child: Container(
         height: 90,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: cardBackground,
           borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: cardBorder),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.06),
+              color: shadowColor,
               blurRadius: 12,
               offset: const Offset(0, 4),
             ),
@@ -306,7 +358,9 @@ class AITypeSection extends StatelessWidget {
                       ),
                       child: Icon(
                         icon,
-                        color: Colors.white,
+                        color: isDark
+                            ? AppColorsDark.textOnPrimary
+                            : AppColorsLight.textOnPrimary,
                         size: 26,
                       ),
                     ),
@@ -318,8 +372,8 @@ class AITypeSection extends StatelessWidget {
                         children: [
                           Text(
                             title,
-                            style: const TextStyle(
-                              color: Colors.black87,
+                            style: TextStyle(
+                              color: textPrimary,
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
@@ -328,7 +382,7 @@ class AITypeSection extends StatelessWidget {
                           Text(
                             subtitle,
                             style: TextStyle(
-                              color: Colors.grey.shade600,
+                              color: textSecondary,
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                             ),
@@ -346,7 +400,9 @@ class AITypeSection extends StatelessWidget {
                       ),
                       child: Icon(
                         Icons.arrow_forward_ios,
-                        color: Colors.white,
+                        color: isDark
+                            ? AppColorsDark.textOnPrimary
+                            : AppColorsLight.textOnPrimary,
                         size: 14,
                       ),
                     ),
