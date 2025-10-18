@@ -25,7 +25,7 @@ class FileManager:
         self.widgets_dir = self.lib_dir / "widgets"
         
         # Generate filename based on service type
-        filename = f"{self.service_type}_generated_widget_loader.dart"
+        filename = f"{self.service_type}_generated_widget.dart"
         self.target_file = self.widgets_dir / filename
         
         logger.info(f"📂 Frontend directory: {self.frontend_dir}")

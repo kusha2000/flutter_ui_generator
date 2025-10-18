@@ -1,29 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/widgets/huggingface_generated_widget_loader.dart';
-import 'package:frontend/widgets/openrouter_generated_widget_loader.dart';
-import 'package:frontend/widgets/copilot_generated_widget_loader.dart';
-import 'package:frontend/widgets/deepseek_generated_widget_loader.dart';
-import 'package:frontend/widgets/gemini_generated_widget_loader.dart';
-import 'package:frontend/widgets/cohere_generated_widget_loader.dart';
-import 'package:frontend/widgets/groq_generated_widget_loader.dart';
+import 'package:frontend/Screens/home_page.dart';
+import 'package:frontend/widgets/huggingface_generated_widget.dart';
+import 'package:frontend/widgets/openrouter_generated_widget.dart';
+import 'package:frontend/widgets/gemini_generated_widget.dart';
+import 'package:frontend/widgets/cohere_generated_widget.dart';
+import 'package:frontend/widgets/groq_generated_widget.dart';
+import 'package:frontend/widgets/training_model_widget.dart';
+import 'package:frontend/theme/app_colors_light.dart';
+import 'package:frontend/theme/app_colors_dark.dart';
+import 'package:frontend/theme/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class AITypeSection extends StatelessWidget {
   const AITypeSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = context.watch<ThemeProvider>();
+    final isDark = themeProvider.isDarkMode;
+    final backgroundColor =
+        isDark ? AppColorsDark.background : AppColorsLight.background;
+    final primaryGradient =
+        isDark ? AppColorsDark.primaryGradient : AppColorsLight.primaryGradient;
+    final textPrimary =
+        isDark ? AppColorsDark.textPrimary : AppColorsLight.textPrimary;
+    final textSecondary =
+        isDark ? AppColorsDark.textSecondary : AppColorsLight.textSecondary;
+
     return Scaffold(
-      backgroundColor: const Color(0xFF0F0F23),
+      backgroundColor: backgroundColor,
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(0xFF0F0F23),
-              Color(0xFF1A1A2E),
-              Color(0xFF16213E),
-            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: isDark
+                ? [
+                    AppColorsDark.background,
+                    AppColorsDark.surface,
+                  ]
+                : [
+                    AppColorsLight.surface,
+                    AppColorsLight.background,
+                  ],
           ),
         ),
         child: SafeArea(
@@ -38,183 +57,233 @@ class AITypeSection extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pop();
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const UIGeneratorHomePage(),
+                          ),
+                        );
                       },
                       child: Container(
                         width: 44,
                         height: 44,
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.1),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                            color: Colors.white.withOpacity(0.2),
-                            width: 1,
+                          gradient: LinearGradient(
+                            colors: primaryGradient,
                           ),
+                          borderRadius: BorderRadius.circular(12),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.2),
-                              blurRadius: 8,
-                              offset: const Offset(0, 2),
+                              color: isDark
+                                  ? AppColorsDark.shadowMedium
+                                  : AppColorsLight.shadowMedium,
+                              blurRadius: 10,
+                              offset: const Offset(0, 4),
                             ),
                           ],
                         ),
-                        child: const Icon(
+                        child: Icon(
                           Icons.arrow_back_ios_new,
-                          color: Colors.white,
+                          color: isDark
+                              ? AppColorsDark.textOnPrimary
+                              : AppColorsLight.textOnPrimary,
                           size: 20,
                         ),
                       ),
                     ),
-                    const SizedBox(width: 40),
-                    Column(
-                      children: [
-                        const Text(
-                          'Choose Your',
-                          style: TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.w300,
-                            color: Colors.white70,
-                          ),
-                        ),
-                        const Text(
-                          'AI Assistant',
-                          style: TextStyle(
-                            fontSize: 36,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                        const SizedBox(height: 2),
-                        Container(
-                          width: 60,
-                          height: 4,
-                          decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: [Color(0xFF6C63FF), Color(0xFF3F51B5)],
+                    const SizedBox(width: 24),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Choose Your',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w400,
+                              color: textSecondary,
                             ),
-                            borderRadius: BorderRadius.circular(2),
                           ),
-                        ),
-                      ],
-                    )
+                          Text(
+                            'AI Assistant',
+                            style: TextStyle(
+                              fontSize: 32,
+                              fontWeight: FontWeight.bold,
+                              color: textPrimary,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Container(
+                            width: 80,
+                            height: 4,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: primaryGradient,
+                              ),
+                              borderRadius: BorderRadius.circular(2),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
 
-                const SizedBox(height: 48),
+                const SizedBox(height: 32),
 
                 // AI Assistant Buttons
                 Expanded(
-                  child: Column(
-                    children: [
-                      _buildAIButton(
-                        context,
-                        'Gemini',
-                        'gemini-2.5-flash-preview-05-20',
-                        Icons.auto_awesome,
-                        const LinearGradient(
-                          colors: [Color(0xFF4285F4), Color(0xFF34A853)],
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        _buildAIButton(
+                          context,
+                          isDark,
+                          'Gemini',
+                          'gemini-2.5-flash-preview-05-20',
+                          Icons.auto_awesome,
+                          LinearGradient(
+                            colors: isDark
+                                ? [
+                                    AppColorsDark.primary,
+                                    AppColorsDark.primaryDark
+                                  ]
+                                : [
+                                    AppColorsLight.primary,
+                                    AppColorsLight.primaryDark
+                                  ],
+                          ),
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => GeminiGeneratedWidget(),
+                              ),
+                            );
+                          },
                         ),
-                        () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => GeminiGeneratedWidget(),
-                            ),
-                          );
-                        },
-                      ),
-                      const SizedBox(height: 16),
-                      _buildAIButton(
-                        context,
-                        'Groq',
-                        'groq/compound',
-                        Icons.chat_bubble_outline,
-                        const LinearGradient(
-                          colors: [Color(0xFF10A37F), Color(0xFF1A7F64)],
+                        const SizedBox(height: 16),
+                        _buildAIButton(
+                          context,
+                          isDark,
+                          'Groq',
+                          'groq/compound',
+                          Icons.chat_bubble_outline,
+                          LinearGradient(
+                            colors: isDark
+                                ? [Color(0xFF14B8A6), Color(0xFF0F766E)]
+                                : [Color(0xFF14B8A6), Color(0xFF0D9488)],
+                          ),
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => GroqGeneratedWidget(),
+                              ),
+                            );
+                          },
                         ),
-                        () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => GroqGeneratedWidget(),
-                            ),
-                          );
-                        },
-                      ),
-                      const SizedBox(height: 16),
-                      _buildAIButton(
-                        context,
-                        'Cohere',
-                        'command-r-plus-08-2024',
-                        Icons.psychology,
-                        const LinearGradient(
-                          colors: [Color(0xFF1DA1F2), Color(0xFF0D8BD9)],
+                        const SizedBox(height: 16),
+                        _buildAIButton(
+                          context,
+                          isDark,
+                          'Cohere',
+                          'command-r-plus-08-2024',
+                          Icons.psychology,
+                          LinearGradient(
+                            colors: isDark
+                                ? [Color(0xFF06B6D4), Color(0xFF0891B2)]
+                                : [Color(0xFF22D3EE), Color(0xFF06B6D4)],
+                          ),
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CohereGeneratedWidget(),
+                              ),
+                            );
+                          },
                         ),
-                        () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => CohereGeneratedWidget(),
-                            ),
-                          );
-                        },
-                      ),
-                      const SizedBox(height: 16),
-                      _buildAIButton(
-                        context,
-                        'HuggingFace',
-                        'Qwen2.5-Coder-7B-Instruct',
-                        Icons.smart_toy,
-                        const LinearGradient(
-                          colors: [Color(0xFFFF6B6B), Color(0xFFEE5A24)],
+                        const SizedBox(height: 16),
+                        _buildAIButton(
+                          context,
+                          isDark,
+                          'HuggingFace',
+                          'Qwen2.5-Coder-7B-Instruct',
+                          Icons.smart_toy,
+                          LinearGradient(
+                            colors: isDark
+                                ? [AppColorsDark.warning, Color(0xFFF97316)]
+                                : [
+                                    AppColorsLight.warning,
+                                    AppColorsLight.warningLight
+                                  ],
+                          ),
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    HuggingFaceGeneratedWidget(),
+                              ),
+                            );
+                          },
                         ),
-                        () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  HuggingFaceGeneratedWidget(),
-                            ),
-                          );
-                        },
-                      ),
-                      const SizedBox(height: 16),
-                      _buildAIButton(
-                        context,
-                        'OpenRouter',
-                        'llama-3.3-70b-instruct',
-                        Icons.code,
-                        const LinearGradient(
-                          colors: [Color(0xFF0078D4), Color(0xFF106EBE)],
+                        const SizedBox(height: 16),
+                        _buildAIButton(
+                          context,
+                          isDark,
+                          'OpenRouter',
+                          'llama-3.3-70b-instruct',
+                          Icons.code,
+                          LinearGradient(
+                            colors: isDark
+                                ? [
+                                    AppColorsDark.secondary,
+                                    AppColorsDark.secondaryDark
+                                  ]
+                                : [
+                                    AppColorsLight.secondary,
+                                    AppColorsLight.secondaryDark
+                                  ],
+                          ),
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    OpenRouterGeneratedWidget(),
+                              ),
+                            );
+                          },
                         ),
-                        () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => OpenRouterGeneratedWidget(),
-                            ),
-                          );
-                        },
-                      ),
-                      const SizedBox(height: 16),
-                      _buildAIButton(
-                        context,
-                        'DeepSeek',
-                        'Advanced reasoning AI',
-                        Icons.psychology_alt,
-                        const LinearGradient(
-                          colors: [Color(0xFF9C27B0), Color(0xFF673AB7)],
+                        const SizedBox(height: 16),
+                        _buildAIButton(
+                          context,
+                          isDark,
+                          'My Training Model',
+                          'Training Model',
+                          Icons.psychology_alt,
+                          LinearGradient(
+                            colors: isDark
+                                ? [AppColorsDark.accent, Color(0xFFDC2626)]
+                                : [
+                                    AppColorsLight.accent,
+                                    AppColorsLight.accentLight
+                                  ],
+                          ),
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => GeneratedWidget(),
+                              ),
+                            );
+                          },
                         ),
-                        () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => DeepSeekGeneratedWidget(),
-                            ),
-                          );
-                        },
-                      ),
-                    ],
+                        const SizedBox(height: 24),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -227,24 +296,37 @@ class AITypeSection extends StatelessWidget {
 
   Widget _buildAIButton(
     BuildContext context,
+    bool isDark,
     String title,
     String subtitle,
     IconData icon,
     Gradient gradient,
     VoidCallback onTap,
   ) {
+    final cardBackground =
+        isDark ? AppColorsDark.cardBackground : AppColorsLight.cardBackground;
+    final textPrimary =
+        isDark ? AppColorsDark.textPrimary : AppColorsLight.textPrimary;
+    final textSecondary =
+        isDark ? AppColorsDark.textSecondary : AppColorsLight.textSecondary;
+    final cardBorder =
+        isDark ? AppColorsDark.cardBorder : AppColorsLight.cardBorder;
+    final shadowColor =
+        isDark ? AppColorsDark.shadowLight : AppColorsLight.shadowLight;
+
     return GestureDetector(
       onTap: onTap,
       child: Container(
         height: 90,
         decoration: BoxDecoration(
+          color: cardBackground,
           borderRadius: BorderRadius.circular(16),
-          gradient: gradient,
+          border: Border.all(color: cardBorder),
           boxShadow: [
             BoxShadow(
-              color: gradient.colors.first.withOpacity(0.3),
+              color: shadowColor,
               blurRadius: 12,
-              offset: const Offset(0, 6),
+              offset: const Offset(0, 4),
             ),
           ],
         ),
@@ -254,21 +336,32 @@ class AITypeSection extends StatelessWidget {
             color: Colors.transparent,
             child: InkWell(
               onTap: onTap,
+              splashColor: gradient.colors.first.withOpacity(0.1),
+              highlightColor: gradient.colors.first.withOpacity(0.05),
               child: Padding(
                 padding: const EdgeInsets.all(20),
                 child: Row(
                   children: [
                     Container(
-                      width: 40,
-                      height: 40,
+                      width: 50,
+                      height: 50,
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.2),
-                        borderRadius: BorderRadius.circular(10),
+                        gradient: gradient,
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                            color: gradient.colors.first.withOpacity(0.3),
+                            blurRadius: 8,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
                       ),
                       child: Icon(
                         icon,
-                        color: Colors.white,
-                        size: 24,
+                        color: isDark
+                            ? AppColorsDark.textOnPrimary
+                            : AppColorsLight.textOnPrimary,
+                        size: 26,
                       ),
                     ),
                     const SizedBox(width: 16),
@@ -279,27 +372,39 @@ class AITypeSection extends StatelessWidget {
                         children: [
                           Text(
                             title,
-                            style: const TextStyle(
-                              color: Colors.white,
+                            style: TextStyle(
+                              color: textPrimary,
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const SizedBox(height: 2),
+                          const SizedBox(height: 4),
                           Text(
                             subtitle,
                             style: TextStyle(
-                              color: Colors.white.withOpacity(0.8),
+                              color: textSecondary,
                               fontSize: 12,
+                              fontWeight: FontWeight.w500,
                             ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ],
                       ),
                     ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.white.withOpacity(0.8),
-                      size: 16,
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        gradient: gradient,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Icon(
+                        Icons.arrow_forward_ios,
+                        color: isDark
+                            ? AppColorsDark.textOnPrimary
+                            : AppColorsLight.textOnPrimary,
+                        size: 14,
+                      ),
                     ),
                   ],
                 ),
