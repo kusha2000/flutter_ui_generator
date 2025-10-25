@@ -393,7 +393,6 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
-                      ),
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
