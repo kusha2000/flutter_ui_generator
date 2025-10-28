@@ -6,56 +6,69 @@ class OpenRouterGeneratedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    body: Container(
-    decoration: const BoxDecoration(
-    gradient: LinearGradient(
-    begin: Alignment.topCenter,
-    end: Alignment.bottomCenter,
-    colors: [
-    Color(0xFF6366F1),
-    Color(0xFF56CCF2),
+    appBar: AppBar(
+    title: const Text('Notifications'),
+    backgroundColor: Theme.of(context).colorScheme.primary,
+    ),
+    body: SingleChildScrollView(
+    child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Column(
+    children: [
+    const SizedBox(height: 16),
+    Card(
+    elevation: 4,
+    shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(8),
+    ),
+    child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Column(
+    children: [
+    Row(
+    children: [
+    const Icon(Icons.notifications, size: 24),
+    const SizedBox(width: 8),
+    const Text('New Message'),
+    ],
+    ),
+    const SizedBox(height: 8),
+    const Text('You have a new message from John Doe'),
     ],
     ),
     ),
-    child: Center(
-    child: Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-    const Icon(
-    Icons.home,
-    size: 64,
-    color: Colors.white,
     ),
     const SizedBox(height: 16),
-    const Text(
-    'Welcome',
-    style: TextStyle(
-    fontSize: 24,
-    color: Colors.white,
-    fontWeight: FontWeight.bold,
+    Card(
+    elevation: 4,
+    shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(8),
     ),
+    child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Column(
+    children: [
+    Row(
+    children: [
+    const Icon(Icons.update, size: 24),
+    const SizedBox(width: 8),
+    const Text('App Update'),
+    ],
     ),
     const SizedBox(height: 8),
-    const Text(
-    'Modern Theme',
-    style: TextStyle(
-    fontSize: 18,
-    color: Colors.white,
+    const Text('A new version of the app is available'),
+    ],
     ),
     ),
-    const SizedBox(height: 32),
+    ),
+    const SizedBox(height: 16),
     ElevatedButton(
     style: ElevatedButton.styleFrom(
-    backgroundColor: const Color(0xFF56CCF2),
+    backgroundColor: Theme.of(context).colorScheme.primary,
     foregroundColor: Colors.white,
-    shape: const RoundedRectangleBorder(
-    borderRadius: BorderRadius.all(Radius.circular(8)),
     ),
-    ),
-    onPressed: () {
-      // Navigate to next screen
-    },
-    child: const Text('Get Started'),
+    onPressed: () {},
+    child: const Text('Mark all as read'),
     ),
     ],
     ),

@@ -5,37 +5,38 @@ class HuggingFaceGeneratedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
-    final theme = Theme.of(context);
-
     return Scaffold(
-    body: Container(
-    width: size.width,
-    height: size.height,
-    decoration: BoxDecoration(
-    gradient: LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors: [theme.colorScheme.primary, theme.colorScheme.secondary],
+    appBar: AppBar(
+    title: const Text('Notifications'),
+    backgroundColor: Theme.of(context).colorScheme.primary,
     ),
-    ),
-    child: Center(
+    body: SingleChildScrollView(
+    child: Padding(
+    padding: const EdgeInsets.all(16.0),
     child: Column(
-    mainAxisAlignment: MainAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-    Image.asset(
-    'assets/images/logo.png',
-    width: 100,
-    height: 100,
+    const ListTile(
+    leading: CircleAvatar(
+    backgroundImage: NetworkImage('https: //via.placeholder.com/50'),
     ),
-    const SizedBox(height: 32),
-    const CircularProgressIndicator(
-    color: Colors.white,
+    title: Text('John Doe'),
+    subtitle: Text('New message received'),
+    trailing: Icon(Icons.new_releases),
     ),
-    const SizedBox(height: 16),
-    const Text(
-    'Loading...',
-    style: TextStyle(color: Colors.white, fontSize: 18),
+    const SizedBox(height: 16.0),
+    const ListTile(
+    leading: Icon(Icons.event_available),
+    title: Text('Event Reminder'),
+    subtitle: Text('Meeting at 3 PM tomorrow'),
+    trailing: Icon(Icons.arrow_forward_ios),
+    ),
+    const SizedBox(height: 16.0),
+    const ListTile(
+    leading: Icon(Icons.notifications_active),
+    title: Text('System Update'),
+    subtitle: Text('Version 2.0 available'),
+    trailing: Icon(Icons.download_done),
     ),
     ],
     ),
