@@ -12,7 +12,7 @@ class CohereGeneratedWidget extends StatelessWidget {
     Container(
     decoration: const BoxDecoration(
     gradient: LinearGradient(
-    colors: [Color(0xFF6366F1), Color(0xFF3B3D99)],
+    colors: [Color(0xFF6366F1), Color(0xFF3B3DF0)],
     ),
     ),
     ),
@@ -20,28 +20,51 @@ class CohereGeneratedWidget extends StatelessWidget {
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
     const Text(
-    'Welcome to Cohere',
+    'Welcome to Cohere App',
     style: TextStyle(
-    color: Colors.white,
     fontSize: 32,
     fontWeight: FontWeight.bold,
+    color: Colors.white,
     ),
     ),
-    const SizedBox(height: 16),
-    Text(
-    'Explore the world of AI',
-    style: TextStyle(
-    color: Colors.white.withOpacity(0.8),
-    fontSize: 18,
+    const SizedBox(height: 24),
+    Container(
+    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+    decoration: BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.circular(8),
+    boxShadow: [
+    BoxShadow(
+    color: Colors.black.withOpacity(0.2),
+    blurRadius: 8,
+    offset: Offset(0, 4),
+    ),
+    ],
+    ),
+    child: Row(
+    children: [
+    const Icon(Icons.search, color: Color(0xFF6366F1)),
+    const SizedBox(width: 16),
+    Expanded(
+    child: TextFormField(
+    decoration: InputDecoration(
+    hintText: 'Search for something...',
+    border: InputBorder.none,
+    hintStyle: TextStyle(color: Colors.grey),
+    ),
+    ),
+    ),
+    ],
     ),
     ),
     const SizedBox(height: 32),
     ElevatedButton(
     style: ElevatedButton.styleFrom(
-    backgroundColor: Colors.white,
-    foregroundColor: const Color(0xFF6366F1),
+    backgroundColor: const Color(0xFF6366F1),
+    foregroundColor: Colors.white,
+    padding: const EdgeInsets.symmetric(vertical: 16),
     shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.all(Radius.circular(8)),
+    borderRadius: BorderRadius.circular(8),
     ),
     ),
     onPressed: () {},

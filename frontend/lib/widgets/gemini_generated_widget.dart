@@ -5,17 +5,14 @@ class GeminiGeneratedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Define a modern color scheme for the splash screen
-    const Color primaryColor = Color(0xFF6366F1); // Indigo 500
-    const Color secondaryColor = Color(0xFF8B5CF6); // Violet 500
-    const Color onPrimaryColor = Colors.white;
-    const Color taglineColor = Color(0xFFE0E0E0); // Slightly off-white for contrast
-
     return Scaffold(
-    body: Container(
+    body: DecoratedBox(
     decoration: const BoxDecoration(
     gradient: LinearGradient(
-    colors: [primaryColor, secondaryColor],
+    colors: [
+    Color(0xFF4A148C), // Deep Purple
+    Color(0xFF7B1FA2), // Medium Purple
+    ],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     ),
@@ -23,33 +20,35 @@ class GeminiGeneratedWidget extends StatelessWidget {
     child: Center(
     child: Column(
     mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-    // App Icon/Logo
-    Icon(
+    children: <Widget>[
+    const Icon(
     Icons.rocket_launch, // A modern, engaging icon
-    size: MediaQuery.sizeOf(context).width * 0.3, // Responsive size
-    color: onPrimaryColor,
+    color: Colors.white,
+    size: 120.0,
     ),
-    const SizedBox(height: 24.0), // Spacing of 24 pixels
-    // App Name
+    const SizedBox(height: 24.0), // Spacing
     const Text(
-    'AstroLaunch', // Placeholder App Name
+    'Gemini App',
     style: TextStyle(
-    color: onPrimaryColor,
-    fontSize: 36.0,
+    color: Colors.white,
+    fontSize: 48.0,
     fontWeight: FontWeight.bold,
     letterSpacing: 1.5,
     ),
     ),
-    const SizedBox(height: 16.0), // Spacing of 16 pixels
-    // Optional: Tagline or version
+    const SizedBox(height: 16.0), // Spacing
     const Text(
-    'Explore the Cosmos',
+    'Your Future, Now.',
     style: TextStyle(
-    color: taglineColor,
-    fontSize: 18.0,
+    color: Colors.white70,
+    fontSize: 20.0,
     fontStyle: FontStyle.italic,
     ),
+    ),
+    const SizedBox(height: 48.0), // More spacing before indicator
+    const CircularProgressIndicator(
+    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+    strokeWidth: 4.0,
     ),
     ],
     ),

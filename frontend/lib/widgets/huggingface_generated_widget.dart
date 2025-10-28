@@ -6,58 +6,38 @@ class HuggingFaceGeneratedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
-    final colorScheme = Theme.of(context).colorScheme;
+    final theme = Theme.of(context);
 
     return Scaffold(
-    body: Center(
-    child: Container(
-    width: size.width * 0.8,
-    height: size.height * 0.6,
+    body: Container(
+    width: size.width,
+    height: size.height,
     decoration: BoxDecoration(
-    borderRadius: BorderRadius.circular(16.0),
     gradient: LinearGradient(
-    colors: [colorScheme.primaryContainer, colorScheme.secondaryContainer],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
+    colors: [theme.colorScheme.primary, theme.colorScheme.secondary],
     ),
-    boxShadow: [
-    BoxShadow(
-    color: colorScheme.onSurface.withOpacity(0.25),
-    blurRadius: 8.0,
-    offset: Offset.zero,
     ),
-    ],
-    ),
-    child: Padding(
-    padding: const EdgeInsets.all(16.0),
+    child: Center(
     child: Column(
     mainAxisAlignment: MainAxisAlignment.center,
-    crossAxisAlignment: CrossAxisAlignment.center,
     children: [
     Image.asset(
-    'assets/logo.png',
-    width: 100.0,
-    height: 100.0,
+    'assets/images/logo.png',
+    width: 100,
+    height: 100,
     ),
-    SizedBox(height: 16.0),
-    const Text(
-    'Welcome to Our App',
-    style: TextStyle(
-    fontSize: 24.0,
-    fontWeight: FontWeight.bold,
+    const SizedBox(height: 32),
+    const CircularProgressIndicator(
     color: Colors.white,
     ),
-    ),
-    SizedBox(height: 8.0),
+    const SizedBox(height: 16),
     const Text(
     'Loading...',
-    style: TextStyle(
-    fontSize: 16.0,
-    color: Colors.white,
-    ),
+    style: TextStyle(color: Colors.white, fontSize: 18),
     ),
     ],
-    ),
     ),
     ),
     ),
