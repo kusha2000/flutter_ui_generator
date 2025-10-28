@@ -5,59 +5,40 @@ class HuggingFaceGeneratedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
-    final colorScheme = Theme.of(context).colorScheme;
-
     return Scaffold(
-    body: Center(
-    child: Container(
-    width: size.width * 0.8,
-    height: size.height * 0.6,
-    decoration: BoxDecoration(
-    borderRadius: BorderRadius.circular(16.0),
-    gradient: LinearGradient(
-    colors: [colorScheme.primaryContainer, colorScheme.secondaryContainer],
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
+    appBar: AppBar(
+    title: const Text('Notifications'),
+    backgroundColor: Theme.of(context).colorScheme.primary,
     ),
-    boxShadow: [
-    BoxShadow(
-    color: colorScheme.onSurface.withOpacity(0.25),
-    blurRadius: 8.0,
-    offset: Offset.zero,
-    ),
-    ],
-    ),
+    body: SingleChildScrollView(
     child: Padding(
     padding: const EdgeInsets.all(16.0),
     child: Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    crossAxisAlignment: CrossAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-    Image.asset(
-    'assets/logo.png',
-    width: 100.0,
-    height: 100.0,
+    const ListTile(
+    leading: CircleAvatar(
+    backgroundImage: NetworkImage('https: //via.placeholder.com/50'),
     ),
-    SizedBox(height: 16.0),
-    const Text(
-    'Welcome to Our App',
-    style: TextStyle(
-    fontSize: 24.0,
-    fontWeight: FontWeight.bold,
-    color: Colors.white,
+    title: Text('John Doe'),
+    subtitle: Text('New message received'),
+    trailing: Icon(Icons.new_releases),
     ),
+    const SizedBox(height: 16.0),
+    const ListTile(
+    leading: Icon(Icons.event_available),
+    title: Text('Event Reminder'),
+    subtitle: Text('Meeting at 3 PM tomorrow'),
+    trailing: Icon(Icons.arrow_forward_ios),
     ),
-    SizedBox(height: 8.0),
-    const Text(
-    'Loading...',
-    style: TextStyle(
-    fontSize: 16.0,
-    color: Colors.white,
-    ),
+    const SizedBox(height: 16.0),
+    const ListTile(
+    leading: Icon(Icons.notifications_active),
+    title: Text('System Update'),
+    subtitle: Text('Version 2.0 available'),
+    trailing: Icon(Icons.download_done),
     ),
     ],
-    ),
     ),
     ),
     ),

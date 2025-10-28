@@ -6,50 +6,77 @@ class CohereGeneratedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    body: Stack(
-    fit: StackFit.expand,
+    appBar: AppBar(
+    title: const Text('Notifications'),
+    backgroundColor: Theme.of(context).colorScheme.primary,
+    ),
+    body: SingleChildScrollView(
+    child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-    Container(
-    decoration: const BoxDecoration(
-    gradient: LinearGradient(
-    colors: [Color(0xFF6366F1), Color(0xFF3B3D99)],
-    ),
-    ),
-    ),
-    Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-    const Text(
-    'Welcome to Cohere',
-    style: TextStyle(
-    color: Colors.white,
-    fontSize: 32,
-    fontWeight: FontWeight.bold,
-    ),
-    ),
-    const SizedBox(height: 16),
     Text(
-    'Explore the world of AI',
-    style: TextStyle(
-    color: Colors.white.withOpacity(0.8),
-    fontSize: 18,
+    'Recent Notifications',
+    style: Theme.of(context).textTheme.bodyLarge,
     ),
+    SizedBox(height: 16.0),
+    ListView.builder(
+    shrinkWrap: true,
+    physics: const NeverScrollableScrollPhysics(),
+    itemCount: 5,
+    itemBuilder: (context, index) {
+      return Card(
+      elevation: 4,
+      margin: const EdgeInsets.only(bottom: 16.0),
+      child: ListTile(
+      leading: const Icon(Icons.notifications),
+      title: Text('Notification $index'),
+      subtitle: Text('This is a sample notification description.'),
+      trailing: const Icon(Icons.arrow_forward_ios),
+      ),
+      );
+    },
     ),
-    const SizedBox(height: 32),
-    ElevatedButton(
-    style: ElevatedButton.styleFrom(
-    backgroundColor: Colors.white,
-    foregroundColor: const Color(0xFF6366F1),
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.all(Radius.circular(8)),
+    Text(
+    'Earlier Notifications',
+    style: Theme.of(context).textTheme.bodyLarge,
     ),
-    ),
-    onPressed: () {},
-    child: const Text('Get Started'),
+    SizedBox(height: 16.0),
+    ListView.builder(
+    shrinkWrap: true,
+    physics: const NeverScrollableScrollPhysics(),
+    itemCount: 3,
+    itemBuilder: (context, index) {
+      return InkWell(
+      onTap: () {},
+      child: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Row(
+      children: [
+      const Icon(Icons.notifications_active),
+      SizedBox(width: 16.0),
+      Expanded(
+      child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+      Text('Old Notification $index'),
+      Text(
+      'This is an older notification from a few days ago.',
+      style: Theme.of(context).textTheme.bodyLarge,
+      ),
+      ],
+      ),
+      ),
+      ],
+      ),
+      ),
+      );
+    },
     ),
     ],
     ),
-    ],
+    ),
     ),
     );
   }

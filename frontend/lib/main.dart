@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/Screens/home_page.dart';
+import 'package:frontend/Screens/splash_screen.dart';
 import 'package:frontend/theme/app_theme.dart';
 import 'package:frontend/theme/theme_provider.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +25,9 @@ class MyApp extends StatelessWidget {
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: themeProvider.themeMode,
-          home: UIGeneratorHomePage(),
+          home: SplashScreen(
+            nextScreen: UIGeneratorHomePage(),
+          ),
         );
       },
     );

@@ -4,116 +4,86 @@ class GeneratedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF0FDF4),
-      body: Stack(
-        children: [
-          Positioned(
-            top: 150,
-            right: -50,
-            child: Container(
-              width: 200,
-              height: 200,
-              decoration: BoxDecoration(
-                color: Color(0xFF10B981).withOpacity(0.05),
-                shape: BoxShape.circle,
-              ),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: Center(
+          child: Text(
+            'Notifications',
+            style: TextStyle(
+              fontSize: 26,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey[800],
             ),
           ),
-          Positioned(
-            bottom: 100,
-            left: -80,
-            child: Container(
-              width: 250,
-              height: 250,
-              decoration: BoxDecoration(
-                color: Color(0xFF059669).withOpacity(0.03),
-                shape: BoxShape.circle,
-              ),
-            ),
-          ),
-          SafeArea(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Spacer(flex: 2),
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                      width: 140,
-                      height: 140,
-                      child: CircularProgressIndicator(
-                        strokeWidth: 3,
-                        value: 0.7,
-                        valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF10B981)),
-                        backgroundColor: Color(0xFF10B981).withOpacity(0.1),
-                      ),
-                    ),
-                    Container(
-                      width: 110,
-                      height: 110,
-                      decoration: BoxDecoration(
-                        color: Color(0xFF10B981),
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0xFF10B981).withOpacity(0.3),
-                            blurRadius: 20,
-                            offset: Offset(0, 8),
-                          ),
-                        ],
-                      ),
-                      child: Icon(
-                        Icons.favorite,
-                        size: 55,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
+        ),
+      ),
+      body: ListView.builder(
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          bool isUnread = index % 2 == 0;
+          return Container(
+            margin: EdgeInsets.only(bottom: 10),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey[200]!),
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey[100]!,
+                  blurRadius: 6,
+                  offset: Offset(0, 2),
                 ),
-                SizedBox(height: 45),
-                Text(
-                  'VitalLife',
-                  style: TextStyle(
-                    fontSize: 34,
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xFF065F46),
-                    letterSpacing: 1,
-                  ),
-                ),
-                SizedBox(height: 12),
-                Text(
-                  'Your journey to wellness starts here',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Color(0xFF10B981),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                Spacer(flex: 3),
-                Container(
-                  width: 40,
-                  height: 40,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 3,
-                    valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF10B981)),
-                  ),
-                ),
-                SizedBox(height: 15),
-                Text(
-                  'Loading your health data...',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Color(0xFF6B7280),
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                SizedBox(height: 50),
               ],
             ),
-          ),
-        ],
+            child: ListTile(
+              contentPadding: EdgeInsets.all(12),
+              leading: Stack(
+                children: [
+                  CircleAvatar(
+                    radius: 22,
+                    backgroundColor: pastelColors[index % pastelColors.length],
+                    child: Icon(Icons.person, color: Colors.white),
+                  ),
+                  if (isUnread)
+                    Positioned(
+                      right: 0,
+                      top: 0,
+                      child: Container(
+                        width: 10,
+                        height: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+              title: Text(
+                'User ${index + 1}',
+                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800]),
+              ),
+              subtitle: Text(
+                'New message received...',
+                style: TextStyle(color: Colors.grey[600], fontSize: 14),
+              ),
+              trailing: Text(
+                '${index + 1} min ago',
+                style: TextStyle(color: Colors.grey[500], fontSize: 12),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
+
+  static  List<Color> pastelColors = [
+    Colors.pink[100]!,
+    Colors.blue[100]!,
+    Colors.green[100]!,
+    Colors.yellow[100]!,
+  ];
 }

@@ -1,0 +1,85 @@
+{
+    "metadata": {
+        "evaluation_date": "2025-10-28 22:57:44",
+        "num_test_samples": 50,
+        "dataset_file": "./flutter_dataset.jsonl"
+    },
+    "models": {
+        "CodeT5-220M": {
+            "accuracy": 0.5210950814385809,
+            "f1_score": 0.6904066266715736,
+            "precision": 0.8989135419267411,
+            "recall": 0.5738414065508828,
+            "rouge1": 0.6232505422867095,
+            "rouge2": 0.5817615749169583,
+            "rougeL": 0.595650374084133,
+            "exact_match_rate": 0.02
+        },
+        "MiniLM-L6": {
+            "accuracy": 0.8651306515996114,
+            "f1_score": 0.9378976308868553,
+            "precision": 0.9437451943875226,
+            "recall": 0.9342556962139591,
+            "rouge1": 0.9455044262635208,
+            "rouge2": 0.9163834966807297,
+            "rougeL": 0.9304533597998355,
+            "exact_match_rate": 0.78
+        },
+        "MiniLM-L12": {
+            "accuracy": 0.8662955590540679,
+            "f1_score": 0.9264477748298807,
+            "precision": 0.9314615347298439,
+            "recall": 0.9240435637418024,
+            "rouge1": 0.9334937994511648,
+            "rouge2": 0.904783798182717,
+            "rougeL": 0.9171275259102163,
+            "exact_match_rate": 0.8
+        },
+        "MPNet-Base": {
+            "accuracy": 0.8701487511300755,
+            "f1_score": 0.9330639459677098,
+            "precision": 0.937583221718607,
+            "recall": 0.9308616392448522,
+            "rouge1": 0.9363919279757912,
+            "rouge2": 0.9084740416464342,
+            "rougeL": 0.9163901036398491,
+            "exact_match_rate": 0.82
+        }
+    },
+    "best_performers": {
+        "accuracy": {
+            "model": "MPNet-Base",
+            "score": 0.8701487511300755
+        },
+        "f1_score": {
+            "model": "MiniLM-L6",
+            "score": 0.9378976308868553
+        },
+        "precision": {
+            "model": "MiniLM-L6",
+            "score": 0.9437451943875226
+        },
+        "recall": {
+            "model": "MiniLM-L6",
+            "score": 0.9342556962139591
+        },
+        "rouge1": {
+            "model": "MiniLM-L6",
+            "score": 0.9455044262635208
+        },
+        "rougeL": {
+            "model": "MiniLM-L6",
+            "score": 0.9304533597998355
+        }
+    },
+    "composite_scores": {
+        "CodeT5-220M": 0.6505262621597702,
+        "MiniLM-L6": 0.9261644931918841,
+        "MiniLM-L12": 0.9164782929528293,
+        "MPNet-Base": 0.9207399316128142
+    },
+    "overall_best": {
+        "model": "MiniLM-L6",
+        "composite_score": 0.9261644931918841
+    }
+}

@@ -3,6 +3,7 @@ import 'package:frontend/widgets/ai_type_selection.dart';
 import 'package:frontend/theme/app_colors_light.dart';
 import 'package:frontend/theme/app_colors_dark.dart';
 import 'package:frontend/theme/theme_provider.dart';
+import 'package:frontend/config/api_config.dart';
 import 'package:provider/provider.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -127,12 +128,18 @@ class _UIGeneratorHomePageState extends State<UIGeneratorHomePage>
     try {
       final request = http.Request(
         'POST',
-        Uri.parse('http://192.168.8.213:8000/generate-ui-stream'),
+        Uri.parse(ApiConfig.GENERATE_UI_STREAM),
       );
       request.headers['Content-Type'] = 'application/json';
       request.body = jsonEncode({'prompt': prompt});
 
-      final streamedResponse = await request.send();
+      final streamedResponse = await request.send().timeout(
+        ApiConfig.REQUEST_TIMEOUT,
+        onTimeout: () {
+          throw Exception(
+              'Request timeout - Backend is not responding. Please check if the backend is running at ${ApiConfig.BASE_URL}');
+        },
+      );
 
       if (streamedResponse.statusCode == 200) {
         String buffer = '';

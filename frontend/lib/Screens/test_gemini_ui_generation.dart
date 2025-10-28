@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/widgets/ai_type_selection.dart';
+import 'package:frontend/config/api_config.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -19,10 +20,18 @@ class _TestGeminiUIGenerationState extends State<TestGeminiUIGeneration> {
 
   Future<void> _generateUI(String prompt) async {
     try {
-      final response = await http.post(
-        Uri.parse('http://172.26.120.94:8000/generate-ui'),
+      final response = await http
+          .post(
+        Uri.parse(ApiConfig.GENERATE_UI),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'prompt': prompt}),
+      )
+          .timeout(
+        ApiConfig.REQUEST_TIMEOUT,
+        onTimeout: () {
+          throw Exception(
+              'Request timeout - Backend is not responding. Please check if the backend is running at ${ApiConfig.BASE_URL}');
+        },
       );
 
       if (response.statusCode == 200) {

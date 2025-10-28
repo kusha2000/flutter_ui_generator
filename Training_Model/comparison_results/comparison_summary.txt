@@ -1,0 +1,67 @@
+================================================================================
+COMPREHENSIVE MODEL COMPARISON SUMMARY
+Flutter UI Code Generation Models
+================================================================================
+
+Evaluation Date: 2025-10-28 22:57:44
+Test Samples: 50
+
+================================================================================
+MODEL PERFORMANCE SUMMARY
+================================================================================
+
+CodeT5-220M:
+  Accuracy:        52.11%
+  F1 Score:        69.04%
+  Precision:       89.89%
+  Recall:          57.38%
+  ROUGE-1:         0.6233
+  ROUGE-L:         0.5957
+  Exact Match:     2.00%
+  Composite Score: 65.05%
+
+MiniLM-L6:
+  Accuracy:        86.51%
+  F1 Score:        93.79%
+  Precision:       94.37%
+  Recall:          93.43%
+  ROUGE-1:         0.9455
+  ROUGE-L:         0.9305
+  Exact Match:     78.00%
+  Composite Score: 92.62%
+
+MiniLM-L12:
+  Accuracy:        86.63%
+  F1 Score:        92.64%
+  Precision:       93.15%
+  Recall:          92.40%
+  ROUGE-1:         0.9335
+  ROUGE-L:         0.9171
+  Exact Match:     80.00%
+  Composite Score: 91.65%
+
+MPNet-Base:
+  Accuracy:        87.01%
+  F1 Score:        93.31%
+  Precision:       93.76%
+  Recall:          93.09%
+  ROUGE-1:         0.9364
+  ROUGE-L:         0.9164
+  Exact Match:     82.00%
+  Composite Score: 92.07%
+
+================================================================================
+BEST PERFORMERS
+================================================================================
+
+ACCURACY       : MPNet-Base      (87.01%)
+F1_SCORE       : MiniLM-L6       (93.79%)
+PRECISION      : MiniLM-L6       (94.37%)
+RECALL         : MiniLM-L6       (93.43%)
+ROUGE1         : MiniLM-L6       (94.55%)
+ROUGEL         : MiniLM-L6       (93.05%)
+
+================================================================================
+OVERALL BEST MODEL: MiniLM-L6
+Composite Score: 92.62%
+================================================================================
