@@ -27,7 +27,7 @@ class GeminiService(BaseLLMService):
                 temperature=0.4,  # Lower temperature for more consistent code
                 top_p=0.8,
                 top_k=40,
-                max_output_tokens=8192
+                max_output_tokens=16384  # Increased to allow complete code generation
             )
         
         super().__init__(generation_config, retry_config)
