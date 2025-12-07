@@ -4,3 +4,5 @@
 Training_Model/trained_models/MiniLM-L12_flutter_retriever_transformer/model.safetensors
 Training_Model/trained_models/MPNet-Base_flutter_retriever_transformer/model.safetensors
 Training_Model/trained_models/MiniLM-L6_flutter_retriever_transformer/model.safetensors
+Training_Model/flutter_codegen_model/model.safetensors
+Documents/

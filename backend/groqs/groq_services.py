@@ -23,8 +23,8 @@ class GroqService(BaseLLMService):
         # Groq-specific generation config optimized for code generation
         if generation_config is None:
             generation_config = GenerationConfig(
-                temperature=0.4,
-                top_p=0.8,
+                temperature=0.3,
+                top_p=0.9,
                 top_k=40,
                 max_output_tokens=8192
             )

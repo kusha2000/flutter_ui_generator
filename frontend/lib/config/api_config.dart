@@ -1,6 +1,6 @@
 class ApiConfig {
   // CHANGE THIS TO YOUR BACKEND IP ADDRESS
-  static const String BASE_URL = 'http://10.242.41.80:8000';
+  static const String BASE_URL = 'http://192.168.8.213:8000';
 
   // API Endpoints
   static const String GENERATE_UI = '$BASE_URL/generate-ui';
